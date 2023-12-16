@@ -1,3 +1,5 @@
+const uploadOSS = require("../../utils/uploadOSS");
+
 // pages/observation-create/observation-create.js
 Page({
 
@@ -8,6 +10,22 @@ Page({
 
   },
 
+  upload() {
+    wx.chooseMedia({
+      mediaType: 'mix',
+      maxDuration: 60,
+      success: (res)=>{
+        //console.log(res);
+        debugger
+        const tempFilePaths = res.tempFiles[0].tempFilePath;
+        debugger
+        uploadOSS(tempFilePaths)
+      },
+      fail: () => {
+        debugger
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
