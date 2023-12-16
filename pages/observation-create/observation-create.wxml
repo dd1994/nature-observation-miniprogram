@@ -1,1 +1,7 @@
-<t-button bind:tap="upload">上传图片</t-button>
+<t-upload
+    mediaType="{{['video','image']}}"
+    files="{{fileList}}"
+    bind:add="handleAdd"
+    bind:remove="handleRemove"
+  >
+  </t-upload>

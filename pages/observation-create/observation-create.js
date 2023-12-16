@@ -8,9 +8,54 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    fileList: [],
   },
 
+  handleAdd(e) {
+    const { files } = e.detail;
+    files.forEach(file => this.uploadFile(file))
+  },
+  uploadFile(file) {
+    const { fileList } = this.data;
+
+    this.setData({
+      fileList: [...fileList, { ...file, status: 'loading' }],
+    });
+    const { length } = fileList;
+
+    const task = uploadOSS({
+      filePath: file.url,
+      key: (new UUID(1)).toString(),
+      success: (res) => {
+        this.setData({
+          [`fileList[${length}].status`]: 'done',
+        });
+      },
+      fail: (err) => {
+        debugger
+      }
+    })
+
+    // const task = wx.uploadFile({
+    //   url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
+    //   filePath: file.url,
+    //   name: 'file',
+    //   formData: { user: 'test' },
+    //   success: () => {
+    //     this.setData({
+    //       [`fileList[${length}].status`]: 'done',
+    //     });
+    //   },
+    // });
+    task.onProgressUpdate((res) => {
+      this.setData({
+        [`fileList[${length}].percent`]: res.progress,
+      });
+    });
+  },
+  handleRemove(e) {
+    debugger
+  },
   upload() {
     wx.chooseMedia({
       mediaType: 'mix',

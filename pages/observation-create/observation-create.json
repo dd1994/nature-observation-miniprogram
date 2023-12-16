@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "创建记录",
   "usingComponents": {
-    "t-button": "tdesign-miniprogram/button/button"
+    "t-upload": "tdesign-miniprogram/upload/upload"
   }
 }
