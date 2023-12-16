@@ -1,4 +1,5 @@
 const uploadOSS = require("../../utils/uploadOSS");
+const {getOSSUrlByKey} = require("../../utils/util")
 var UUID = require("pure-uuid")
 
 // pages/observation-create/observation-create.js
@@ -26,6 +27,7 @@ Page({
         const index = this.data.fileList.findIndex(i => i.key === uuid)
         this.setData({
           [`fileList[${index}].status`]: 'done',
+          [`fileList[${index}].url`]: getOSSUrlByKey(uuid),
         });
       },
       fail: (err) => {

@@ -14,6 +14,10 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+function getOSSUrlByKey(key) {
+  return `https://observation-images.oss-cn-beijing.aliyuncs.com/${key}`
+}
 module.exports = {
-  formatTime
+  formatTime,
+  getOSSUrlByKey
 }
