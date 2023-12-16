@@ -1,4 +1,18 @@
 /**app.wxss**/
+page {
+  /* 待设计主题色 */
+/* --td-primary-color-1: #e7e9bc;
+--td-primary-color-2: #d3daa9;
+--td-primary-color-3: #becc97;
+--td-primary-color-4: #a9bd85;
+--td-primary-color-5: #94af75;
+--td-primary-color-6: #7ea266;
+--td-primary-color-7: #679457;
+--td-primary-color-8: #50874a;
+--td-primary-color-9: #36793d;
+--td-primary-color-10: #136c32; */
+}
+
 .container {
   height: 100%;
   display: flex;
