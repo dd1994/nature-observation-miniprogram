@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/observation-create/observation-create",
     "pages/index/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarBackgroundColor": "#FFF"
   },
   "rendererOptions": {
     "skyline": {
