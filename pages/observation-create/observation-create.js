@@ -1,4 +1,5 @@
 const uploadOSS = require("../../utils/uploadOSS");
+var UUID = require("pure-uuid")
 
 // pages/observation-create/observation-create.js
 Page({
@@ -15,10 +16,12 @@ Page({
       mediaType: 'mix',
       maxDuration: 60,
       success: (res)=>{
-        //console.log(res);
-        debugger
-        const tempFilePaths = res.tempFiles[0].tempFilePath;
-        debugger
+        const tempFilePaths = res.tempFiles.map(file => {
+          return {
+            key: (new UUID(1)).toString(),
+            filePath: file.tempFilePath
+          }
+        })
         uploadOSS(tempFilePaths)
       },
       fail: () => {

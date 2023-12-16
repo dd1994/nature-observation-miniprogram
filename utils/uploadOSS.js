@@ -6,29 +6,27 @@ const key = '<object name>';
 const securityToken = '<x-oss-security-token>'; 
 const filePath = '<filePath>'; // 待上传文件的文件路径。
 
-function uploadOSS(filesPaths) {
-  const path = Array.isArray(filesPaths) ? filesPaths : [filesPaths]
+function uploadOSS(filesParam) {
+  const files = Array.isArray(filesParam) ? filesParam : [filesParam]
 
-  for (let index = 0; index < path.length; index++) {
+  for (let index = 0; index < files.length; index++) {
     wx.uploadFile({
       url: host,
-      filePath: path[index],
+      filePath: files[index].filePath,
       name: 'file', // 必须填file。
       formData: {
-        key: 'test.png',
+        key: files[index].key // files[index].key,
         // policy,
         // OSSAccessKeyId: ossAccessKeyId,
         // signature,
         // 'x-oss-security-token': securityToken // 使用STS签名时必传。
       },
       success: (res) => {
-        debugger
         if (res.statusCode === 204) {
           console.log('上传成功');
         }
       },
       fail: err => {
-        debugger
         console.log(err);
       }
     });
