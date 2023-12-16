@@ -16,19 +16,22 @@ Page({
     files.forEach(file => this.uploadFile(file))
   },
   uploadFile(file) {
+    const uuid = (new UUID(1)).toString()
     const { fileList } = this.data;
 
     this.setData({
-      fileList: [...fileList, { ...file, status: 'loading' }],
+      fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
     });
-    const { length } = fileList;
 
     const task = uploadOSS({
       filePath: file.url,
-      key: (new UUID(1)).toString(),
+      key: uuid,
       success: (res) => {
+        debugger
+        const index = this.data.fileList.findIndex(i => i.key === uuid)
+        debugger
         this.setData({
-          [`fileList[${length}].status`]: 'done',
+          [`fileList[${index}].status`]: 'done',
         });
       },
       fail: (err) => {
@@ -48,8 +51,10 @@ Page({
     //   },
     // });
     task.onProgressUpdate((res) => {
+      const index = this.data.fileList.findIndex(i => i.key === uuid)
+
       this.setData({
-        [`fileList[${length}].percent`]: res.progress,
+        [`fileList[${index}].percent`]: res.progress,
       });
     });
   },
