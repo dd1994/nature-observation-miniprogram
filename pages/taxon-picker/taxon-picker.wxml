@@ -2,9 +2,10 @@
 <view class="page-container">
   <t-search model:value="{{inputWords}}" placeholder="搜索物种中文名、拉丁名..." bind:change="searchWords"/>
 
-  <view class="search-result-taxon-list" wx:for="{{searchResult}}">
-      <view class="search-result-taxon-item">
-        {{item.name_c}} {{item.name}}
-      </view>
+<view class="search-result-taxon-list">
+
+  <view class="search-result-taxon-item" wx:for="{{searchResult}}">
+    <t-cell title="{{item.name_c}}" description="{{item.name}}" hover arrow />
   </view>
+</view>
 </view>
