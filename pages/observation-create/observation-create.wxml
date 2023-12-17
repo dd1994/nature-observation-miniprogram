@@ -57,6 +57,8 @@
     <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange"/>
   </view>
 
+  <t-divider />
+
   <view class="create-form-save-button">
     <t-button block theme="primary" size="large">保存</t-button>
   </view>
