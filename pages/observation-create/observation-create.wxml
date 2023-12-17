@@ -21,11 +21,19 @@
     <view wx:else class="create-form-item-placeholder">时间</view>
   </view>
   <t-date-time-picker
-    title="时间"
+    title="观察时间"
     visible="{{timeSelectorVisible}}"
     mode="second"
     value="{{time}}"
     format="YYYY-MM-DD HH:mm:ss"
     bind:confirm="timeChange"
 />
+<t-divider />
+<view class="create-form-item-wrapper">
+    <view class="create-form-item-icon-wrapper">
+      <t-icon name="location" size="20px"/>
+    </view>
+    <view wx:if="{{address}}" class="create-form-item-content">{{address}}</view>
+    <view wx:else class="create-form-item-placeholder">观察位置</view>
+  </view>
 </view>
