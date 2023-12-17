@@ -7,9 +7,21 @@ Page({
   data: {
     inputWords: '',
     searchResult: []
+//     hierarchyCode: "Animalia_Chordata_Aves_Passeriformes_Pycnonotidae_Pycnonotus_Pycnonotus sinensis"
+// name: "Pycnonotus sinensis"
+// nameCode: "14b35463-5451-46f6-abd1-819082387624"
+// name_c: "白头鹎"
+// name_py: "bái tóu bēi"
+// parentId: "ec706686-fe91-4dc6-a88e-b288590b0ca6"
+// pyabbr: "btb"
+// rank: "Species"
+// taxongroup: "鸟类"
   },
   searchWords(e) {
     // 请求接口
+    if(!this.data.inputWords.length) {
+      return  this.setData({searchResult: []})
+    }
     wx.request({
       url: 'http://www.sp2000.org.cn/api/v2/getNameByKeyword',
       data: {
@@ -17,13 +29,14 @@ Page({
         keyword: this.data.inputWords
       },
       success: (res) => {
-        if(res.code !== 200) {
+        const resData = res?.data
+        if(resData?.code !== 200) {
           wx.showToast({
-            title: res.message,
+            title: resData?.message || '请求失败',
           })
         } else {
-          if(res?.data?.names?.length) {
-            this.setData({searchResult: res.data.names})
+          if(resData?.data?.names?.length) {
+            this.setData({searchResult: resData.data.names})
           }
         }
       },
