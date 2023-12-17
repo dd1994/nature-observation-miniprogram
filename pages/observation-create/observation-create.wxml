@@ -14,8 +14,11 @@
   </view>
   <t-divider />
   <view bind:tap="openTimePicker" class="create-form-item-wrapper">
-    <t-icon name="time" size="20px"/>
-    <view class="create-form-item-placeholder">时间</view>
+    <view class="create-form-item-icon-wrapper">
+      <t-icon name="time" size="20px"/>
+    </view>
+    <view wx:if="{{time}}" class="create-form-item-content">{{time}}</view>
+    <view wx:else class="create-form-item-placeholder">时间</view>
   </view>
   <t-date-time-picker
     title="时间"
@@ -23,5 +26,6 @@
     mode="second"
     value="{{time}}"
     format="YYYY-MM-DD HH:mm:ss"
+    bind:confirm="timeChange"
 />
 </view>

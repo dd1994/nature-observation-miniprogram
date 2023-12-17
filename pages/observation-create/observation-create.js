@@ -81,5 +81,8 @@ Page({
   },
   openTimePicker() {
     this.setData({timeSelectorVisible: true})
+  },
+  timeChange(e) {
+    this.setData({time: e.detail.value})
   }
 })

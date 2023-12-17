@@ -16,5 +16,8 @@
 .create-form-item-placeholder {
   color: rgba(0, 0, 0, 0.4);
   font-size: 13px;
-  margin-left: 13px;
+}
+
+.create-form-item-icon-wrapper {
+  margin-right: 13px;
 }
