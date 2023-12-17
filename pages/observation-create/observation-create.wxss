@@ -33,3 +33,10 @@
 .create-form-item-checkbox {
   padding: 0 !important;
 }
+
+.create-form-save-button {
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+  right: 10px;
+}

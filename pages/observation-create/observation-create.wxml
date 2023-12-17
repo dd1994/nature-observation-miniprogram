@@ -56,4 +56,8 @@
     <view style="margin-right: 10px;" class="create-form-item-content">是否人工圈养或栽培</view>
     <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange"/>
   </view>
+
+  <view class="create-form-save-button">
+    <t-button block theme="primary" size="large">保存</t-button>
+  </view>
 </view>
