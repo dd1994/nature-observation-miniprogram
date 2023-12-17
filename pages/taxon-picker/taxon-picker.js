@@ -17,11 +17,20 @@ Page({
         keyword: this.data.inputWords
       },
       success: (res) => {
-        if(res?.data?.names?.length) {
-          this.setData({searchResult: res.data.names})
+        if(res.code !== 200) {
+          wx.showToast({
+            title: res.message,
+          })
+        } else {
+          if(res?.data?.names?.length) {
+            this.setData({searchResult: res.data.names})
+          }
         }
       },
       fail: (err) => {
+        wx.showToast({
+          title: '搜索失败，请稍后重试',
+        })
         this.setData({searchResult: []})
       }
     })
