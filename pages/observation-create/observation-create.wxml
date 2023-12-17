@@ -47,4 +47,13 @@
     <view style="margin-right: 10px;" class="create-form-item-content">是否隐藏位置</view>
     <t-checkbox t-class="create-form-item-checkbox" checked="{{addressVisible}}" icon="rectangle" bind:change="addressVisibleChange"/>
   </view>
+
+  <t-divider />
+  <view class="create-form-item-wrapper">
+    <view class="create-form-item-icon-wrapper">
+      <t-icon name="user-business" size="20px"/>
+    </view>
+    <view style="margin-right: 10px;" class="create-form-item-content">是否人工圈养或栽培</view>
+    <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange"/>
+  </view>
 </view>

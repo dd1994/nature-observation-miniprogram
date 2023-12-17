@@ -87,5 +87,8 @@ Page({
   },
   addressVisibleChange(e) {
     this.setData({addressVisible: e.detail.checked})
+  },
+  artificialChange(e) {
+    this.setData({artificial: e.detail.checked})
   }
 })
