@@ -14,8 +14,8 @@
 }
 
 .create-form-item-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 13px;
+  color: rgba(0, 0, 0, 0.4) !important;
+  font-size: 13px !important;
 }
 
 .create-form-item-icon-wrapper {
@@ -24,4 +24,12 @@
 
 .create-form-item-content {
   font-size: 13px;
+}
+
+.create-form-item-checkbox {
+  padding: 0;
+}
+
+.create-form-item-checkbox {
+  padding: 0 !important;
 }

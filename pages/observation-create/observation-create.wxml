@@ -10,7 +10,10 @@
   </view>
 
   <view class="create-form-item-wrapper">
-  <t-input borderless prefixIcon="edit-2" placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="noteChange" />
+    <view class="create-form-item-icon-wrapper">
+      <t-icon name="edit-2" size="20px"/>
+    </view>
+  <t-input placeholder-class="create-form-item-placeholder " borderless placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="noteChange" />
   </view>
   <t-divider />
   <view bind:tap="openTimePicker" class="create-form-item-wrapper">
@@ -41,6 +44,7 @@
     <view class="create-form-item-icon-wrapper">
       <t-icon name="user-invisible" size="20px"/>
     </view>
-    <view class="create-form-item-content">是否隐藏位置</view>
+    <view style="margin-right: 10px;" class="create-form-item-content">是否隐藏位置</view>
+    <t-checkbox t-class="create-form-item-checkbox" checked="{{addressVisible}}" icon="rectangle" bind:change="addressVisibleChange"/>
   </view>
 </view>

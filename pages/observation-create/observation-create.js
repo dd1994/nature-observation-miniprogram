@@ -84,5 +84,8 @@ Page({
   },
   timeChange(e) {
     this.setData({time: e.detail.value})
+  },
+  addressVisibleChange(e) {
+    this.setData({addressVisible: e.detail.checked})
   }
 })
