@@ -16,6 +16,11 @@ Page({
     taxon: '',
     addressVisible: '',
     artificial: false,
+    gridConfig: {
+      column: 3,
+      width: 200,
+      height: 200
+    }
   },
   computed: {
     formattedLatitude(data) {
@@ -47,10 +52,7 @@ Page({
   uploadFile(file) {
     const uuid = (new UUID(1)).toString()
     const { fileList } = this.data;
-    wx.getImageInfo({
-      src: file.url,
-    }).then((res) => {
-      file.metaData = res
+      file.metaData = {}
       const array = wx.getFileSystemManager().readFileSync(file.url);
 
       var exifInfo = JSON.parse(JSON.stringify(EXIF.handleBinaryFile(array)));
@@ -76,10 +78,8 @@ Page({
         file.metaData.gpsInfo = GPSInfo
         this.setData({address: GPSInfo})
       }
-    }).then(() => {
       this.setData({
         fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
-      
       });
   
       const task = uploadOSS({
@@ -104,7 +104,7 @@ Page({
           [`fileList[${index}].percent`]: res.progress,
         });
       });
-    })
+  
   },
   upload() {
     wx.chooseMedia({
