@@ -4,10 +4,16 @@
 
 <view class="search-result-taxon-list">
 
-  <view class="search-result-taxon-item" wx:for="{{searchResult}}">
-    <view class="search-result-taxon-item-chinese-name">{{item.name_c}}</view>
-    <view class="search-result-taxon-item-name">{{item.name}}</view>
-      <t-divider/>
+  <view wx:for="{{searchResult}}">
+    <view class="search-result-taxon-item">
+      <view class="search-result-taxon-item-left">
+      <view class="search-result-taxon-item-chinese-name">{{item.name_c}}</view>
+      <view class="search-result-taxon-item-name">{{item.name}}</view>
+    </view>
+    <t-checkbox t-class="search-result-taxon-select" icon="circle"/>
+    </view>
+    <t-divider/>
+
   </view>
 </view>
 </view>

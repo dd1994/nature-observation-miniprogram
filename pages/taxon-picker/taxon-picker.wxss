@@ -2,6 +2,13 @@
   margin-top: 10px;
 }
 
+.search-result-taxon-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
 .search-result-taxon-item-chinese-name {
   font-size: 16px;
 }
@@ -9,4 +16,8 @@
 .search-result-taxon-item-name {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.search-result-taxon-select {
+  padding: 0 !important;
 }
