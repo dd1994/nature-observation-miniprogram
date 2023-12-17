@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "搜索物种",
   "usingComponents": {
     "t-search": "tdesign-miniprogram/search/search",
     "t-divider": "tdesign-miniprogram/divider/divider",
