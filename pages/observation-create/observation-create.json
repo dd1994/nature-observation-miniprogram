@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "创建记录",
   "usingComponents": {
-    "t-upload": "tdesign-miniprogram/upload/upload"
+    "t-upload": "tdesign-miniprogram/upload/upload",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea"
   }
 }

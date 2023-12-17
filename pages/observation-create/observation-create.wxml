@@ -5,3 +5,4 @@
     bind:remove="handleRemove"
   >
   </t-upload>
+  <t-input prefixIcon="edit-2" placeholder="添加笔记(选填)" maxcharacter="{{100}}" />

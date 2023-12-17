@@ -25,6 +25,7 @@ function uploadOSS({filePath, key, success, fail}){
         }
       },
       fail: err => {
+        debugger
         console.log(err);
         fail(err)
       }
