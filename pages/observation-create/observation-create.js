@@ -79,4 +79,7 @@ Page({
       fileList,
     });
   },
+  openTimePicker() {
+    this.setData({timeSelectorVisible: true})
+  }
 })

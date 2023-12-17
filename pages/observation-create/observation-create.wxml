@@ -13,8 +13,9 @@
   <t-input borderless prefixIcon="edit-2" placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="noteChange" />
   </view>
   <t-divider />
-  <view class="create-form-item-wrapper">
+  <view bind:tap="openTimePicker" class="create-form-item-wrapper">
     <t-icon name="time" size="20px"/>
+    <view class="create-form-item-placeholder">时间</view>
   </view>
   <t-date-time-picker
     title="时间"
