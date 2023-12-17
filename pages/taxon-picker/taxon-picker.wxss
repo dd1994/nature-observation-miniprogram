@@ -1,2 +1,12 @@
 .search-result-taxon-list {
+  margin-top: 10px;
+}
+
+.search-result-taxon-item-chinese-name {
+  font-size: 16px;
+}
+
+.search-result-taxon-item-name {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
 }
