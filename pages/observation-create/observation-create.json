@@ -3,6 +3,9 @@
   "usingComponents": {
     "t-upload": "tdesign-miniprogram/upload/upload",
     "t-input": "tdesign-miniprogram/input/input",
-    "t-textarea": "tdesign-miniprogram/textarea/textarea"
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-divider": "tdesign-miniprogram/divider/divider"
   }
 }

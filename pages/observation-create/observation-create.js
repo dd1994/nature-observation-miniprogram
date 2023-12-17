@@ -8,6 +8,7 @@ Page({
     fileList: [],
     note: '',
     time: '',
+    timeSelectorVisible: false,
     address: '',
     taxon: '',
     addressVisible: '',

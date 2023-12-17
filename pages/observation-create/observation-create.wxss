@@ -1,1 +1,14 @@
 /* pages/observation-create/observation-create.wxss */
+.create-image-uplader-wrapper {
+  margin-bottom: 10px;
+}
+.create-form-item-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  --td-input-vertical-padding: 0;
+
+  padding: 0 10px;
+}
