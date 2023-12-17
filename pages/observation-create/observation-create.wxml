@@ -36,7 +36,7 @@
     <view class="create-form-item-icon-wrapper">
       <t-icon name="location" size="20px"/>
     </view>
-    <view wx:if="{{address}}" class="create-form-item-content">{{address}}</view>
+    <view wx:if="{{address.length}}" class="create-form-item-content">经度{{JSON.stringify(address[0])}} 纬度 {{JSON.stringify(address[1])}}</view>
     <view wx:else class="create-form-item-placeholder">观察位置</view>
   </view>
   <t-divider />

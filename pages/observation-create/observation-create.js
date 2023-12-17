@@ -1,6 +1,7 @@
 const uploadOSS = require("../../utils/uploadOSS");
 const {getOSSUrlByKey} = require("../../utils/util")
-var UUID = require("pure-uuid")
+const UUID = require("pure-uuid")
+var myexif = require('../../utils/exif');
 
 // pages/observation-create/observation-create.js
 Page({
@@ -24,33 +25,54 @@ Page({
   uploadFile(file) {
     const uuid = (new UUID(1)).toString()
     const { fileList } = this.data;
+    wx.getImageInfo({
+      src: file.url,
+    }).then((res) => {
+      file.metaData = res
+      var array = wx.getFileSystemManager().readFileSync(file.url);;
 
-    this.setData({
-      fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
-    });
-
-    const task = uploadOSS({
-      filePath: file.url,
-      key: uuid,
-      success: (res) => {
-        const index = this.data.fileList.findIndex(i => i.key === uuid)
-        this.setData({
-          [`fileList[${index}].status`]: 'done',
-          [`fileList[${index}].url`]: getOSSUrlByKey(uuid),
-        });
-      },
-      fail: (err) => {
-        debugger
+      var res = myexif.handleBinaryFile(array);
+      const GPSLatitude = res?.data?.GPSLatitude
+      const GPSLongitude = res?.data?.GPSLongitude
+      wx.showModal({
+        title: '',
+        content: JSON.stringify(res),
+      })
+      if(GPSLatitude) {
+        file.metaData.GPSLatitude = GPSLatitude
+        file.metaData.GPSLongitude = GPSLongitude
+        this.setData({address: [GPSLatitude, GPSLongitude]})
       }
-    })
 
-    task.onProgressUpdate((res) => {
-      const index = this.data.fileList.findIndex(i => i.key === uuid)
-
+    }).then(() => {
       this.setData({
-        [`fileList[${index}].percent`]: res.progress,
+        fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
+      
       });
-    });
+  
+      const task = uploadOSS({
+        filePath: file.url,
+        key: uuid,
+        success: (res) => {
+          const index = this.data.fileList.findIndex(i => i.key === uuid)
+          this.setData({
+            [`fileList[${index}].status`]: 'done',
+            [`fileList[${index}].url`]: getOSSUrlByKey(uuid),
+          });
+        },
+        fail: (err) => {
+          debugger
+        }
+      })
+  
+      task.onProgressUpdate((res) => {
+        const index = this.data.fileList.findIndex(i => i.key === uuid)
+  
+        this.setData({
+          [`fileList[${index}].percent`]: res.progress,
+        });
+      });
+    })
   },
   upload() {
     wx.chooseMedia({
