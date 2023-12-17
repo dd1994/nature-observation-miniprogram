@@ -1,2 +1,4 @@
 <!--pages/taxon-picker/taxon-picker.wxml-->
-<text>pages/taxon-picker/taxon-picker.wxml</text>
+<view class="page-container">
+  <t-search model:value="{{inputWords}}" placeholder="搜索物种中文名、拉丁名..." bind:change="searchWords"/>
+</view>
