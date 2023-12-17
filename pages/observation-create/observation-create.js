@@ -54,9 +54,6 @@ Page({
       });
     });
   },
-  handleRemove(e) {
-    debugger
-  },
   upload() {
     wx.chooseMedia({
       mediaType: 'mix',

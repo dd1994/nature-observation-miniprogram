@@ -13,6 +13,9 @@ page {
 --td-primary-color-10: #136c32; */
 }
 
+.page-container {
+  margin: 10px;
+}
 .container {
   height: 100%;
   display: flex;
