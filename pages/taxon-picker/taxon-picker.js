@@ -19,6 +19,9 @@ Page({
   },
   searchWords(e) {
     // 请求接口
+    this.setData({
+      inputWords: e.detail.value
+    })
     if(!this.data.inputWords.length) {
       return  this.setData({searchResult: []})
     }
