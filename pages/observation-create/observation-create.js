@@ -6,8 +6,16 @@ var UUID = require("pure-uuid")
 Page({
   data: {
     fileList: [],
+    note: '',
+    time: '',
+    address: '',
+    taxon: '',
+    addressVisible: '',
+    artificial: false,
   },
-
+  noteChange(e) {
+    this.setData({note: e.detail.value})
+  },
   handleAdd(e) {
     const { files } = e.detail;
     files.forEach(file => this.uploadFile(file))
@@ -35,17 +43,6 @@ Page({
       }
     })
 
-    // const task = wx.uploadFile({
-    //   url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
-    //   filePath: file.url,
-    //   name: 'file',
-    //   formData: { user: 'test' },
-    //   success: () => {
-    //     this.setData({
-    //       [`fileList[${length}].status`]: 'done',
-    //     });
-    //   },
-    // });
     task.onProgressUpdate((res) => {
       const index = this.data.fileList.findIndex(i => i.key === uuid)
 
