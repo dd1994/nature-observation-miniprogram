@@ -21,3 +21,7 @@
 .create-form-item-icon-wrapper {
   margin-right: 13px;
 }
+
+.create-form-item-content {
+  font-size: 13px;
+}

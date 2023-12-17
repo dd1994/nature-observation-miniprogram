@@ -36,4 +36,11 @@
     <view wx:if="{{address}}" class="create-form-item-content">{{address}}</view>
     <view wx:else class="create-form-item-placeholder">观察位置</view>
   </view>
+  <t-divider />
+  <view class="create-form-item-wrapper">
+    <view class="create-form-item-icon-wrapper">
+      <t-icon name="user-invisible" size="20px"/>
+    </view>
+    <view class="create-form-item-content">是否隐藏位置</view>
+  </view>
 </view>
