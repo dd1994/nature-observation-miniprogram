@@ -1,6 +1,9 @@
 /* pages/observation-create/observation-create.wxss */
+.page-container {
+  --std-font-size: 20px;
+}
 .create-image-uplader-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .create-form-item-wrapper {
@@ -15,7 +18,7 @@
 
 .create-form-item-placeholder {
   color: rgba(0, 0, 0, 0.4) !important;
-  font-size: 13px !important;
+  font-size: var(--std-font-size) !important;
 }
 
 .create-form-item-icon-wrapper {
@@ -23,7 +26,7 @@
 }
 
 .create-form-item-content {
-  font-size: 13px;
+  font-size: var(--std-font-size);
 }
 
 .create-form-item-checkbox {
