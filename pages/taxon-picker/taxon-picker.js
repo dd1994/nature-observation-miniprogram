@@ -8,7 +8,7 @@ Page({
    */
   data: {
     inputWords: '',
-    taxonDetailDialogVisible: true,
+    taxonDetailDialogVisible: false,
     searchResult: []
 //     hierarchyCode: "Animalia_Chordata_Aves_Passeriformes_Pycnonotidae_Pycnonotus_Pycnonotus sinensis"
 // name: "Pycnonotus sinensis"
@@ -31,6 +31,10 @@ Page({
     const actionMap = {
       "鸟类": () => {
         openBirdDetail(taxonInfo.name)
+      },
+      "植物": () => {
+        this.onTaxonDetailDialogVisibleChange(
+          {detail: {visible: true}})
       }
     }
 

@@ -5,7 +5,6 @@ function fetchPlantDetail({name, success, fail}) {
       key: name
     },
     success(res) {
-      debugger
       success(res)
     },
     fail(err) {
