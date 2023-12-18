@@ -1,4 +1,6 @@
 <!--components/plant-detail/plant-detail.wxml-->
 <view class="page-container">
-  <rich-text nodes="{{desc}}"></rich-text>
+  <view class="rich-text-container">
+    <rich-text nodes="{{desc}}"></rich-text>
+  </view>
 </view>
