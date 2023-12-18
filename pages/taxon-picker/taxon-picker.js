@@ -1,5 +1,6 @@
 // pages/taxon-picker/taxon-picker.js
 const { openBirdDetail } = require('../../utils/openTaxonDetail')
+const {fetchPlantDetail} = require('../../utils/service')
 
 Page({
 
@@ -34,11 +35,22 @@ Page({
         openBirdDetail(taxonInfo.name)
       },
       "植物": () => {
-        this.setData({
-          clickTaxon: taxonInfo
+        fetchPlantDetail({
+          name: taxonInfo.name,
+          success: (res) => {
+            if(res?.data?.frpsdesc) {
+              this.setData({
+                clickTaxon: res.data
+              })
+              this.onTaxonDetailDialogVisibleChange({detail: {visible: true}})
+            } else {
+              // 植物志没有数据，想想从其它接口搞点数据过来
+            }
+          },
+          fail: (err) => {
+  
+          }
         })
-        this.onTaxonDetailDialogVisibleChange(
-          {detail: {visible: true}})
       }
     }
 
@@ -74,6 +86,7 @@ Page({
         if(resData?.code !== 200) {
           wx.showToast({
             title: resData?.message || '请求失败',
+            icon: 'none'
           })
         } else {
           if(resData?.data?.names?.length) {
@@ -84,6 +97,7 @@ Page({
       fail: (err) => {
         wx.showToast({
           title: '搜索失败，请稍后重试',
+          icon: 'none'
         })
         this.setData({searchResult: []})
       }

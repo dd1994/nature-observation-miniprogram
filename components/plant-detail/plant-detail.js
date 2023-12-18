@@ -23,20 +23,5 @@ Component({
 
   },
   lifetimes: {
-    attached() {
-      if(this.data.taxon?.name) {
-        fetchPlantDetail({
-          name: this.data.taxon.name,
-          success: (res) => {
-            this.setData({
-              desc: res.data.frpsdesc
-            })
-          },
-          fail: (err) => {
-  
-          }
-        })
-      }
-    }
   }
 })
