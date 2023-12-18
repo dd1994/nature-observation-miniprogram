@@ -24,9 +24,7 @@ Component({
   },
   lifetimes: {
     attached() {
-      debugger
       if(this.data.taxon?.name) {
-        debugger
         fetchPlantDetail({
           name: this.data.taxon.name,
           success: (res) => {
