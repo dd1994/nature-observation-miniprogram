@@ -4,7 +4,7 @@
 
 <view class="search-result-taxon-list">
 
-  <view wx:for="{{searchResult}}">
+  <view wx:key="name" wx:for="{{searchResult}}">
     <view class="search-result-taxon-item">
       <view data-taxon="{{item}}" class="search-result-taxon-item-left" bind:tap="viewTaxonDetail">
       <view class="search-result-taxon-item-chinese-name">{{item.name_c}}</view>
@@ -15,5 +15,9 @@
     <t-divider/>
 
   </view>
+
+  <t-popup visible="true" bind:visible-change="onVisibleChange" placement="bottom">
+  <plant-detail/>
+</t-popup>
 </view>
 </view>

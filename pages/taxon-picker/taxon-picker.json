@@ -4,6 +4,8 @@
     "t-search": "tdesign-miniprogram/search/search",
     "t-divider": "tdesign-miniprogram/divider/divider",
     "t-cell": "tdesign-miniprogram/cell/cell",
-    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox"
+    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "plant-detail": "../../components/plant-detail/plant-detail"
   }
 }
