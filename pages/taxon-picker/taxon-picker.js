@@ -1,4 +1,6 @@
 // pages/taxon-picker/taxon-picker.js
+const { openBirdDetail } = require('../../utils/openTaxonDetail')
+
 Page({
 
   /**
@@ -16,6 +18,22 @@ Page({
 // pyabbr: "btb"
 // rank: "Species"
 // taxongroup: "鸟类"
+  },
+  selectTaxon(e) {
+    debugger
+  },
+  viewTaxonDetail(e) {
+    const taxonInfo = e.currentTarget.dataset.taxon
+    const defaultAction = () => {
+      // do nothing
+    }
+    const actionMap = {
+      "鸟类": () => {
+        openBirdDetail(taxonInfo.name)
+      }
+    }
+
+    ;(actionMap[taxonInfo.taxongroup] || defaultAction)()
   },
   searchWords(e) {
     // 请求接口
