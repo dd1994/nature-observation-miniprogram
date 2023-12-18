@@ -6,7 +6,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    taxon: null
   },
 
   /**
@@ -23,18 +23,22 @@ Component({
 
   },
   lifetimes: {
-    created() {
-      fetchPlantDetail({
-        name: 'Sapindus saponaria',
-        success: (res) => {
-          this.setData({
-            desc: res.data.frpsdesc
-          })
-        },
-        fail: (err) => {
-
-        }
-      })
+    attached() {
+      debugger
+      if(this.data.taxon?.name) {
+        debugger
+        fetchPlantDetail({
+          name: this.data.taxon.name,
+          success: (res) => {
+            this.setData({
+              desc: res.data.frpsdesc
+            })
+          },
+          fail: (err) => {
+  
+          }
+        })
+      }
     }
   }
 })

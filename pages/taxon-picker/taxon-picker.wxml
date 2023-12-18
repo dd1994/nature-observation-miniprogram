@@ -17,7 +17,8 @@
   </view>
 
   <t-popup visible="{{taxonDetailDialogVisible}}" bind:visible-change="onTaxonDetailDialogVisibleChange" placement="bottom" close-btn>
-  <plant-detail/>
+  <view ></view>
+  <plant-detail wx:if="{{clickTaxon}}" taxon="{{clickTaxon}}"/>
 </t-popup>
 </view>
 </view>
