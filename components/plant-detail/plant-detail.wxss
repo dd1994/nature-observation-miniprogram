@@ -1,1 +1,5 @@
-/* components/plant-detail/plant-detail.wxss */
+.page-container {
+  padding: 40px 10px 10px 10px;
+  height: 80vh;
+  overflow: scroll;
+}

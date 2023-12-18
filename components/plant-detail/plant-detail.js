@@ -1,4 +1,5 @@
-// components/plant-detail/plant-detail.js
+const {fetchPlantDetail} = require('../../utils/service')
+
 Component({
 
   /**
@@ -12,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    desc: '',
   },
 
   /**
@@ -20,5 +21,20 @@ Component({
    */
   methods: {
 
+  },
+  lifetimes: {
+    created() {
+      fetchPlantDetail({
+        name: 'Sapindus saponaria',
+        success: (res) => {
+          this.setData({
+            desc: res.data.frpsdesc
+          })
+        },
+        fail: (err) => {
+
+        }
+      })
+    }
   }
 })

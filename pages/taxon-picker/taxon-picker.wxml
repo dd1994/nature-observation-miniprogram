@@ -16,7 +16,7 @@
 
   </view>
 
-  <t-popup visible="true" bind:visible-change="onVisibleChange" placement="bottom">
+  <t-popup visible="true" prevent-scroll-through="{{true}}" placement="bottom" close-btn>
   <plant-detail/>
 </t-popup>
 </view>
