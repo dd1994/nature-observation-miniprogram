@@ -8,6 +8,7 @@ Page({
    */
   data: {
     inputWords: '',
+    taxonDetailDialogVisible: true,
     searchResult: []
 //     hierarchyCode: "Animalia_Chordata_Aves_Passeriformes_Pycnonotidae_Pycnonotus_Pycnonotus sinensis"
 // name: "Pycnonotus sinensis"
@@ -34,6 +35,11 @@ Page({
     }
 
     ;(actionMap[taxonInfo.taxongroup] || defaultAction)()
+  },
+  onTaxonDetailDialogVisibleChange(e) {
+    this.setData({
+      taxonDetailDialogVisible: e.detail.visible
+    })
   },
   searchWords(e) {
     // 请求接口
