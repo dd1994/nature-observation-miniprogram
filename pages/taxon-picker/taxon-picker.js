@@ -28,7 +28,11 @@ Page({
   viewTaxonDetail(e) {
     const taxonInfo = e.currentTarget.dataset.taxon
     const defaultAction = () => {
-      // do nothing
+      wx.showToast({
+        title: '暂时没有更多关于该物种的信息了~',
+        icon: 'none',
+        duration: 2500
+      })
     }
     const actionMap = {
       "鸟类": () => {
@@ -44,6 +48,10 @@ Page({
               })
               this.onTaxonDetailDialogVisibleChange({detail: {visible: true}})
             } else {
+              wx.showToast({
+                title: '暂时没有更多关于该物种的信息了',
+                icon: 'none'
+              })
               // 植物志没有数据，想想从其它接口搞点数据过来
             }
           },
