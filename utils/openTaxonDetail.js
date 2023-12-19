@@ -6,6 +6,15 @@ function openBirdDetail(name) {
   });
 }
 
+function openMammalDetail(name) {
+  // 感谢懂鸟: https://mp.weixin.qq.com/s/FK1G67KM96yqMBYSdwcEHA
+  wx.openEmbeddedMiniProgram({
+    appId: 'wx39173a9ffd43d645',
+    path: 'pages/detail/detail?name=' + encodeURIComponent(name),
+  });
+}
+
 module.exports = {
-  openBirdDetail
+  openBirdDetail,
+  openMammalDetail
 }

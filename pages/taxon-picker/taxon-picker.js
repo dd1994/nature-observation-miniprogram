@@ -1,5 +1,5 @@
 // pages/taxon-picker/taxon-picker.js
-const { openBirdDetail } = require('../../utils/openTaxonDetail')
+const { openBirdDetail, openMammalDetail } = require('../../utils/openTaxonDetail')
 const { fetchPlantDetail, fetchAnimalDetail } = require('../../utils/service')
 const computedBehavior = require('miniprogram-computed').behavior
 
@@ -44,7 +44,9 @@ Page({
     }
     const actionMap = {
       "鸟类": () => {
-        openBirdDetail(taxonInfo.name)
+        if (taxonInfo.rank === "Species") {
+          openBirdDetail(taxonInfo.name)
+        }
       },
       "植物": () => {
         fetchPlantDetail({
@@ -85,9 +87,14 @@ Page({
             this.onTaxonDetailDialogVisibleChange({ detail: { visible: true } })
           }
         })
+      },
+      "兽类": () => {
+        if (taxonInfo.rank === "Species") {
+          openMammalDetail(taxonInfo.name)
+        }
       }
     }
-    ; (actionMap[taxonInfo.taxongroup] || defaultAction)()
+      ; (actionMap[taxonInfo.taxongroup] || defaultAction)()
   },
   onTaxonDetailDialogVisibleChange(e) {
     this.setData({
