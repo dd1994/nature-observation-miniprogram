@@ -1,2 +1,21 @@
-<!--components/animal-detail/animal-detail.wxml-->
-<text>components/animal-detail/animal-detail.wxml</text>
+<view class="page-container">
+  <view class="taxon-name">
+    <view class="taxon-name-c">
+      {{taxon.taxonInfo.name_c}}
+    </view>
+    <view class="taxon-name-s">
+      {{taxon.taxonInfo.name}}
+    </view>
+  </view>
+  <view class="taxon-detail-item" wx:for="{{taxon.detail}}">
+    <view class="desc-type-title">
+      {{item.descTypeChinese}}：
+    </view>
+    <view wx:for="{{item.DescriptionInfo}}" wx:for-item="desc">
+      <rich-text nodes="{{desc.descontent}}" />
+      <view class="taxon-detail-item-refs" wx:for="{{desc.refs}}" wx:for-item="ref">
+        参考文献: {{ref}}
+      </view>
+    </view>
+  </view>
+</view>
