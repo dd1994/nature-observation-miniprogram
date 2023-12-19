@@ -1,24 +1,24 @@
 <!--pages/taxon-picker/taxon-picker.wxml-->
 <view class="page-container">
-  <t-search value="{{inputWords}}" placeholder="搜索物种中文名、拉丁名..." bind:change="searchWords"/>
+  <t-search value="{{inputWords}}" placeholder="搜索物种中文名、拉丁名..." bind:change="searchWords" />
 
-<view class="search-result-taxon-list">
+  <view class="search-result-taxon-list">
 
-  <view wx:key="name" wx:for="{{searchResult}}">
-    <view class="search-result-taxon-item">
-      <view data-taxon="{{item}}" class="search-result-taxon-item-left" bind:tap="viewTaxonDetail">
-      <view class="search-result-taxon-item-chinese-name">{{item.name_c}}</view>
-      <view class="search-result-taxon-item-name">{{item.name}}</view>
+    <view wx:key="name" wx:for="{{searchResult}}">
+      <view class="search-result-taxon-item">
+        <view data-taxon="{{item}}" class="search-result-taxon-item-left" bind:tap="viewTaxonDetail">
+          <view class="search-result-taxon-item-chinese-name">{{item.name_c}}</view>
+          <view class="search-result-taxon-item-name">{{item.name}}</view>
+        </view>
+        <t-checkbox data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" />
+      </view>
+      <t-divider />
+
     </view>
-    <t-checkbox data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon"/>
-    </view>
-    <t-divider/>
 
+    <t-popup visible="{{taxonDetailDialogVisible}}" bind:visible-change="onTaxonDetailDialogVisibleChange" placement="bottom" close-btn>
+      <view></view>
+      <plant-detail wx:if="{{clickTaxonGroup === '植物'}}" taxon="{{clickTaxon}}" />
+    </t-popup>
   </view>
-
-  <t-popup visible="{{taxonDetailDialogVisible}}" bind:visible-change="onTaxonDetailDialogVisibleChange" placement="bottom" close-btn>
-  <view ></view>
-  <plant-detail wx:if="{{clickTaxon}}" taxon="{{clickTaxon}}"/>
-</t-popup>
-</view>
 </view>
