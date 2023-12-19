@@ -56,7 +56,7 @@ function fetchAnimalDetailDesc(name, descType) {
     }
   })
 }
-function fetchAnimalDetail({ name, success, fail }) {
+function fetchAnimalDetail({ name }) {
   return fetchAnimalDetailDescType(name)
     .then(descTypes => {
       return Promise.all(descTypes

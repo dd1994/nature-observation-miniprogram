@@ -1,5 +1,4 @@
-const {fetchPlantDetail} = require('../../utils/service')
-
+// components/animal-detail/animal-detail.js
 Component({
 
   /**
@@ -13,6 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+
   },
 
   /**
@@ -20,7 +20,5 @@ Component({
    */
   methods: {
 
-  },
-  lifetimes: {
   }
 })

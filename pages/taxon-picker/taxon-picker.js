@@ -72,24 +72,21 @@ Page({
         })
       },
       "昆虫": () => {
-        debugger
         fetchAnimalDetail({
-          name: taxonInfo.name,
-          success: (res) => {
+          name: taxonInfo.name
+        }).then(res => {
+          if (res?.length) {
             this.setData({
               clickTaxon: {
                 detail: res,
                 taxonInfo: taxonInfo
               }
             })
-          },
-          fail: (err) => {
-            debugger
+            this.onTaxonDetailDialogVisibleChange({ detail: { visible: true } })
           }
         })
       }
     }
-    debugger
     ; (actionMap[taxonInfo.taxongroup] || defaultAction)()
   },
   onTaxonDetailDialogVisibleChange(e) {
