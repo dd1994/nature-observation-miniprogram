@@ -1,6 +1,6 @@
 // pages/taxon-picker/taxon-picker.js
 const { openBirdDetail } = require('../../utils/openTaxonDetail')
-const {fetchPlantDetail} = require('../../utils/service')
+const {fetchPlantDetail, fetchAnimalDetail} = require('../../utils/service')
 
 Page({
 
@@ -59,9 +59,21 @@ Page({
   
           }
         })
+      },
+      "昆虫": () => {
+        debugger
+        fetchAnimalDetail({
+          name: taxonInfo.name,
+          success: (res) => {
+            debugger
+          },
+          fail: (err) => {
+            debugger
+          }
+        })
       }
     }
-
+    debugger
     ;(actionMap[taxonInfo.taxongroup] || defaultAction)()
   },
   onTaxonDetailDialogVisibleChange(e) {

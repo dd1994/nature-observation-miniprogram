@@ -17,7 +17,20 @@ const formatNumber = n => {
 function getOSSUrlByKey(key) {
   return `https://observation-images.oss-cn-beijing.aliyuncs.com/${key}`
 }
+
+export const requestPromise = (params) => {
+  return new Promise((resolve, reject) => {
+      wx.request({
+          ...params,  //  请求的参数
+          success: (result) => {
+              resolve(result)
+          },
+          fail: (err) => { reject(err) },
+      })
+  });
+}
 module.exports = {
   formatTime,
-  getOSSUrlByKey
+  getOSSUrlByKey,
+  requestPromise
 }
