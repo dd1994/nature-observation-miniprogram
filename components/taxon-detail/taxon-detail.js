@@ -18,7 +18,7 @@ Component({
       return data.taxon?.taxongroup
     },
     useAnimalDB(data) {
-      return ['鱼类', '昆虫', '无脊椎动物'].includes(data.taxon?.taxongroup)
+      return ['鱼类', '昆虫', '无脊椎动物', '两栖类'].includes(data.taxon?.taxongroup)
     },
     useEmbeddedMiniProgram(data) {
       return ['鸟类', '兽类'].includes(data.taxon?.taxongroup)
@@ -109,6 +109,7 @@ Component({
         "昆虫": defaultAnimalAction,
         "鱼类": defaultAnimalAction,
         "无脊椎动物": defaultAnimalAction,
+        "两栖类": defaultAnimalAction,
         "兽类": () => {
           if (taxon.rank === "Species") {
             openMammalDetail(taxon.name)
