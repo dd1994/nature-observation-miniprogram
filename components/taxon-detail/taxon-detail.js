@@ -63,10 +63,16 @@ Component({
                     ...taxon
                   }
                 })
+              } else {
+                this.setData({
+                  taxonDetail: taxon
+                })
               }
             },
             fail: (err) => {
-
+              this.setData({
+                taxonDetail: taxon
+              })
             }
           })
         },
@@ -81,7 +87,15 @@ Component({
                   ...taxon
                 }
               })
+            } else {
+              this.setData({
+                taxonDetail: taxon
+              })
             }
+          }).catch(err => {
+            this.setData({
+              taxonDetail: taxon
+            })
           })
         },
         "兽类": () => {
