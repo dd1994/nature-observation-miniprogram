@@ -17,6 +17,9 @@ Component({
     taxonGroup(data) {
       return data.taxon?.taxongroup
     },
+    useAnimalDB(data) {
+      return ['鱼类', '昆虫'].includes(data.taxon?.taxongroup)
+    },
     popupVisible(data) {
       return data.visible && !['鸟类', '兽类'].includes(data.taxonGroup)
     }
@@ -46,6 +49,31 @@ Component({
           duration: 2500
         })
       }
+
+      const defaultAnimalAction = () => {
+        fetchAnimalDetail({
+          name: taxon.name
+        }).then(res => {
+          if (res?.length) {
+            debugger
+            this.setData({
+              taxonDetail: {
+                detail: res,
+                ...taxon
+              }
+            })
+          } else {
+            this.setData({
+              taxonDetail: taxon
+            })
+          }
+        }).catch(err => {
+          this.setData({
+            taxonDetail: taxon
+          })
+        })
+      }
+
       const actionMap = {
         "鸟类": () => {
           if (taxon.rank === "Species") {
@@ -76,28 +104,8 @@ Component({
             }
           })
         },
-        "昆虫": () => {
-          fetchAnimalDetail({
-            name: taxon.name
-          }).then(res => {
-            if (res?.length) {
-              this.setData({
-                taxonDetail: {
-                  detail: res,
-                  ...taxon
-                }
-              })
-            } else {
-              this.setData({
-                taxonDetail: taxon
-              })
-            }
-          }).catch(err => {
-            this.setData({
-              taxonDetail: taxon
-            })
-          })
-        },
+        "昆虫": defaultAnimalAction,
+        "鱼类": defaultAnimalAction,
         "兽类": () => {
           if (taxon.rank === "Species") {
             openMammalDetail(taxon.name)
