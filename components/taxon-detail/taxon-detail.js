@@ -20,8 +20,11 @@ Component({
     useAnimalDB(data) {
       return ['鱼类', '昆虫'].includes(data.taxon?.taxongroup)
     },
+    useEmbeddedMiniProgram(data) {
+      return ['鸟类', '兽类'].includes(data.taxon?.taxongroup)
+    },
     popupVisible(data) {
-      return data.visible && !['鸟类', '兽类'].includes(data.taxonGroup)
+      return data.visible && !data.useEmbeddedMiniProgram
     }
   },
   /**
@@ -55,7 +58,6 @@ Component({
           name: taxon.name
         }).then(res => {
           if (res?.length) {
-            debugger
             this.setData({
               taxonDetail: {
                 detail: res,
