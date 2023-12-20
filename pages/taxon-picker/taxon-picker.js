@@ -1,6 +1,3 @@
-// pages/taxon-picker/taxon-picker.js
-const { openBirdDetail, openMammalDetail } = require('../../utils/openTaxonDetail')
-const { fetchPlantDetail, fetchAnimalDetail } = require('../../utils/service')
 const computedBehavior = require('miniprogram-computed').behavior
 
 Page({
@@ -25,87 +22,15 @@ Page({
     // taxongroup: "鸟类"
   },
   computed: {
-    clickTaxonGroup(data) {
-      return data?.clickTaxon?.taxonInfo?.taxongroup
-    }
   },
   selectTaxon(e) {
     debugger
   },
-
   viewTaxonDetail(e) {
-    const taxonInfo = e.currentTarget.dataset.taxon
-    const defaultAction = () => {
-      wx.showToast({
-        title: '暂时没有更多关于该物种的信息了~',
-        icon: 'none',
-        duration: 2500
-      })
-    }
-    const actionMap = {
-      "鸟类": () => {
-        if (taxonInfo.rank === "Species") {
-          openBirdDetail(taxonInfo.name)
-        }
-      },
-      "植物": () => {
-        fetchPlantDetail({
-          name: taxonInfo.name,
-          success: (res) => {
-            if (res?.data?.frpsdesc) {
-              this.setData({
-                clickTaxon: {
-                  detail: res.data,
-                  taxonInfo: taxonInfo
-                }
-              })
-              this.onTaxonDetailDialogVisibleChange({ detail: { visible: true } })
-            } else {
-              wx.showToast({
-                title: '暂时没有更多关于该物种的信息了',
-                icon: 'none'
-              })
-              // 植物志没有数据，想想从其它接口搞点数据过来
-            }
-          },
-          fail: (err) => {
-
-          }
-        })
-      },
-      "昆虫": () => {
-        fetchAnimalDetail({
-          name: taxonInfo.name
-        }).then(res => {
-          if (res?.length) {
-            this.setData({
-              clickTaxon: {
-                detail: res,
-                taxonInfo: taxonInfo
-              }
-            })
-            this.onTaxonDetailDialogVisibleChange({ detail: { visible: true } })
-          }
-        })
-      },
-      "兽类": () => {
-        if (taxonInfo.rank === "Species") {
-          openMammalDetail(taxonInfo.name)
-        }
-      }
-    }
-      ; (actionMap[taxonInfo.taxongroup] || defaultAction)()
-  },
-  onTaxonDetailDialogVisibleChange(e) {
     this.setData({
-      taxonDetailDialogVisible: e.detail.visible
+      clickTaxon: e.currentTarget.dataset.taxon,
+      taxonDetailDialogVisible: true
     })
-    if (!e.detail.visible) {
-      this.setData({
-        clickTaxon: null
-      })
-    }
-
   },
   searchWords(e) {
     // 请求接口

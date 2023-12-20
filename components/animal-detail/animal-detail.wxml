@@ -1,10 +1,10 @@
 <view class="page-container">
   <view class="taxon-name">
     <view class="taxon-name-c">
-      {{taxon.taxonInfo.name_c}}
+      {{taxon.name_c}}
     </view>
     <view class="taxon-name-s">
-      {{taxon.taxonInfo.name}}
+      {{taxon.name}}
     </view>
   </view>
   <view class="taxon-detail-item" wx:for="{{taxon.detail}}">

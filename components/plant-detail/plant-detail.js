@@ -1,14 +1,15 @@
-const {fetchPlantDetail} = require('../../utils/service')
+const computedBehavior = require('miniprogram-computed').behavior
 
 Component({
-
-  /**
-   * 组件的属性列表
-   */
+  behaviors: [computedBehavior],
   properties: {
     taxon: null
   },
-
+  computed: {
+    frpsdesc(data) {
+      return data?.taxon?.frpsdesc
+    }
+  },
   /**
    * 组件的初始数据
    */

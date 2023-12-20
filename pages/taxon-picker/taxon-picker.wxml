@@ -16,10 +16,6 @@
 
     </view>
 
-    <t-popup visible="{{taxonDetailDialogVisible}}" bind:visible-change="onTaxonDetailDialogVisibleChange" placement="bottom" close-btn>
-      <view></view>
-      <plant-detail wx:if="{{clickTaxonGroup === '植物'}}" taxon="{{clickTaxon}}" />
-      <animal-detail wx:if="{{clickTaxonGroup === '昆虫'}}" taxon="{{clickTaxon}}" />
-    </t-popup>
+    <taxon-detail taxon="{{clickTaxon}}" model:visible="{{taxonDetailDialogVisible}}"/>
   </view>
 </view>

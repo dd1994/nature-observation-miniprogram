@@ -1,6 +1,6 @@
 const { requestPromise } = require('./util')
 
-function fetchPlantDetail({ name, success, fail }) {
+export function fetchPlantDetail({ name, success, fail }) {
   wx.request({
     url: 'https://www.iplant.cn/ashx/getfrps.ashx',
     data: {
@@ -56,7 +56,7 @@ function fetchAnimalDetailDesc(name, descType) {
     }
   })
 }
-function fetchAnimalDetail({ name }) {
+export function fetchAnimalDetail({ name }) {
   return fetchAnimalDetailDescType(name)
     .then(descTypes => {
       return Promise.all(descTypes
@@ -64,9 +64,4 @@ function fetchAnimalDetail({ name }) {
           return fetchAnimalDetailDesc(name, descType)
         }))
     })
-}
-
-module.exports = {
-  fetchPlantDetail,
-  fetchAnimalDetail
 }

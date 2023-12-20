@@ -1,6 +1,6 @@
 <!--components/plant-detail/plant-detail.wxml-->
 <view class="page-container">
-  <view wx:if="taxon" class="rich-text-container">
-    <rich-text nodes="{{taxon.detail.frpsdesc || ''}}"></rich-text>
+  <view wx:if="frpsdesc" class="rich-text-container">
+    <rich-text nodes="{{frpsdesc || ''}}"></rich-text>
   </view>
 </view>
