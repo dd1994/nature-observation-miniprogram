@@ -27,7 +27,13 @@ Page({
   computed: {
   },
   selectTaxon(e) {
-    debugger
+    wx.navigateTo({
+      url: '/pages/observation-create/observation-create',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromSearchPage', { taxon: e.target.dataset.taxon })
+      }
+    })
   },
   viewTaxonDetail(e) {
     this.setData({

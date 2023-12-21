@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/taxon-picker/taxon-picker",
     "pages/observation-create/observation-create",
+    "pages/taxon-picker/taxon-picker",
     "pages/index/index"
   ],
   "window": {
