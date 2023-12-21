@@ -28,11 +28,12 @@ Page({
   computed: {
   },
   selectTaxon(e) {
-    wx.navigateTo({
+    const eventChannel = this.getOpenerEventChannel();
+    wx.navigateBack({
       url: '/pages/observation-create/observation-create',
-      success: function (res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromSearchPage', { taxon: e.target.dataset.taxon })
+      complete: () => {
+        debugger
+        eventChannel.emit('backFromSearchPage',e.target.dataset.taxon)
       }
     })
   },

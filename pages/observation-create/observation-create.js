@@ -146,18 +146,25 @@ Page({
     this.setData({ artificial: e.detail.checked })
   },
   onLoad() {
-    const eventChannel = this.getOpenerEventChannel()
-    if (eventChannel?.on) {
-      eventChannel.on('acceptDataFromSearchPage', (data) => {
-        this.setData({
-          taxon: data.taxon
-        })
-      })
-    }
+    // const eventChannel = this.getOpenerEventChannel()
+    // if (eventChannel?.on) {
+    //   eventChannel.on('acceptDataFromSearchPage', (data) => {
+    //     this.setData({
+    //       taxon: data.taxon
+    //     })
+    //   })
+    // }
   },
   goToSearch() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
+      events: {
+        backFromSearchPage: (taxon) => {
+          this.setData({
+            taxon: taxon
+          })
+        }
+      }
     })
   }
 })
