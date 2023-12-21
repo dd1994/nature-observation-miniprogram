@@ -13,7 +13,6 @@ Page({
     time: '',
     timeSelectorVisible: false,
     address: null,
-    taxon: '',
     addressVisible: '',
     artificial: false,
     taxon: null,
@@ -149,8 +148,11 @@ Page({
   onLoad() {
     const eventChannel = this.getOpenerEventChannel()
     if (eventChannel?.on) {
-      eventChannel.on('acceptDataFromSearchPage', function (data) {
-        console.log(data)
+      eventChannel.on('acceptDataFromSearchPage', (data) => {
+        debugger
+        this.setData({
+          taxon: data.taxon
+        })
       })
     }
   },
