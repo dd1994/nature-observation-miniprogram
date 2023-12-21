@@ -149,7 +149,6 @@ Page({
     const eventChannel = this.getOpenerEventChannel()
     if (eventChannel?.on) {
       eventChannel.on('acceptDataFromSearchPage', (data) => {
-        debugger
         this.setData({
           taxon: data.taxon
         })
