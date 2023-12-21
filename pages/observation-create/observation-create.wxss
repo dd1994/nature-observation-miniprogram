@@ -1,7 +1,9 @@
 /* pages/observation-create/observation-create.wxss */
 .page-container {
   --std-font-size: 20px;
+  font-size: 20px;
 }
+
 .create-image-uplader-wrapper {
   margin-bottom: 20px;
 }
