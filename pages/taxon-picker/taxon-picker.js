@@ -13,6 +13,7 @@ Page({
     taxonDetailDialogVisible: false,
     searchResult: [],
     clickTaxon: null,
+    searchLoading: false,
 
     //     hierarchyCode: "Animalia_Chordata_Aves_Passeriformes_Pycnonotidae_Pycnonotus_Pycnonotus sinensis"
     // name: "Pycnonotus sinensis"
@@ -49,17 +50,24 @@ Page({
     if (!this.data.inputWords.length) {
       return this.setData({ searchResult: [] })
     }
-
+    this.setData({
+      searchLoading: true
+    })
     searchTaxon({
       name: this.data.inputWords,
       success: (res) => {
+        this.setData({
+          searchLoading: false,
+          searchResult: []
+        })
         if (res?.data?.results?.length) {
           this.setData({ searchResult: res?.data?.results })
-        } else {
-          this.setData({ searchResult: [] })
         }
       },
       fail: (err) => {
+        this.setData({
+          searchLoading: false
+        })
         wx.showToast({
           title: '搜索失败，请稍后重试',
           icon: 'none'

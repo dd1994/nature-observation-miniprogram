@@ -21,3 +21,10 @@
 .search-result-taxon-select {
   padding: 0 !important;
 }
+
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}

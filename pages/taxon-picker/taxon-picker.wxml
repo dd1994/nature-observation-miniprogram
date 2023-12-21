@@ -16,6 +16,10 @@
 
     </view>
 
-    <taxon-detail taxon="{{clickTaxon}}" model:visible="{{taxonDetailDialogVisible}}"/>
+    <taxon-detail taxon="{{clickTaxon}}" model:visible="{{taxonDetailDialogVisible}}" />
+
+    <view wx-if="{{searchLoading}}" class="loading-wrapper">
+      <t-loading theme="spinner" size="40rpx" text="加载中..." inheritColor class="wrapper" />
+    </view>
   </view>
 </view>
