@@ -8,7 +8,7 @@
     <view class="create-form-item-icon-wrapper">
       <t-icon name="help-circle" size="20px" />
     </view>
-    <view wx:if="taxon">
+    <view wx:if="{{taxon}}">
       {{taxon.preferred_common_name}}
     </view>
     <view wx:else class="create-form-item-placeholder">
