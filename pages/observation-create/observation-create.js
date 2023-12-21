@@ -153,5 +153,10 @@ Page({
         console.log(data)
       })
     }
+  },
+  goToSearch() {
+    wx.navigateTo({
+      url: '/pages/taxon-picker/taxon-picker',
+    })
   }
 })

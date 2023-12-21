@@ -4,6 +4,16 @@
     </t-upload>
   </view>
 
+  <view class="create-form-item-wrapper" bind:tap="goToSearch">
+    <view class="create-form-item-icon-wrapper">
+      <t-icon name="help-circle" size="20px" />
+    </view>
+    <view class="create-form-item-placeholder">
+      你看到了什么？
+    </view>
+    <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
+  </view>
+  <t-divider />
   <view class="create-form-item-wrapper">
     <view class="create-form-item-icon-wrapper">
       <t-icon name="edit-2" size="20px" />
