@@ -16,6 +16,7 @@ Page({
     taxon: '',
     addressVisible: '',
     artificial: false,
+    taxon: null,
     gridConfig: {
       column: 3,
       width: 200,
