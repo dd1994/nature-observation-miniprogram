@@ -15,13 +15,13 @@ Component({
   },
   computed: {
     taxonGroup(data) {
-      return data.taxon?.taxongroup
+      return data.taxon?.iconic_taxon_name
     },
     useAnimalDB(data) {
-      return ['鱼类', '昆虫', '无脊椎动物', '两栖类'].includes(data.taxon?.taxongroup)
+      return ['Actinopterygii', 'Insecta', 'Mollusca', 'Amphibia'].includes(data.taxon?.iconic_taxon_name)
     },
     useEmbeddedMiniProgram(data) {
-      return ['鸟类', '兽类'].includes(data.taxon?.taxongroup)
+      return ['Aves', 'Mammalia'].includes(data.taxon?.iconic_taxon_name)
     },
     popupVisible(data) {
       return data.visible && !data.useEmbeddedMiniProgram
@@ -77,12 +77,12 @@ Component({
       }
 
       const actionMap = {
-        "鸟类": () => {
-          if (taxon.rank === "Species") {
+        "Aves": () => {
+          if (taxon.rank === "species") {
             openBirdDetail(taxon.name)
           }
         },
-        "植物": () => {
+        "Plantae": () => {
           fetchPlantDetail({
             name: taxon.name,
             success: (res) => {
@@ -106,17 +106,17 @@ Component({
             }
           })
         },
-        "昆虫": defaultAnimalAction,
-        "鱼类": defaultAnimalAction,
-        "无脊椎动物": defaultAnimalAction,
-        "两栖类": defaultAnimalAction,
-        "兽类": () => {
-          if (taxon.rank === "Species") {
+        'Actinopterygii': defaultAnimalAction,
+        'Insecta': defaultAnimalAction,
+        'Mollusca': defaultAnimalAction,
+        'Amphibia': defaultAnimalAction,
+        "Mammalia": () => {
+          if (taxon.rank === "species") {
             openMammalDetail(taxon.name)
           }
         }
       }
-        ; (actionMap[taxon.taxongroup] || defaultAction)()
+        ; (actionMap[taxon.iconic_taxon_name] || defaultAction)()
     }
   },
   observers: {

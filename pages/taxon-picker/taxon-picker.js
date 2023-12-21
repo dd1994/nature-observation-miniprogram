@@ -1,4 +1,7 @@
 const computedBehavior = require('miniprogram-computed').behavior
+import { searchTaxon } from '../../utils/inaturalistApi'
+import '../../utils/lodash-fix'
+import _ from 'lodash'
 
 Page({
   behaviors: [computedBehavior],
@@ -32,7 +35,7 @@ Page({
       taxonDetailDialogVisible: true
     })
   },
-  searchWords(e) {
+  searchWords: _.throttle(function (e) {
     // 请求接口
     this.setData({
       inputWords: e.detail.value
@@ -40,23 +43,14 @@ Page({
     if (!this.data.inputWords.length) {
       return this.setData({ searchResult: [] })
     }
-    wx.request({
-      url: 'http://www.sp2000.org.cn/api/v2/getNameByKeyword',
-      data: {
-        apiKey: '95cf54522c3c48c88d4ab800ec33eb0f',
-        keyword: this.data.inputWords
-      },
+
+    searchTaxon({
+      name: this.data.inputWords,
       success: (res) => {
-        const resData = res?.data
-        if (resData?.code !== 200) {
-          wx.showToast({
-            title: resData?.message || '请求失败',
-            icon: 'none'
-          })
+        if (res?.data?.results?.length) {
+          this.setData({ searchResult: res?.data?.results })
         } else {
-          if (resData?.data?.names?.length) {
-            this.setData({ searchResult: resData.data.names })
-          }
+          this.setData({ searchResult: [] })
         }
       },
       fail: (err) => {
@@ -67,5 +61,5 @@ Page({
         this.setData({ searchResult: [] })
       }
     })
-  }
+  }, 2000)
 })
