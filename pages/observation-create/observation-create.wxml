@@ -13,7 +13,7 @@
       <view wx:if="{{taxon}}">
         {{taxon.preferred_common_name}}
       </view>
-      <view wx:else>
+      <view wx:else class="create-form-item-placeholder">
         你看到了什么？
       </view>
       <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
@@ -24,7 +24,7 @@
     <view class="create-form-item-icon-wrapper">
       <t-icon name="edit-2" size="20px" />
     </view>
-    <t-input placeholder-class="create-form-item-placeholder " borderless placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="noteChange" />
+    <t-input placeholder-class="create-form-item-placeholder" borderless placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="noteChange" />
   </view>
   <t-divider />
   <view bind:tap="openTimePicker" class="create-form-item-wrapper">
