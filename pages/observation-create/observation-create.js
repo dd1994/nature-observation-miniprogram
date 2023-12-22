@@ -26,19 +26,17 @@ Page({
     formattedLatitude(data) {
       // 注意： computed 函数中不能访问 this ，只有 data 对象可供访问
       // 这个函数的返回值会被设置到 this.data.sum 字段中
-      if (data.address?.GPSLatitude) {
-        return `${data.address?.GPSLatitude[0]}°${data.address?.GPSLatitude[1]}'${data.address?.GPSLatitude[2]}"${data.address?.GPSLatitudeRef}`
+      if (data.address?.GPSLatitude?.length) {
+        const value = (data.address?.GPSLatitude[0] + (data.address?.GPSLatitude[1] / 60) + (data.address?.GPSLatitude[2] / 3600)).toFixed(6)
+        const ref = data.address?.GPSLatitudeRef === 'N' ? 1 : -1
+        return ref * value
       }
     },
     formattedLongitude(data) {
-      if (data.address?.GPSLongitude) {
-        return `${data.address?.GPSLongitude[0]}°${data.address?.GPSLongitude[1]}'${data.address?.GPSLongitude[2]}"${data.address?.GPSLongitudeRef}`
-      }
-    },
-    formattedAltitude(data) {
-      if (data.address?.GPSAltitude) {
-        const prefix = data.address.GPSAltitudeRef === 0 ? '' : '-'
-        return `${prefix}${Math.floor(data.address?.GPSAltitude)}米`
+      if (data.address?.GPSLongitude?.length) {
+        const value = (data.address?.GPSLongitude[0] + (data.address?.GPSLongitude[1] / 60) + (data.address?.GPSLongitude[2] / 3600)).toFixed(6)
+        const ref = data.address?.GPSLongitudeRef === 'E' ? 1 : -1
+        return ref * value
       }
     }
   },
@@ -72,8 +70,6 @@ Page({
         GPSLatitudeRef: exifInfo?.data?.GPSLatitudeRef,
         GPSLongitude: exifInfo?.data?.GPSLongitude,
         GPSLongitudeRef: exifInfo?.data?.GPSLongitudeRef,
-        GPSAltitude: exifInfo?.data?.GPSAltitude,
-        GPSAltitudeRef: exifInfo?.data?.GPSAltitudeRef,
       }
       file.metaData.gpsInfo = GPSInfo
       this.setData({ address: GPSInfo })
@@ -93,7 +89,7 @@ Page({
         });
       },
       fail: (err) => {
-        debugger
+
       }
     })
 

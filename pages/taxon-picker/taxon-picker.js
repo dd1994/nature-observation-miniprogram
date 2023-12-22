@@ -32,7 +32,6 @@ Page({
     wx.navigateBack({
       url: '/pages/observation-create/observation-create',
       complete: () => {
-        debugger
         eventChannel.emit('backFromSearchPage',e.target.dataset.taxon)
       }
     })
