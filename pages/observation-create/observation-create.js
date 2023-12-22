@@ -26,7 +26,6 @@ Page({
   computed: {
     formattedLatitude(data) {
       // 注意： computed 函数中不能访问 this ，只有 data 对象可供访问
-      // 这个函数的返回值会被设置到 this.data.sum 字段中
       if (data.address?.GPSLatitude?.length) {
         const value = (data.address?.GPSLatitude[0] + (data.address?.GPSLatitude[1] / 60) + (data.address?.GPSLatitude[2] / 3600)).toFixed(6)
         const ref = data.address?.GPSLatitudeRef === 'N' ? 1 : -1
@@ -41,7 +40,6 @@ Page({
       }
     },
     formattedAddress(data) {
-      debugger
       return data?.address?.amapInfo?.formatted_address
     }
   },
@@ -86,7 +84,6 @@ Page({
           }
         })
       }).catch(err => {
-        debugger
       })
     }
     this.setData({
@@ -131,7 +128,6 @@ Page({
         uploadOSS(tempFilePaths)
       },
       fail: () => {
-        debugger
       }
     })
   },
