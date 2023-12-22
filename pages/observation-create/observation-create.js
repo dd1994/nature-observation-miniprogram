@@ -1,7 +1,7 @@
 const uploadOSS = require("../../utils/uploadOSS");
 const { getOSSUrlByKey } = require("../../utils/util")
 const UUID = require("pure-uuid")
-var EXIF = require('../../utils/exif');
+var EXIF = require('../../utils/libs/exif');
 const computedBehavior = require('miniprogram-computed').behavior;
 const { fetchAdressByGPS } = require("../../utils/amapApi");
 
