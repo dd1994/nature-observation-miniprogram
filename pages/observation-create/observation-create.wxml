@@ -4,12 +4,12 @@
     </t-upload>
   </view>
 
-  <view class="create-form-item-wrapper" bind:tap="goToSearch">
+  <view class="create-form-item-wrapper">
     <view class="create-form-item-icon-wrapper">
       <t-icon name="help-circle" size="20px" />
     </view>
 
-    <view class="create-form-item-content">
+    <view bind:tap="goToSearch" class="create-form-item-content">
       <view wx:if="{{taxon}}">
         {{taxon.preferred_common_name}}
       </view>
