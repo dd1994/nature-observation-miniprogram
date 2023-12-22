@@ -8,13 +8,16 @@
     <view class="create-form-item-icon-wrapper">
       <t-icon name="help-circle" size="20px" />
     </view>
-    <view wx:if="{{taxon}}">
-      {{taxon.preferred_common_name}}
+
+    <view class="create-form-item-content">
+      <view wx:if="{{taxon}}">
+        {{taxon.preferred_common_name}}
+      </view>
+      <view wx:else>
+        你看到了什么？
+      </view>
+      <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
     </view>
-    <view wx:else class="create-form-item-placeholder">
-      你看到了什么？
-    </view>
-    <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
   </view>
   <t-divider />
   <view class="create-form-item-wrapper">

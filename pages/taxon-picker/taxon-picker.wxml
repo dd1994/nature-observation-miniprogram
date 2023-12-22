@@ -1,6 +1,6 @@
 <!--pages/taxon-picker/taxon-picker.wxml-->
 <view class="page-container">
-  <t-search value="{{inputWords}}" placeholder="搜索物种中文名、拉丁名..." bind:change="searchWords" />
+  <t-search focus value="{{inputWords}}" placeholder="搜索物种中文名、拉丁名..." bind:change="searchWords" />
 
   <view class="search-result-taxon-list">
 
@@ -18,7 +18,7 @@
 
     <taxon-detail taxon="{{clickTaxon}}" model:visible="{{taxonDetailDialogVisible}}" />
 
-    <view wx-if="{{searchLoading}}" class="loading-wrapper">
+    <view wx:if="{{searchLoading}}" class="loading-wrapper">
       <t-loading theme="spinner" size="40rpx" text="加载中..." inheritColor class="wrapper" />
     </view>
   </view>

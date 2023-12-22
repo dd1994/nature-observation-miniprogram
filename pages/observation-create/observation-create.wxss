@@ -29,6 +29,10 @@
 
 .create-form-item-content {
   font-size: var(--std-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
 }
 
 .create-form-item-checkbox {
