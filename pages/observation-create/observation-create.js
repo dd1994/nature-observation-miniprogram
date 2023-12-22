@@ -2,7 +2,8 @@ const uploadOSS = require("../../utils/uploadOSS");
 const { getOSSUrlByKey } = require("../../utils/util")
 const UUID = require("pure-uuid")
 var EXIF = require('../../utils/exif');
-const computedBehavior = require('miniprogram-computed').behavior
+const computedBehavior = require('miniprogram-computed').behavior;
+const { fetchAdressByGPS } = require("../../utils/amapApi");
 
 // pages/observation-create/observation-create.js
 Page({
@@ -38,6 +39,10 @@ Page({
         const ref = data.address?.GPSLongitudeRef === 'E' ? 1 : -1
         return ref * value
       }
+    },
+    formattedAddress(data) {
+      debugger
+      return data?.address?.amapInfo?.formatted_address
     }
   },
   noteChange(e) {
@@ -73,6 +78,16 @@ Page({
       }
       file.metaData.gpsInfo = GPSInfo
       this.setData({ address: GPSInfo })
+      fetchAdressByGPS({ lng: this.data.formattedLongitude, lat: this.data.formattedLatitude }).then(res => {
+        this.setData({
+          address: {
+            ...this.data.address,
+            amapInfo: res.data.regeocode
+          }
+        })
+      }).catch(err => {
+        debugger
+      })
     }
     this.setData({
       fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
