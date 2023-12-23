@@ -44,7 +44,7 @@
     <view class="create-form-item-icon-wrapper">
       <t-icon name="location" size="20px" />
     </view>
-    <view class="create-form-item-content">
+    <view class="create-form-item-content" bind:tap="goToSearchLocation">
       <view wx:if="{{formattedAddress}}" class="create-form-item-content">{{formattedAddress}}</view>
       <view wx:else class="create-form-item-placeholder">观察位置(选填)</view>
       <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />

@@ -3,8 +3,9 @@ const { getOSSUrlByKey } = require("../../utils/util")
 const UUID = require("pure-uuid")
 var EXIF = require('../../utils/libs/exif');
 const computedBehavior = require('miniprogram-computed').behavior;
-const { fetchAdressByGPS } = require("../../utils/amapApi");
-
+const { fetchAdressByGPS } = require("../../utils/qMap");
+import { goToLocationSelector } from '../../utils/qMap'
+const chooseLocation = requirePlugin('chooseLocation');
 // pages/observation-create/observation-create.js
 Page({
   behaviors: [computedBehavior],
@@ -40,8 +41,15 @@ Page({
       }
     },
     formattedAddress(data) {
-      return data?.address?.amapInfo?.formatted_address
+      debugger
+      return data?.address?.qMapInfo?.formatted_addresses?.recommend
     }
+  },
+  goToSearchLocation() {
+    goToLocationSelector({
+      lat: this.data.formattedLatitude,
+      lng: this.data.formattedLongitude
+    })
   },
   noteChange(e) {
     this.setData({ note: e.detail.value })
@@ -80,7 +88,7 @@ Page({
         this.setData({
           address: {
             ...this.data.address,
-            amapInfo: res.data.regeocode
+            qMapInfo: res.data.result
           }
         })
       }).catch(err => {
@@ -152,15 +160,26 @@ Page({
   artificialChange(e) {
     this.setData({ artificial: e.detail.checked })
   },
-  onLoad() {
-    // const eventChannel = this.getOpenerEventChannel()
-    // if (eventChannel?.on) {
-    //   eventChannel.on('acceptDataFromSearchPage', (data) => {
-    //     this.setData({
-    //       taxon: data.taxon
-    //     })
-    //   })
-    // }
+  // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
+  onShow() {
+    const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
+    debugger
+    if (location?.latitude) {
+      debugger
+      fetchAdressByGPS({ lng: location.longitude, lat: location.latitude }).then(res => {
+        this.setData({
+          address: {
+            ...this.data.address,
+            qMapInfo: res.data.result
+          }
+        })
+      }).catch(err => {
+      })
+    }
+  },
+  onUnload() {
+    // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
+    chooseLocation.setLocation(null);
   },
   goToSearch() {
     wx.navigateTo({
