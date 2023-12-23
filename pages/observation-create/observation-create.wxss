@@ -1,7 +1,7 @@
 /* pages/observation-create/observation-create.wxss */
 .page-container {
-  --std-font-size: 20px;
-  font-size: 20px;
+  --std-font-size: 18px;
+  font-size: 18px;
 }
 
 .create-image-uplader-wrapper {

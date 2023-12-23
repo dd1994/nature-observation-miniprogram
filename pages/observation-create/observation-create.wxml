@@ -4,7 +4,7 @@
     </t-upload>
   </view>
 
-  <view class="create-form-item-wrapper">
+  <view class="create-form-item-wrapper create-form-item-wrapper-taxon">
     <view class="create-form-item-icon-wrapper">
       <t-icon name="help-circle" size="20px" />
     </view>
