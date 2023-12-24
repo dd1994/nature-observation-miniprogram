@@ -14,23 +14,35 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
-function getOSSUrlByKey(key) {
+export function getOSSUrlByKey(key) {
   return `https://observation-images.oss-cn-beijing.aliyuncs.com/${key}`
 }
 
 export const requestPromise = (params) => {
   return new Promise((resolve, reject) => {
-      wx.request({
-          ...params,  //  请求的参数
-          success: (result) => {
-              resolve(result)
-          },
-          fail: (err) => { reject(err) },
-      })
+    wx.request({
+      ...params,  //  请求的参数
+      success: (result) => {
+        resolve(result)
+      },
+      fail: (err) => { reject(err) },
+    })
   });
 }
-module.exports = {
-  formatTime,
-  getOSSUrlByKey,
-  requestPromise
+
+export const formatExifGPSLongitude = (GPSLongitude, GPSLongitudeRef) => {
+  if (GPSLongitude?.length) {
+    const value = (GPSLongitude[0] + (GPSLongitude[1] / 60) + (GPSLongitude[2] / 3600)).toFixed(6)
+    const ref = GPSLongitudeRef === 'E' ? 1 : -1
+    return ref * value
+  }
+}
+
+
+export const formatExifGPSLatitude = (GPSLatitude, GPSLatitudeRef) => {
+  if (GPSLatitude?.length) {
+    const value = (GPSLatitude[0] + (GPSLatitude[1] / 60) + (GPSLatitude[2] / 3600)).toFixed(6)
+    const ref = GPSLatitudeRef === 'N' ? 1 : -1
+    return ref * value
+  }
 }

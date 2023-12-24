@@ -1,5 +1,6 @@
 const uploadOSS = require("../../utils/uploadOSS");
-const { getOSSUrlByKey } = require("../../utils/util")
+
+import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 var EXIF = require('../../utils/libs/exif');
 const computedBehavior = require('miniprogram-computed').behavior;
@@ -14,8 +15,7 @@ Page({
     note: '',
     time: '',
     timeSelectorVisible: false,
-    address: null,
-    addressVisible: '',
+    location: null,
     artificial: false,
     taxon: null,
     gridConfig: {
@@ -25,24 +25,8 @@ Page({
     }
   },
   computed: {
-    formattedLatitude(data) {
-      // 注意： computed 函数中不能访问 this ，只有 data 对象可供访问
-      if (data.address?.GPSLatitude?.length) {
-        const value = (data.address?.GPSLatitude[0] + (data.address?.GPSLatitude[1] / 60) + (data.address?.GPSLatitude[2] / 3600)).toFixed(6)
-        const ref = data.address?.GPSLatitudeRef === 'N' ? 1 : -1
-        return ref * value
-      }
-    },
-    formattedLongitude(data) {
-      if (data.address?.GPSLongitude?.length) {
-        const value = (data.address?.GPSLongitude[0] + (data.address?.GPSLongitude[1] / 60) + (data.address?.GPSLongitude[2] / 3600)).toFixed(6)
-        const ref = data.address?.GPSLongitudeRef === 'E' ? 1 : -1
-        return ref * value
-      }
-    },
-    formattedAddress(data) {
-      debugger
-      return data?.address?.qMapInfo?.formatted_addresses?.recommend
+    displayLocationName(data) {
+      return data?.location?.name
     }
   },
   goToSearchLocation() {
@@ -74,7 +58,7 @@ Page({
       file.metaData.time = time
     }
 
-    if (exifInfo?.data?.GPSLatitude && !this.address) {
+    if (exifInfo?.data?.GPSLatitude && !this.location) {
       const GPSInfo = {
         // 参考文档 https://exiftool.org/TagNames/GPS.html
         GPSLatitude: exifInfo?.data?.GPSLatitude,
@@ -83,14 +67,31 @@ Page({
         GPSLongitudeRef: exifInfo?.data?.GPSLongitudeRef,
       }
       file.metaData.gpsInfo = GPSInfo
-      this.setData({ address: GPSInfo })
-      fetchAdressByGPS({ lng: this.data.formattedLongitude, lat: this.data.formattedLatitude }).then(res => {
-        this.setData({
-          address: {
-            ...this.data.address,
-            qMapInfo: res.data.result
-          }
-        })
+      fetchAdressByGPS({
+        lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
+        lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
+      }).then(res => {
+        const result = res?.data?.result
+        if (result) {
+          this.setData({
+            location: {
+              // 标准地址
+              address: result.formatted_addresses.standard_address,
+              // 市
+              city: result.address_component.city,
+              // 区/县
+              district: result.address_component.district,
+              // 维度
+              latitude: result.location.lat,
+              // 经度
+              longitude: result.location.lng,
+              // 展示地址
+              name: result.formatted_addresses.recommend,
+              // 省
+              province: result.address_component.province,
+            }
+          })
+        }
       }).catch(err => {
       })
     }
@@ -154,26 +155,15 @@ Page({
   timeChange(e) {
     this.setData({ time: e.detail.value })
   },
-  addressVisibleChange(e) {
-    this.setData({ addressVisible: e.detail.checked })
-  },
   artificialChange(e) {
     this.setData({ artificial: e.detail.checked })
   },
-  // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
   onShow() {
+    // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
-    debugger
     if (location?.latitude) {
-      debugger
-      fetchAdressByGPS({ lng: location.longitude, lat: location.latitude }).then(res => {
-        this.setData({
-          address: {
-            ...this.data.address,
-            qMapInfo: res.data.result
-          }
-        })
-      }).catch(err => {
+      this.setData({
+        location
       })
     }
   },

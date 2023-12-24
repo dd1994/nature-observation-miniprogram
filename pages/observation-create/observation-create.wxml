@@ -45,21 +45,12 @@
       <t-icon name="location" size="20px" />
     </view>
     <view class="create-form-item-content" bind:tap="goToSearchLocation">
-      <view wx:if="{{formattedAddress}}" class="create-form-item-content">{{formattedAddress}}</view>
+      <view wx:if="{{displayLocationName}}" class="create-form-item-content">{{displayLocationName}}</view>
       <view wx:else class="create-form-item-placeholder">观察位置(选填)</view>
       <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
     </view>
   </view>
   <t-divider />
-  <!-- <view class="create-form-item-wrapper">
-    <view class="create-form-item-icon-wrapper">
-      <t-icon name="user-invisible" size="20px" />
-    </view>
-    <view class="create-form-item-content">是否隐藏位置</view>
-    <t-checkbox t-class="create-form-item-checkbox" checked="{{addressVisible}}" icon="rectangle" bind:change="addressVisibleChange" />
-  </view>
-
-  <t-divider /> -->
   <view class="create-form-item-wrapper">
     <view class="create-form-item-icon-wrapper">
       <t-icon name="user-business" size="20px" />
