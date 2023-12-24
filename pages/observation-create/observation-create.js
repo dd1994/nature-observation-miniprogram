@@ -41,6 +41,9 @@ Page({
   removeLocation() {
     this.setData({ location: null })
   },
+  removeTime() {
+    this.setData({ time: null })
+  },
   noteChange(e) {
     this.setData({ note: e.detail.value })
   },
