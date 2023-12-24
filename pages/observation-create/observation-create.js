@@ -31,8 +31,8 @@ Page({
   },
   goToSearchLocation() {
     goToLocationSelector({
-      lat: this.location?.latitude,
-      lng: this.location?.longitude
+      lat: this.data.location?.latitude,
+      lng: this.data.location?.longitude
     })
   },
   noteChange(e) {
