@@ -27,6 +27,13 @@
   margin-right: 13px;
 }
 
+.create-form-item__right-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: none;
+}
+
 .create-form-item-content {
   font-size: var(--std-font-size);
   display: flex;

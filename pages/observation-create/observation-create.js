@@ -26,7 +26,7 @@ Page({
   },
   computed: {
     displayLocationName(data) {
-      return data?.location?.name
+      return data?.location?.name || ''
     }
   },
   goToSearchLocation() {
@@ -34,6 +34,9 @@ Page({
       lat: this.data.location?.latitude,
       lng: this.data.location?.longitude
     })
+  },
+  removeLocation() {
+    this.setData({ location: null })
   },
   noteChange(e) {
     this.setData({ note: e.detail.value })
