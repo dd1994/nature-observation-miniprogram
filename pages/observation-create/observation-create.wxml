@@ -33,7 +33,7 @@
     </view>
     <view class="create-form-item-content" bind:tap="openTimePicker">
       <view wx:if="{{time}}" class="create-form-item-content">{{time}}</view>
-      <view wx:else class="create-form-item-placeholder">时间</view>
+      <view wx:else class="create-form-item-placeholder">观察时间</view>
       <view catch:tap="removeTime" class="create-form-item__right-icon">
         <t-icon wx:if="{{time}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
         </t-icon>
