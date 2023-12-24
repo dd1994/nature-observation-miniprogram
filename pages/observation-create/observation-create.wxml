@@ -1,6 +1,6 @@
 <view class="page-container">
   <view class="create-image-uplader-wrapper">
-    <t-upload config="{{sourceType: ['album']}}" mediaType="{{['video','image']}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
+    <t-upload config="{{uploadConfig}}" mediaType="{{['video','image']}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
     </t-upload>
   </view>
 
@@ -40,7 +40,7 @@
       </view>
     </view>
   </view>
-  <t-date-time-picker title="观察时间" visible="{{timeSelectorVisible}}" mode="second" value="{{time}}" format="YYYY-MM-DD HH:mm:ss" bind:confirm="timeChange" />
+  <t-date-time-picker title="观察时间" visible="{{timeSelectorVisible}}" mode="second" value="{{time}}" format="YYYY-MM-DD HH:mm:ss" default-value="{{defaultTime}}" bind:confirm="timeChange" />
   <t-divider />
 
   <view class="create-form-item-wrapper">

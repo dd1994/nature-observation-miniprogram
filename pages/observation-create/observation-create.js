@@ -17,10 +17,14 @@ Page({
     fileList: [],
     note: '',
     time: moment().format(defaultTimeFormat),
+    defaultTime: moment().format(defaultTimeFormat),
     timeSelectorVisible: false,
     location: null,
     artificial: false,
     taxon: null,
+    uploadConfig: {
+      sourceType: ['album']
+    },
     gridConfig: {
       column: 3,
       width: 200,
