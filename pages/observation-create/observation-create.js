@@ -7,13 +7,16 @@ const computedBehavior = require('miniprogram-computed').behavior;
 const { fetchAdressByGPS } = require("../../utils/qMap");
 import { goToLocationSelector } from '../../utils/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
+import { defaultTimeFormat, exifFormat } from '../../utils/constant'
+import moment from 'moment'
+
 // pages/observation-create/observation-create.js
 Page({
   behaviors: [computedBehavior],
   data: {
     fileList: [],
     note: '',
-    time: '',
+    time: moment().format(defaultTimeFormat),
     timeSelectorVisible: false,
     location: null,
     artificial: false,
@@ -56,7 +59,7 @@ Page({
     const time = exifInfo?.data?.DateTime
     if (time && !this.time) {
       this.setData({
-        time: time
+        time: moment(time, exifFormat).format(defaultTimeFormat)
       })
       file.metaData.time = time
     }
