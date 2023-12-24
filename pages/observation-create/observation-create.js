@@ -29,7 +29,7 @@ Page({
   },
   computed: {
     displayLocationName(data) {
-      return data?.location?.name || ''
+      return data?.location?.recommend_name || ''
     }
   },
   goToSearchLocation() {
@@ -85,7 +85,7 @@ Page({
           this.setData({
             location: {
               // 标准地址
-              address: result.formatted_addresses.standard_address,
+              standard_address: result.formatted_addresses.standard_address,
               // 市
               city: result.address_component.city,
               // 区/县
@@ -95,7 +95,7 @@ Page({
               // 经度
               longitude: result.location.lng,
               // 展示地址
-              name: result.formatted_addresses.recommend,
+              recommend_name: result.formatted_addresses.recommend,
               // 省
               province: result.address_component.province,
             }
@@ -172,7 +172,11 @@ Page({
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
     if (location?.latitude) {
       this.setData({
-        location
+        location: {
+          ...location,
+          recommend_name: location.name,
+          standard_address: location.address
+        }
       })
     }
   },
