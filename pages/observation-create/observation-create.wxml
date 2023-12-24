@@ -1,6 +1,6 @@
 <view class="page-container">
   <view class="create-image-uplader-wrapper">
-    <t-upload mediaType="{{['video','image']}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
+    <t-upload config="{{sourceType: ['album']}}" mediaType="{{['video','image']}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
     </t-upload>
   </view>
 
