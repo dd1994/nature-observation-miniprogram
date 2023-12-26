@@ -68,6 +68,6 @@
   <t-divider />
 
   <view class="create-form-save-button">
-    <t-button block theme="primary" size="large">保存</t-button>
+    <t-button bind:tap="save" block theme="primary" size="large">保存</t-button>
   </view>
 </view>

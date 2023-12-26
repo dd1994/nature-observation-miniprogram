@@ -175,9 +175,12 @@ Page({
     // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
     if (location?.latitude) {
+      debugger
       this.setData({
         location: {
           ...location,
+          name: null,
+          address: null,
           recommend_name: location.name,
           standard_address: location.address
         }
@@ -186,6 +189,7 @@ Page({
   },
   onUnload() {
     // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
+    debugger
     chooseLocation.setLocation(null);
   },
   goToSearch() {
@@ -197,6 +201,45 @@ Page({
             taxon: taxon
           })
         }
+      }
+    })
+  },
+  save() {
+    const basicInfo = {
+      user_id: 1, // 测试，先写死 1
+      description: this.data.description,
+      observed_on: this.data.observedOn,
+      artificial: this.data.artificial
+    }
+    const taxonInfo = {
+      common_name: this.data.taxon.preferred_common_name,
+      scientific_name: this.data.taxon.name,
+      taxon_rank: this.data.taxon.rank,
+      iconic_taxon_name: this.data.taxon.iconic_taxon_name,
+      taxon_id: this.data.taxon.id
+    }
+
+    const otherInfo = {
+      license: null
+    }
+
+    debugger
+    const params = {
+      ...basicInfo,
+      ...this.data.location,
+      ...taxonInfo,
+      ...otherInfo
+    }
+
+    wx.request({
+      url: 'http://127.0.0.1:7001/api/v1/observations',
+      method: 'POST',
+      data: params,
+      success: (res) => {
+        debugger
+      },
+      error: (err) => {
+        debugger
       }
     })
   }
