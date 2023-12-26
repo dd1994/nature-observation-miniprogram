@@ -15,7 +15,7 @@ Page({
   behaviors: [computedBehavior],
   data: {
     fileList: [],
-    note: '',
+    description: '',
     observedOn: moment().format(defaultTimeFormat),
     defaultTime: moment().format(defaultTimeFormat),
     timeSelectorVisible: false,
@@ -48,8 +48,8 @@ Page({
   removeObservedOn() {
     this.setData({ observedOn: null })
   },
-  noteChange(e) {
-    this.setData({ note: e.detail.value })
+  descriptionChange(e) {
+    this.setData({ description: e.detail.value })
   },
   handleAdd(e) {
     const { files } = e.detail;
