@@ -32,15 +32,15 @@
       <t-icon name="time" size="20px" />
     </view>
     <view class="create-form-item-content" bind:tap="openTimePicker">
-      <view wx:if="{{time}}" class="create-form-item-content">{{time}}</view>
+      <view wx:if="{{observedOn}}" class="create-form-item-content">{{observedOn}}</view>
       <view wx:else class="create-form-item-placeholder">观察时间</view>
-      <view catch:tap="removeTime" class="create-form-item__right-icon">
-        <t-icon wx:if="{{time}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
+      <view catch:tap="removeObservedOn" class="create-form-item__right-icon">
+        <t-icon wx:if="{{observedOn}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
         </t-icon>
       </view>
     </view>
   </view>
-  <t-date-time-picker title="观察时间" visible="{{timeSelectorVisible}}" mode="second" value="{{time}}" format="YYYY-MM-DD HH:mm:ss" default-value="{{defaultTime}}" bind:confirm="timeChange" />
+  <t-date-time-picker title="观察时间" visible="{{timeSelectorVisible}}" mode="second" value="{{observedOn}}" format="YYYY-MM-DD HH:mm:ss" default-value="{{defaultTime}}" bind:confirm="observedOnChange" />
   <t-divider />
 
   <view class="create-form-item-wrapper">

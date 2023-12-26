@@ -16,7 +16,7 @@ Page({
   data: {
     fileList: [],
     note: '',
-    time: moment().format(defaultTimeFormat),
+    observedOn: moment().format(defaultTimeFormat),
     defaultTime: moment().format(defaultTimeFormat),
     timeSelectorVisible: false,
     location: null,
@@ -45,8 +45,8 @@ Page({
   removeLocation() {
     this.setData({ location: null })
   },
-  removeTime() {
-    this.setData({ time: null })
+  removeObservedOn() {
+    this.setData({ observedOn: null })
   },
   noteChange(e) {
     this.setData({ note: e.detail.value })
@@ -64,9 +64,9 @@ Page({
     var exifInfo = JSON.parse(JSON.stringify(EXIF.handleBinaryFile(array)));
 
     const time = exifInfo?.data?.DateTime
-    if (time && !this.time) {
+    if (time && !this.data.observedOn) {
       this.setData({
-        time: moment(time, exifFormat).format(defaultTimeFormat)
+        observedOn: moment(time, exifFormat).format(defaultTimeFormat)
       })
       file.metaData.time = time
     }
@@ -165,8 +165,8 @@ Page({
   openTimePicker() {
     this.setData({ timeSelectorVisible: true })
   },
-  timeChange(e) {
-    this.setData({ time: e.detail.value })
+  observedOnChange(e) {
+    this.setData({ observedOn: e.detail.value })
   },
   artificialChange(e) {
     this.setData({ artificial: e.detail.checked })
