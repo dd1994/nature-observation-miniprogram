@@ -12,7 +12,6 @@ id	观察主键 id
 userId	用户		
 description	描述		
 observed_on	观察时间		
-image_url	图片
 updated_at	更新时间		
 created_at	创建时间
 // 2. 地理位置
