@@ -186,7 +186,6 @@ Page({
   },
   onUnload() {
     // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
-    debugger
     chooseLocation.setLocation(null);
   },
   goToSearch() {
