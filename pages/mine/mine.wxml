@@ -1,2 +1,9 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="page-mine">
+  <view class="mine-cell-group">
+    <t-cell title="我的主页" hover arrow leftIcon="user-1" />
+    <t-cell title="物种统计" hover arrow leftIcon="chart-pie" />
+  </view>
+  <view class="mine-cell-group">
+    <t-cell title="设置" hover arrow leftIcon="setting-1" />
+  </view>
+</view>
