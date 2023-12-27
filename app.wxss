@@ -1,7 +1,8 @@
 /**app.wxss**/
+/* #36ab60 */
 page {
   /* 待设计主题色 */
-/* --td-primary-color-1: #e7e9bc;
+  /* --td-primary-color-1: #e7e9bc;
 --td-primary-color-2: #d3daa9;
 --td-primary-color-3: #becc97;
 --td-primary-color-4: #a9bd85;
@@ -16,6 +17,7 @@ page {
 .page-container {
   margin: 10px;
 }
+
 .container {
   height: 100%;
   display: flex;
@@ -24,4 +26,4 @@ page {
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}

@@ -6,7 +6,7 @@
   ],
   "tabBar": {
     "color": "#000",
-    "selectedColor": "green",
+    "selectedColor": "#36ab60",
     "backgroundColor": "#FFF",
     "list": [
       {
@@ -17,7 +17,9 @@
       },
       {
         "pagePath": "pages/observation-create/observation-create",
-        "text": "探索"
+        "text": "探索",
+        "iconPath": "./static/explore.png",
+        "selectedIconPath": "./static/explore-selected.png"
       }
     ]
   },
