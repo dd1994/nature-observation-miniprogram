@@ -7,12 +7,17 @@ Component({
   methods: {
     fetchObservations() {
       wx.request({
-        url: 'http://127.0.0.1:7001/api/v1/observations',
+        url: 'http://192.168.3.40:7001/api/v1/observations',
         success: (res) => {
           this.setData({
             observations: res.data
           })
         }
+      })
+    },
+    onAddIconTap() {
+      wx.navigateTo({
+        url: '/pages/observation-create/observation-create'
       })
     }
   },
