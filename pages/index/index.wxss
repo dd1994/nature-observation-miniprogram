@@ -9,6 +9,8 @@
 .observation-list__item {
   aspect-ratio: 1;
   position: relative;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .observation-list__item__img {
@@ -24,6 +26,7 @@
   bottom: 0;
   color: #fff;
   font-size: 18px;
+  line-height: 1;
   padding: 4px;
   background-color: rgba(0, 0, 0, 0.4);
 
