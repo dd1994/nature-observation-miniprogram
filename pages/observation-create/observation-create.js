@@ -1,5 +1,6 @@
 const uploadOSS = require("../../utils/uploadOSS");
-
+import _ from 'lodash'
+console.log(_.pick({a: 1, b: 2}, ['a']))
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 var EXIF = require('../../utils/libs/exif');

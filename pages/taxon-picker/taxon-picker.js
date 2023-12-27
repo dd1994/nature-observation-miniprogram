@@ -1,6 +1,5 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { searchTaxon } from '../../utils/inaturalistApi'
-import '../../utils/libs/lodash-fix'
 import _ from 'lodash'
 
 Page({
