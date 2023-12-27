@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/explore/index",
     "pages/observation-create/observation-create",
-    "pages/taxon-picker/taxon-picker"
+    "pages/taxon-picker/taxon-picker",
+    "pages/mine/mine"
   ],
   "tabBar": {
     "color": "#000",
@@ -21,6 +22,12 @@
         "text": "探索",
         "iconPath": "./static/explore.png",
         "selectedIconPath": "./static/explore-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我",
+        "iconPath": "./static/me.png",
+        "selectedIconPath": "./static/me-selected.png"
       }
     ]
   },
