@@ -1,9 +1,9 @@
 .observation-list {
-  margin: 10px;
+  margin: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 5px;
-  grid-column-gap: 10px;
+  grid-row-gap: 3px;
+  grid-column-gap: 6px;
 }
 
 .observation-list__item {
@@ -26,6 +26,11 @@
   font-size: 18px;
   padding: 4px;
   background-color: rgba(0, 0, 0, 0.4);
+
+  /* 名称过长时省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .observation-add-icon {
