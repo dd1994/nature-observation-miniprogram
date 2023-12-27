@@ -1,3 +1,6 @@
-<!--index.wxml-->
-<navigation-bar title="自然记录" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<t-button theme="primary">按钮</t-button>
+<view class="observation-list">
+  <view class="observation-list__item" wx:key="id" wx:for="{{observations}}">
+    <text class="observation-list__item__text">{{item.common_name}}</text>
+    <image class="observation-list__item__img" src="{{item.photos[0]}}"></image>
+  </view>
+</view>

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/observation-create/observation-create",
-    "pages/taxon-picker/taxon-picker",
-    "pages/index/index"
+    "pages/taxon-picker/taxon-picker"
   ],
   "window": {
     "navigationBarTextStyle": "black",
