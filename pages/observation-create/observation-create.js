@@ -233,10 +233,15 @@ Page({
       method: 'POST',
       data: params,
       success: (res) => {
-        debugger
+        wx.navigateTo({
+          url: '/pages/index/index'
+        })
       },
       error: (err) => {
-        debugger
+        wx.showToast({
+          title: '保存失败',
+          icon: 'none'
+        })
       }
     })
   }
