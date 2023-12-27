@@ -4,6 +4,23 @@
     "pages/observation-create/observation-create",
     "pages/taxon-picker/taxon-picker"
   ],
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "green",
+    "backgroundColor": "#FFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "记录",
+        "iconPath": "./static/home.png",
+        "selectedIconPath": "./static/home-selected.png"
+      },
+      {
+        "pagePath": "pages/observation-create/observation-create",
+        "text": "探索"
+      }
+    ]
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#FFF"
