@@ -1,6 +1,5 @@
 const uploadOSS = require("../../utils/uploadOSS");
 import _ from 'lodash'
-console.log(_.pick({a: 1, b: 2}, ['a']))
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 var EXIF = require('../../utils/libs/exif');
@@ -176,12 +175,9 @@ Page({
     // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
     const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
     if (location?.latitude) {
-      debugger
       this.setData({
         location: {
-          ...location,
-          name: null,
-          address: null,
+          ..._.pick(location, ['latitude', 'longitude', 'province', 'city', 'district']),
           recommend_name: location.name,
           standard_address: location.address
         }
@@ -224,8 +220,8 @@ Page({
       license: null
     }
 
-    debugger
     const params = {
+      fileList: this.data.fileList,
       ...basicInfo,
       ...this.data.location,
       ...taxonInfo,
