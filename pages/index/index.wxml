@@ -1,12 +1,5 @@
-<view class="observations-list-page">
-  <view class="observation-list">
-    <view class="observation-list__item" wx:key="id" wx:for="{{observations}}">
-      <view class="observation-list__item__text">{{item.common_name}}</view>
-      <image class="observation-list__item__img" src="{{item.photos[0]}}"></image>
-    </view>
-  </view>
-
-
+<view class="index-page">
+  <observation-list observations="{{observations}}"></observation-list>
   <image bind:tap="onAddIconTap" class="observation-add-icon" src="../../static/add.png">
   </image>
 </view>
