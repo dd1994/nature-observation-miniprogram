@@ -38,6 +38,8 @@
 
 .observation-add-icon {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
 }

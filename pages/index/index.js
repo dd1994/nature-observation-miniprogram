@@ -17,7 +17,8 @@ Component({
     },
     onAddIconTap() {
       wx.navigateTo({
-        url: '/pages/observation-create/observation-create'
+        url: "/pages/observation-create/observation-create",
+
       })
     }
   },
