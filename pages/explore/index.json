@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "探索",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "observation-list": "/components/observation-list/observation-list"
+  }
+}

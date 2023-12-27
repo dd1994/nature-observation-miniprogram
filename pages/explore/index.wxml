@@ -1,0 +1,5 @@
+<view class="index-page">
+  <observation-list observations="{{observations}}"></observation-list>
+  <image bind:tap="onAddIconTap" class="observation-add-icon" src="../../static/add.png">
+  </image>
+</view>

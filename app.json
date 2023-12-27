@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/explore/index",
     "pages/observation-create/observation-create",
     "pages/taxon-picker/taxon-picker"
   ],
@@ -16,7 +17,7 @@
         "selectedIconPath": "./static/home-selected.png"
       },
       {
-        "pagePath": "pages/taxon-picker/taxon-picker",
+        "pagePath": "pages/explore/index",
         "text": "探索",
         "iconPath": "./static/explore.png",
         "selectedIconPath": "./static/explore-selected.png"
