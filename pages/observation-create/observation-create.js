@@ -9,7 +9,7 @@ import { goToLocationSelector } from '../../utils/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifFormat } from '../../utils/constant'
 import moment from 'moment'
-import { fetchObservationDetail, deleteObservation } from '../../utils/restful/observations'
+import { fetchObservationDetail, createObservation, deleteObservation } from '../../utils/restful/observations'
 
 // pages/observation-create/observation-create.js
 Page({
@@ -274,21 +274,26 @@ Page({
       ...otherInfo
     }
 
-    wx.request({
-      url: 'http://192.168.3.40:7001/api/v1/observations',
-      method: 'POST',
-      data: params,
-      success: (res) => {
-        wx.navigateTo({
-          url: '/pages/index/index'
+
+    createObservation(params).then(res => {
+      if (res?.data?.success) {
+        wx.showToast({
+          title: '保存成功',
         })
-      },
-      error: (err) => {
+        setTimeout(() => {
+          this.goToIndexAndRefresh()
+        }, 1000)
+      } else {
         wx.showToast({
           title: '保存失败',
           icon: 'none'
         })
       }
+    }).catch(err => {
+      wx.showToast({
+        title: '保存失败',
+        icon: 'none'
+      })
     })
   },
   delete() {
@@ -298,8 +303,30 @@ Page({
       confirmText: '确认删除',
       complete: (res) => {
         if (res.confirm) {
-          deleteObservation(this.data.id)
+          deleteObservation(this.data.id).then(res => {
+            wx.showToast({
+              title: res?.data?.success ? '删除成功' : '删除失败',
+              icon: 'none'
+            })
+          }).catch(err => {
+            wx.showToast({
+              title: '删除失败',
+              icon: 'none'
+            })
+          }).then(() => {
+            setTimeout(() => {
+              this.goToIndexAndRefresh()
+            }, 1000)
+          })
         }
+      }
+    })
+  },
+  goToIndexAndRefresh() {
+    wx.switchTab({
+      url: '/pages/index/index',
+      fail: (err) => {
+        debugger
       }
     })
   }
