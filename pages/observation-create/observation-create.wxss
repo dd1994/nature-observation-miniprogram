@@ -7,7 +7,7 @@
 
 .create-form {
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .create-image-uplader-wrapper {
