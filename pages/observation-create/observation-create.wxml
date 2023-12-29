@@ -69,7 +69,7 @@
   <view class="create-form-save-button">
     <t-button bind:tap="save" block theme="primary" size="large">保存</t-button>
   </view>
-  <view bind:tap="delete" class="delegte-form-save-button">
+  <view wx:if="{{isEdit}}" bind:tap="delete" class="delegte-form-save-button">
     <t-icon name="delete" style="margin-right: 5px;"></t-icon>
     删除这条记录
   </view>
