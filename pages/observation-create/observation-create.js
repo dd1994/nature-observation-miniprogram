@@ -69,7 +69,7 @@ Page({
     var exifInfo = JSON.parse(JSON.stringify(EXIF.handleBinaryFile(array)));
 
     const time = exifInfo?.data?.DateTime
-    if (time && !this.data.observedOn) {
+    if (time) {
       this.setData({
         observedOn: moment(time, exifFormat).format(defaultTimeFormat)
       })
@@ -248,6 +248,12 @@ Page({
     })
   },
   save() {
+    if (!this.data.taxon) {
+      wx.showToast({
+        title: '请选择物种',
+        icon: 'none'
+      })
+    }
     const basicInfo = {
       user_id: 1, // 测试，先写死 1
       description: this.data.description,
