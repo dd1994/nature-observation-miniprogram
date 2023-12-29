@@ -327,7 +327,6 @@ Page({
     wx.switchTab({
       url: '/pages/index/index',
       complete: () => {
-        debugger
         eventChannel.emit('refresh')
       }
     })
