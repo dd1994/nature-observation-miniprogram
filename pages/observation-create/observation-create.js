@@ -323,10 +323,12 @@ Page({
     })
   },
   goToIndexAndRefresh() {
+    const eventChannel = this.getOpenerEventChannel();
     wx.switchTab({
       url: '/pages/index/index',
-      fail: (err) => {
+      complete: () => {
         debugger
+        eventChannel.emit('refresh')
       }
     })
   }

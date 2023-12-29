@@ -1,30 +1,31 @@
 import { fetchObservationList } from '../../utils/restful/observations'
 
-Component({
+Page({
   data: {
     observations: [],
     limit: 20,
     offset: 0,
   },
-  methods: {
-    fetchObservations() {
-      fetchObservationList().then(res => {
-        this.setData({
-          observations: res.data
-        })
+  fetchObservations() {
+    fetchObservationList().then(res => {
+      this.setData({
+        observations: res.data
       })
-    },
-    onAddIconTap() {
-      wx.navigateTo({
-        url: "/pages/observation-create/observation-create",
-
-      })
-    }
+    })
   },
-  created() {
+  onAddIconTap() {
+    wx.navigateTo({
+      url: "/pages/observation-create/observation-create",
+      events: {
+        refresh: () => {
+          this.fetchObservations()
+        }
+      }
+    })
+  },
+  onLoad() {
     this.fetchObservations()
   },
   onShow() {
-    this.fetchObservations()
   }
 })

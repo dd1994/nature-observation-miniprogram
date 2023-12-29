@@ -25,6 +25,11 @@ Component({
     gotoDetailPage(e) {
       wx.navigateTo({
         url: `/pages/observation-create/observation-create?id=${e.currentTarget.dataset.id}`,
+        events: {
+          refresh: () => {
+            this.triggerEvent('refresh')
+          }
+        }
       })
     }
   }
