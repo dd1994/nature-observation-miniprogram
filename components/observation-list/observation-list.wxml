@@ -1,6 +1,6 @@
 <view class="observation-list">
-  <navigator data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{observations}}">
+  <view data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{observations}}">
     <view class="observation-list__item__text">{{item.common_name}}</view>
     <image class="observation-list__item__img" src="{{item.photos[0]}}"></image>
-  </navigator>
+  </view>
 </view>
