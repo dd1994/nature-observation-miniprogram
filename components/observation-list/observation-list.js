@@ -22,6 +22,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    gotoDetailPage(e) {
+      wx.navigateTo({
+        url: `/pages/observation-create/observation-create?id=${e.currentTarget.dataset.id}`,
+      })
+    }
   }
 })

@@ -1,3 +1,5 @@
+import { fetchObservationList } from '../../utils/observations'
+
 Component({
   data: {
     observations: [],
@@ -6,13 +8,10 @@ Component({
   },
   methods: {
     fetchObservations() {
-      wx.request({
-        url: 'http://192.168.3.40:7001/api/v1/observations',
-        success: (res) => {
-          this.setData({
-            observations: res.data
-          })
-        }
+      fetchObservationList().then(res => {
+        this.setData({
+          observations: res.data
+        })
       })
     },
     onAddIconTap() {

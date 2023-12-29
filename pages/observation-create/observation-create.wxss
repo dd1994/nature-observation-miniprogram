@@ -5,8 +5,12 @@
   font-size: 20px;
 }
 
+.create-form {
+  background-color: #fff;
+}
+
 .create-image-uplader-wrapper {
-  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .create-form-item-wrapper {

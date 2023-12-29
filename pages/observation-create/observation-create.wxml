@@ -1,71 +1,73 @@
 <view class="page-container">
-  <view class="create-image-uplader-wrapper">
-    <t-upload config="{{uploadConfig}}" mediaType="{{['video','image']}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
-    </t-upload>
-  </view>
-
-  <view class="create-form-item-wrapper create-form-item-wrapper-taxon">
-    <view class="create-form-item-icon-wrapper">
-      <t-icon name="help-circle" size="20px" />
+  <view class="create-form">
+    <view class="create-image-uplader-wrapper">
+      <t-upload config="{{uploadConfig}}" mediaType="{{['video','image']}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
+      </t-upload>
     </view>
 
-    <view bind:tap="goToSearch" class="create-form-item-content">
-      <view wx:if="{{taxon}}">
-        {{taxon.preferred_common_name}}
+    <view class="create-form-item-wrapper create-form-item-wrapper-taxon">
+      <view class="create-form-item-icon-wrapper">
+        <t-icon name="help-circle" size="20px" />
       </view>
-      <view wx:else class="create-form-item-placeholder">
-        你看到了什么？
-      </view>
-      <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
-    </view>
-  </view>
-  <t-divider />
-  <view class="create-form-item-wrapper">
-    <view class="create-form-item-icon-wrapper">
-      <t-icon name="edit-2" size="20px" />
-    </view>
-    <t-input placeholder-class="create-form-item-placeholder" borderless placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="descriptionChange" />
-  </view>
-  <t-divider />
-  <view class="create-form-item-wrapper">
-    <view class="create-form-item-icon-wrapper">
-      <t-icon name="time" size="20px" />
-    </view>
-    <view class="create-form-item-content" bind:tap="openTimePicker">
-      <view wx:if="{{observedOn}}" class="create-form-item-content">{{observedOn}}</view>
-      <view wx:else class="create-form-item-placeholder">观察时间</view>
-      <view catch:tap="removeObservedOn" class="create-form-item__right-icon">
-        <t-icon wx:if="{{observedOn}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
-        </t-icon>
-      </view>
-    </view>
-  </view>
-  <t-date-time-picker title="观察时间" visible="{{timeSelectorVisible}}" mode="second" value="{{observedOn}}" format="YYYY-MM-DD HH:mm:ss" default-value="{{defaultTime}}" bind:confirm="observedOnChange" />
-  <t-divider />
 
-  <view class="create-form-item-wrapper">
-    <view class="create-form-item-icon-wrapper">
-      <t-icon name="location" size="20px" />
-    </view>
-    <view class="create-form-item-content" bind:tap="goToSearchLocation">
-      <view wx:if="{{displayLocationName}}" class="create-form-item-content">{{displayLocationName}}</view>
-      <view wx:else class="create-form-item-placeholder">观察位置(选填)</view>
-      <view catch:tap="removeLocation" class="create-form-item__right-icon">
-        <t-icon wx:if="{{displayLocationName}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
-        </t-icon>
+      <view bind:tap="goToSearch" class="create-form-item-content">
+        <view wx:if="{{taxon}}">
+          {{taxon.preferred_common_name}}
+        </view>
+        <view wx:else class="create-form-item-placeholder">
+          你看到了什么？
+        </view>
+        <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
       </view>
     </view>
-  </view>
-  <t-divider />
-  <view class="create-form-item-wrapper">
-    <view class="create-form-item-icon-wrapper">
-      <t-icon name="user-business" size="20px" />
+    <t-divider />
+    <view class="create-form-item-wrapper">
+      <view class="create-form-item-icon-wrapper">
+        <t-icon name="edit-2" size="20px" />
+      </view>
+      <t-input placeholder-class="create-form-item-placeholder" borderless placeholder="添加笔记(选填)" maxcharacter="{{100}}" bind:change="descriptionChange" />
     </view>
-    <view class="create-form-item-content">是否人工圈养或栽培</view>
-    <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange" />
-  </view>
+    <t-divider />
+    <view class="create-form-item-wrapper">
+      <view class="create-form-item-icon-wrapper">
+        <t-icon name="time" size="20px" />
+      </view>
+      <view class="create-form-item-content" bind:tap="openTimePicker">
+        <view wx:if="{{observedOn}}" class="create-form-item-content">{{observedOn}}</view>
+        <view wx:else class="create-form-item-placeholder">观察时间</view>
+        <view catch:tap="removeObservedOn" class="create-form-item__right-icon">
+          <t-icon wx:if="{{observedOn}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
+          </t-icon>
+        </view>
+      </view>
+    </view>
+    <t-date-time-picker title="观察时间" visible="{{timeSelectorVisible}}" mode="second" value="{{observedOn}}" format="YYYY-MM-DD HH:mm:ss" default-value="{{defaultTime}}" bind:confirm="observedOnChange" />
+    <t-divider />
 
-  <t-divider />
+    <view class="create-form-item-wrapper">
+      <view class="create-form-item-icon-wrapper">
+        <t-icon name="location" size="20px" />
+      </view>
+      <view class="create-form-item-content" bind:tap="goToSearchLocation">
+        <view wx:if="{{displayLocationName}}" class="create-form-item-content">{{displayLocationName}}</view>
+        <view wx:else class="create-form-item-placeholder">观察位置(选填)</view>
+        <view catch:tap="removeLocation" class="create-form-item__right-icon">
+          <t-icon wx:if="{{displayLocationName}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
+          </t-icon>
+        </view>
+      </view>
+    </view>
+    <t-divider />
+    <view class="create-form-item-wrapper">
+      <view class="create-form-item-icon-wrapper">
+        <t-icon name="user-business" size="20px" />
+      </view>
+      <view class="create-form-item-content">是否人工圈养或栽培</view>
+      <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange" />
+    </view>
+
+    <t-divider />
+  </view>
 
   <view class="create-form-save-button">
     <t-button bind:tap="save" block theme="primary" size="large">保存</t-button>

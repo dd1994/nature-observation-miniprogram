@@ -14,6 +14,7 @@ import moment from 'moment'
 Page({
   behaviors: [computedBehavior],
   data: {
+    id: null,
     fileList: [],
     description: '',
     observedOn: moment().format(defaultTimeFormat),
@@ -34,6 +35,9 @@ Page({
   computed: {
     displayLocationName(data) {
       return data?.location?.recommend_name || ''
+    },
+    isEdit(data) {
+      return !!data.id
     }
   },
   goToSearchLocation() {
@@ -187,6 +191,12 @@ Page({
   onUnload() {
     // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
     chooseLocation.setLocation(null);
+  },
+  onLoad(options) {
+    if (options.id) {
+      // 编辑状态
+      this.setData({ id: options.id })
+    }
   },
   goToSearch() {
     wx.navigateTo({
