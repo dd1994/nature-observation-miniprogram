@@ -9,6 +9,7 @@ import { goToLocationSelector } from '../../utils/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifFormat } from '../../utils/constant'
 import moment from 'moment'
+import { fetchObservationDetail } from '../../utils/restful/observations'
 
 // pages/observation-create/observation-create.js
 Page({
@@ -196,7 +197,36 @@ Page({
     if (options.id) {
       // 编辑状态
       this.setData({ id: options.id })
+      this.fetchObservationDetail()
     }
+  },
+  fetchObservationDetail() {
+    fetchObservationDetail(this.data.id).then(res => {
+      const data = res.data
+      debugger
+      this.setData({
+        description: data.description,
+        observedOn: data.observed_on,
+        "artificial": !!data.artificial,
+        location: {
+          "latitude": data.latitude,
+          "longitude": data.longitude,
+          "province": data.province,
+          "city": data.city,
+          "district": data.district,
+          "recommend_name": data.recommend_name,
+          "standard_address": data.standard_address,
+        },
+        taxon: {
+          "preferred_common_name": data.common_name,
+          "common_name": data.common_name,
+          "scientific_name": data.scientific_name,
+          "taxon_rank": data.taxon_rank,
+          "iconic_taxon_name": data.iconic_taxon_name,
+          "taxon_id": data.taxon_id,
+        }
+      })
+    })
   },
   goToSearch() {
     wx.navigateTo({

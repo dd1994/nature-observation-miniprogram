@@ -1,4 +1,4 @@
-import { fetchObservationList } from '../../utils/observations'
+import { fetchObservationList } from '../../utils/restful/observations'
 
 Component({
   data: {

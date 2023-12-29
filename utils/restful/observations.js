@@ -1,4 +1,4 @@
-import { requestPromise } from "./util"
+import { requestPromise } from "../util"
 
 export function fetchObservationList() {
   return requestPromise({
@@ -8,9 +8,6 @@ export function fetchObservationList() {
 
 export function fetchObservationDetail(id) {
   return requestPromise({
-    url: 'http://192.168.3.40:7001/api/v1/observations',
-    data: {
-      id
-    }
+    url: 'http://192.168.3.40:7001/api/v1/observations/' + id,
   })
 }
