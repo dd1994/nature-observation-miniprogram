@@ -290,5 +290,22 @@ Page({
         })
       }
     })
+  },
+  delete() {
+    wx.showModal({
+      title: '',
+      content: '确认删除这条记录吗',
+      confirmText: '确认删除',
+      complete: (res) => {
+        debugger
+        if (res.cancel) {
+
+        }
+
+        if (res.confirm) {
+          debugger
+        }
+      }
+    })
   }
 })
