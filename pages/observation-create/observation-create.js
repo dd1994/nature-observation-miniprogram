@@ -9,7 +9,7 @@ import { goToLocationSelector } from '../../utils/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifFormat } from '../../utils/constant'
 import moment from 'moment'
-import { fetchObservationDetail } from '../../utils/restful/observations'
+import { fetchObservationDetail, deleteObservation } from '../../utils/restful/observations'
 
 // pages/observation-create/observation-create.js
 Page({
@@ -297,13 +297,8 @@ Page({
       content: '确认删除这条记录吗',
       confirmText: '确认删除',
       complete: (res) => {
-        debugger
-        if (res.cancel) {
-
-        }
-
         if (res.confirm) {
-          debugger
+          deleteObservation(this.data.id)
         }
       }
     })
