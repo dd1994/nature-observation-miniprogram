@@ -202,8 +202,7 @@ Page({
   },
   fetchObservationDetail() {
     fetchObservationDetail(this.data.id).then(res => {
-      const data = res.data
-      debugger
+      const data = res.data[0]
       this.setData({
         description: data.description,
         observedOn: data.observed_on,
@@ -220,11 +219,19 @@ Page({
         taxon: {
           "preferred_common_name": data.common_name,
           "common_name": data.common_name,
-          "scientific_name": data.scientific_name,
-          "taxon_rank": data.taxon_rank,
+          "name": data.scientific_name,
+          "rank": data.taxon_rank,
           "iconic_taxon_name": data.iconic_taxon_name,
-          "taxon_id": data.taxon_id,
-        }
+          "id": data.taxon_id,
+        },
+        fileList: data.photos.map(i => {
+          return {
+            url: i.url,
+            key: i.key,
+            type: 'image',
+            status: 'done'
+          }
+        })
       })
     })
   },
