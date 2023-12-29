@@ -9,7 +9,7 @@ import { goToLocationSelector } from '../../utils/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifFormat } from '../../utils/constant'
 import moment from 'moment'
-import { fetchObservationDetail, createObservation, deleteObservation } from '../../utils/restful/observations'
+import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/restful/observations'
 
 // pages/observation-create/observation-create.js
 Page({
@@ -266,16 +266,26 @@ Page({
       license: null
     }
 
+    const locationInfo = {
+      'latitude': this.data.location?.latitude || null,
+      'longitude': this.data.location?.longitude || null,
+      'province': this.data.location?.province || null,
+      'city': this.data.location?.city || null,
+      'district': this.data.location?.district || null,
+      "recommend_name": this.data.location?.recommend_name || null,
+      "standard_address": this.data.location?.standard_address || null,
+    }
+
     const params = {
       fileList: this.data.fileList,
       ...basicInfo,
-      ...this.data.location,
+      ...locationInfo,
       ...taxonInfo,
       ...otherInfo
     }
 
-
-    createObservation(params).then(res => {
+    const fn = this.data.isEdit ? updateObservation : createObservation
+    fn(params, this.data.id).then(res => {
       if (res?.data?.success) {
         wx.showToast({
           title: '保存成功',
