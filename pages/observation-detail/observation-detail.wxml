@@ -1,2 +1,10 @@
-<!--pages/observation-detail/observation-detail.wxml-->
-<text>pages/observation-detail/observation-detail.wxml</text>
+<view class="page-conatiner">
+  <t-swiper
+  current="{{currentPhoto}}"
+  autoplay="{{true}}"
+  duration="{{500}}"
+  interval="{{5000}}"
+  list="{{swiperList}}"
+  navigation="{{ { type: 'dots-bar' } }}"
+/>
+</view>
