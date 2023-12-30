@@ -6,14 +6,13 @@ Page({
   behaviors: [computedBehavior],
   data: {
     observationDetail: null,
-    currentPhoto: 1,
+    currentPhoto: 0,
   },
   computed: {
     swiperList(data) {
       return (data.observationDetail?.photos || []).map(i => {
         return {
           value: i.url,
-          ariaLabel: '图片1',
         }
       })
     }
