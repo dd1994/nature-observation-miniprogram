@@ -4,7 +4,8 @@
     "pages/explore/index",
     "pages/observation-create/observation-create",
     "pages/taxon-picker/taxon-picker",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/observation-detail/observation-detail"
   ],
   "tabBar": {
     "color": "#000",
