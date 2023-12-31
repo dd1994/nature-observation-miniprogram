@@ -2,7 +2,6 @@
 /* #36ab60 */
 page {
   background-color: #f6f6f6;
-  --td-swiper-radius: 0;
   /* 待设计主题色 */
   /* --td-primary-color-1: #e7e9bc;
 --td-primary-color-2: #d3daa9;
