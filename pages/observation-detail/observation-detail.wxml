@@ -1,3 +1,4 @@
 <view class="page-conatiner">
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" list="{{swiperList}}" height="{{'563rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
+  <t-cell title="{{common_name}}" description="{{scientific_name}}" hover arrow t-class="taxon-name-cell" />
 </view>

@@ -18,6 +18,12 @@ Page({
           value: i,
         }
       })
+    },
+    scientific_name(data) {
+      return data.observationDetail?.scientific_name
+    },
+    common_name(data) {
+      return data.observationDetail?.common_name
     }
   },
   onSwiperClick(e) {
