@@ -16,7 +16,6 @@
 .observation-list__item__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .observation-list__item__text {
