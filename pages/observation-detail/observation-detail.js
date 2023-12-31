@@ -27,10 +27,13 @@ Page({
       return data.observationDetail?.common_name
     },
     recommend_name(data) {
-      return data.observationDetail?.recommend_name
+      return data.observationDetail?.city + data.observationDetail?.recommend_name
     },
     description(data) {
       return data.observationDetail?.description
+    },
+    mapUrl(data) {
+      return `/pages/observation-map/observation-map?longitude=${data.longitude}&latitude=${data.latitude}`
     },
     longitude(data) {
       return data.observationDetail?.longitude

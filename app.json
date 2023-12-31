@@ -5,7 +5,8 @@
     "pages/observation-create/observation-create",
     "pages/taxon-picker/taxon-picker",
     "pages/mine/mine",
-    "pages/observation-detail/observation-detail"
+    "pages/observation-detail/observation-detail",
+    "pages/observation-map/observation-map"
   ],
   "tabBar": {
     "color": "#000",

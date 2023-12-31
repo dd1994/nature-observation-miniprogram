@@ -1,0 +1,8 @@
+.observation-map-container {
+  height: 100vh;
+}
+
+.observation-map {
+  width: 100%;
+  height: 100%;
+}

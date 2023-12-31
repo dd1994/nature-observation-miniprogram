@@ -1,0 +1,4 @@
+<view class="observation-map-container">
+  <map class="observation-map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{[{longitude, latitude}]}}">
+  </map>
+</view>
