@@ -1,6 +1,7 @@
 .page-container {
   --td-swiper-radius: 0;
   --td-tab-track-width: 200rpx;
+  margin: 0;
 }
 
 .taxon-name-cell {

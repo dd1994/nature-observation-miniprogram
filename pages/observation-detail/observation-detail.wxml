@@ -2,7 +2,7 @@
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" list="{{swiperList}}" height="{{'563rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
   <t-cell title="{{common_name}}" description="{{scientific_name}}" hover arrow t-class="taxon-name-cell" />
   <t-tabs defaultValue="{{0}}" t-class="custom-tabs">
-    <t-tab-panel label="选项" value="0" />
-    <t-tab-panel label="选项" value="1" />
+    <t-tab-panel label="信息" value="0" />
+    <t-tab-panel label="鉴定" value="1" />
   </t-tabs>
 </view>
