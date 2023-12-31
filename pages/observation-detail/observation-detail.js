@@ -7,6 +7,7 @@ Page({
   data: {
     observationDetail: null,
     currentPhoto: 0,
+    mapVisible: false,
   },
   computed: {
     photos(data) {
@@ -30,7 +31,23 @@ Page({
     },
     description(data) {
       return data.observationDetail?.description
+    },
+    longitude(data) {
+      return data.observationDetail?.longitude
+    },
+    latitude(data) {
+      return data.observationDetail?.latitude
     }
+  },
+  viewMapDetail() {
+    this.setData({
+      mapVisible: true
+    })
+  },
+  onMapVisibleChange(e) {
+    this.setData({
+      mapVisible: e.detail.visible
+    })
   },
   onSwiperClick(e) {
     const index = e.detail.index

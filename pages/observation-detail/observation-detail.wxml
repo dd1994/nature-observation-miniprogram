@@ -8,12 +8,16 @@
           <t-icon name="edit-2" style="margin-right: 5px;" /> 备注
         </view>
       </t-cell>
-      <t-cell wx:if="{{recommend_name}}" description="{{recommend_name}}" hover arrow>
+      <t-cell bind:tap="viewMapDetail" wx:if="{{recommend_name}}" description="{{recommend_name}}" hover arrow>
         <view style="display: flex; align-items: center;" slot="title">
           <t-icon name="location" style="margin-right: 5px;" />观察位置
         </view>
       </t-cell>
     </t-tab-panel>
     <t-tab-panel label="鉴定" value="1" />
+    <t-popup visible="{{mapVisible}}" bind:visible-change="onMapVisibleChange" placement="bottom" close-btn>
+      <map class="observation-map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{[{longitude, latitude}]}}" scale="{{12}}">
+      </map>
+    </t-popup>
   </t-tabs>
 </view>
