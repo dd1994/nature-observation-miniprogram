@@ -9,13 +9,24 @@ Page({
     currentPhoto: 0,
   },
   computed: {
+    photos(data) {
+      return (data.observationDetail?.photos || []).map(i => i.url)
+    },
     swiperList(data) {
-      return (data.observationDetail?.photos || []).map(i => {
+      return data.photos.map(i => {
         return {
-          value: i.url,
+          value: i,
         }
       })
     }
+  },
+  onSwiperClick(e) {
+    const index = e.detail.index
+    wx.previewImage({
+      urls: this.data.photos,
+      showmenu: false,
+      current: this.data.photos[index],
+    })
   },
   onLoad(options) {
     fetchObservationDetail(options.id).then(res => {
