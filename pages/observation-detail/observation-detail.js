@@ -27,6 +27,9 @@ Page({
     },
     recommend_name(data) {
       return data.observationDetail?.recommend_name
+    },
+    description(data) {
+      return data.observationDetail?.description
     }
   },
   onSwiperClick(e) {
