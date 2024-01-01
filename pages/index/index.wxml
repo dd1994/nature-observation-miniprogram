@@ -1,5 +1,7 @@
 <view class="index-page">
   <observation-list bind:refresh="fetchObservations" observations="{{observations}}"></observation-list>
-  <image bind:tap="onAddIconTap" class="observation-add-icon" src="../../static/add.png">
-  </image>
+  <view class="observation-add-icon-wrapper">
+    <image bind:tap="onAddIconTap" class="observation-add-icon" src="../../static/add1.png">
+    </image>
+  </view>
 </view>
