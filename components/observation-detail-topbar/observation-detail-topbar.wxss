@@ -1,8 +1,11 @@
 .observation-detail-topbar {
-  margin: 10px;
+  padding: 10px;
+  border-top: 1px solid #e7e7e7;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: white;
 }
 
 .observation-detail-topbar__left {
