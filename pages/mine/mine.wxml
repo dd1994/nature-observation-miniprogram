@@ -9,9 +9,6 @@
 
   <view class="mine-cell-group">
     <t-cell title="设置" hover arrow leftIcon="setting-1" />
-  </view>
-
-  <view class="mine-cell-group">
     <t-cell title="关于我们" hover arrow leftIcon="member" />
   </view>
 </view>
