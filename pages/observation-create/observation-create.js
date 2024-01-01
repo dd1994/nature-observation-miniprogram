@@ -257,7 +257,7 @@ Page({
     const basicInfo = {
       user_id: 1, // 测试，先写死 1
       description: this.data.description,
-      observed_on: this.data.observedOn,
+      observed_on: moment(this.data.observedOn, defaultTimeFormat).format('x'),
       artificial: this.data.artificial
     }
     const taxonInfo = {
