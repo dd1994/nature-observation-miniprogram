@@ -40,11 +40,19 @@ Page({
     },
     latitude(data) {
       return data.observationDetail?.latitude
+    },
+    editUrl(data) {
+      return `/pages/observation-create/observation-create?id=` + data.observationDetail?.id
     }
   },
   viewMapDetail() {
     this.setData({
       mapVisible: true
+    })
+  },
+  edit() {
+    wx.redirectTo({
+      url: this.data.editUrl,
     })
   },
   onMapVisibleChange(e) {
