@@ -17,3 +17,7 @@
   width: 100%;
   height: 80vh;
 }
+
+.edit-button-wrapper {
+  margin: 32px 32px;
+}
