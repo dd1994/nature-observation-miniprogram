@@ -1,1 +1,18 @@
-/* components/observation-detail-topbar/observation-detail-topbar.wxss */
+.observation-detail-topbar {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.observation-detail-topbar__left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.observation-detail-topbar__left__avatar {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}

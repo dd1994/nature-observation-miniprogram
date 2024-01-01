@@ -5,7 +5,7 @@ const computedBehavior = require('miniprogram-computed').behavior;
 Page({
   behaviors: [computedBehavior],
   data: {
-    observationDetail: null,
+    observationDetail: {},
     currentPhoto: 0,
     mapVisible: false,
   },
