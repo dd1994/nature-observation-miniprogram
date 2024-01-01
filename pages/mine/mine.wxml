@@ -1,9 +1,17 @@
 <view class="page-mine">
   <view class="mine-cell-group">
-    <t-cell title="我的主页" hover arrow leftIcon="user-1" />
-    <t-cell title="物种统计" hover arrow leftIcon="chart-pie" />
+    <t-cell title="我的统计" hover arrow leftIcon="chart-pie" />
   </view>
+
+  <view class="mine-cell-group">
+    <t-cell title="物种百科" hover arrow leftIcon="book" />
+  </view>
+
   <view class="mine-cell-group">
     <t-cell title="设置" hover arrow leftIcon="setting-1" />
+  </view>
+
+  <view class="mine-cell-group">
+    <t-cell title="关于我们" hover arrow leftIcon="member" />
   </view>
 </view>
