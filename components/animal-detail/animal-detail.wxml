@@ -7,14 +7,16 @@
       {{taxon.name}}
     </view>
   </view>
-  <view class="taxon-detail-item" wx:for="{{taxon.detail}}">
+  <view wx:for-index="idx" class="taxon-detail-item" wx:for="{{taxon.detail}}">
     <view class="desc-type-title">
       {{item.descTypeChinese}}：
     </view>
     <view wx:for="{{item.DescriptionInfo}}" wx:for-item="desc">
       <rich-text nodes="{{desc.descontent}}" />
-      <view class="taxon-detail-item-refs" wx:for="{{desc.refs}}" wx:for-item="ref">
-        引用来源: {{ref}}
+      <view>
+        <view wx:if="{{idx === taxon.detail.length - 1}}" class="taxon-detail-item-refs" wx:for="{{desc.refs}}" wx:for-item="ref">
+          引用来源: {{ref}}
+        </view>
       </view>
     </view>
   </view>
