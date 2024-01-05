@@ -1,2 +1,4 @@
-<!--pages/taxon-detail/taxon-detail.wxml-->
-<text>pages/taxon-detail/taxon-detail.wxml</text>
+<view>
+  <plant-detail wx:if="{{taxonGroup === 'Plantae'}}" taxon="{{taxonDetail}}" />
+  <animal-detail wx:if="{{useAnimalDB}}" taxon="{{taxonDetail}}" />
+</view>
