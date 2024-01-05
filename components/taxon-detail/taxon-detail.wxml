@@ -1,6 +1,0 @@
-<view>
-  <t-popup visible="{{popupVisible}}" bind:visible-change="onVisibleChange" placement="bottom" close-btn>
-    <plant-detail wx:if="{{taxonGroup === 'Plantae'}}" taxon="{{taxonDetail}}" />
-    <animal-detail wx:if="{{useAnimalDB}}" taxon="{{taxonDetail}}" />
-  </t-popup>
-</view>

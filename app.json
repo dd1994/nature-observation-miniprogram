@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/taxon-detail/taxon-detail",
     "pages/index/index",
     "pages/explore/index",
     "pages/observation-create/observation-create",
     "pages/taxon-picker/taxon-picker",
     "pages/mine/mine",
     "pages/observation-detail/observation-detail",
-    "pages/observation-map/observation-map"
+    "pages/observation-map/observation-map",
+    "pages/taxon-detail/taxon-detail"
   ],
   "tabBar": {
     "color": "#000",

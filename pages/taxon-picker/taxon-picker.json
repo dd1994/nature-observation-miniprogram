@@ -5,7 +5,6 @@
     "t-divider": "tdesign-miniprogram/divider/divider",
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
-    "taxon-detail": "../../components/taxon-detail/taxon-detail",
     "t-loading": "tdesign-miniprogram/loading/loading"
   }
 }

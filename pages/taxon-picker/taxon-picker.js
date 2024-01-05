@@ -1,6 +1,7 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { searchTaxon } from '../../utils/inaturalistApi'
 import _ from 'lodash'
+import { openTaxonDetail } from '../../utils/openTaxonDetail';
 
 Page({
   behaviors: [computedBehavior],
@@ -11,7 +12,6 @@ Page({
     inputWords: '',
     taxonDetailDialogVisible: false,
     searchResult: [],
-    clickTaxon: null,
     searchLoading: false,
 
     //     hierarchyCode: "Animalia_Chordata_Aves_Passeriformes_Pycnonotidae_Pycnonotus_Pycnonotus sinensis"
@@ -31,15 +31,15 @@ Page({
     wx.navigateBack({
       url: '/pages/observation-create/observation-create',
       complete: () => {
-        eventChannel.emit('backFromSearchPage',e.target.dataset.taxon)
+        eventChannel.emit('backFromSearchPage', e.target.dataset.taxon)
       }
     })
   },
   viewTaxonDetail(e) {
     this.setData({
-      clickTaxon: e.currentTarget.dataset.taxon,
       taxonDetailDialogVisible: true
     })
+    openTaxonDetail(e.currentTarget.dataset.taxon)
   },
   searchWords: _.throttle(function (e) {
     // 请求接口

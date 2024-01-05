@@ -13,3 +13,15 @@ export function openMammalDetail(name) {
     path: 'pages/detail/detail?name=' + encodeURIComponent(name),
   });
 }
+
+export const openTaxonDetail = (taxon) => {
+  if(taxon?.iconic_taxon_name === 'Aves') {
+    openBirdDetail(taxon.name)
+  } else if(taxon?.iconic_taxon_name === 'Mammalia') {
+    openMammalDetail(taxon.name)
+  } else {
+    wx.navigateTo({
+      url: '/pages/taxon-detail/taxon-detail?name=' + encodeURIComponent(taxon.name),
+    })
+  }
+}

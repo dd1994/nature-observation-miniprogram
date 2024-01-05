@@ -66,7 +66,6 @@ Page({
         fetchPlantDetail({
           name: taxon.name,
           success: (res) => {
-            debugger
             if (res?.data?.frpsdesc) {
               this.setData({
                 taxonDetail: {

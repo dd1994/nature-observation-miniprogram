@@ -46,3 +46,4 @@ export const formatExifGPSLatitude = (GPSLatitude, GPSLatitudeRef) => {
     return ref * value
   }
 }
+
