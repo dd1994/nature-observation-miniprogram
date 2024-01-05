@@ -6,9 +6,7 @@ Page({
   behaviors: [computedBehavior],
   data: {
     taxon: {
-      rank: 'species',
-      name: 'Dioscorea polystachya',
-      "iconic_taxon_name": "Plantae",
+      type: Object
     },
     taxonDetail: null,
   },
@@ -18,12 +16,9 @@ Page({
     },
     useAnimalDB(data) {
       return ['Actinopterygii', 'Insecta', 'Mollusca', 'Amphibia'].includes(data.taxon?.iconic_taxon_name)
-    },
-    useEmbeddedMiniProgram(data) {
-      return ['Aves', 'Mammalia'].includes(data.taxon?.iconic_taxon_name)
-    },
+    }
   },
-  openDetail() {
+  fetchDetail() {
     const taxon = this.data.taxon
     const defaultAction = () => {
       wx.showToast({
@@ -98,7 +93,17 @@ Page({
     }
       ; (actionMap[taxon.iconic_taxon_name] || defaultAction)()
   },
-  onLoad() {
-    this.openDetail()
+  onLoad(options) {
+    const taxon = {
+      rank: decodeURIComponent(options.rank),
+      name: decodeURIComponent(options.name),
+      "iconic_taxon_name": decodeURIComponent(options.iconic_taxon_name)
+    }
+
+    this.setData({
+      taxon
+    })
+
+    this.fetchDetail()
   }
 })

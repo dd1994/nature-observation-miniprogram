@@ -47,3 +47,10 @@ export const formatExifGPSLatitude = (GPSLatitude, GPSLatitudeRef) => {
   }
 }
 
+
+export const generateUrlWithParams = (url, params) => {
+  const keys = Object.keys(params)
+  return url + '?' + keys.map(key => {
+    return `${key}=${encodeURIComponent(params[key])}`
+  }).join("&")
+}

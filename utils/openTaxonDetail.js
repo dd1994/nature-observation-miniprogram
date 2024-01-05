@@ -1,3 +1,5 @@
+import { generateUrlWithParams } from "./util";
+
 export function openBirdDetail(name) {
   // 感谢懂鸟: https://mp.weixin.qq.com/s/FK1G67KM96yqMBYSdwcEHA
   wx.openEmbeddedMiniProgram({
@@ -15,13 +17,17 @@ export function openMammalDetail(name) {
 }
 
 export const openTaxonDetail = (taxon) => {
-  if(taxon?.iconic_taxon_name === 'Aves') {
+  if (taxon?.iconic_taxon_name === 'Aves') {
     openBirdDetail(taxon.name)
-  } else if(taxon?.iconic_taxon_name === 'Mammalia') {
+  } else if (taxon?.iconic_taxon_name === 'Mammalia') {
     openMammalDetail(taxon.name)
   } else {
     wx.navigateTo({
-      url: '/pages/taxon-detail/taxon-detail?name=' + encodeURIComponent(taxon.name),
+      url: generateUrlWithParams('/pages/taxon-detail/taxon-detail', {
+        name: taxon.name,
+        rank: taxon.rank,
+        iconic_taxon_name: taxon.iconic_taxon_name
+      })
     })
   }
 }
