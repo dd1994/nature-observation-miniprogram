@@ -11,7 +11,7 @@
       </view>
     </t-collapse-panel>
     <t-collapse-panel header="Flower of China 介绍" value="{{2}}">
-      <view wx:if="focnContent" class="rich-text-container">
+      <view wx:if="{{focnContent}}" class="rich-text-container">
         <rich-text wx:if="{{focnContent.contenttitle}}" nodes="{{focnContent.contenttitle || ''}}"></rich-text>
         <view>
           {{focnContent.foccname}} {{focnContent.focpinyin}}
@@ -22,7 +22,7 @@
 
         <rich-text wx:if="{{focnContent.Comment}}" nodes="{{focnContent.Comment || ''}}"></rich-text>
       </view>
-      <view wx:else>暂未被中国植物志收录</view>
+      <view wx:else>暂未被 Flower of China 收录</view>
     </t-collapse-panel>
   </t-collapse>
 </view>
