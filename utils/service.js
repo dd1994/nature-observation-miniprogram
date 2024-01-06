@@ -1,6 +1,7 @@
 const { requestPromise } = require('./util')
 
-export function fetchPlantDetail({ name, success, fail }) {
+// 获取
+export function fetchPlantFrpsDetail({ name, success, fail }) {
   wx.request({
     url: 'https://www.iplant.cn/ashx/getfrps.ashx',
     data: {

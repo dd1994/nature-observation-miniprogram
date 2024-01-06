@@ -1,6 +1,6 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
-import { fetchPlantDetail } from '../../utils/service'
+import { fetchPlantFrpsDetail } from '../../utils/service'
 Component({
   behaviors: [computedBehavior],
   properties: {
@@ -34,7 +34,7 @@ Component({
         return
       }
 
-      fetchPlantDetail({
+      fetchPlantFrpsDetail({
         name: this.data.taxon.name,
         success: (res) => {
           if (res?.data?.frpsdesc) {

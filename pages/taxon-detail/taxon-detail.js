@@ -1,7 +1,7 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { openBirdDetail, openMammalDetail } from '../../utils/openTaxonDetail'
 import { fetchTaxonTreeFromSp2000 } from '../../utils/restful/taxon'
-import { fetchPlantDetail, fetchAnimalDetail } from '../../utils/service'
+import { fetchPlantFrpsDetail, fetchAnimalDetail } from '../../utils/service'
 
 Page({
   behaviors: [computedBehavior],
