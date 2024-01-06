@@ -28,7 +28,7 @@ Page({
       return data.observationDetail?.iconic_taxon_name
     },
     rank(data) {
-      return data.observationDetail?.rank
+      return data.observationDetail?.taxon_rank
     },
     common_name(data) {
       return data.observationDetail?.common_name

@@ -1,5 +1,6 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { openBirdDetail, openMammalDetail } from '../../utils/openTaxonDetail'
+import { fetchTaxonTreeFromSp2000 } from '../../utils/restful/taxon'
 import { fetchPlantDetail, fetchAnimalDetail } from '../../utils/service'
 
 Page({
@@ -9,6 +10,7 @@ Page({
       type: Object
     },
     taxonDetail: null,
+    taxonTree: null,
   },
   computed: {
     taxonGroup(data) {
@@ -17,6 +19,12 @@ Page({
     useAnimalDB(data) {
       return ['Actinopterygii', 'Insecta', 'Mollusca', 'Amphibia'].includes(data.taxon?.iconic_taxon_name)
     }
+  },
+  async fetchTaxonTree() {
+    const res = await fetchTaxonTreeFromSp2000({ rank: this.data.taxon.rank, name: this.data.taxon.name })
+    this.setData({
+      taxonTree: res.data
+    })
   },
   fetchDetail() {
     const taxon = this.data.taxon
@@ -104,6 +112,7 @@ Page({
       taxon
     })
 
+    this.fetchTaxonTree()
     this.fetchDetail()
   }
 })

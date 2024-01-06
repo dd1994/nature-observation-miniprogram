@@ -3,7 +3,8 @@ const computedBehavior = require('miniprogram-computed').behavior
 Component({
   behaviors: [computedBehavior],
   properties: {
-    taxon: null
+    taxon: null,
+    taxonTree: null
   },
   computed: {
     frpsdesc(data) {
