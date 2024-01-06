@@ -1,10 +1,11 @@
 const computedBehavior = require('miniprogram-computed').behavior
+import { generateNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
 
 Component({
   behaviors: [computedBehavior],
   properties: {
-    taxon: null,
-    taxonTree: null
+    taxon: {},
+    taxonTree: {}
   },
   computed: {
     frpsdesc(data) {
@@ -14,10 +15,8 @@ Component({
       const taxonTree = data.taxonTree
 
       if (taxonTree) {
-        const family = taxonTree.familyChineseName || taxonTree.family
-        const genus = taxonTree.genusChineseName || taxonTree.genus
-
-        return `${family}-${genus}`
+        const rankList = selectLatest3LevelRank(data.taxon.rank)
+        return generateNameFromRankList(rankList, data.taxonTree)
       } else {
         return '分类'
       }
