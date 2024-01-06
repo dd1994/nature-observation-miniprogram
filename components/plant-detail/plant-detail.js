@@ -16,13 +16,16 @@ Component({
       } else {
         return '分类'
       }
+    },
+    frpsdesc(data) {
+      return data.frpsContent?.frpsdesc
     }
   },
   /**
    * 组件的初始数据
    */
   data: {
-    frpsdesc: '', // 中国植物志
+    frpsContent: null, // 中国植物志
     focnContent: null // Flower  of China 翻译版
   },
 
@@ -40,7 +43,7 @@ Component({
         success: (res) => {
           if (res?.data?.frpsdesc) {
             this.setData({
-              frpsdesc: res.data.frpsdesc
+              frpsContent: res.data
             })
           }
         },
