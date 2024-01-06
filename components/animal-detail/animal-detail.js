@@ -1,12 +1,14 @@
 // components/animal-detail/animal-detail.js
 import { fetchAnimalFaunaDetail } from '../../utils/service/plantApi'
-Component({
+import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
 
-  /**
-   * 组件的属性列表
-   */
+const computedBehavior = require('miniprogram-computed').behavior
+
+Component({
+  behaviors: [computedBehavior],
   properties: {
-    taxon: null
+    taxon: {},
+    taxonTree: {}
   },
 
   /**
@@ -15,7 +17,17 @@ Component({
   data: {
     faunaContent: [] // 中国动物志
   },
-
+  computed: {
+    taxonTreeTitle(data) {
+      const taxonTree = data.taxonTree
+      if (taxonTree) {
+        const rankList = selectLatest3LevelRank(data.taxon?.rank)
+        return generateCombinedChineseNameFromRankList(rankList, data.taxonTree)
+      } else {
+        return '分类'
+      }
+    },
+  },
   /**
    * 组件的方法列表
    */

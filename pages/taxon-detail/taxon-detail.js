@@ -1,7 +1,6 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { openBirdDetail, openMammalDetail } from '../../utils/openTaxonDetail'
 import { fetchTaxonTreeFromSp2000 } from '../../utils/service/taxon'
-import { fetchPlantFrpsDetail, fetchAnimalFaunaDetail } from '../../utils/service/plantApi'
 
 Page({
   behaviors: [computedBehavior],
@@ -9,7 +8,6 @@ Page({
     taxon: {
       type: Object
     },
-    taxonDetail: null,
     taxonTree: null,
   },
   computed: {
@@ -37,26 +35,6 @@ Page({
     }
 
     const defaultAnimalAction = () => {
-      fetchAnimalFaunaDetail({
-        name: taxon.name
-      }).then(res => {
-        if (res?.length) {
-          this.setData({
-            taxonDetail: {
-              detail: res,
-              ...taxon
-            }
-          })
-        } else {
-          this.setData({
-            taxonDetail: taxon
-          })
-        }
-      }).catch(err => {
-        this.setData({
-          taxonDetail: taxon
-        })
-      })
     }
 
     const actionMap = {

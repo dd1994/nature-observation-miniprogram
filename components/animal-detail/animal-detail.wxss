@@ -12,14 +12,19 @@
 }
 
 .desc-type-title {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .taxon-detail-item {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .taxon-detail-item-refs {
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
+  margin-top: 20px;
+}
+
+.taxon-tree-pannel-content {
+  padding: 0 !important;
 }
