@@ -7,7 +7,7 @@
       {{taxon.name}}
     </view>
   </view>
-  <view wx:for-index="idx" class="taxon-detail-item" wx:for="{{taxon.detail}}">
+  <view wx:for-index="idx" class="taxon-detail-item" wx:for="{{faunaContent}}">
     <view class="desc-type-title">
       {{item.descTypeChinese}}：
     </view>

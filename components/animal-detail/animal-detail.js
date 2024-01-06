@@ -1,5 +1,5 @@
 // components/animal-detail/animal-detail.js
-import { fetchAnimalDetail } from '../../utils/service/plantApi'
+import { fetchAnimalFaunaDetail } from '../../utils/service/plantApi'
 Component({
 
   /**
@@ -13,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    faunaContent: null // 中国动物志
+    faunaContent: [] // 中国动物志
   },
 
   /**
@@ -21,11 +21,11 @@ Component({
    */
   methods: {
     fetchDetail() {
-      if(!this.taxon?.name) {
+      if (!this.data.taxon?.name) {
         return
       }
-      fetchAnimalDetail({
-        name: this.taxon.name
+      fetchAnimalFaunaDetail({
+        name: this.data.taxon.name
       }).then(res => {
         if (res?.length) {
           this.setData({
