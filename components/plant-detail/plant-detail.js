@@ -1,6 +1,6 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
-import { fetchPlantFrpsDetail, fetchPlantFocnDetail } from '../../utils/service/plantApi'
+import { fetchPlantFrpsDetail, fetchPlantFocnDetail, fetchPlantFrpsPhoto } from '../../utils/service/plantApi'
 Component({
   behaviors: [computedBehavior],
   properties: {
@@ -46,6 +46,20 @@ Component({
             frpsContent: res.data
           })
         }
+        return res
+      }).then(res => {
+        if (res?.data?.zwzsutu) {
+          fetchPlantFrpsPhoto({ appphoto: res.data.zwzsutu }).then(res => {
+            if (res?.data) {
+              this.setData({
+                frpsContent: {
+                  ...this.data.frpsContent,
+                  photoUrl: "https://img1.iplant.cn/imgf/b/" + res.data
+                }
+              })
+            }
+          })
+        }
       })
     },
     fetchPlantFocnDetail() {
@@ -61,6 +75,11 @@ Component({
             focnContent: res.data
           })
         }
+      })
+    },
+    previewFrpsPhoto() {
+      wx.previewImage({
+        urls: [this.data?.frpsContent?.photoUrl],
       })
     }
   },

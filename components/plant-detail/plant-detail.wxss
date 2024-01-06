@@ -5,3 +5,7 @@
 .taxon-tree-pannel-content {
   padding: 0 !important;
 }
+
+.frps-image {
+  width: 100%;
+}

@@ -20,6 +20,9 @@ export function fetchPlantFrpsPhoto({ appphoto }) {
   return requestPromise({
     url: 'https://www.iplant.cn/ashx/getppbcphoto.ashx',
     method: 'POST',
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
     data: { appphoto, n: 1 }
   })
 }

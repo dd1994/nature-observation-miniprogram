@@ -6,6 +6,7 @@
     </t-collapse-panel>
     <t-collapse-panel header="《中国植物志》介绍" value="{{1}}">
       <view wx:if="frpsdesc" class="rich-text-container">
+        <image bind:tap="previewFrpsPhoto" wx:if="{{frpsContent.photoUrl}}" mode="widthFix" class="frps-image" src="{{frpsContent.photoUrl}}" />
         <view wx:if="{{frpsdesc}}">
           <rich-text nodes="{{frpsdesc || ''}}"></rich-text>
         </view>
