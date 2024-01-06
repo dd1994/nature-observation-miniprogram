@@ -9,6 +9,18 @@ Component({
   computed: {
     frpsdesc(data) {
       return data?.taxon?.frpsdesc
+    },
+    taxonTreeTitle(data) {
+      const taxonTree = data.taxonTree
+
+      if (taxonTree) {
+        const family = taxonTree.familyChineseName || taxonTree.family
+        const genus = taxonTree.genusChineseName || taxonTree.genus
+
+        return `${family}-${genus}`
+      } else {
+        return '分类'
+      }
     }
   },
   /**
