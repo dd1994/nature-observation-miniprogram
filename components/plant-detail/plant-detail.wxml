@@ -7,6 +7,7 @@
     <t-collapse-panel header="《中国植物志》介绍" value="{{1}}">
       <view wx:if="frpsdesc" class="rich-text-container">
         <rich-text wx:if="{{frpsdesc}}" nodes="{{frpsdesc || ''}}"></rich-text>
+        <view wx:else>暂未被中国植物志收录</view>
       </view>
     </t-collapse-panel>
   </t-collapse>
