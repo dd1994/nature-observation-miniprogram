@@ -48,7 +48,7 @@ export const selectLatest3LevelRank = (rank) => {
   return result.reverse()
 }
 
-export const generateNameFromRankList = (tree, data) => {
+export const generateChineseNameFromRankList = (tree, data) => {
   return tree.map((item) => {
     const rank = item.rank;
     return data[rank + 'ChineseName'] || data[rank]
