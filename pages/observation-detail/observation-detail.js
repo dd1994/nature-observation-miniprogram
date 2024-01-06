@@ -1,5 +1,5 @@
 import { openTaxonDetail } from "../../utils/openTaxonDetail";
-import { fetchObservationDetail } from "../../utils/restful/observations"
+import { fetchObservationDetail } from "../../utils/service/observations"
 const computedBehavior = require('miniprogram-computed').behavior;
 
 // pages/observation-detail/observation-detail.js

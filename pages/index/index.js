@@ -1,4 +1,4 @@
-import { fetchObservationList } from '../../utils/restful/observations'
+import { fetchObservationList } from '../../utils/service/observations'
 
 Page({
   data: {
