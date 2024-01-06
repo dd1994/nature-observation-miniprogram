@@ -19,3 +19,10 @@ App({
     userInfo: null
   }
 })
+
+// {
+//   "pagePath": "pages/explore/index",
+//   "text": "探索",
+//   "iconPath": "./static/explore.png",
+//   "selectedIconPath": "./static/explore-selected.png"
+// },
