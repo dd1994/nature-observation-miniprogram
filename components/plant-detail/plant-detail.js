@@ -56,7 +56,6 @@ Component({
       fetchPlantFocnDetail({
         name: this.data.taxon.name,
         success: (res) => {
-          debugger
           if (res?.data) {
             this.setData({
               focnContent: res.data
