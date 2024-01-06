@@ -1,3 +1,7 @@
 .rich-text-container {
   padding: 10px;
 }
+
+.taxon-tree-pannel-content {
+  padding: 0 !important;
+}

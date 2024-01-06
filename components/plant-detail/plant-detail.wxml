@@ -1,7 +1,7 @@
 <!--components/plant-detail/plant-detail.wxml-->
 <view class="page-container">
   <t-collapse defaultValue="{{[1]}}" expandMutex expandIcon>
-    <t-collapse-panel header="{{taxonTreeTitle}}" value="{{0}}">
+    <t-collapse-panel header="{{taxonTreeTitle}}" value="{{0}}" t-class-content="taxon-tree-pannel-content">
       <taxon-tree taxonTree="{{taxonTree}}" rank="{{taxon.rank}}" />
     </t-collapse-panel>
     <t-collapse-panel header="《中国植物志》介绍" value="{{1}}">
