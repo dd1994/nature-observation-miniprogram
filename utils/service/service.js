@@ -1,4 +1,4 @@
-const { requestPromise } = require('./util')
+const { requestPromise } = require('../util')
 
 // 获取中国植物志内容
 export function fetchPlantFrpsDetail({ name, success, fail }) {

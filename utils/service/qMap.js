@@ -1,7 +1,7 @@
 const key = '4BVBZ-M7ACQ-MKQ5E-4UCDH-46TUQ-EUB6H'; //使用在腾讯位置服务申请的key
 const referer = '自然记录'; //调用插件的app的名称
 
-import { requestPromise } from "./util"
+import { requestPromise } from "../util"
 
 export const fetchAdressByGPS = ({ lng, lat }) => {
   return requestPromise({
