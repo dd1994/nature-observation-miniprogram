@@ -48,9 +48,26 @@ export const selectLatest3LevelRank = (rank) => {
   return result.reverse()
 }
 
-export const generateChineseNameFromRankList = (tree, data) => {
-  return tree.map((item) => {
-    const rank = item.rank;
+export const generateNameList = (rankList, data) => {
+  return rankList.map(item => {
+    const rank = item.rank
+    const commonName = data[rank + 'ChineseName']
+    const scientificName = data[rank]
+    return {
+      scientificName,
+      displayName: commonName ? `${commonName}(${scientificName})` : scientificName,
+      commonName: commonName || scientificName
+    }
+  })
+}
+
+export const generateChineseNameList = (rankList, data) => {
+  return rankList.map(item => {
+    const rank = item.rank
     return data[rank + 'ChineseName'] || data[rank]
-  }).join('-')
+  })
+}
+
+export const generateCombinedChineseNameFromRankList = (rankList, data) => {
+  return generateChineseNameList(rankList, data).join('-')
 }

@@ -1,2 +1,6 @@
 <!--components/taxon-tree/taxon-tree.wxml-->
-<text>components/taxon-tree/taxon-tree.wxml</text>
+<view>
+  <view wx:for="{{nameList}}">
+    <t-cell title="{{item.displayName}}" hover arrow />
+  </view>
+</view>

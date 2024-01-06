@@ -1,5 +1,5 @@
 const computedBehavior = require('miniprogram-computed').behavior
-
+import { generateNameList, selectSubRankList } from './util'
 // auditSpecialists: "Jin Xiaohua"
 // class: "Magnoliopsida"
 // classChineseName: "木兰纲"
@@ -41,5 +41,13 @@ Component({
    */
   methods: {
 
+  },
+  computed: {
+    rankList(data) {
+      return selectSubRankList(data.rank)
+    },
+    nameList(data) {
+      return generateNameList(data.rankList, data.taxonTree)
+    }
   }
 })

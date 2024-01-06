@@ -1,5 +1,5 @@
 const computedBehavior = require('miniprogram-computed').behavior
-import { generateChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
+import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
 
 Component({
   behaviors: [computedBehavior],
@@ -15,8 +15,8 @@ Component({
       const taxonTree = data.taxonTree
 
       if (taxonTree) {
-        const rankList = selectLatest3LevelRank(data.taxon.rank)
-        return generateChineseNameFromRankList(rankList, data.taxonTree)
+        const rankList = selectLatest3LevelRank(data.taxon?.rank)
+        return generateCombinedChineseNameFromRankList(rankList, data.taxonTree)
       } else {
         return '分类'
       }
