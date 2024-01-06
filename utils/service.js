@@ -2,7 +2,7 @@ const { requestPromise } = require('./util')
 
 // 获取中国植物志内容
 export function fetchPlantFrpsDetail({ name, success, fail }) {
-  wx.request({
+  return requestPromise({
     url: 'https://www.iplant.cn/ashx/getfrps.ashx',
     data: {
       key: name
@@ -16,9 +16,17 @@ export function fetchPlantFrpsDetail({ name, success, fail }) {
   })
 }
 
+export function fetchPlantFrpsPhoto({ appphoto }) {
+  return requestPromise({
+    url: 'https://www.iplant.cn/ashx/getppbcphoto.ashx',
+    method: 'POST',
+    data: { appphoto, n: 1 }
+  })
+}
+
 // 获取 Flora of China 中文翻译版
 export function fetchPlantFocnDetail({ name, success, fail }) {
-  wx.request({
+  return requestPromise({
     url: 'https://www.iplant.cn/ashx/getfocn.ashx',
     data: {
       key: name
@@ -31,6 +39,7 @@ export function fetchPlantFocnDetail({ name, success, fail }) {
     }
   })
 }
+
 
 function fetchAnimalDetailDescType(name) {
   return requestPromise({

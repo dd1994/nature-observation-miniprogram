@@ -39,15 +39,12 @@ Component({
       }
 
       fetchPlantFrpsDetail({
-        name: this.data.taxon.name,
-        success: (res) => {
-          if (res?.data?.frpsdesc) {
-            this.setData({
-              frpsContent: res.data
-            })
-          }
-        },
-        fail: (err) => {
+        name: this.data.taxon.name
+      }).then((res) => {
+        if (res?.data?.frpsdesc) {
+          this.setData({
+            frpsContent: res.data
+          })
         }
       })
     },
@@ -57,15 +54,12 @@ Component({
       }
 
       fetchPlantFocnDetail({
-        name: this.data.taxon.name,
-        success: (res) => {
-          if (res?.data) {
-            this.setData({
-              focnContent: res.data
-            })
-          }
-        },
-        fail: (err) => {
+        name: this.data.taxon.name
+      }).then((res) => {
+        if (res?.data) {
+          this.setData({
+            focnContent: res.data
+          })
         }
       })
     }
