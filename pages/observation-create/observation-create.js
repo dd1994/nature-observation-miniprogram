@@ -1,15 +1,14 @@
-const uploadOSS = require("../../utils/uploadOSS");
+const uploadOSS = require("../../utils/service/uploadOSS");
 import _ from 'lodash'
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 var EXIF = require('../../utils/libs/exif');
 const computedBehavior = require('miniprogram-computed').behavior;
-const { fetchAdressByGPS } = require("../../utils/qMap");
-import { goToLocationSelector } from '../../utils/qMap'
+import { goToLocationSelector, fetchAdressByGPS } from '../../utils/service/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifFormat } from '../../utils/constant'
 import moment from 'moment'
-import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/restful/observations'
+import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 
 // pages/observation-create/observation-create.js
 Page({

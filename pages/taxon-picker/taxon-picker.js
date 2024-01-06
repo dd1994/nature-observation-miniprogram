@@ -1,5 +1,5 @@
 const computedBehavior = require('miniprogram-computed').behavior
-import { searchTaxon } from '../../utils/inaturalistApi'
+import { searchTaxon } from '../../utils/service/inaturalistApi'
 import _ from 'lodash'
 import { openTaxonDetail } from '../../utils/openTaxonDetail';
 

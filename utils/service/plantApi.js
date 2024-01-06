@@ -44,7 +44,7 @@ export function fetchPlantFocnDetail({ name, success, fail }) {
 }
 
 
-function fetchAnimalDetailDescType(name) {
+function fetchAnimalFaunaDetailDescType(name) {
   return requestPromise({
     url: 'http://zoology.especies.cn/api/v1/descriptionType',
     data: {
@@ -61,7 +61,7 @@ function fetchAnimalDetailDescType(name) {
   })
 }
 
-function fetchAnimalDetailDesc(name, descType) {
+function fetchAnimalFaunaDetailDesc(name, descType) {
   const descTypeKey = Object.keys(descType)[0]
   const descTypeChinese = descType[descTypeKey]
 
@@ -85,12 +85,12 @@ function fetchAnimalDetailDesc(name, descType) {
     }
   })
 }
-export function fetchAnimalDetail({ name }) {
-  return fetchAnimalDetailDescType(name)
+export function fetchAnimalFaunaDetail({ name }) {
+  return fetchAnimalFaunaDetailDescType(name)
     .then(descTypes => {
       return Promise.all(descTypes
         .map(descType => {
-          return fetchAnimalDetailDesc(name, descType)
+          return fetchAnimalFaunaDetailDesc(name, descType)
         }))
     })
 }
