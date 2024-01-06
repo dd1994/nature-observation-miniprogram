@@ -1,3 +1,4 @@
+import { openTaxonDetail } from "../../utils/openTaxonDetail";
 import { fetchObservationDetail } from "../../utils/restful/observations"
 const computedBehavior = require('miniprogram-computed').behavior;
 
@@ -22,6 +23,12 @@ Page({
     },
     scientific_name(data) {
       return data.observationDetail?.scientific_name
+    },
+    iconic_taxon_name(data) {
+      return data.observationDetail?.iconic_taxon_name
+    },
+    rank(data) {
+      return data.observationDetail?.rank
     },
     common_name(data) {
       return data.observationDetail?.common_name
@@ -71,6 +78,13 @@ Page({
   onLoad(options) {
     fetchObservationDetail(options.id).then(res => {
       this.setData({ observationDetail: res.data[0] })
+    })
+  },
+  openTaxonDetail() {
+    openTaxonDetail({
+      name: this.data.scientific_name,
+      rank: this.data.rank,
+      iconic_taxon_name: this.data.iconic_taxon_name
     })
   }
 })
