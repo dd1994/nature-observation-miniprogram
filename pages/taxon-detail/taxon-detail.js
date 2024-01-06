@@ -66,28 +66,6 @@ Page({
         }
       },
       "Plantae": () => {
-        fetchPlantDetail({
-          name: taxon.name,
-          success: (res) => {
-            if (res?.data?.frpsdesc) {
-              this.setData({
-                taxonDetail: {
-                  ...res.data,
-                  ...taxon
-                }
-              })
-            } else {
-              this.setData({
-                taxonDetail: taxon
-              })
-            }
-          },
-          fail: (err) => {
-            this.setData({
-              taxonDetail: taxon
-            })
-          }
-        })
       },
       'Actinopterygii': defaultAnimalAction,
       'Insecta': defaultAnimalAction,

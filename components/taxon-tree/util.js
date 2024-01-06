@@ -49,6 +49,10 @@ export const selectLatest3LevelRank = (rank) => {
 }
 
 export const generateNameList = (rankList, data) => {
+  if (!data) {
+    return []
+  }
+
   return rankList.map(item => {
     const rank = item.rank
     const commonName = data[rank + 'ChineseName']
