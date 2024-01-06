@@ -1,6 +1,6 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
-import { fetchPlantFrpsDetail } from '../../utils/service'
+import { fetchPlantFrpsDetail, fetchPlantFocnDetail } from '../../utils/service'
 Component({
   behaviors: [computedBehavior],
   properties: {
@@ -22,7 +22,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    frpsdesc: ''
+    frpsdesc: '', // 中国植物志
+    focnContent: null // Flower  of China 翻译版
   },
 
   /**
@@ -46,11 +47,31 @@ Component({
         fail: (err) => {
         }
       })
+    },
+    fetchPlantFocnDetail() {
+      if (!this.data?.taxon?.name) {
+        return
+      }
+
+      fetchPlantFocnDetail({
+        name: this.data.taxon.name,
+        success: (res) => {
+          debugger
+          if (res?.data) {
+            this.setData({
+              focnContent: res.data
+            })
+          }
+        },
+        fail: (err) => {
+        }
+      })
     }
   },
   lifetimes: {
     attached() {
       this.fetchDetailFrpsDetail()
+      this.fetchPlantFocnDetail()
     }
   }
 })

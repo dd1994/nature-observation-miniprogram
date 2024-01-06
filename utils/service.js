@@ -1,9 +1,25 @@
 const { requestPromise } = require('./util')
 
-// 获取
+// 获取中国植物志内容
 export function fetchPlantFrpsDetail({ name, success, fail }) {
   wx.request({
     url: 'https://www.iplant.cn/ashx/getfrps.ashx',
+    data: {
+      key: name
+    },
+    success(res) {
+      success(res)
+    },
+    fail(err) {
+      fail(err)
+    }
+  })
+}
+
+// 获取 Flora of China 中文翻译版
+export function fetchPlantFocnDetail({ name, success, fail }) {
+  wx.request({
+    url: 'https://www.iplant.cn/ashx/getfocn.ashx',
     data: {
       key: name
     },
