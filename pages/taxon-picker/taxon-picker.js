@@ -2,6 +2,7 @@ const computedBehavior = require('miniprogram-computed').behavior
 import { searchTaxon } from '../../utils/service/inaturalistApi'
 import _ from 'lodash'
 import { openTaxonDetail } from '../../utils/openTaxonDetail';
+import { validRankList } from '../../components/taxon-tree/util';
 
 Page({
   behaviors: [computedBehavior],
@@ -13,16 +14,6 @@ Page({
     taxonDetailDialogVisible: false,
     searchResult: [],
     searchLoading: false,
-
-    //     hierarchyCode: "Animalia_Chordata_Aves_Passeriformes_Pycnonotidae_Pycnonotus_Pycnonotus sinensis"
-    // name: "Pycnonotus sinensis"
-    // nameCode: "14b35463-5451-46f6-abd1-819082387624"
-    // name_c: "白头鹎"
-    // name_py: "bái tóu bēi"
-    // parentId: "ec706686-fe91-4dc6-a88e-b288590b0ca6"
-    // pyabbr: "btb"
-    // rank: "Species"
-    // taxongroup: "鸟类"
   },
   computed: {
   },
@@ -52,27 +43,27 @@ Page({
     this.setData({
       searchLoading: true
     })
-    searchTaxon({
-      name: this.data.inputWords,
-      success: (res) => {
+    searchTaxon({ name: this.data.inputWords }).then(res => {
+      this.setData({
+        searchLoading: false,
+        searchResult: []
+      })
+      if (res?.data?.results?.length) {
         this.setData({
-          searchLoading: false,
-          searchResult: []
+          searchResult: (res?.data?.results || []).filter(i => {
+            return validRankList.includes(i.rank)
+          })
         })
-        if (res?.data?.results?.length) {
-          this.setData({ searchResult: res?.data?.results })
-        }
-      },
-      fail: (err) => {
-        this.setData({
-          searchLoading: false
-        })
-        wx.showToast({
-          title: '搜索失败，请稍后重试',
-          icon: 'none'
-        })
-        this.setData({ searchResult: [] })
       }
+    }).catch(err => {
+      this.setData({
+        searchLoading: false
+      })
+      wx.showToast({
+        title: '搜索失败，请稍后重试',
+        icon: 'none'
+      })
+      this.setData({ searchResult: [] })
     })
   }, 2000)
 })
