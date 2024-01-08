@@ -4,19 +4,25 @@
       <taxon-tree taxonTree="{{taxonTree}}" rank="{{taxon.rank}}" />
     </t-collapse-panel>
     <t-collapse-panel header="《中国动物志》介绍" value="{{1}}">
-      <view wx:for-index="idx" class="taxon-detail-item" wx:for="{{faunaContent}}">
-        <view class="desc-type-title">
-          {{item.descTypeChinese}}：
-        </view>
-        <view wx:for="{{item.DescriptionInfo}}" wx:for-item="desc">
-          <rich-text nodes="{{desc.descontent}}" />
-          <view>
-            <view wx:if="{{idx === faunaContent.length - 1}}" class="taxon-detail-item-refs" wx:for="{{desc.refs}}" wx:for-item="ref">
-              引用来源: {{ref}}
+      <view wx:if="{{faunaContent.length}}">
+        <view wx:for-index="idx" class="taxon-detail-item" wx:for="{{faunaContent}}">
+          <view class="desc-type-title">
+            {{item.descTypeChinese}}：
+          </view>
+          <view wx:for="{{item.DescriptionInfo}}" wx:for-item="desc">
+            <rich-text nodes="{{desc.descontent}}" />
+            <view>
+              <view wx:if="{{idx === faunaContent.length - 1}}" class="taxon-detail-item-refs" wx:for="{{desc.refs}}" wx:for-item="ref">
+                引用来源: {{ref}}
+              </view>
             </view>
           </view>
         </view>
       </view>
+      <view wx:else>暂未被《中国动物志》收录</view>
+    </t-collapse-panel>
+    <t-collapse-panel header="更多外部资源" value="{{3}}">
+      <external-resource resource="{{externalResource}}" />
     </t-collapse-panel>
   </t-collapse>
 </view>
