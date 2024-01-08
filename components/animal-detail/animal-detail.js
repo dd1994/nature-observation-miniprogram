@@ -30,7 +30,8 @@ Component({
     externalResource(data) {
       return [{
         label: "联盟图片",
-        url: `https://image.cubg.cn/search?sort=default&text=${encodeURIComponent(data.taxon.name)}&shitu=-1&taxonId=`
+        url: `https://image.cubg.cn/search?sort=default&text=${encodeURIComponent(data.taxon.name)}&shitu=-1&taxonId=`,
+        desc: '索引了全球320个主题网站的720万张图片，涵盖全球45万个物种，图片鉴定基本准确可靠。'
       }]
     }
   },

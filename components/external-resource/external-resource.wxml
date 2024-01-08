@@ -1,7 +1,10 @@
 <view>
-  <view bind:tap="copy" data-url="{{item.url}}" class="resource-item" wx:for="{{resource}}">
-    <text>{{item.label}}</text>
-    <t-icon style="display: inline;" name="link-1"></t-icon>
-    <text class="resource-item__desc">({{item.desc}})</text>
+  <view wx:for="{{resource}}">
+    <view bind:tap="copy" data-url="{{item.url}}" class="resource-item">
+      <text>{{item.label}}</text>
+      <t-icon style="display: inline;" name="link-1"></t-icon>
+      <text class="resource-item__desc">({{item.desc}})</text>
+    </view>
+    <t-divider />
   </view>
 </view>

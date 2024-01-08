@@ -21,11 +21,22 @@ Component({
       return data.frpsContent?.frpsdesc
     },
     externalResource(data) {
-      return [{
-        label: "联盟图片",
-        url: `https://image.cubg.cn/search?sort=default&text=${encodeURIComponent(data.taxon.name)}&shitu=-1&taxonId=`,
-        desc: '索引了全球320个主题网站的720万张图片，涵盖全球45万个物种，图片鉴定基本准确可靠。'
-      }]
+      const encodedName = encodeURIComponent(data.taxon.name)
+      return [
+        {
+          label: "PPBC",
+          url: `https://ppbc.iplant.cn/list21?keyword=${encodedName}&sel=like`,
+          desc: "超过1400万张植物图片，多数图片由专业人士提供，鉴定准确度较高。"
+        },
+        {
+          label: "联盟图片",
+          url: `https://image.cubg.cn/search?sort=default&text=${encodedName}&shitu=-1&taxonId=`,
+          desc: '索引了全球320个主题网站的720万张图片，涵盖全球45万个物种，图片鉴定基本准确可靠。'
+        }, {
+          label: "CFH",
+          url: `https://www.cfh.ac.cn/Spdb/spsearch.aspx?aname=${encodedName}`,
+          desc: '超过2000万张用户上传的植物照片，以中国植物为主。拥有最全的植物中文别名数据库'
+        }]
     }
   },
   /**
