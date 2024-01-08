@@ -28,7 +28,7 @@
       <view wx:else>暂未被 Flower of China 收录</view>
     </t-collapse-panel>
     <t-collapse-panel header="更多外部资源" value="{{3}}">
-      <external-resource />
+      <external-resource resource="{{externalResource}}"/>
     </t-collapse-panel>
   </t-collapse>
 </view>

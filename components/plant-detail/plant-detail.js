@@ -19,6 +19,12 @@ Component({
     },
     frpsdesc(data) {
       return data.frpsContent?.frpsdesc
+    },
+    externalResource(data) {
+      return [{
+        label: "联盟图片",
+        url: `https://image.cubg.cn/search?sort=default&text=${encodeURIComponent(data.taxon.name)}&shitu=-1&taxonId=`
+      }]
     }
   },
   /**

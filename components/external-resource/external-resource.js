@@ -1,11 +1,9 @@
 // components/external-resource/external-resource.js
 Component({
-
-  /**
-   * 组件的属性列表
-   */
   properties: {
-
+    resource: {
+      value: []
+    }
   },
 
   /**
@@ -19,6 +17,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    copy(e) {
+      wx.setClipboardData({
+        data: e.currentTarget.dataset.url,
+        success(res) {
+          wx.getClipboardData({
+            success(res) {
+              wx.showToast({
+                title: '复制成功，请粘贴到外部浏览器打开',
+                icon: 'none'
+              })
+            }
+          })
+        }
+      })
+    }
   }
 })
