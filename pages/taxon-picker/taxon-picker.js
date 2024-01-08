@@ -33,6 +33,11 @@ Page({
     })
     openTaxonDetail(e.currentTarget.dataset.taxon)
   },
+  viewTaxonWhenHidePicker(e) {
+    if (this.data.hidePicker) {
+      this.viewTaxonDetail(e)
+    }
+  },
   searchWords: _.throttle(function (e) {
     // 请求接口
     this.setData({
@@ -68,7 +73,7 @@ Page({
     })
   }, 2000),
   onLoad(options) {
-    if(options.hidePicker) {
+    if (options.hidePicker) {
       this.setData({
         hidePicker: true
       })

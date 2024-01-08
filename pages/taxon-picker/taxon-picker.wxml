@@ -5,7 +5,7 @@
   <view class="search-result-taxon-list">
 
     <view wx:key="name" wx:for="{{searchResult}}">
-      <view class="search-result-taxon-item">
+      <view data-taxon="{{item}}" bind:tap="viewTaxonWhenHidePicker" class="search-result-taxon-item">
         <view data-taxon="{{item}}" class="search-result-taxon-item-left" bind:tap="viewTaxonDetail">
           <view class="search-result-taxon-item-chinese-name">{{item.preferred_common_name}}</view>
           <view class="search-result-taxon-item-name">{{item.name}}</view>
