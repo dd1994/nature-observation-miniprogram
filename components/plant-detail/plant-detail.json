@@ -3,6 +3,7 @@
   "usingComponents": {
     "taxon-tree": "../taxon-tree/taxon-tree",
     "t-collapse": "tdesign-miniprogram/collapse/collapse",
-    "t-collapse-panel": "tdesign-miniprogram/collapse-panel/collapse-panel"
+    "t-collapse-panel": "tdesign-miniprogram/collapse-panel/collapse-panel",
+    "external-resource": "../external-resource/external-resource"
   }
 }
