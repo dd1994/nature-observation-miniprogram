@@ -10,7 +10,7 @@
           <view class="search-result-taxon-item-chinese-name">{{item.preferred_common_name}}</view>
           <view class="search-result-taxon-item-name">{{item.name}}</view>
         </view>
-        <t-checkbox data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" />
+        <t-checkbox wx:if="{{!hidePicker}}" data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" />
       </view>
       <t-divider />
 

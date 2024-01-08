@@ -14,6 +14,7 @@ Page({
     taxonDetailDialogVisible: false,
     searchResult: [],
     searchLoading: false,
+    hidePicker: false
   },
   computed: {
   },
@@ -65,5 +66,12 @@ Page({
       })
       this.setData({ searchResult: [] })
     })
-  }, 2000)
+  }, 2000),
+  onLoad(options) {
+    if(options.hidePicker) {
+      this.setData({
+        hidePicker: true
+      })
+    }
+  }
 })
