@@ -24,8 +24,9 @@ Component({
           wx.getClipboardData({
             success(res) {
               wx.showToast({
-                title: '复制成功，请粘贴到外部浏览器打开',
-                icon: 'none'
+                title: '链接复制成功，请粘贴到外部浏览器打开',
+                icon: 'none',
+                duration: 3000,
               })
             }
           })
