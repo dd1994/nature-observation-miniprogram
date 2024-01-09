@@ -12,8 +12,8 @@
           <view wx:for="{{item.DescriptionInfo}}" wx:for-item="desc">
             <rich-text nodes="{{desc.descontent}}" />
             <view>
-              <view wx:if="{{idx === faunaContent.length - 1}}" class="taxon-detail-item-refs" wx:for="{{desc.refs}}" wx:for-item="ref">
-                引用来源: {{ref}}
+              <view wx:if="{{idx === faunaContent.length - 1}}" wx:for="{{desc.refs}}" wx:for-item="ref">
+                <taxon-detail-ref refContent="{{ref}}" />
               </view>
             </view>
           </view>

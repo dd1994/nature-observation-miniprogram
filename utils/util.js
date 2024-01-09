@@ -54,3 +54,7 @@ export const generateUrlWithParams = (url, params) => {
     return `${key}=${encodeURIComponent(params[key])}`
   }).join("&")
 }
+
+export const removeRichTextTag = (str) => {
+  return str.replace(/<\/?.+?>/g, "")
+}

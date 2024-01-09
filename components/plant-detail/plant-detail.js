@@ -1,6 +1,8 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
 import { fetchPlantFrpsDetail, fetchPlantFocnDetail, fetchPlantFrpsPhoto } from '../../utils/service/plantApi'
+import { removeRichTextTag } from '../../utils/util'
+
 Component({
   behaviors: [computedBehavior],
   properties: {
@@ -18,7 +20,10 @@ Component({
       }
     },
     frpsdesc(data) {
-      return data.frpsContent?.frpsdesc
+      return data.frpsContent?.frpsdesc || ''
+    },
+    frpsnolink(data) {
+      return removeRichTextTag((data.frpsContent?.frpsnolink || '')).replace("PDF", "")
     },
     externalResource(data) {
       const encodedName = encodeURIComponent(data.taxon.name)

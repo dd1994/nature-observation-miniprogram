@@ -1,0 +1,9 @@
+<view class="taxon-detail-item-ref">
+  <view wx:if="{{refType === 'richText'}}">
+    <rich-text nodes="{{refContent}}" />
+  </view>
+
+  <view wx:else>
+    引用来源: {{refContent}}
+  </view>
+</view>
