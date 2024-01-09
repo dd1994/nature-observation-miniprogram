@@ -4,6 +4,7 @@
     "taxon-tree": "../taxon-tree/taxon-tree",
     "t-collapse": "tdesign-miniprogram/collapse/collapse",
     "t-collapse-panel": "tdesign-miniprogram/collapse-panel/collapse-panel",
+    "t-divider": "tdesign-miniprogram/divider/divider",
     "external-resource": "../external-resource/external-resource",
     "taxon-detail-ref": "../taxon-detail-ref/taxon-detail-ref"
   }

@@ -17,6 +17,7 @@
               </view>
             </view>
           </view>
+          <t-divider wx:if="{{idx !== faunaContent.length - 1}}" />
         </view>
       </view>
       <view wx:else>暂未被《中国动物志》收录</view>
