@@ -17,9 +17,10 @@ export function openMammalDetail(name) {
 }
 
 export const openTaxonDetail = (taxon) => {
-  if (taxon?.iconic_taxon_name === 'Aves') {
+  const isSpecies = (taxon?.rank === 'species')
+  if ((taxon?.iconic_taxon_name === 'Aves') && isSpecies) {
     openBirdDetail(taxon.name)
-  } else if (taxon?.iconic_taxon_name === 'Mammalia') {
+  } else if ((taxon?.iconic_taxon_name === 'Mammalia') && isSpecies) {
     openMammalDetail(taxon.name)
   } else {
     wx.navigateTo({
