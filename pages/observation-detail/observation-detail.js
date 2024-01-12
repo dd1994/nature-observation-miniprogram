@@ -33,8 +33,8 @@ Page({
     common_name(data) {
       return data.observationDetail?.common_name
     },
-    recommend_name(data) {
-      return data.observationDetail?.city + data.observationDetail?.recommend_name
+    recommend_address_name(data) {
+      return data.observationDetail?.city + data.observationDetail?.recommend_address_name
     },
     description(data) {
       return data.observationDetail?.description

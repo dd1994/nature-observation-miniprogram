@@ -34,7 +34,7 @@ Page({
   },
   computed: {
     displayLocationName(data) {
-      return data?.location?.recommend_name || ''
+      return data?.location?.recommend_address_name || ''
     },
     isEdit(data) {
       return !!data.id
@@ -103,7 +103,7 @@ Page({
               // 经度
               longitude: result.location.lng,
               // 展示地址
-              recommend_name: result.formatted_addresses.recommend,
+              recommend_address_name: result.formatted_addresses.recommend,
               // 省
               province: result.address_component.province,
             }
@@ -182,7 +182,7 @@ Page({
       this.setData({
         location: {
           ..._.pick(location, ['latitude', 'longitude', 'province', 'city', 'district']),
-          recommend_name: location.name,
+          recommend_address_name: location.name,
           standard_address: location.address
         }
       })
@@ -212,7 +212,7 @@ Page({
           "province": data.province,
           "city": data.city,
           "district": data.district,
-          "recommend_name": data.recommend_name,
+          "recommend_address_name": data.recommend_address_name,
           "standard_address": data.standard_address,
         },
         taxon: {
@@ -277,7 +277,7 @@ Page({
       'province': this.data.location?.province || null,
       'city': this.data.location?.city || null,
       'district': this.data.location?.district || null,
-      "recommend_name": this.data.location?.recommend_name || null,
+      "recommend_address_name": this.data.location?.recommend_address_name || null,
       "standard_address": this.data.location?.standard_address || null,
     }
 
