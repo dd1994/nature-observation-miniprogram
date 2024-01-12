@@ -6,7 +6,7 @@
     <t-tab-panel label="信息" value="0">
       <t-cell wx:if="{{description}}" description="{{description}}" hover>
         <view style="display: flex; align-items: center;" slot="title">
-          <t-icon name="edit-2" style="margin-right: 5px;" /> 备注
+          <t-icon name="info-circle" style="margin-right: 5px;" /> 备注
         </view>
       </t-cell>
       <t-cell jump-type="navigateTo" wx:if="{{recommend_address_name}}" description="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
