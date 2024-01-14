@@ -1,4 +1,5 @@
 import { openTaxonDetail } from "../../utils/openTaxonDetail";
+import { fetchIdentificationList } from "../../utils/service/identifications";
 import { fetchObservationDetail } from "../../utils/service/observations"
 const computedBehavior = require('miniprogram-computed').behavior;
 
@@ -9,6 +10,7 @@ Page({
     observationDetail: {},
     currentPhoto: 0,
     mapVisible: false,
+    identifications: []
   },
   computed: {
     photos(data) {
@@ -78,6 +80,8 @@ Page({
   onLoad(options) {
     fetchObservationDetail(options.id).then(res => {
       this.setData({ observationDetail: res.data[0] })
+    }).then(() => {
+      this.fetchIdentificationList()
     })
   },
   openTaxonDetail() {
@@ -85,6 +89,13 @@ Page({
       name: this.data.scientific_name,
       rank: this.data.rank,
       iconic_taxon_name: this.data.iconic_taxon_name
+    })
+  },
+  fetchIdentificationList() {
+    fetchIdentificationList({ observation_id: this.data.observationDetail?.id }).then(res => {
+      this.setData({
+        identifications: res.data
+      })
     })
   }
 })
