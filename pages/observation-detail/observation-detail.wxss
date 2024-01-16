@@ -21,3 +21,7 @@
 .edit-button-wrapper {
   margin: 32px 32px;
 }
+
+.identifications-pannel {
+  margin-bottom: 40px;
+}

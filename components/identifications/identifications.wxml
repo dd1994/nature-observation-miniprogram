@@ -1,7 +1,7 @@
 <view class="identifications-list">
   <t-steps layout="vertical" readonly theme="dot" current="{{-1}}">
-    <t-step-item wx:for="{{identifications}}" wx:key="index">
-      <view slot="title">{{item.user_name}}添加了一个鉴定</view>
+    <t-step-item wx:for="{{formattedIdentifications}}" wx:key="index">
+      <view slot="title">{{item.user_name}}{{item.created_from_now}}添加了一个鉴定</view>
       <taxon-cell slot="content" taxon="{{item}}" />
     </t-step-item>
   </t-steps>
