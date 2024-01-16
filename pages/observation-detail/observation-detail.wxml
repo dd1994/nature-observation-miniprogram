@@ -1,7 +1,7 @@
 <view class="page-container">
   <observation-detail-topbar userId="{{observationDetail.id}}" userName="{{observationDetail.user_name}}" userAvatar="{{observationDetail.avatar}}" observedOn="{{observationDetail.observed_on}}" />
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" list="{{swiperList}}" height="{{'563rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
-  <t-cell bind:click="openTaxonDetail" title="{{common_name}}" description="{{scientific_name}}" hover arrow t-class="taxon-name-cell" />
+  <taxon-cell taxon="{{observationDetail}}"></taxon-cell>
   <t-tabs defaultValue="{{0}}" t-class="custom-tabs">
     <t-tab-panel label="信息" value="0">
       <t-cell wx:if="{{description}}" description="{{description}}" hover>

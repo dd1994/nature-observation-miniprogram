@@ -1,0 +1,4 @@
+.taxon-name-cell {
+  line-height: 1 !important;
+  padding: 8px 16px !important;
+}

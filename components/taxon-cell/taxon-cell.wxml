@@ -1,0 +1,3 @@
+<view>
+  <t-cell bind:click="openTaxonDetail" title="{{taxon.common_name}}" description="{{taxon.scientific_name}}" hover arrow t-class="taxon-name-cell" />
+</view>

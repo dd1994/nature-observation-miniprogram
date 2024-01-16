@@ -10,6 +10,7 @@
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-button": "tdesign-miniprogram/button/button",
     "observation-detail-topbar": "../../components/observation-detail-topbar/observation-detail-topbar",
-    "identifications": "../../components/identifications/identifications"
+    "identifications": "../../components/identifications/identifications",
+    "taxon-cell": "../../components/taxon-cell/taxon-cell"
   }
 }

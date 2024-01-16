@@ -1,1 +1,4 @@
-/* components/identifications/identifications.wxss */
+.identifications-list {
+  margin: 10px;
+  min-height: 150px;
+}

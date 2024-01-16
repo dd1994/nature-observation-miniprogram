@@ -1,11 +1,15 @@
 // components/identifications/identifications.js
-Component({
+const computedBehavior = require('miniprogram-computed').behavior;
 
+Component({
+  behaviors: [computedBehavior],
   /**
    * 组件的属性列表
    */
   properties: {
-
+    identifications: {
+      value: []
+    }
   },
 
   /**
@@ -20,5 +24,7 @@ Component({
    */
   methods: {
 
+  },
+  computed: {
   }
 })
