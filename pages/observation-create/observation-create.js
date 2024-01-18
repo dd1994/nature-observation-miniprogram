@@ -9,6 +9,7 @@ const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
+import { showErrorTips } from '../../utils/feedBack';
 
 // pages/observation-create/observation-create.js
 Page({
@@ -201,10 +202,13 @@ Page({
   },
   fetchObservationDetail() {
     fetchObservationDetail(this.data.id).then(res => {
-      const data = res.data[0]
+      const data = res?.data?.[0]
+      if(!data) {
+        showErrorTips("获取数据失败")
+      }
       this.setData({
         description: data.description,
-        observedOn: data.observed_on,
+        observedOn: moment(data.observed_on).format(defaultTimeFormat),
         "artificial": !!data.artificial,
         location: {
           "latitude": data.latitude,
