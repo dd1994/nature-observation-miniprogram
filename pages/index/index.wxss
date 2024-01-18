@@ -4,6 +4,10 @@
   --td-tab-item-height: 60px;
 }
 
+.custom-tab-content {
+  background-color: #f6f6f6;
+}
+
 .custom-tabs {
   /* padding: 0 80rpx !important; */
   /* padding: 20px 0px !important; */

@@ -4,8 +4,6 @@
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 5px;
   grid-column-gap: 5px;
-  background-color: #f6f6f6;
-  padding-bottom: 50px;
 }
 
 .observation-list__item {
