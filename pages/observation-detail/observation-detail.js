@@ -2,6 +2,7 @@ import { openTaxonDetail } from "../../utils/openTaxonDetail";
 import { fetchIdentificationList } from "../../utils/service/identifications";
 import { fetchObservationDetail } from "../../utils/service/observations"
 const computedBehavior = require('miniprogram-computed').behavior;
+import { createIdentification } from '../../utils/service/identifications'
 
 // pages/observation-detail/observation-detail.js
 Page({
@@ -22,6 +23,9 @@ Page({
           value: i,
         }
       })
+    },
+    id(data) {
+      return data.observationDetail?.id
     },
     scientific_name(data) {
       return data.observationDetail?.scientific_name
@@ -97,5 +101,23 @@ Page({
         identifications: res.data
       })
     })
-  }
+  },
+  addIdentification() {
+    wx.navigateTo({
+      url: '/pages/taxon-picker/taxon-picker',
+      events: {
+        backFromSearchPage: (taxon) => {
+          createIdentification({
+            observation_id: this.data.id,
+            common_name: taxon.preferred_common_name,
+            scientific_name: taxon.name,
+            taxon_rank: taxon.rank,
+            iconic_taxon_name: taxon.iconic_taxon_name,
+            taxon_id: taxon.id,
+            user_id: 1,
+          })
+        }
+      }
+    })
+  },
 })
