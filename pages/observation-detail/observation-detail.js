@@ -115,6 +115,14 @@ Page({
             iconic_taxon_name: taxon.iconic_taxon_name,
             taxon_id: taxon.id,
             user_id: 1,
+          }).then(() => {
+            this.fetchIdentificationList()
+          }).catch(err => {
+            wx.showToast({
+              title: '添加鉴定失败，请稍后重试',
+              icon: 'none',
+              duration: 3000
+            })
           })
         }
       }
