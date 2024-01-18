@@ -1,5 +1,7 @@
 // app.js
 import './utils/libs/lodash-fix'
+import  '../../utils/libs/moment-zh-cn'
+
 
 App({
   onLaunch() {
