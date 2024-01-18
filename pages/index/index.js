@@ -1,6 +1,8 @@
 import { fetchObservationList } from '../../utils/service/observations'
+const computedBehavior = require('miniprogram-computed').behavior;
 
 Page({
+  behaviors: [computedBehavior],
   data: {
     observations: [],
     limit: 20,
@@ -27,5 +29,13 @@ Page({
     this.fetchObservations()
   },
   onShow() {
+  },
+  computed: {
+    tab1Title(data) {
+      return `观察（${data.observations.length}）`
+    },
+    tab2Title(data) {
+      return `物种（${data.observations.length - 3}）`
+    },
   }
 })
