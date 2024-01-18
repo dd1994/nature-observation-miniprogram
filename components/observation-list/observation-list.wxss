@@ -4,12 +4,14 @@
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 5px;
   grid-column-gap: 5px;
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
 }
 
 .observation-list__item {
   aspect-ratio: 1;
   position: relative;
-  border-radius: 2px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
