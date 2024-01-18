@@ -1,6 +1,7 @@
 // components/identifications/identifications.js
 const computedBehavior = require('miniprogram-computed').behavior;
 import moment from 'moment'
+import local from '../../utils/libs/moment-zh-cn'
 moment.locale('zh-cn')
 
 Component({
