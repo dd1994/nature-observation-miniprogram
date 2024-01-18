@@ -83,7 +83,16 @@ Page({
   },
   onLoad(options) {
     fetchObservationDetail(options.id).then(res => {
-      this.setData({ observationDetail: res.data[0] })
+      const data = res?.data?.[0]
+      if (data) {
+        this.setData({
+          observationDetail: {
+            ...data
+          }
+        })
+      } else {
+        th
+      }
     }).then(() => {
       this.fetchIdentificationList()
     })
