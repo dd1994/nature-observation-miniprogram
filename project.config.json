@@ -15,7 +15,8 @@
     "showShadowRootInWxmlPanel": true,
     "packNpmRelationList": [],
     "useCompilerPlugins": [
-      "typescript"
+      "typescript",
+      "sass"
     ],
     "babelSetting": {
       "ignore": [],
