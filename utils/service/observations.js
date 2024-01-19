@@ -21,7 +21,7 @@ export function fetchObservationDetail(id) {
 }
 
 export function updateObservation(params, id) {
-  return requestPromise({
+  return requestPromiseWithLogin({
     url: 'http://192.168.3.40:7001/api/v1/observations/' + id,
     method: 'put',
     data: params
@@ -29,7 +29,7 @@ export function updateObservation(params, id) {
 }
 
 export function deleteObservation(id) {
-  return requestPromise({
+  return requestPromiseWithLogin({
     url: 'http://192.168.3.40:7001/api/v1/observations/' + id,
     method: 'DELETE',
   })
