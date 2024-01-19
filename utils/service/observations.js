@@ -7,7 +7,7 @@ export function fetchObservationList() {
 }
 
 export function createObservation(params) {
-  return requestPromise({
+  return requestPromiseWithLogin({
     url: 'http://192.168.3.40:7001/api/v1/observations',
     method: 'POST',
     data: params

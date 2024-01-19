@@ -123,7 +123,6 @@ Page({
             taxon_rank: taxon.rank,
             iconic_taxon_name: taxon.iconic_taxon_name,
             taxon_id: taxon.id,
-            user_id: 1,
           }).then(() => {
             this.fetchIdentificationList()
           }).catch(err => {
