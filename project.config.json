@@ -14,6 +14,9 @@
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmRelationList": [],
+    "useCompilerPlugins": [
+      "typescript"
+    ],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
