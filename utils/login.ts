@@ -4,14 +4,20 @@ export const login = () => {
       success(res) {
         debugger
         wx.request({
-          url: 'http://localhost:7001/api/v1/wxmini/openid',
+          url: 'http://localhost:7001/api/v1/login',
           data: {
             code: res.code
           },
           success(res) {
-            debugger
-            resolve(res)
-            console.log('openid = ', res.data)
+            // @ts-ignore
+            if (res?.data.success) {
+              // @ts-ignore
+              wx.setStorageSync('token', res?.data?.data?.token)
+              resolve(true)
+            } else {
+              // @ts-ignore
+              reject(res?.data?.message)
+            }
           }
         })
       },
