@@ -1,3 +1,4 @@
+import { login } from '../../utils/login';
 import { fetchObservationList } from '../../utils/service/observations'
 const computedBehavior = require('miniprogram-computed').behavior;
 
@@ -16,13 +17,15 @@ Page({
     })
   },
   onAddIconTap() {
-    wx.navigateTo({
-      url: "/pages/observation-create/observation-create",
-      events: {
-        refresh: () => {
-          this.fetchObservations()
+    login().then(() => {
+      wx.navigateTo({
+        url: "/pages/observation-create/observation-create",
+        events: {
+          refresh: () => {
+            this.fetchObservations()
+          }
         }
-      }
+      })
     })
   },
   onLoad() {
