@@ -30,6 +30,22 @@ export const requestPromise = (params) => {
   });
 }
 
+export const requestPromiseWithLogin = (params) => {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      ...params,  //  请求的参数
+      data: {
+        ...params.data,
+        token: wx.getStorageSync('token')
+      },
+      success: (result) => {
+        resolve(result)
+      },
+      fail: (err) => { reject(err) },
+    })
+  });
+}
+
 export const formatExifGPSLongitude = (GPSLongitude, GPSLongitudeRef) => {
   if (GPSLongitude?.length) {
     const value = (GPSLongitude[0] + (GPSLongitude[1] / 60) + (GPSLongitude[2] / 3600)).toFixed(6)

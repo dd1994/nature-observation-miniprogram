@@ -1,7 +1,7 @@
-import { requestPromise } from "../util"
+import { requestPromise, requestPromiseWithLogin } from "../util"
 
 export function fetchObservationList() {
-  return requestPromise({
+  return requestPromiseWithLogin({
     url: 'http://192.168.3.40:7001/api/v1/observations'
   })
 }

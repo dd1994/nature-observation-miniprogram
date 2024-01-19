@@ -12,7 +12,7 @@ Page({
   fetchObservations() {
     fetchObservationList().then(res => {
       this.setData({
-        observations: res.data
+        observations: res?.data?.data || []
       })
     })
   },
