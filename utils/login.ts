@@ -1,9 +1,11 @@
+import { apiDomain } from "./constant"
+
 export const login = () => {
   return new Promise((resolve, reject) => {
     wx.login({
       success(res) {
         wx.request({
-          url: 'http://localhost:7001/api/v1/login',
+          url: apiDomain + '/api/v1/login',
           data: {
             code: res.code
           },
