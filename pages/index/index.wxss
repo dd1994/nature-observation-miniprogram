@@ -5,7 +5,8 @@
 }
 
 .empty-tips {
-  margin: 150rpx;
+  height: 100vh;
+  margin: 0 150rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
