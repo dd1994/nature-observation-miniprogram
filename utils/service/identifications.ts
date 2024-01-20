@@ -11,7 +11,7 @@ export function fetchIdentificationList(params) {
 
 export function createIdentification(params) {
   return requestPromiseWithLogin({
-    url: apiDomain + '/api/v1/identifications',
+    url: apiDomain + '/api/v1/identifications/create',
     method: 'POST',
     data: params
   })
