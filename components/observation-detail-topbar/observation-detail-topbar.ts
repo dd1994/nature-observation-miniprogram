@@ -15,7 +15,7 @@ Component({
     },
     userAvatar: {
       type: String,
-      value: '../../static/default-avatar.png'
+      value: '../../static/me.png'
     },
     observedOn: {
       type: String
