@@ -8,12 +8,18 @@ Page({
     observations: [],
     limit: 20,
     offset: 0,
+    isEmpty: false,
   },
   fetchObservations() {
     fetchObservationList().then(res => {
       this.setData({
         observations: res?.data?.data || []
       })
+      if (!this.data.observations.length) {
+        this.setData({
+          isEmpty: true
+        })
+      }
     })
   },
   onAddIconTap() {
@@ -26,6 +32,11 @@ Page({
           }
         }
       })
+    })
+  },
+  goToExplore() {
+    wx.switchTab({
+      url: '/pages/explore/index'
     })
   },
   onLoad() {

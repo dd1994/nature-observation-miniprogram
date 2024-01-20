@@ -4,11 +4,19 @@
   --td-tab-item-height: 60px;
 }
 
-.custom-tab-content {
-  background-color: #f6f6f6;
+.empty-tips {
+  margin: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.custom-tabs {
-  /* padding: 0 80rpx !important; */
-  /* padding: 20px 0px !important; */
+.empty-tips__or {
+  margin: 10px 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.custom-tab-content {
+  background-color: #f6f6f6;
 }
