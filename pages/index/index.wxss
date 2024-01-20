@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #e7e7e7;
+  border: 1px solid var(--td-primary-color-7);
 }
 
 .observation-add-icon {
