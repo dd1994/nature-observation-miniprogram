@@ -1,3 +1,7 @@
 .mine-cell-group:not(:first-child) {
   margin-top: 20px;
 }
+
+.avatar {
+  margin-right: 10px;
+}

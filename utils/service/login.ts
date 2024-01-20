@@ -1,4 +1,4 @@
-import { apiDomain } from "./constant"
+import { apiDomain } from "../constant"
 
 export const login = () => {
   return new Promise((resolve, reject) => {

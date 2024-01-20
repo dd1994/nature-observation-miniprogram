@@ -1,4 +1,4 @@
-import { login } from '../../utils/login';
+import { login } from '../../utils/service/login';
 import { fetchObservationList } from '../../utils/service/observations'
 const computedBehavior = require('miniprogram-computed').behavior;
 
