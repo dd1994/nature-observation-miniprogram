@@ -18,6 +18,7 @@ export function createObservation(params) {
 export function fetchObservationDetail(id) {
   return requestPromise({
     url: 'http://192.168.3.40:7001/api/v1/observations/' + id,
+    method: 'POST',
   })
 }
 
