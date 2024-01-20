@@ -5,8 +5,5 @@
     </t-tab-panel>
     <t-tab-panel label="{{tab2Title}}" value="1" style="{{tabPanelstyle}}">选项二内容</t-tab-panel>
   </t-tabs>
-  <view class="observation-add-icon-wrapper">
-    <image bind:tap="onAddIconTap" class="observation-add-icon" src="../../static/add1.png">
-    </image>
-  </view>
+  <add-observation-button bind:tap="onAddIconTap" />
 </view>

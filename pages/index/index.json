@@ -6,6 +6,7 @@
     "t-icon": "tdesign-miniprogram/icon/icon",
     "observation-list": "/components/observation-list/observation-list",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
-  "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "add-observation-button": "/components/add-observation-button/add-observation-button"
   }
 }

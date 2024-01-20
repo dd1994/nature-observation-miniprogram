@@ -12,22 +12,3 @@
   /* padding: 0 80rpx !important; */
   /* padding: 20px 0px !important; */
 }
-
-.observation-add-icon-wrapper {
-  background-color: #fff;
-  position: fixed;
-  right: 30px;
-  bottom: 100px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--td-primary-color-7);
-}
-
-.observation-add-icon {
-  width: 45px;
-  height: 45px;
-}
