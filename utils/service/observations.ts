@@ -8,6 +8,13 @@ export function fetchObservationList() {
   })
 }
 
+export function fetchObservationExploreList() {
+  return requestPromise({
+    url: apiDomain + '/api/v1/observations/explore',
+    method: 'POST',
+  })
+}
+
 export function createObservation(params) {
   return requestPromiseWithLogin({
     url: apiDomain + '/api/v1/observations/create',

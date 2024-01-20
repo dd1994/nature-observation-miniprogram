@@ -1,4 +1,4 @@
-import { fetchObservationList } from "../../utils/service/observations"
+import { fetchObservationExploreList, fetchObservationList } from "../../utils/service/observations"
 
 Component({
   data: {
@@ -8,7 +8,7 @@ Component({
   },
   methods: {
     fetchObservations() {
-      fetchObservationList().then(res => {
+      fetchObservationExploreList().then(res => {
         this.setData({
           observations: res?.data?.data || []
         })

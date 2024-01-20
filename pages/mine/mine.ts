@@ -4,7 +4,7 @@ Page({
   data: {
     user: null
   },
-  onLoad() {
+  onTabItemTap() {
     getUserProfile().then(res => {
       this.setData({
         user: res?.data?.data
