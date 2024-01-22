@@ -1,4 +1,4 @@
-import { getUserProfile } from "../../utils/service/user"
+import { getUserProfile, updateUserProfile } from "../../utils/service/user"
 
 // pages/profile-setting/profile-setting.ts
 Page({
@@ -25,6 +25,21 @@ Page({
   },
   bioChange(e) {
     this.fieldChange('bio', e.detail.value)
+  },
+  save() {
+    return updateUserProfile({
+      user_name: this.data?.userProfile?.user_name,
+      bio: this.data?.userProfile?.bio,
+      avatar: this.data.avatar
+    }).then(res => {
+      if (res?.data?.success) {
+        wx.showToast({
+          title: '保存成功',
+        })
+      }
+    }).then(() => {
+      this.getUserProfile()
+    })
   },
   onLoad() {
     this.getUserProfile()

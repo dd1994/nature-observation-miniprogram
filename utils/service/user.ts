@@ -7,3 +7,11 @@ export function getUserProfile() {
     method: 'POST',
   })
 }
+
+export function updateUserProfile(params: any) {
+  return requestPromiseWithLogin({
+    url: apiDomain + '/api/v1/user/updateUserProfile',
+    method: 'POST',
+    data: params
+  })
+}
