@@ -7,12 +7,6 @@ import { getUserProfile } from './utils/service/user'
 
 App({
   onLaunch() {
-    login().then(() => {
-      return getUserProfile().then(res => {
-        // @ts-ignore
-        this.globalData.userInfo = res?.data?.data
-      })
-    })
   },
   globalData: {
     userInfo: null
