@@ -29,7 +29,7 @@
 
 .create-form-item-wrapper-taxon .create-form-item-wrapper {
   background-color: #FFF;
-  padding: 20px;
+  padding: 20px 10px;
   border-top: 1px solid rgb(231, 231, 231);
 }
 
