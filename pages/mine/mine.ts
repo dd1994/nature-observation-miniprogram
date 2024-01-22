@@ -1,5 +1,6 @@
 import { login } from "../../utils/service/login";
 import { getUserProfile } from "../../utils/service/user"
+import { isLogin } from "../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
 
 Page({
@@ -14,6 +15,9 @@ Page({
     }
   },
   login() {
+    if (isLogin()) {
+      return
+    }
     wx.showLoading({
       title: '登录中...'
     })

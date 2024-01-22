@@ -74,3 +74,6 @@ export const generateUrlWithParams = (url, params) => {
 export const removeRichTextTag = (str) => {
   return str.replace(/<\/?.+?>/g, "")
 }
+export const isLogin = () => {
+  return !!wx.getStorageSync('token')
+}
