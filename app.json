@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/profile-setting/profile-setting",
     "pages/index/index",
     "pages/explore/index",
     "pages/observation-create/observation-create",
@@ -9,8 +10,7 @@
     "pages/observation-map/observation-map",
     "pages/taxon-detail/taxon-detail",
     "pages/setting/setting",
-    "pages/about/about",
-    "pages/profile-setting/profile-setting"
+    "pages/about/about"
   ],
   "tabBar": {
     "color": "#000",
