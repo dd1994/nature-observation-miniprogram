@@ -1,5 +1,5 @@
 <view class="page-mine">
-  <view class="mine-cell-group">
+  <view class="cell-group">
     <t-cell title="{{displayName}}" bind:tap="login" hover arrow>
       <view class="avatar" slot="left-icon">
         <t-avatar wx:if="{{user.avatar}}" size="large" shape="round" image="{{user.avatar}}" />
@@ -12,11 +12,11 @@
     <t-cell title="我的统计" hover arrow leftIcon="chart-pie" />
   </view> -->
 
-  <view class="mine-cell-group">
+  <view class="cell-group">
     <t-cell title="物种信息" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
   </view>
 
-  <view wx:if="{{user}}" class="mine-cell-group">
+  <view wx:if="{{user}}" class="cell-group">
     <t-cell title="设置" hover arrow leftIcon="setting-1" url="/pages/setting/setting" />
     <!-- <t-cell title="关于" hover arrow leftIcon="member" /> -->
   </view>

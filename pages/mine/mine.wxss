@@ -1,4 +1,4 @@
-.mine-cell-group:not(:first-child) {
+.cell-group:not(:first-child) {
   margin-top: 20px;
 }
 

@@ -1,2 +1,8 @@
-<!--pages/setting/setting.wxml-->
-<text>pages/setting/setting.wxml</text>
+<view>
+  <view class="cell-group">
+    <t-cell title="设置" hover arrow leftIcon="setting-1" url="/pages/setting/setting" />
+  </view>
+  <view class="cell-group">
+    <t-cell title="关于" hover arrow leftIcon="member" />
+  </view>
+</view>
