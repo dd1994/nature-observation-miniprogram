@@ -1,2 +1,7 @@
-<!--pages/profile-setting/profile-setting.wxml-->
-<text>pages/profile-setting/profile-setting.wxml</text>
+<view>
+  <t-input maxlength="{{10}}" label="名字" placeholder="请输入名字" />
+  <t-textarea maxlength="{{300}}" label="个人简介" placeholder="请输入个人简介，让别人更了解你" />
+  <view class="user-profile-save-button">
+    <t-button bind:tap="save" block theme="primary" size="large">保存</t-button>
+  </view>
+</view>
