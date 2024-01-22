@@ -14,8 +14,6 @@ export const login = () => {
             if (res?.data.success) {
               // @ts-ignore
               wx.setStorageSync('token', res?.data?.data?.token)
-              // @ts-ignore
-              wx.setStorageSync('user', res?.data?.data?.user)
               resolve(true)
             } else {
               // @ts-ignore
