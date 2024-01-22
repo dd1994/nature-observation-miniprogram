@@ -1,6 +1,6 @@
 <view>
-  <t-input maxlength="{{10}}" label="名字" placeholder="请输入名字" />
-  <t-textarea maxlength="{{300}}" label="个人简介" placeholder="请输入个人简介，让别人更了解你" />
+  <t-input model:value="{{userProfile.user_name}}" maxlength="{{10}}" label="名字" placeholder="请输入名字" />
+  <t-textarea maxlength="{{300}}" label="个人简介" placeholder="填写个人简介，让别人更了解你" />
   <view class="user-profile-save-button">
     <t-button bind:tap="save" block theme="primary" size="large">保存</t-button>
   </view>
