@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "remote-rich-text": "../../components/remote-rich-text/remote-rich-text"
+  }
+}

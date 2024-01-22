@@ -8,7 +8,8 @@
     "pages/observation-detail/observation-detail",
     "pages/observation-map/observation-map",
     "pages/taxon-detail/taxon-detail",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/about/about"
   ],
   "tabBar": {
     "color": "#000",

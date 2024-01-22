@@ -1,0 +1,3 @@
+<view>
+  <remote-rich-text url="about"></remote-rich-text>
+</view>
