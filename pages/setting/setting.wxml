@@ -1,8 +1,8 @@
 <view>
   <view class="cell-group">
-    <t-cell title="编辑个人资料" hover arrow leftIcon="user-1" url="/pages/setting/setting" />
+    <t-cell title="编辑个人资料" hover arrow leftIcon="user-1" url="/pages/profile-setting/profile-setting" />
   </view>
   <view class="cell-group">
-    <t-cell title="关于" hover arrow leftIcon="member" url="/pages/about/about" />
+    <t-cell title="关于自然记录" hover arrow leftIcon="member" url="/pages/about/about" />
   </view>
 </view>

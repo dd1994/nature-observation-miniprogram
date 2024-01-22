@@ -9,7 +9,8 @@
     "pages/observation-map/observation-map",
     "pages/taxon-detail/taxon-detail",
     "pages/setting/setting",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/profile-setting/profile-setting"
   ],
   "tabBar": {
     "color": "#000",
