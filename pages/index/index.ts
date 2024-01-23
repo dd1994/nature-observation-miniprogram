@@ -20,12 +20,17 @@ Page({
         this.setData({
           isEmpty: true
         })
+      } else {
+        this.setData({
+          isEmpty: false
+        })
       }
     })
   },
   async onAddIconTap() {
     if (needFirstLogin()) {
       await login()
+      app.globalData.firstLoginFlag = true
     }
     wx.navigateTo({
       url: "/pages/observation-create/observation-create",
@@ -45,6 +50,9 @@ Page({
     this.fetchObservations()
   },
   onShow() {
+    if (app.globalData.firstLoginFlag) {
+      this.fetchObservations()
+    }
   },
   computed: {
     tab1Title(data) {

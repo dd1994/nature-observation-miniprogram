@@ -10,6 +10,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    firstLoginFlag: false // 第一次登录后的标记，用于第一次登录后切换 tab 时进行刷新
+    firstLoginFlag: false // 第一次登录后的标记，用于第一次登录后返回首页时进行刷新
   }
 })
