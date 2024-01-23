@@ -11,7 +11,7 @@ import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips } from '../../utils/feedBack';
 
-// pages/observation-create/observation-create.js
+const app = getApp()
 Page({
   behaviors: [computedBehavior],
   data: {
@@ -203,7 +203,7 @@ Page({
   fetchObservationDetail() {
     fetchObservationDetail(this.data.id).then(res => {
       const data = res?.data?.[0]
-      if(!data) {
+      if (!data) {
         showErrorTips("获取数据失败")
       }
       this.setData({
@@ -326,7 +326,6 @@ Page({
               title: res?.data?.success ? '删除成功' : '删除失败',
               icon: 'none'
             })
-            
           }).catch(err => {
             wx.showToast({
               title: '删除失败',
@@ -342,12 +341,10 @@ Page({
     })
   },
   goToIndexAndRefresh() {
-    const eventChannel = this.getOpenerEventChannel();
+    app.globalData.indexPageNeedRefresh = true
+
     wx.switchTab({
       url: '/pages/index/index',
-      complete: () => {
-        eventChannel.emit('refresh')
-      }
     })
   }
 })
