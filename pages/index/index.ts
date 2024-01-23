@@ -12,7 +12,7 @@ Page({
     isEmpty: false,
   },
   resetAndFetchObservations() {
-    fetchObservationList().then(res => {
+    return fetchObservationList().then(res => {
       this.setData({
         observations: res?.data?.data || []
       })
@@ -54,12 +54,17 @@ Page({
       this.resetAndFetchObservations()
     }
   },
+  onPullDownRefresh() {
+    this.resetAndFetchObservations().finally(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
   computed: {
     tab1Title(data) {
       return `观察（${data.observations.length}）`
     },
     tab2Title(data) {
-      return `物种（${data.observations.length - 3}）`
+      return `物种（0）`
     },
   }
 })
