@@ -49,5 +49,8 @@ Page({
   },
   onTabItemTap() {
     this.getUserProfile()
+  },
+  onShow() {
+    this.getUserProfile()
   }
 })

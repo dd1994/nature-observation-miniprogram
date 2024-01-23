@@ -38,6 +38,9 @@ Page({
         })
       }
     }).then(() => {
+      wx.switchTab({
+        url: '/pages/mine/mine'
+      })
       this.getUserProfile()
     })
   },
