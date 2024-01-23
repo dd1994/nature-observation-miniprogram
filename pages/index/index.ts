@@ -30,7 +30,7 @@ Page({
   async onAddIconTap() {
     if (needFirstLogin()) {
       await login()
-      app.globalData.firstLoginFlag = true
+      app.globalData.indexPageNeedRefresh = true
     }
     wx.navigateTo({
       url: "/pages/observation-create/observation-create",
@@ -50,7 +50,7 @@ Page({
     this.fetchObservations()
   },
   onShow() {
-    if (app.globalData.firstLoginFlag) {
+    if (app.globalData.indexPageNeedRefresh) {
       this.fetchObservations()
     }
   },

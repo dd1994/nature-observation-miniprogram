@@ -27,7 +27,7 @@ Page({
     })
     try {
       await login()
-      app.globalData.firstLoginFlag = true
+      app.globalData.indexPageNeedRefresh = true
       await this.getUserProfile()
     } catch (error) {
     } finally {

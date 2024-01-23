@@ -326,6 +326,7 @@ Page({
               title: res?.data?.success ? '删除成功' : '删除失败',
               icon: 'none'
             })
+            
           }).catch(err => {
             wx.showToast({
               title: '删除失败',
