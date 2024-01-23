@@ -15,7 +15,7 @@ Page({
       return data.user?.user_name || '点击登录'
     }
   },
-  login() {
+  async login() {
     if (isLogin()) {
       return
     }
@@ -25,13 +25,14 @@ Page({
     this.setData({
       loginLoding: true
     })
-    login().then(() => {
-      return this.getUserProfile()
-    }).finally(() => {
-      wx.showToast({
-        title: '登录成功'
-      })
-    })
+    try {
+      await login()
+      app.globalData.firstLoginFlag = true
+      await this.getUserProfile()
+    } catch (error) {
+    } finally {
+      wx.hideLoading()
+    }
   },
   getUserProfile() {
     getUserProfile().then(res => {
