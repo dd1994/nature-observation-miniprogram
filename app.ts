@@ -9,6 +9,7 @@ App({
   onLaunch() {
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    firstLoginFlag: false // 第一次登录后的标记，用于第一次登录后切换 tab 时进行刷新
   }
 })

@@ -1,7 +1,8 @@
 import { login } from '../../utils/service/login';
 import { fetchObservationList } from '../../utils/service/observations'
+import { needFirstLogin } from '../../utils/util';
 const computedBehavior = require('miniprogram-computed').behavior;
-
+const app = getApp()
 Page({
   behaviors: [computedBehavior],
   data: {
@@ -22,16 +23,17 @@ Page({
       }
     })
   },
-  onAddIconTap() {
-    login().then(() => {
-      wx.navigateTo({
-        url: "/pages/observation-create/observation-create",
-        events: {
-          refresh: () => {
-            this.fetchObservations()
-          }
+  async onAddIconTap() {
+    if (needFirstLogin()) {
+      await login()
+    }
+    wx.navigateTo({
+      url: "/pages/observation-create/observation-create",
+      events: {
+        refresh: () => {
+          this.fetchObservations()
         }
-      })
+      }
     })
   },
   goToExplore() {
