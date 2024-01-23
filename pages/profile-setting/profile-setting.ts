@@ -38,9 +38,11 @@ Page({
         })
       }
     }).then(() => {
-      wx.switchTab({
-        url: '/pages/mine/mine'
-      })
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/mine/mine'
+        })
+      }, 1500);
       this.getUserProfile()
     })
   },
