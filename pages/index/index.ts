@@ -11,7 +11,7 @@ Page({
     offset: 0,
     isEmpty: false,
   },
-  fetchObservations() {
+  resetAndFetchObservations() {
     fetchObservationList().then(res => {
       this.setData({
         observations: res?.data?.data || []
@@ -36,7 +36,7 @@ Page({
       url: "/pages/observation-create/observation-create",
       events: {
         refresh: () => {
-          this.fetchObservations()
+          this.resetAndFetchObservations()
         }
       }
     })
@@ -47,11 +47,11 @@ Page({
     })
   },
   onLoad() {
-    this.fetchObservations()
+    this.resetAndFetchObservations()
   },
   onShow() {
     if (app.globalData.indexPageNeedRefresh) {
-      this.fetchObservations()
+      this.resetAndFetchObservations()
     }
   },
   computed: {
