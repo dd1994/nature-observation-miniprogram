@@ -1,8 +1,9 @@
 /**app.wxss**/
 /* #36ab60 */
 page {
-  /* 由 https://uicolors.app/create 生成的配色 */
+  font-family: sans-serif;
   background-color: #f6f6f6;
+  /* 由 https://uicolors.app/create 生成的配色 */
   --td-primary-color-1: #effef2;
   --td-primary-color-2: #dafee1;
   --td-primary-color-3: #b6fcc6;
