@@ -13,30 +13,30 @@
     "pages/profile-setting/profile-setting"
   ],
   "tabBar": {
-    "borderStyle": "white",
-    "backgroundColor": "#FFF",
+    "borderStyle": "@borderStyle",
+    "backgroundColor": "@backgroundColor",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "./static/home.png",
-        "selectedIconPath": "./static/home-selected.png"
+        "iconPath": "@iconPath1",
+        "selectedIconPath": "@selectedIconPath1"
       },
       {
         "pagePath": "pages/explore/index",
-        "iconPath": "./static/explore.png",
-        "selectedIconPath": "./static/explore-selected.png"
+        "iconPath": "@iconPath2",
+        "selectedIconPath": "@selectedIconPath2"
       },
       {
         "pagePath": "pages/mine/mine",
-        "iconPath": "./static/me.png",
-        "selectedIconPath": "./static/me-selected.png"
+        "iconPath": "@iconPath3",
+        "selectedIconPath": "@selectedIconPath3"
       }
     ]
   },
+  "darkmode": true,
+  "themeLocation": "theme.json",
   "window": {
-    "navigationStyle": "custom",
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#FFF"
+    "navigationStyle": "custom"
   },
   "rendererOptions": {
     "skyline": {

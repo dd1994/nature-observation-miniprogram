@@ -1,0 +1,22 @@
+{
+  "light": {
+    "borderStyle": "white",
+    "backgroundColor": "#FFF",
+    "iconPath1": "./static/home.png",
+    "selectedIconPath1": "./static/home-selected.png",
+    "iconPath2": "./static/explore.png",
+    "selectedIconPath2": "./static/explore-selected.png",
+    "iconPath3": "./static/me.png",
+    "selectedIconPath3": "./static/me-selected.png"
+  },
+  "dark": {
+    "borderStyle": "black",
+    "backgroundColor": "#000",
+    "iconPath1": "./static/home.png",
+    "selectedIconPath1": "./static/home-selected.png",
+    "iconPath2": "./static/explore.png",
+    "selectedIconPath2": "./static/explore-selected.png",
+    "iconPath3": "./static/me.png",
+    "selectedIconPath3": "./static/me-selected.png"
+  }
+}
