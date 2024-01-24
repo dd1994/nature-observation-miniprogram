@@ -1,4 +1,5 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
     "t-upload": "tdesign-miniprogram/upload/upload",
     "t-input": "tdesign-miniprogram/input/input",
