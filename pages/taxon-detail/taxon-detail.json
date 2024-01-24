@@ -1,6 +1,4 @@
 {
-  "navigationStyle": "custom",
-  "navigationBarTitleText": "物种详情",
   "usingComponents": {
     "t-popup": "tdesign-miniprogram/popup/popup",
     "plant-detail": "../../components/plant-detail/plant-detail",

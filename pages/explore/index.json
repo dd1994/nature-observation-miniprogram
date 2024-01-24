@@ -1,6 +1,4 @@
 {
-  "navigationStyle": "custom",
-  "navigationBarTitleText": "探索",
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar",
     "t-button": "tdesign-miniprogram/button/button",

@@ -1,6 +1,4 @@
 {
-  "navigationStyle": "custom",
-  "navigationBarTitleText": "记录详情",
   "usingComponents": {
     "t-swiper": "tdesign-miniprogram/swiper/swiper",
     "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
