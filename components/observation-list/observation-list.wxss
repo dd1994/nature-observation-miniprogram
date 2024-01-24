@@ -7,7 +7,8 @@
 }
 
 .observation-list__item {
-  aspect-ratio: 1;
+  /* 黄金分割比 */
+  aspect-ratio: 1.6;
   position: relative;
   border-radius: 4px;
   overflow: hidden;
