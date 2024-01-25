@@ -1,3 +1,5 @@
+import { login } from "./service/login"
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -30,7 +32,8 @@ export const requestPromise = (params) => {
   });
 }
 
-export const requestPromiseWithLogin = (params) => {
+
+export function requestPromiseWithLogin(params) {
   return new Promise((resolve, reject) => {
     wx.request({
       ...params,  //  请求的参数
@@ -39,7 +42,19 @@ export const requestPromiseWithLogin = (params) => {
         token: wx.getStorageSync('token')
       },
       success: (result) => {
-        resolve(result)
+        if (result?.data?.code === -1) {
+          // 如果未登录，重新登录
+          return login().then(() => {
+            return requestPromiseWithLogin(params)
+            .then(res => {
+              resolve(res)
+            }).catch(err => {
+              reject(err)
+            })
+          })
+        } else {
+          resolve(result)
+        }
       },
       fail: (err) => { reject(err) },
     })
