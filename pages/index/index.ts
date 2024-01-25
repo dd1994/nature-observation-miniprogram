@@ -62,14 +62,17 @@ Page({
   },
   computed: {
     tab1Title(data) {
-      return `观察(${data.observations.length})`
+      return `观察(${data.observations.length + 100})`
     },
     tab2Title(data) {
-      return `物种(0)`
+      return `物种(${data.observations.length + 100})`
+    },
+    tab3Title(data) {
+      return `鉴定(${data.observations.length + 100})`
     },
     stickyProps(data) {
       return {
-        'offsetTop': data.statusBarHeight
+        // 'offsetTop': data.statusBarHeight
       }
     }
   }

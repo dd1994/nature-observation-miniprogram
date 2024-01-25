@@ -1,6 +1,6 @@
 .index-page {
-  --td-tab-track-width: 180rpx;
-  --td-tab-font-size: 16px;
+  --td-tab-track-width: 150rpx;
+  --td-tab-font-size: 14px;
   /* --td-tab-item-height: 60px; */
 }
 
@@ -20,4 +20,8 @@
 
 .custom-tab-content {
   background-color: #f6f6f6;
+}
+
+.custom-tabs {
+  padding: 0 10px !important;
 }
