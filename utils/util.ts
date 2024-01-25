@@ -42,15 +42,15 @@ export function requestPromiseWithLogin(params) {
         token: wx.getStorageSync('token')
       },
       success: (result) => {
-        if (result?.data?.code === -1) {
+        if ((result?.data?.code === -1) && !needFirstLogin()) {
           // 如果未登录，重新登录
           return login().then(() => {
             return requestPromiseWithLogin(params)
-            .then(res => {
-              resolve(res)
-            }).catch(err => {
-              reject(err)
-            })
+              .then(res => {
+                resolve(res)
+              }).catch(err => {
+                reject(err)
+              })
           })
         } else {
           resolve(result)
