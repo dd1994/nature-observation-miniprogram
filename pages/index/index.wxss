@@ -1,7 +1,7 @@
 .index-page {
   --td-tab-track-width: 180rpx;
   --td-tab-font-size: 16px;
-  --td-tab-item-height: 40px;
+  --td-tab-item-height: 42px;
 }
 
 .empty-tips {
