@@ -1,11 +1,11 @@
-<view class="index-page" style="margin-top: {{statusBarHeight}}px;">
+<view class="index-page">
   <view class="empty-tips" wx:if="{{isEmpty}}">
     <t-button block theme="primary" bind:tap="onAddIconTap">开始记录</t-button>
     <view class="empty-tips__or">或者</view>
     <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
   </view>
   <view wx:else>
-    <t-tabs sticky stickyProps="{{stickyProps}}" split="{{false}}" defaultValue="{{0}}" t-class-item="custom-tabs" t-class-content="custom-tab-content" space-evenly="{{false}}">
+    <t-tabs sticky stickyProps="{{stickyProps}}" split="{{false}}" defaultValue="{{0}}" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <t-tab-panel label=" {{tab1Title}}" value="0" style="{{tabPanelstyle}}">
         <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}"></observation-list>
       </t-tab-panel>
