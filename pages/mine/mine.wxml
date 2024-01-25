@@ -1,4 +1,4 @@
-<view class="page-mine" style="margin-top: {{pageTop}}px;">
+<view class="page-mine">
   <view class="cell-group">
     <t-cell title="{{displayName}}" bind:tap="login" hover arrow>
       <view class="avatar" slot="left-icon">

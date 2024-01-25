@@ -36,7 +36,9 @@
   "darkmode": true,
   "themeLocation": "theme.json",
   "window": {
-    "navigationStyle": "custom"
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTextStyle": "black"
   },
   "rendererOptions": {
     "skyline": {
