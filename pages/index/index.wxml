@@ -1,9 +1,16 @@
-<view class="index-page">
+<view class="index-page" style="margin-top: {{statusBarHeight}}px;">
   <view class="empty-tips" wx:if="{{isEmpty}}">
     <t-button block theme="primary" bind:tap="onAddIconTap">开始记录</t-button>
     <view class="empty-tips__or">或者</view>
     <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
   </view>
-  <observation-list wx:else bind:refresh="resetAndFetchObservations" observations="{{observations}}"></observation-list>
+  <view wx:else>
+    <t-tabs split="{{false}}" defaultValue="{{0}}" t-class-item="custom-tabs" t-class-content="custom-tab-content" space-evenly="{{false}}">
+      <t-tab-panel label=" {{tab1Title}}" value="0" style="{{tabPanelstyle}}">
+        <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}"></observation-list>
+      </t-tab-panel>
+      <t-tab-panel label="{{tab2Title}}" value="1" style="{{tabPanelstyle}}">选项二内容</t-tab-panel>
+    </t-tabs>
+  </view>
   <add-observation-button wx:if="{{!isEmpty}}" bind:tap="onAddIconTap" />
 </view>

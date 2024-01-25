@@ -1,10 +1,11 @@
+import FullscreenBehavior from '../../components/fullscreen/fullscreen';
 import { login } from '../../utils/service/login';
 import { fetchObservationList } from '../../utils/service/observations'
 import { needFirstLogin } from '../../utils/util';
 const computedBehavior = require('miniprogram-computed').behavior;
 const app = getApp()
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [computedBehavior, FullscreenBehavior],
   data: {
     observations: [],
     limit: 20,
@@ -61,10 +62,15 @@ Page({
   },
   computed: {
     tab1Title(data) {
-      return `观察（${data.observations.length}）`
+      return `观察(${data.observations.length})`
     },
     tab2Title(data) {
-      return `物种（0）`
+      return `物种(0)`
     },
+    stickyProps(data) {
+      return {
+        'offsetTop': data.statusBarHeight
+      }
+    }
   }
 })

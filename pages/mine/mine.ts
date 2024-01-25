@@ -1,3 +1,4 @@
+import FullscreenBehavior from "../../components/fullscreen/fullscreen";
 import { login } from "../../utils/service/login";
 import { getUserProfile } from "../../utils/service/user"
 import { isLogin } from "../../utils/util";
@@ -5,7 +6,7 @@ const computedBehavior = require('miniprogram-computed').behavior;
 
 const app = getApp()
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [computedBehavior, FullscreenBehavior],
   data: {
     user: null,
     loginLoding: false
@@ -13,6 +14,9 @@ Page({
   computed: {
     displayName(data) {
       return data.user?.user_name || '点击登录'
+    },
+    pageTop(data) {
+      return data.statusBarHeight + data.navBarHeight
     }
   },
   async login() {
