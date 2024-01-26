@@ -7,7 +7,7 @@ const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
-import { showErrorTips } from '../../utils/feedBack';
+import { showErrorTips, showSuccessTips } from '../../utils/feedBack';
 import { generateDataFromRes, generateSaveParamsFromData } from './util';
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 import uploadOSS from '../../utils/service/uploadOSS';
@@ -197,23 +197,16 @@ Page({
     const fn = this.data.isEdit ? updateObservation : createObservation
     fn(params, this.data.id).then((res: any) => {
       if (res?.data?.success) {
-        wx.showToast({
-          title: '保存成功',
-        })
+        showSuccessTips('保存成功')
         setTimeout(() => {
           this.goToIndexAndRefresh()
         }, 1000)
       } else {
-        wx.showToast({
-          title: '保存失败',
-          icon: 'none'
-        })
+        showErrorTips('保存失败，请稍后重试')
       }
     }).catch(err => {
-      wx.showToast({
-        title: '保存失败',
-        icon: 'none'
-      })
+      console.error(err)
+      showErrorTips('保存失败，请稍后重试')
     })
   },
   delete() {
@@ -229,10 +222,7 @@ Page({
               icon: 'none'
             })
           }).catch(err => {
-            wx.showToast({
-              title: '删除失败',
-              icon: 'none'
-            })
+            showErrorTips('删除失败，请稍后重试')
           }).then(() => {
             setTimeout(() => {
               this.goToIndexAndRefresh()
