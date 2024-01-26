@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 const computedBehavior = require('miniprogram-computed').behavior;
-import { goToLocationSelector, fetchAdressByGPS } from '../../utils/service/qMap'
+import { goToLocationSelector, fetchAdressByGPS, translateGPS } from '../../utils/service/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
@@ -67,30 +67,37 @@ Page({
     }
 
     if (GPSInfo) {
-      const res: any = await fetchAdressByGPS({
-        lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
-        lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
-      })
-      const result = res?.data?.result
-      if (result) {
-        this.setData({
-          location: {
-            // 标准地址
-            standard_address: result.formatted_addresses.standard_address,
-            // 市
-            city: result.address_component.city,
-            // 区/县
-            district: result.address_component.district,
-            // 维度
-            latitude: result.location.lat,
-            // 经度
-            longitude: result.location.lng,
-            // 展示地址
-            recommend_address_name: result.formatted_addresses.recommend,
-            // 省
-            province: result.address_component.province,
-          }
+      try {
+        const { lng, lat } = await translateGPS({
+          // @ts-ignore
+          lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
+          // @ts-ignore
+          lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
         })
+        const res: any = await fetchAdressByGPS({ lng, lat })
+        const result = res?.data?.result
+        if (result) {
+          this.setData({
+            location: {
+              // 标准地址
+              standard_address: result.formatted_addresses.standard_address,
+              // 市
+              city: result.address_component.city,
+              // 区/县
+              district: result.address_component.district,
+              // 维度
+              latitude: lat,
+              // 经度
+              longitude: lng,
+              // 展示地址
+              recommend_address_name: result.formatted_addresses.recommend,
+              // 省
+              province: result.address_component.province,
+            }
+          })
+        }
+      } catch (error) {
+        console.error(error)
       }
     }
     this.setData({
