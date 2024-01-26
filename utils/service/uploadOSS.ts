@@ -39,4 +39,4 @@ function uploadOSS({ filePath, key, success, fail }) {
   })
 }
 
-module.exports = uploadOSS
+export default uploadOSS

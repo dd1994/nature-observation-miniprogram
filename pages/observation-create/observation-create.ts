@@ -1,4 +1,3 @@
-const uploadOSS = require("../../utils/service/uploadOSS");
 import _ from 'lodash'
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
@@ -11,6 +10,7 @@ import { fetchObservationDetail, createObservation, deleteObservation, updateObs
 import { showErrorTips } from '../../utils/feedBack';
 import { generateSaveParamsFromData } from './util';
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
+import uploadOSS from '../../utils/service/uploadOSS';
 const app = getApp()
 Page({
   behaviors: [computedBehavior],
@@ -70,7 +70,7 @@ Page({
       fetchAdressByGPS({
         lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
         lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
-      }).then(res => {
+      }).then((res: any) => {
         const result = res?.data?.result
         if (result) {
           this.setData({
@@ -223,7 +223,7 @@ Page({
     const params = generateSaveParamsFromData(this.data)
 
     const fn = this.data.isEdit ? updateObservation : createObservation
-    fn(params, this.data.id).then(res => {
+    fn(params, this.data.id).then((res: any) => {
       if (res?.data?.success) {
         wx.showToast({
           title: '保存成功',
@@ -249,9 +249,9 @@ Page({
       title: '',
       content: '确认删除这条记录吗',
       confirmText: '确认删除',
-      complete: (res) => {
+      complete: (res: any) => {
         if (res.confirm) {
-          deleteObservation(this.data.id).then(res => {
+          deleteObservation(this.data.id).then((res: any) => {
             wx.showToast({
               title: res?.data?.success ? '删除成功' : '删除失败',
               icon: 'none'
