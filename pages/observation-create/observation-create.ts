@@ -48,9 +48,6 @@ Page({
   removeLocation() {
     this.setData({ location: null })
   },
-  removeObservedOn() {
-    this.setData({ observedOn: null })
-  },
   descriptionChange(e) {
     this.setData({ description: e.detail.value })
   },

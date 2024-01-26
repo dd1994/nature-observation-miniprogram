@@ -24,7 +24,7 @@
     </view>
     <view class="create-form-item-wrapper create-form-item-wrapper-note">
       <view class="create-form-item-icon-wrapper">
-        <t-icon name="edit-2" size="20px" />
+        <t-icon name="edit-1" size="20px" />
       </view>
       <t-input placeholder-class="create-form-item-placeholder" borderless value="{{description}}" placeholder="添加备注(选填)" maxcharacter="{{100}}" bind:change="descriptionChange" />
     </view>
@@ -55,7 +55,7 @@
     </view>
     <view class="create-form-item-wrapper">
       <view class="create-form-item-icon-wrapper">
-        <t-icon name="user-business" size="20px" />
+        <t-icon name="user" size="20px" />
       </view>
       <view class="create-form-item-content">是否人工圈养或栽培</view>
       <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange" />
