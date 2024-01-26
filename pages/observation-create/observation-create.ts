@@ -92,6 +92,7 @@ Page({
           })
         }
       }).catch(err => {
+        console.error(err)
       })
     }
     this.setData({
@@ -109,7 +110,8 @@ Page({
         });
       },
       fail: (err) => {
-
+        showErrorTips('图片上传失败，请稍后重试')
+        console.error(err)
       }
     })
 
@@ -122,31 +124,12 @@ Page({
     });
 
   },
-  upload() {
-    wx.chooseMedia({
-      mediaType: 'mix',
-      maxDuration: 60,
-      success: (res) => {
-        const tempFilePaths = res.tempFiles.map(file => {
-          return {
-            key: (new UUID(1)).toString(),
-            filePath: file.tempFilePath
-          }
-        })
-        uploadOSS(tempFilePaths)
-      },
-      fail: () => {
-      }
-    })
-  },
   onRemoveUploadFile(e) {
     const { index } = e.detail;
     const { fileList } = this.data;
 
     fileList.splice(index, 1);
-    this.setData({
-      fileList,
-    });
+    this.setData({ fileList });
   },
   observedOnChange(e) {
     this.setData({ observedOn: e.detail.value })
