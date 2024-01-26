@@ -185,10 +185,11 @@ Page({
   },
   save() {
     if (!this.data.taxon) {
-      wx.showToast({
-        title: '请选择物种',
-        icon: 'none'
-      })
+      showErrorTips('请选择物种')
+    }
+
+    if (!this.data.fileList?.length) {
+      showErrorTips('请上传图片')
     }
 
     const params = generateSaveParamsFromData(this.data)
