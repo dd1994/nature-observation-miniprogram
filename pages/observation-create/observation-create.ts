@@ -55,19 +55,54 @@ Page({
     const { files } = e.detail;
     files.forEach(file => this.uploadFile(file))
   },
-  async uploadFile(file) {
+  uploadFile(file) {
     const uuid = (new UUID(1)).toString()
     const { fileList } = this.data;
+    this.setData({
+      fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
+    });
 
-    const { time, GPSInfo } = parseExifFromLocalImgUrl(file.url)
+    const task = uploadOSS({
+      filePath: file.url,
+      key: uuid,
+      success: (res) => {
+        const index = this.data.fileList.findIndex(i => i.key === uuid)
+        this.setData({
+          [`fileList[${index}].status`]: 'done',
+          [`fileList[${index}].url`]: getOSSUrlByKey(uuid),
+        });
+      },
+      fail: (err) => {
+        showErrorTips('图片上传失败，请稍后重试')
+        console.error(err)
+      }
+    })
+
+    task.onProgressUpdate((res) => {
+      const index = this.data.fileList.findIndex(i => i.key === uuid)
+      this.setData({
+        [`fileList[${index}].percent`]: res.progress,
+      });
+    });
+
+    this.setTimeAndLocationFromParseImg(file.url)
+  },
+  async setTimeAndLocationFromParseImg(fileUrl) {
+    const { time, GPSInfo } = parseExifFromLocalImgUrl(fileUrl)
     if (time) {
       this.setData({
         observedOn: moment(time, exifTimeFormat).format(defaultTimeFormat)
       })
     }
 
-    if (GPSInfo) {
+    if (GPSInfo && !this.data.location) {
       try {
+        this.setData({
+          location: {
+            latitude: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
+            longitude: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef),
+          }
+        })
         const { lng, lat } = await translateGPS({
           // @ts-ignore
           lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
@@ -76,6 +111,7 @@ Page({
         })
         const res: any = await fetchAdressByGPS({ lng, lat })
         const result = res?.data?.result
+
         if (result) {
           this.setData({
             location: {
@@ -100,34 +136,6 @@ Page({
         console.error(error)
       }
     }
-    this.setData({
-      fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
-    });
-
-    const task = uploadOSS({
-      filePath: file.url,
-      key: uuid,
-      success: (res) => {
-        const index = this.data.fileList.findIndex(i => i.key === uuid)
-        this.setData({
-          [`fileList[${index}].status`]: 'done',
-          [`fileList[${index}].url`]: getOSSUrlByKey(uuid),
-        });
-      },
-      fail: (err) => {
-        showErrorTips('图片上传失败，请稍后重试')
-        console.error(err)
-      }
-    })
-
-    task.onProgressUpdate((res) => {
-      const index = this.data.fileList.findIndex(i => i.key === uuid)
-
-      this.setData({
-        [`fileList[${index}].percent`]: res.progress,
-      });
-    });
-
   },
   onRemoveUploadFile(e) {
     const { index } = e.detail;
