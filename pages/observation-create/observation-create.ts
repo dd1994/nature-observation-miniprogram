@@ -51,7 +51,7 @@ Page({
   descriptionChange(e) {
     this.setData({ description: e.detail.value })
   },
-  handleAdd(e) {
+  onAddUploadFiles(e) {
     const { files } = e.detail;
     files.forEach(file => this.uploadFile(file))
   },
@@ -153,7 +153,7 @@ Page({
       }
     })
   },
-  handleRemove(e) {
+  onRemoveUploadFile(e) {
     const { index } = e.detail;
     const { fileList } = this.data;
 
