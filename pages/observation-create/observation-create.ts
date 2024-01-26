@@ -2,11 +2,10 @@ const uploadOSS = require("../../utils/service/uploadOSS");
 import _ from 'lodash'
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
-var EXIF = require('../../utils/libs/exif');
 const computedBehavior = require('miniprogram-computed').behavior;
 import { goToLocationSelector, fetchAdressByGPS } from '../../utils/service/qMap'
 const chooseLocation = requirePlugin('chooseLocation');
-import { defaultTimeFormat, exifFormat } from '../../utils/constant'
+import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips } from '../../utils/feedBack';
@@ -58,28 +57,15 @@ Page({
   uploadFile(file) {
     const uuid = (new UUID(1)).toString()
     const { fileList } = this.data;
-    file.metaData = {}
-    const array = wx.getFileSystemManager().readFileSync(file.url);
 
-    var exifInfo = JSON.parse(JSON.stringify(EXIF.handleBinaryFile(array)));
-
-    const time = exifInfo?.data?.DateTime
+    const { time, GPSInfo } = parseExifFromLocalImgUrl(file.url)
     if (time) {
       this.setData({
-        observedOn: moment(time, exifFormat).format(defaultTimeFormat)
+        observedOn: moment(time, exifTimeFormat).format(defaultTimeFormat)
       })
-      file.metaData.time = time
     }
 
-    if (exifInfo?.data?.GPSLatitude && !this.location) {
-      const GPSInfo = {
-        // 参考文档 https://exiftool.org/TagNames/GPS.html
-        GPSLatitude: exifInfo?.data?.GPSLatitude,
-        GPSLatitudeRef: exifInfo?.data?.GPSLatitudeRef,
-        GPSLongitude: exifInfo?.data?.GPSLongitude,
-        GPSLongitudeRef: exifInfo?.data?.GPSLongitudeRef,
-      }
-      file.metaData.gpsInfo = GPSInfo
+    if (GPSInfo) {
       fetchAdressByGPS({
         lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
         lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
@@ -193,7 +179,7 @@ Page({
     }
   },
   fetchObservationDetail() {
-    fetchObservationDetail(this.data.id).then(res => {
+    fetchObservationDetail(this.data.id).then((res: any) => {
       const data = res?.data?.[0]
       if (!data) {
         showErrorTips("获取数据失败")
