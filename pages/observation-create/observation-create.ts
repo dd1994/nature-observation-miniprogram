@@ -55,7 +55,7 @@ Page({
     const { files } = e.detail;
     files.forEach(file => this.uploadFile(file))
   },
-  uploadFile(file) {
+  async uploadFile(file) {
     const uuid = (new UUID(1)).toString()
     const { fileList } = this.data;
 
@@ -67,34 +67,31 @@ Page({
     }
 
     if (GPSInfo) {
-      fetchAdressByGPS({
+      const res: any = await fetchAdressByGPS({
         lng: formatExifGPSLongitude(GPSInfo.GPSLongitude, GPSInfo.GPSLongitudeRef),
         lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
-      }).then((res: any) => {
-        const result = res?.data?.result
-        if (result) {
-          this.setData({
-            location: {
-              // 标准地址
-              standard_address: result.formatted_addresses.standard_address,
-              // 市
-              city: result.address_component.city,
-              // 区/县
-              district: result.address_component.district,
-              // 维度
-              latitude: result.location.lat,
-              // 经度
-              longitude: result.location.lng,
-              // 展示地址
-              recommend_address_name: result.formatted_addresses.recommend,
-              // 省
-              province: result.address_component.province,
-            }
-          })
-        }
-      }).catch(err => {
-        console.error(err)
       })
+      const result = res?.data?.result
+      if (result) {
+        this.setData({
+          location: {
+            // 标准地址
+            standard_address: result.formatted_addresses.standard_address,
+            // 市
+            city: result.address_component.city,
+            // 区/县
+            district: result.address_component.district,
+            // 维度
+            latitude: result.location.lat,
+            // 经度
+            longitude: result.location.lng,
+            // 展示地址
+            recommend_address_name: result.formatted_addresses.recommend,
+            // 省
+            province: result.address_component.province,
+          }
+        })
+      }
     }
     this.setData({
       fileList: [...fileList, { ...file, key: uuid, status: 'loading' }],
