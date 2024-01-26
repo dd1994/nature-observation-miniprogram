@@ -196,12 +196,15 @@ Page({
     })
   },
   save() {
+    if (this.data.fileList?.find(i => i.status === 'loading')) {
+      return showErrorTips('请等待图片上传完成后再保存')
+    }
     if (!this.data.taxon) {
-      showErrorTips('请选择物种')
+      return showErrorTips('请选择物种')
     }
 
     if (!this.data.fileList?.length) {
-      showErrorTips('请上传图片')
+      return showErrorTips('请上传图片')
     }
 
     const params = generateSaveParamsFromData(this.data)
