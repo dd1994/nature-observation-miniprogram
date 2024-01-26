@@ -15,15 +15,13 @@ const app = getApp()
 Page({
   behaviors: [computedBehavior],
   data: {
-    id: null,
-    fileList: [],
-    description: '',
-    observedOn: moment().format(defaultTimeFormat),
-    defaultTime: moment().format(defaultTimeFormat),
-    timeSelectorVisible: false,
-    location: null,
-    artificial: false,
-    taxon: null,
+    id: null, // 编辑状态的观察 id
+    fileList: [], // 上传的图片列表
+    description: '', // 备注
+    observedOn: moment().format(defaultTimeFormat), // 观察时间
+    location: null, // 观察地址信息
+    artificial: false, // 是否人工圈养或栽培
+    taxon: null, // 观察物种
     uploadConfig: {
       sourceType: ['album']
     },
@@ -166,9 +164,6 @@ Page({
     this.setData({
       fileList,
     });
-  },
-  openTimePicker() {
-    this.setData({ timeSelectorVisible: true })
   },
   observedOnChange(e) {
     this.setData({ observedOn: e.detail.value })
