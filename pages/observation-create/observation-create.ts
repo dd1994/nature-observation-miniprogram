@@ -199,6 +199,10 @@ Page({
     if (this.data.fileList?.find(i => i.status === 'loading')) {
       return showErrorTips('请等待图片上传完成后再保存')
     }
+
+    if (this.data.fileList?.find(i => i.status !== 'done')) {
+      return showErrorTips('部分图片上传失败，请尝试重新上传')
+    }
     if (!this.data.taxon) {
       return showErrorTips('请选择物种')
     }
