@@ -9,6 +9,7 @@ import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips } from '../../utils/feedBack';
+import { generateSaveParamsFromData } from './util';
 
 const app = getApp()
 Page({
@@ -218,40 +219,8 @@ Page({
         icon: 'none'
       })
     }
-    const basicInfo = {
-      description: this.data.description,
-      observed_on: moment(this.data.observedOn, defaultTimeFormat).format('x'),
-      artificial: this.data.artificial
-    }
-    const taxonInfo = {
-      common_name: this.data.taxon.preferred_common_name,
-      scientific_name: this.data.taxon.name,
-      taxon_rank: this.data.taxon.rank,
-      iconic_taxon_name: this.data.taxon.iconic_taxon_name,
-      taxon_id: this.data.taxon.id
-    }
 
-    const otherInfo = {
-      license: null
-    }
-
-    const locationInfo = {
-      'latitude': this.data.location?.latitude || null,
-      'longitude': this.data.location?.longitude || null,
-      'province': this.data.location?.province || null,
-      'city': this.data.location?.city || null,
-      'district': this.data.location?.district || null,
-      "recommend_address_name": this.data.location?.recommend_address_name || null,
-      "standard_address": this.data.location?.standard_address || null,
-    }
-
-    const params = {
-      fileList: this.data.fileList,
-      ...basicInfo,
-      ...locationInfo,
-      ...taxonInfo,
-      ...otherInfo
-    }
+    const params = generateSaveParamsFromData(this.data)
 
     const fn = this.data.isEdit ? updateObservation : createObservation
     fn(params, this.data.id).then(res => {
