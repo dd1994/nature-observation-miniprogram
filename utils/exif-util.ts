@@ -1,6 +1,6 @@
 const EXIF = require('./libs/exif');
 
-const parseExifFromLocalImgUrl = (localUrl) => {
+export const parseExifFromLocalImgUrl = (localUrl) => {
   const base64File = wx.getFileSystemManager().readFileSync(localUrl);
 
   // 两次 json 操作是为了格式化

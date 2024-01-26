@@ -10,7 +10,7 @@ import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips } from '../../utils/feedBack';
 import { generateSaveParamsFromData } from './util';
-
+import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 const app = getApp()
 Page({
   behaviors: [computedBehavior],
