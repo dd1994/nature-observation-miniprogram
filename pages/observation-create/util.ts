@@ -39,3 +39,36 @@ export const generateSaveParamsFromData = (data: any) => {
 
   return params
 }
+
+export const generateDataFromRes = (res) => {
+  return {
+    description: res.description,
+    observedOn: moment(res.observed_on).format(defaultTimeFormat),
+    "artificial": !!res.artificial,
+    location: {
+      "latitude": res.latitude,
+      "longitude": res.longitude,
+      "province": res.province,
+      "city": res.city,
+      "district": res.district,
+      "recommend_address_name": res.recommend_address_name,
+      "standard_address": res.standard_address,
+    },
+    taxon: {
+      "preferred_common_name": res.common_name,
+      "common_name": res.common_name,
+      "name": res.scientific_name,
+      "rank": res.taxon_rank,
+      "iconic_taxon_name": res.iconic_taxon_name,
+      "id": res.taxon_id,
+    },
+    fileList: res.photos.map(i => {
+      return {
+        url: i.url,
+        key: i.key,
+        type: 'image',
+        status: 'done'
+      }
+    })
+  }
+}

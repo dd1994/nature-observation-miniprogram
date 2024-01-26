@@ -8,7 +8,7 @@ import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips } from '../../utils/feedBack';
-import { generateSaveParamsFromData } from './util';
+import { generateDataFromRes, generateSaveParamsFromData } from './util';
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 import uploadOSS from '../../utils/service/uploadOSS';
 const app = getApp()
@@ -168,36 +168,7 @@ Page({
       if (!data) {
         showErrorTips("获取数据失败")
       }
-      this.setData({
-        description: data.description,
-        observedOn: moment(data.observed_on).format(defaultTimeFormat),
-        "artificial": !!data.artificial,
-        location: {
-          "latitude": data.latitude,
-          "longitude": data.longitude,
-          "province": data.province,
-          "city": data.city,
-          "district": data.district,
-          "recommend_address_name": data.recommend_address_name,
-          "standard_address": data.standard_address,
-        },
-        taxon: {
-          "preferred_common_name": data.common_name,
-          "common_name": data.common_name,
-          "name": data.scientific_name,
-          "rank": data.taxon_rank,
-          "iconic_taxon_name": data.iconic_taxon_name,
-          "id": data.taxon_id,
-        },
-        fileList: data.photos.map(i => {
-          return {
-            url: i.url,
-            key: i.key,
-            type: 'image',
-            status: 'done'
-          }
-        })
-      })
+      this.setData(generateDataFromRes(data))
     })
   },
   goToSearch() {
