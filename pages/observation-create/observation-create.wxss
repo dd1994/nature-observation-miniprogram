@@ -49,6 +49,11 @@
   font-size: var(--std-font-size) !important;
 }
 
+.create-form-item-time-tips {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+}
+
 .create-form-item-icon-wrapper {
   margin-right: 13px;
 }
