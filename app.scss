@@ -1,8 +1,8 @@
-/**app.wxss**/
-/* #36ab60 */
+@import './theme.scss';
+
 page {
   font-family: sans-serif;
-  background-color: #f6f6f6;
+  background-color: $default-bg;
   /* 由 https://uicolors.app/create 生成的配色 */
   --td-primary-color-1: #effef2;
   --td-primary-color-2: #dafee1;
