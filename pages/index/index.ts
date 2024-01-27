@@ -62,13 +62,13 @@ Page({
   },
   computed: {
     tab1Title(data) {
-      return `观察(${data.observations.length + 100})`
+      return `观察(${data.observations.length})`
     },
     tab2Title(data) {
-      return `物种(${data.observations.length + 100})`
+      return `物种(${data.observations.length})`
     },
     tab3Title(data) {
-      return `鉴定(${data.observations.length + 100})`
+      return `鉴定(${data.observations.length})`
     },
     stickyProps(data) {
       return {
