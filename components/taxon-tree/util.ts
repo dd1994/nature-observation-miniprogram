@@ -29,7 +29,7 @@ const rankList = [
   }
 ]
 
-export const validRankList = rankList.map(i => i.rank).concat('hybrid')
+export const validRankList = rankList.map(i => i.rank)
 
 // 选择到某个具体级别，如 family
 export const selectSubRankList = (rank) => {

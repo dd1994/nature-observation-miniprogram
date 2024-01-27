@@ -56,9 +56,16 @@ Page({
       })
       if (res?.data?.results?.length) {
         this.setData({
-          searchResult: (res?.data?.results || []).filter(i => {
-            return validRankList.includes(i.rank)
-          })
+          searchResult: (res?.data?.results || [])
+            .map(i => {
+              return {
+                ...i,
+                rank: i.rank === 'hybrid' ? 'species' : i.rank
+              }
+            })
+            .filter(i => {
+              return validRankList.includes(i.rank)
+            })
         })
       }
     }).catch(err => {
