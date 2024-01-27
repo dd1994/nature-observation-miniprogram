@@ -13,7 +13,7 @@
   </view> -->
 
   <view class="cell-group">
-    <t-cell title="物种信息" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="book" />
+    <t-cell title="物种信息" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
   </view>
 
   <view wx:if="{{user}}" class="cell-group">
