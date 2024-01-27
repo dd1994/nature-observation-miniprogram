@@ -1,6 +1,6 @@
 <!--components/taxon-tree/taxon-tree.wxml-->
 <view>
-  <view wx:for="{{nameList}}">
+  <view key="{{item.displayName}}" wx:for="{{nameList}}">
     <t-cell title="{{item.displayName}}" hover arrow t-class="taxon-name-cell" t-class-title="taxon-name-cell-title" />
   </view>
 </view>
