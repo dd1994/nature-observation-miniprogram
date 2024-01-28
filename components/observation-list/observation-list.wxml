@@ -3,7 +3,7 @@
     <view class="observation-list__item__bottom">
       <view class="observation-list__item__text">{{item.common_name}}
       </view>
-      <t-icon catch:tap="previewImg" data-item="{{item}}" name="fullscreen-1" color="rgba(255, 255, 255, 0.5)" size="25" />
+      <t-icon catch:tap="previewImg" data-item="{{item}}" name="fullscreen-1" style="padding:2px 4px;" color="rgba(255, 255, 255, 0.5)" size="25" />
     </view>
     <view class="observation-list__item__img" style="background-image: url({{item.displayImg}})"></view>
   </view>
