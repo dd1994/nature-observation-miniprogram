@@ -14,6 +14,14 @@ Component({
 
   },
   methods: {
+    previewImg(e) {
+      const photos = e.currentTarget?.dataset?.item?.photos?.map(i => i.url) || []
+      wx.previewImage({
+        urls: photos,
+        showmenu: false,
+        current: photos[0],
+      })
+    },
     gotoDetailPage(e) {
       wx.navigateTo({
         url: `/pages/observation-detail/observation-detail?id=${e.currentTarget.dataset.id}`,
