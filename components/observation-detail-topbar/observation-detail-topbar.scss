@@ -1,9 +1,11 @@
+@import '../../theme.scss';
+
 .observation-detail-topbar {
-  padding: 10px;
+  padding: 2px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(0, 0, 0, 0.7);
+  color: $font-gray-2;
   background-color: white;
 }
 
