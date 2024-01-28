@@ -1,11 +1,11 @@
-import FullscreenBehavior from '../../components/fullscreen/fullscreen';
+import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
 import { fetchObservationList } from '../../utils/service/observations'
 import { needFirstLogin } from '../../utils/util';
 const computedBehavior = require('miniprogram-computed').behavior;
 const app = getApp()
 Page({
-  behaviors: [computedBehavior, FullscreenBehavior],
+  behaviors: [computedBehavior, UserProfileBehavior],
   data: {
     observations: [],
     limit: 20,

@@ -7,7 +7,7 @@
   <view wx:else>
     <t-tabs sticky stickyProps="{{stickyProps}}" split="{{false}}" defaultValue="{{0}}" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <t-tab-panel label="{{tab1Title}}" value="0">
-        <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}"></observation-list>
+        <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}"></observation-list>
       </t-tab-panel>
       <t-tab-panel label="{{tab2Title}}" value="1">
         <view>物种列表</view>

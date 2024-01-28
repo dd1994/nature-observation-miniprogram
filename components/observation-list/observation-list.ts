@@ -9,16 +9,20 @@ Component({
       type: Array,
       value: []
     },
+    userProfile: {
+      type: Object,
+    }
   },
   data: {
 
   },
   methods: {
     previewImg(e) {
-      const photos = e.currentTarget?.dataset?.item?.photos?.map(i => i.url) || []
+      const item = e.currentTarget?.dataset?.item
+      const photos = item?.photos?.map(i => i.url) || []
       wx.previewImage({
         urls: photos,
-        showmenu: false,
+        showmenu: this.data.userProfile?.id === item.user_id,
         current: photos[0],
       })
     },
@@ -42,6 +46,6 @@ Component({
           displayImg: getImgQuality(i.photos[0].url, 30)
         }
       })
-    }
+    },
   }
 })
