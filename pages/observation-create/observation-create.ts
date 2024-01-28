@@ -22,6 +22,7 @@ Page({
     location: null, // 观察地址信息
     artificial: false, // 是否人工圈养或栽培
     taxon: null, // 观察物种
+    originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
     uploadConfig: {
       sourceType: ['album']
     },
@@ -37,6 +38,9 @@ Page({
     },
     isEdit(data) {
       return !!data.id
+    },
+    taxonChanged(data) {
+      return data.isEdit && (data.originTaxonName !== data.taxon?.name)
     }
   },
   goToSearchLocation() {

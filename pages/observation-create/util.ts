@@ -37,6 +37,11 @@ export const generateSaveParamsFromData = (data: any) => {
     ...otherInfo
   }
 
+
+  if (data.isEdit) {
+    // @ts-ignore
+    params.taxonChanged = data.taxonChanged
+  }
   return params
 }
 
@@ -54,6 +59,7 @@ export const generateDataFromRes = (res) => {
       "recommend_address_name": res.recommend_address_name,
       "standard_address": res.standard_address,
     },
+    originTaxonName: res.scientific_name,
     taxon: {
       "preferred_common_name": res.common_name,
       "common_name": res.common_name,
