@@ -58,7 +58,7 @@ Page({
     editUrl(data) {
       return `/pages/observation-create/observation-create?id=` + data.observationDetail?.id
     },
-    showEditButton(data) {
+    isOwner(data) {
       return data.observationDetail?.user_id === data.userProfile?.id
     }
   },
@@ -81,7 +81,7 @@ Page({
     const index = e.detail.index
     wx.previewImage({
       urls: this.data.photos,
-      showmenu: false,
+      showmenu: this.data.isOwner,
       current: this.data.photos[index],
     })
   },

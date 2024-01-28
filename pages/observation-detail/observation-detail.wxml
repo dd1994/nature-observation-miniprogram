@@ -18,7 +18,7 @@
         </view>
       </t-cell>
 
-      <view wx:if="{{showEditButton}}" class="edit-button-wrapper">
+      <view wx:if="{{isOwner}}" class="edit-button-wrapper">
         <t-button bind:tap="edit" icon="edit" theme="primary" block size="medium" variant="outline">编辑观察</t-button>
       </view>
     </t-tab-panel>
