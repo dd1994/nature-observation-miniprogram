@@ -31,7 +31,7 @@ Component({
       return (data.observations || []).map(i => {
         return {
           ...i,
-          displayImg: getImgQuality(i.photos[0].url, 30)
+          displayImg: getImgQuality(i.photos[0].url, 20)
         }
       })
     }

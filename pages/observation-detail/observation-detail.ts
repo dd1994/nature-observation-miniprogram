@@ -4,6 +4,7 @@ import { fetchObservationDetail } from "../../utils/service/observations"
 const computedBehavior = require('miniprogram-computed').behavior;
 import { createIdentification } from '../../utils/service/identifications'
 import UserProfileBehavior from "../../components/user-profile/user-profile";
+import { getImgQuality } from "../../utils/img";
 
 // pages/observation-detail/observation-detail.js
 Page({
@@ -21,7 +22,7 @@ Page({
     swiperList(data) {
       return data.photos.map(i => {
         return {
-          value: i,
+          value: getImgQuality(i, 70),
         }
       })
     },
