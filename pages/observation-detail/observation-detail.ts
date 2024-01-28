@@ -3,10 +3,11 @@ import { fetchIdentificationList } from "../../utils/service/identifications";
 import { fetchObservationDetail } from "../../utils/service/observations"
 const computedBehavior = require('miniprogram-computed').behavior;
 import { createIdentification } from '../../utils/service/identifications'
+import UserProfileBehavior from "../../components/user-profile/user-profile";
 
 // pages/observation-detail/observation-detail.js
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [computedBehavior, UserProfileBehavior],
   data: {
     observationDetail: {},
     currentPhoto: 0,
@@ -56,6 +57,9 @@ Page({
     },
     editUrl(data) {
       return `/pages/observation-create/observation-create?id=` + data.observationDetail?.id
+    },
+    showEditButton(data) {
+      return data.observationDetail?.user_id === data.userProfile?.id
     }
   },
   viewMapDetail() {
