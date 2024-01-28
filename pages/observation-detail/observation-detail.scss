@@ -1,9 +1,16 @@
+@import "../../theme.scss";
+
 .page-container {
   --td-swiper-radius: 0;
   --td-tab-track-width: 200rpx;
   margin: 0;
   min-height: 100vh;
   background-color: white;
+}
+
+.observation-desc {
+  color: $font-gray-2;
+  margin: 32rpx 32rpx 0 32rpx;
 }
 
 .taxon-name-cell {
