@@ -22,7 +22,7 @@ Page({
     swiperList(data) {
       return data.photos.map(i => {
         return {
-          value: getImgQuality(i, 70),
+          value: getImgQuality(i, 80),
         }
       })
     },
