@@ -1,4 +1,5 @@
 import { apiDomain } from "../constant"
+import { getUserProfile } from "./user"
 
 export const login = () => {
   return new Promise((resolve, reject) => {
@@ -14,6 +15,13 @@ export const login = () => {
             if (res?.data.success) {
               // @ts-ignore
               wx.setStorageSync('token', res?.data?.data?.token)
+              getUserProfile().then(res => {
+                wx.setStorage({
+                  key: 'user',
+                  // @ts-ignore
+                  data: res.data.data,
+                })
+              })
               resolve(true)
             } else {
               // @ts-ignore

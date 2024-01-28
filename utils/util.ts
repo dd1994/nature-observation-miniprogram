@@ -43,7 +43,7 @@ export function requestPromiseWithLogin(params) {
       },
       success: (result) => {
         if ((result?.data?.code === -1) && !needFirstLogin()) {
-          // 如果未登录，重新登录
+          // 如果登录失效，重新登录
           return login().then(() => {
             return requestPromiseWithLogin(params)
               .then(res => {
