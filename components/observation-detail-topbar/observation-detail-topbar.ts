@@ -28,6 +28,7 @@ Component({
   data: {
 
   },
+  // @ts-ignore
   computed: {
     formattedObservedOn(data) {
       return moment(data.observedOn).format("YYYY-MM-DD")
