@@ -43,7 +43,7 @@
 
 .create-form-item-placeholder {
   color: $font-gray-3 !important;
-  font-size: $font-size-xs !important;
+  font-size: $font-size-l !important;
 }
 
 .create-form-item-time-tips {
@@ -64,7 +64,7 @@
 }
 
 .create-form-item-content {
-  font-size: $font-size-xs;
+  font-size: $font-size-l;
   display: flex;
   align-items: center;
   justify-content: space-between;
