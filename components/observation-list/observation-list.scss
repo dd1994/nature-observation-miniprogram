@@ -1,9 +1,11 @@
+@import "../../theme.scss";
+
 .observation-list {
-  margin: 5px;
+  margin: $area-gap-xxs;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: 5px;
-  grid-column-gap: 5px;
+  grid-row-gap: $area-gap-xxs;
+  grid-column-gap: $area-gap-xxs;
 }
 
 .observation-list__item {
@@ -27,8 +29,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding-left: 4px;
-  background-color: rgba(0, 0, 0, 0.4);
+  padding-left: $area-gap-xxs;
+  background-color: $bg-trans;
 
   display: flex;
   align-items: center;
@@ -37,11 +39,14 @@
 
 .observation-list__item__text {
   color: #fff;
-  font-size: 18px;
-  line-height: 1;
+  font-size: $font-size-m;
 
   /* 名称过长时省略 */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.observation-list__item__fullscreen {
+  padding: 2px $area-gap-xxs;
 }
