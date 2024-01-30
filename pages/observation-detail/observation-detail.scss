@@ -28,10 +28,10 @@
 }
 
 .edit-button-wrapper {
-  margin: 32px 32px;
+  margin: $area-gap-xxl;
 }
 
 .identifications-pannel {
-  margin-bottom: 40px;
+  // margin-bottom: $area-gap-xxl;
   background-color: $default-bg;
 }
