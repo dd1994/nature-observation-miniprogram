@@ -1,8 +1,6 @@
 @import "../../theme.scss";
 
 .page-container {
-  --std-font-size: 20px;
-  --td-font-size-m: 20px;
   font-size: 20px;
   margin: 0;
   padding-bottom: 100px;
@@ -44,13 +42,13 @@
 }
 
 .create-form-item-placeholder {
-  color: rgba(0, 0, 0, 0.4) !important;
-  font-size: var(--std-font-size) !important;
+  color: $font-gray-3 !important;
+  font-size: $font-size-xs !important;
 }
 
 .create-form-item-time-tips {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 16px;
+  color: $font-gray-3;
+  font-size: $font-size;
   margin-right: 16rpx;
 }
 
@@ -66,7 +64,7 @@
 }
 
 .create-form-item-content {
-  font-size: var(--std-font-size);
+  font-size: $font-size-xs;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,6 +87,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: $font-size;
+  color: $font-gray-2;
 }
