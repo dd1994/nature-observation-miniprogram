@@ -212,6 +212,10 @@ Page({
       return showErrorTips('请上传图片')
     }
 
+    if (!this.data.taxon?.name) {
+      return showErrorTips('请选择你看到了什么')
+    }
+
     const params = generateSaveParamsFromData(this.data)
 
     const fn = this.data.isEdit ? updateObservation : createObservation
