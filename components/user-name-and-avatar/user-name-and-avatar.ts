@@ -8,6 +8,10 @@ Component({
     userProfile: {
       type: Object,
       value: {}
+    },
+    color: {
+      type: String,
+      value: 'rgba(0, 0, 0, 0.9)'
     }
   },
 
