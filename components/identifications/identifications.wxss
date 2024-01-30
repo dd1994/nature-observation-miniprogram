@@ -1,7 +1,0 @@
-.identifications-list {
-  margin: 10px;
-}
-
-.identifications-user {
-  color: rgba(0, 0, 0, 0.9);
-}

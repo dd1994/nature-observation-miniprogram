@@ -1,11 +1,15 @@
+@import "../../theme.scss";
+
 .user-name-and-avatar {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  color: $font-gray-1;
 }
 
 .user__avatar {
   width: 25px;
   height: 25px;
   margin-right: 10px;
+  border-radius: 50%;
 }

@@ -1,0 +1,12 @@
+@import "../../theme.scss";
+
+.identifications-list {
+  margin: 10px;
+}
+
+.identifications-item-user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $font-gray-2;
+}

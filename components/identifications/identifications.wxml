@@ -1,6 +1,9 @@
 <view class="identifications-list">
   <view wx:for="{{formattedIdentifications}}" wx:key="id">
-    <view slot="title"><text class="identifications-user">{{item.user_name}}</text> {{item.created_from_now}}添加了一个鉴定</view>
+    <view class="identifications-item-user" slot="title">
+      <user-name-and-avatar userProfile="{{item}}" />
+      <view style="margin-left: 10px;">{{item.created_from_now}}添加了一个鉴定</view>
+    </view>
     <taxon-cell slot="content" taxon="{{item}}" />
   </view>
 </view>

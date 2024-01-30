@@ -10,7 +10,12 @@ Component({
    */
   properties: {
     identifications: {
+      type: Array,
       value: []
+    },
+    userProfile: {
+      type: Object,
+      value: {}
     }
   },
 
