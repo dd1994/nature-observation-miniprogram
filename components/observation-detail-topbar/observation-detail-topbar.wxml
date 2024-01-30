@@ -1,8 +1,5 @@
 <view class="observation-detail-topbar">
-  <view class="observation-detail-topbar__left">
-    <image class="observation-detail-topbar__left__avatar" src="../../static/me.png" mode="" />
-    <view>{{userName}}</view>
-  </view>
+  <user-name-and-avatar userProfile="{{userProfile}}"></user-name-and-avatar>
   <view class="observation-detail-topbar__right">
     {{formattedObservedOn}}
   </view>

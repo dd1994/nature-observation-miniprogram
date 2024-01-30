@@ -7,15 +7,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    userId: {
-      type: String
-    },
-    userName: {
-      type: String
-    },
-    userAvatar: {
-      type: String,
-      value: '../../static/me.png'
+    userProfile: {
+      type: Object,
+      value: {}
     },
     observedOn: {
       type: String

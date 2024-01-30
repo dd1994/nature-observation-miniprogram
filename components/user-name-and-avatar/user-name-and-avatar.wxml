@@ -1,0 +1,4 @@
+<view class="user-name-and-avatar">
+  <image class="user__avatar" src="../../static/me.png" mode="" />
+  <view class="user-name">{{userProfile.user_name}}</view>
+</view>

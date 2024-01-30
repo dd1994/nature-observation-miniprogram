@@ -88,15 +88,12 @@ Page({
   },
   onLoad(options) {
     fetchObservationDetail(options.id).then(res => {
+      // @ts-ignore
       const data = res?.data?.[0]
       if (data) {
         this.setData({
-          observationDetail: {
-            ...data
-          }
+          observationDetail: data
         })
-      } else {
-        th
       }
     }).then(() => {
       this.fetchIdentificationList()
@@ -112,6 +109,7 @@ Page({
   fetchIdentificationList() {
     fetchIdentificationList({ observation_id: this.data.observationDetail?.id }).then(res => {
       this.setData({
+        // @ts-ignore
         identifications: res.data
       })
     })

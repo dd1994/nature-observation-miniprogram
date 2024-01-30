@@ -1,0 +1,11 @@
+.user-name-and-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user__avatar {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
