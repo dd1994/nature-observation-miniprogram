@@ -1,9 +1,14 @@
 <view class="identifications-list">
   <view wx:for="{{formattedIdentifications}}" wx:key="id">
-    <view class="identifications-item-user" slot="title">
+    <view class="identifications-item-user">
       <user-name-and-avatar userProfile="{{item}}" />
       <view style="margin-left: 10px;">{{item.created_from_now}}添加了一个鉴定</view>
     </view>
-    <taxon-cell slot="content" taxon="{{item}}" />
+    <taxon-cell taxon="{{item}}" />
+
+    <view data-taxon="{{item}}" bind:tap="openTaxonDetail" hover arrow t-class="taxon-name-cell">
+      <view class="taxon-common-name">{{item.common_name}}</view>
+      <view class="taxon-scientific-name">{{item.scientific_name}}</view>
+    </view>
   </view>
 </view>
