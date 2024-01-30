@@ -1,28 +1,30 @@
+@import "../../theme.scss";
+
 .page-container {
   margin: 0;
-  padding: 10px;
+  padding: $area-gap-s;
   min-height: 100vh;
   background-color: #fff;
 }
 
 .search-result-taxon-list {
-  margin-top: 10px;
+  margin-top: $area-gap-s;
 }
 
 .search-result-taxon-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 $area-gap-s;
 }
 
 .search-result-taxon-item-chinese-name {
-  font-size: 16px;
+  font-size: $font-size;
 }
 
 .search-result-taxon-item-name {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: $font-size-s;
+  color: $font-gray-2;
 }
 
 .search-result-taxon-select {
@@ -33,5 +35,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: $area-gap-xl;
 }
