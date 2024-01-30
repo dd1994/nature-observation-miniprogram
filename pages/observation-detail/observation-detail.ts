@@ -1,11 +1,12 @@
 import { openTaxonDetail } from "../../utils/openTaxonDetail";
 import { fetchIdentificationList } from "../../utils/service/identifications";
 import { fetchObservationDetail } from "../../utils/service/observations"
+import { showErrorTips, showSuccessTips } from "../../utils/feedBack"
+
 const computedBehavior = require('miniprogram-computed').behavior;
 import { createIdentification } from '../../utils/service/identifications'
 import UserProfileBehavior from "../../components/user-profile/user-profile";
 import { getImgQuality } from "../../utils/img";
-
 // pages/observation-detail/observation-detail.js
 Page({
   behaviors: [computedBehavior, UserProfileBehavior],
@@ -114,6 +115,22 @@ Page({
       })
     })
   },
+  agreeID(e) {
+    const ID = e.detail
+    createIdentification({
+      observation_id: this.data.id,
+      common_name: ID.common_name,
+      scientific_name: ID.scientific_name,
+      taxon_rank: ID.taxon_rank,
+      iconic_taxon_name: ID.iconic_taxon_name,
+      taxon_id: ID.taxon_id,
+    }).then(() => {
+      showSuccessTips('添加鉴定成功')
+      this.fetchIdentificationList()
+    }).catch(err => {
+      showErrorTips('添加鉴定失败，请稍后重试')
+    })
+  },
   addIdentification() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -127,13 +144,10 @@ Page({
             iconic_taxon_name: taxon.iconic_taxon_name,
             taxon_id: taxon.id,
           }).then(() => {
+            showSuccessTips('添加鉴定成功')
             this.fetchIdentificationList()
           }).catch(err => {
-            wx.showToast({
-              title: '添加鉴定失败，请稍后重试',
-              icon: 'none',
-              duration: 3000
-            })
+            showErrorTips('添加鉴定失败，请稍后重试')
           })
         }
       }

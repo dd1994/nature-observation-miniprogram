@@ -39,6 +39,10 @@ Component({
         iconic_taxon_name: taxon.iconic_taxon_name
       })
     },
+    agreeID(e) {
+      const taxon = e.currentTarget.dataset.taxon
+      this.triggerEvent('agreeID', taxon)
+    }
   },
   // @ts-ignore
   computed: {

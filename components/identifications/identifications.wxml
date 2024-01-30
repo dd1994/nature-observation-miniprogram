@@ -5,9 +5,15 @@
       <view style="margin-left: 10px;">鉴定于 {{item.created_from_now}}</view>
     </view>
 
-    <view data-taxon="{{item}}" bind:tap="openTaxonDetail" hover arrow class="id-taxon-wrapper">
-      <view class="taxon-common-name">{{item.common_name}}</view>
-      <view class="taxon-scientific-name">{{item.scientific_name}}</view>
+    <view class="dentifications-item-bottom">
+      <view data-taxon="{{item}}" bind:tap="openTaxonDetail" hover arrow class="id-taxon-wrapper">
+        <view class="taxon-common-name">{{item.common_name}}</view>
+        <view class="taxon-scientific-name">{{item.scientific_name}}</view>
+      </view>
+      <view wx:if="{{item.user_id !== userProfile.id}}" class="id-agree" bind:tap="agreeID" data-taxon="{{item}}">
+        <t-icon size="20px" name="check" />
+        同意
+      </view>
     </view>
   </view>
 </view>

@@ -4,6 +4,7 @@
     "t-steps": "tdesign-miniprogram/steps/steps",
     "t-step-item": "tdesign-miniprogram/step-item/step-item",
     "taxon-cell": "../taxon-cell/taxon-cell",
-    "user-name-and-avatar": "../user-name-and-avatar/user-name-and-avatar"
+    "user-name-and-avatar": "../user-name-and-avatar/user-name-and-avatar",
+    "t-icon": "tdesign-miniprogram/icon/icon"
   }
 }

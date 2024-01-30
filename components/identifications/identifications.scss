@@ -14,6 +14,20 @@
   color: $font-gray-2;
 }
 
+.dentifications-item-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  .id-agree {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: $font-size;
+    color: var(--td-primary-color-8);
+  }
+}
+
 .id-taxon-wrapper {
   margin-left: 35px;
   margin-top: 5px;
