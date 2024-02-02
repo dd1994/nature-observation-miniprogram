@@ -14,6 +14,7 @@
         <view bind:tap="goToSearch" class="create-form-item-content">
           <view wx:if="{{taxon}}">
             {{taxon.preferred_common_name}}
+            <text class="create-form-item-content__scientific_name">{{taxon.name}}</text>
           </view>
           <view wx:else class="create-form-item-placeholder">
             你看到了什么？
