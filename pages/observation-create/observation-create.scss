@@ -1,5 +1,9 @@
 @import "../../theme.scss";
 
+page {
+  background-color: $default-bg;
+}
+
 .page-container {
   font-size: $font-size-m;
   margin: 0;

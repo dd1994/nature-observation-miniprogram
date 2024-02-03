@@ -1,5 +1,9 @@
 @import "../../theme.scss";
 
+page {
+  background-color: $default-bg;
+}
+
 .cell-group:not(:first-child) {
   margin-top: $area-gap-s;
 }

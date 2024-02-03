@@ -16,7 +16,8 @@
     <t-cell title="物种信息" bordered="{{false}}" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
   </view>
 
-  <view wx:if="{{user}}" class="cell-group">
-    <t-cell bordered="{{false}}" title="设置" hover arrow leftIcon="setting" url="/pages/setting/setting" />
+  <view class="cell-group">
+    <t-cell wx:if="{{user}}" title="设置" hover arrow leftIcon="setting" url="/pages/setting/setting" />
+    <t-cell title="关于" hover arrow leftIcon="member" url="/pages/about/about" />
   </view>
 </view>
