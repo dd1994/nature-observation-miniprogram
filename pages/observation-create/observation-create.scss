@@ -14,7 +14,7 @@ page {
 }
 
 .create-image-uplader-wrapper {
-  padding: $area-gap-xs;
+  padding: $area-gap;
 }
 
 .create-form-item-wrapper-taxon {
@@ -24,7 +24,7 @@ page {
 
 .create-form-item-wrapper-taxon .create-form-item-wrapper {
   background-color: #FFF;
-  padding: $area-gap $area-gap-xs;
+  padding: $area-gap;
   border-bottom: none;
 }
 
@@ -35,7 +35,7 @@ page {
   justify-content: flex-start;
   width: 100%;
   --td-input-vertical-padding: 0;
-  padding: $area-gap $area-gap-xs;
+  padding: $area-gap;
   border-bottom: 1px solid $border-color;
 
   &:last-child {
