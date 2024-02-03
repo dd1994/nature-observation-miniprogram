@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .observation-detail-topbar {
-  padding: 4px 16px;
+  padding: $area-gap-xs $area-gap;
   display: flex;
   align-items: center;
   justify-content: space-between;
