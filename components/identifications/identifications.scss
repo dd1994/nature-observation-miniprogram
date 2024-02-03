@@ -29,7 +29,8 @@
 }
 
 .id-taxon-wrapper {
-  margin-top: $area-gap-xxs;
+  margin-top: $area-gap-xs;
+  line-height: 1.2;
 
   .taxon-common-name {
     color: $font-gray-1;
