@@ -23,13 +23,10 @@ Page({
     artificial: false, // 是否人工圈养或栽培
     taxon: null, // 观察物种
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
-    uploadConfig: {
-      sourceType: ['album']
-    },
-    gridConfig: {
-      column: 3,
-      width: 200,
-      height: 200
+    tUploadConfig: {
+      uploadConfig: {
+        sourceType: ['album']
+      },
     }
   },
   computed: {
