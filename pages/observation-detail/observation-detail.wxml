@@ -7,9 +7,9 @@
       <view wx:if="{{description}}" class="observation-desc">
         <text>{{description}}</text>
       </view>
-      <t-cell jump-type="navigateTo" wx:if="{{recommend_address_name}}" description="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
+      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" description="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
         <view style="display: flex; align-items: center;" slot="title">
-          <t-icon name="location" style="margin-right: 5px;" />观察位置
+          <t-icon name="location" style="margin-right: 4px;" />观察位置
         </view>
       </t-cell>
 
