@@ -89,6 +89,13 @@
   color: $font-gray-3;
 }
 
+.form-taxon-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .create-form-item-content__scientific_name {
   font-size: $font-size-s;
   color: $font-gray-3;

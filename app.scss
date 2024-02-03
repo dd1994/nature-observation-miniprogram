@@ -5,6 +5,13 @@ page {
   font-size: $font-size;
   line-height: 1.3;
   background-color: $default-bg;
+  --td-font-size: $font-size-xs;
+  --td-font-size-xs: $font-size-xs; // 字号-一级字号
+  --td-font-size-s: $font-size-s; // 字号-二级字号
+  --td-font-size-base: $font-size; // 字号-三级字号
+  --td-font-size-m: $font-size-m; // 字号-二级字号
+  --td-font-size-l: $font-size-l; // 字号-四级字号
+  --td-font-size-xl: $font-size-xl; // 字号-五级字号
   /* 由 https://uicolors.app/create 生成的配色 */
   --td-primary-color-1: #effef2;
   --td-primary-color-2: #dafee1;

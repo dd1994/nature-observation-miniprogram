@@ -12,7 +12,7 @@
         </view>
 
         <view bind:tap="goToSearch" class="create-form-item-content">
-          <view wx:if="{{taxon}}">
+          <view class="form-taxon-name" wx:if="{{taxon}}">
             {{taxon.preferred_common_name}}
             <text class="create-form-item-content__scientific_name">{{taxon.name}}</text>
           </view>
