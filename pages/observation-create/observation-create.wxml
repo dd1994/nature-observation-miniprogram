@@ -28,7 +28,7 @@
       </view>
       <view class="create-form-item-content" bind:tap="goToSearchLocation">
         <view wx:if="{{displayLocationName}}" class="create-form-item-content">{{displayLocationName}}</view>
-        <view wx:else class="create-form-item-placeholder">观察位置(选填)</view>
+        <view wx:else class="create-form-item-placeholder">观察位置</view>
         <view catch:tap="removeLocation" class="create-form-item__right-icon">
           <t-icon wx:if="{{displayLocationName}}" name="close" color="rgba(0,0,0,0.4)" size="28px">
           </t-icon>
