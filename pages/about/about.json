@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "关于",
   "usingComponents": {
     "remote-rich-text": "../../components/remote-rich-text/remote-rich-text"
   }
