@@ -19,7 +19,6 @@
           <view wx:else class="create-form-item-placeholder">
             你看到了什么？
           </view>
-          <t-icon name="chevron-right" color="rgba(0,0,0,0.4)" size="28px" />
         </view>
       </view>
     </view>

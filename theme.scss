@@ -1,5 +1,7 @@
-  $default-bg: #f6f6f6;
+  $default-bg: #f3f3f3;
   $bg-trans: rgba(0, 0, 0, 0.1);
+
+  $border-color: #e7e7e7;
 
   $font-gray-1: rgba(0, 0, 0, 0.9);
   $font-gray-2: rgba(0, 0, 0, 0.6);
@@ -12,11 +14,11 @@
   $font-size-l: 20px;
   $font-size-xl: 22px;
 
-  $area-gap-xxs: 4px; // 字号-一级字号
-  $area-gap-xs: 6px; // 字号-一级字号
-  $area-gap-s: 10px; // 字号-二级字号
-  $area-gap: 14px;
-  $area-gap-m: 18px;
-  $area-gap-l: 22px;
-  $area-gap-xl: 26px;
-  $area-gap-xxl: 30px;
+  $area-gap-xxs: 4px; // 间距
+  $area-gap-xs: 8px;
+  $area-gap-s: 12px;
+  $area-gap: 16px;
+  $area-gap-m: 20px;
+  $area-gap-l: 24px;
+  $area-gap-xl: 28px;
+  $area-gap-xxl: 32px;
