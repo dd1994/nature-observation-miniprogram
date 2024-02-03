@@ -10,7 +10,7 @@
 }
 
 .create-image-uplader-wrapper {
-  padding: $area-gap-s;
+  padding: $area-gap-xs;
 }
 
 .create-form-item-wrapper-taxon {
@@ -47,11 +47,11 @@
 .create-form-item-time-tips {
   color: $font-gray-3;
   font-size: $font-size;
-  margin-right: 16rpx;
+  margin-right: $area-gap-xs;
 }
 
 .create-form-item-icon-wrapper {
-  margin-right: 13px;
+  margin-right: $area-gap-xs;
 }
 
 .create-form-item__right-icon {
@@ -81,12 +81,12 @@
   margin: $area-gap-xxl;
 }
 
-.delegte-form-save-button {
+.delete-button {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: $font-size;
-  color: $font-gray-2;
+  color: $font-gray-3;
 }
 
 .create-form-item-content__scientific_name {
