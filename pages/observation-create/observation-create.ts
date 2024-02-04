@@ -23,6 +23,7 @@ Page({
     artificial: false, // 是否人工圈养或栽培
     taxon: null, // 观察物种
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
+    notSelectedTaxonTips: false,
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album']
@@ -210,6 +211,9 @@ Page({
     }
 
     if (!this.data.taxon?.name) {
+      this.setData({
+        notSelectedTaxonTips: true,
+      })
       return showErrorTips('请选择你看到了什么')
     }
 
