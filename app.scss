@@ -25,13 +25,13 @@ page {
   --td-primary-color-9: #106b27;
   --td-primary-color-10: #0f5822;
 
-  --td-spacer: $area-gap-xs;
-  --td-spacer-1: $area-gap-s; // 间距-小-x
-  --td-spacer-2: $area-gap; // 间距-小
-  --td-spacer-3: $area-gap-m; // 间距-中
-  --td-spacer-4: $area-gap-l; // 间距-大
-  --td-spacer-5: $area-gap-xl; // 间距-大-x
-  --td-spacer-6: $area-gap-xxl; // 间距-大-xx
+  --td-spacer: 8px; //$area-gap-xs;
+  --td-spacer-1: 12px; // 间距-小-x
+  --td-spacer-2: 16px; // 间距-小
+  --td-spacer-3: 24px; // 间距-中
+  --td-spacer-4: 32px; // 间距-大
+  --td-spacer-5: 48px; // 间距-大-x
+  --td-spacer-6: 64px; // 间距-大-xx
 }
 
 .page-container {
