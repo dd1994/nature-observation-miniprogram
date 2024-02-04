@@ -1,7 +1,6 @@
 @import './theme.scss';
 
 page {
-  font-family: sans-serif;
   font-size: $font-size;
   line-height: 1.5;
   --td-cell-vertical-padding: 16px;
@@ -25,6 +24,14 @@ page {
   --td-primary-color-8: #0e932e;
   --td-primary-color-9: #106b27;
   --td-primary-color-10: #0f5822;
+
+  --td-spacer: $area-gap-xs;
+  --td-spacer-1: $area-gap-s; // 间距-小-x
+  --td-spacer-2: $area-gap; // 间距-小
+  --td-spacer-3: $area-gap-m; // 间距-中
+  --td-spacer-4: $area-gap-l; // 间距-大
+  --td-spacer-5: $area-gap-xl; // 间距-大-x
+  --td-spacer-6: $area-gap-xxl; // 间距-大-xx
 }
 
 .page-container {
