@@ -1,7 +1,7 @@
 @import "../../theme.scss";
 
 .custom-tabs {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--td-border-color);
 }
 
 .page-container {
@@ -12,7 +12,7 @@
 }
 
 .observation-desc {
-  color: $font-gray-1;
+  color: var(--td-font-gray-1);
   margin: var(--td-spacer-2) var(--td-spacer-2) 0 var(--td-spacer-2);
 }
 

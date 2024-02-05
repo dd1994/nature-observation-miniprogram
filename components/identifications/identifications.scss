@@ -3,7 +3,7 @@
 .identifications-item {
   padding: var(--td-spacer) 0;
   font-size: var(--td-font-size-base);
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--td-border-color);
   margin: 0 var(--td-spacer-2);
 }
 
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: $font-gray-2;
+  color: var(--td-font-gray-2);
 }
 
 .dentifications-item-taxon {
@@ -33,12 +33,12 @@
   line-height: 1.2;
 
   .taxon-common-name {
-    color: $font-gray-1;
+    color: var(--td-font-gray-1);
     font-size: var(--td-font-size);
   }
 
   .taxon-scientific-name {
-    color: $font-gray-2;
+    color: var(--td-font-gray-2);
     font-size: var(--td-font-size-base);
   }
 }
