@@ -26,7 +26,8 @@ Page({
     notSelectedTaxonTips: false,
     tUploadConfig: {
       uploadConfig: {
-        sourceType: ['album']
+        sourceType: ['album'],
+        sizeType: ['original']
       },
     }
   },
