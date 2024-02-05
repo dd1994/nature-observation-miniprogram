@@ -1,7 +1,7 @@
 @import "../../theme.scss";
 
 .identifications-item {
-  padding: $area-gap-xs 0;
+  padding: var(--td-spacer) 0;
   font-size: $font-size-s;
   border-bottom: 1px solid $border-color;
   margin: 0 var(--td-spacer-2);
@@ -29,7 +29,7 @@
 }
 
 .id-taxon-wrapper {
-  margin-top: $area-gap-xs;
+  margin-top: var(--td-spacer);
   line-height: 1.2;
 
   .taxon-common-name {

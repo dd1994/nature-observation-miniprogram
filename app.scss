@@ -28,7 +28,7 @@ page {
   --td-primary-color-9: #106b27;
   --td-primary-color-10: #0f5822;
 
-  --td-spacer: 16rpx; //$area-gap-xs;
+  --td-spacer: 16rpx; //var(--td-spacer);
   --td-spacer-1: 24rpx; // 间距-小-x
   --td-spacer-2: 32rpx; // 间距-小
   --td-spacer-3: 48rpx; // 间距-中

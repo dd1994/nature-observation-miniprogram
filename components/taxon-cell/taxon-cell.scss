@@ -2,5 +2,5 @@
 
 .taxon-name-cell {
   line-height: 1 !important;
-  padding: $area-gap-xs $area-gap !important;
+  padding: var(--td-spacer) var(--td-spacer-2) !important;
 }

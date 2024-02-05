@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: $area-gap var(--spacer-mini) $area-gap var(--td-spacer-1);
+  margin: var(--td-spacer-2) var(--spacer-mini) var(--td-spacer-2) var(--td-spacer-1);
 }
 
 .search-result-taxon-item-chinese-name {
@@ -35,5 +35,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: $area-gap-xl;
+  margin-top: var(--td-spacer-5);
 }
