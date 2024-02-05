@@ -23,7 +23,7 @@
 }
 
 .search-result-taxon-item-name {
-  font-size: $font-size-xs;
+  font-size: var(--td-spacer-1);
   color: $font-gray-3;
 }
 
