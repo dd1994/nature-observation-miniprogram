@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: $area-gap $area-gap-xxs $area-gap $area-gap-s;
+  margin: $area-gap $area-gap-xxs $area-gap var(--td-spacer-1);
 }
 
 .search-result-taxon-item-chinese-name {

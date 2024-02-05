@@ -1,13 +1,13 @@
 @import "../../theme.scss";
 
 page {
-  background-color: $default-bg;
+  background-color: var(--default-bg);
 }
 
 .cell-group:not(:first-child) {
-  margin-top: $area-gap-l;
+  margin-top: var(--td-spacer-4);
 }
 
 .avatar {
-  margin-right: $area-gap-s;
+  margin-right: var(--td-spacer-1);
 }
