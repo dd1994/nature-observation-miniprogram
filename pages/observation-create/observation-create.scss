@@ -37,10 +37,6 @@ page {
   --td-input-vertical-padding: 0;
   padding: var(--td-spacer-2);
   line-height: 1.3; // 使换行时看起来更加紧凑
-
-  &:last-child {
-    border-bottom: none;
-  }
 }
 
 .create-form-item-placeholder {
@@ -66,7 +62,7 @@ page {
   align-items: center;
   justify-content: flex-start;
   flex: 1;
-  --td-switch-unchecked-color: var(--td-font-gray-4);
+  --td-switch-unchecked-color: rgba(0, 0, 0, 0.1);
 }
 
 .create-form-item-content__artificial-label {
@@ -96,8 +92,4 @@ page {
 .create-form-item-content__scientific_name {
   font-size: var(--td-font-size-s);
   color: var(--td-font-gray-3);
-}
-
-.create-form-item-checkbox-icon {
-  margin-right: 0 !important;
 }

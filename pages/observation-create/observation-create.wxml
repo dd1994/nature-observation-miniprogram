@@ -59,7 +59,7 @@
         <t-icon name="user" size="20px" />
       </view>
       <view class="create-form-item-content">
-        <view class="create-form-item-content__artificial-label">
+        <view bind:tap="toggleArtificial" class="create-form-item-content__artificial-label">
           是否人工圈养或栽培
         </view>
         <t-switch size="small" value="{{artificial}}" bind:change="artificialChange" />
