@@ -52,6 +52,7 @@ page {
 
 .create-form-item-icon-wrapper {
   margin-right: $area-gap-xs;
+  color: $font-gray-3;
 }
 
 .create-form-item__right-icon {
@@ -102,7 +103,7 @@ page {
 }
 
 .create-form-item-content__scientific_name {
-  font-size: $font-size-s;
+  font-size: $font-size-xs;
   color: $font-gray-3;
 }
 
