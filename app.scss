@@ -1,8 +1,6 @@
 @import './theme.scss';
 
 page {
-  font-size: $font-size;
-  line-height: 1.5;
   --td-cell-vertical-padding: 32rpx;
   --td-cell-horizontal-padding: 32rpx;
 
@@ -11,13 +9,13 @@ page {
   --td-font-gray-3: rgba(0, 0, 0, 0.4);
   --td-font-gray-4: rgba(0, 0, 0, 0.2);
 
-  --td-font-size: $font-size-xs;
-  --td-font-size-xs: $font-size-xs; // 字号-一级字号
-  --td-font-size-s: $font-size-s; // 字号-二级字号
-  --td-font-size-base: $font-size; // 字号-三级字号
-  --td-font-size-m: $font-size-m; // 字号-二级字号
-  --td-font-size-l: $font-size-l; // 字号-四级字号
-  --td-font-size-xl: $font-size-xl; // 字号-五级字号
+  --td-font-size: 20rpx;
+  --td-font-size-xs: 20rpx; // 字号-一级字号
+  --td-font-size-s: 24rpx; // 字号-二级字号
+  --td-font-size-base: 32rpx; // 字号-三级字号
+  --td-font-size-m: 36rpx; // 字号-二级字号
+  --td-font-size-l: 40rpx; // 字号-四级字号
+  --td-font-size-xl: 44rpx; // 字号-五级字号
   /* 由 https://uicolors.app/create 生成的配色 */
   --td-primary-color-1: #effef2;
   --td-primary-color-2: #dafee1;
@@ -37,6 +35,9 @@ page {
   --td-spacer-4: 64rpx; // 间距-大
   --td-spacer-5: 96rpx; // 间距-大-x
   --td-spacer-6: 128rpx; // 间距-大-xx
+
+  font-size: var(--td-font-size-base);
+  line-height: 1.5;
 }
 
 .page-container {

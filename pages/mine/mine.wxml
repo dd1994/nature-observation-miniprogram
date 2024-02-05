@@ -17,7 +17,7 @@
   </view>
 
   <view class="cell-group">
-    <t-cell wx:if="{{user}}"  title="设置" hover arrow leftIcon="setting" url="/pages/setting/setting" />
+    <t-cell wx:if="{{user}}" bordered="{{false}}" title="设置" hover arrow leftIcon="setting" url="/pages/setting/setting" />
     <t-cell title="关于" hover bordered="{{false}}" arrow leftIcon="member" url="/pages/about/about" />
   </view>
 </view>
