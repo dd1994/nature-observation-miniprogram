@@ -2,29 +2,29 @@
 
 .page-container {
   margin: 0;
-  padding: $area-gap-s;
+  padding: $area-gap;
   min-height: 100vh;
   background-color: #fff;
 }
 
 .search-result-taxon-list {
-  margin-top: $area-gap-s;
+  margin-top: $area-gap;
 }
 
 .search-result-taxon-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 $area-gap-s;
+  margin: $area-gap $area-gap-xxs $area-gap $area-gap-s;
 }
 
 .search-result-taxon-item-chinese-name {
-  font-size: $font-size;
+  font-size: $font-size-m;
 }
 
 .search-result-taxon-item-name {
-  font-size: $font-size-s;
-  color: $font-gray-2;
+  font-size: $font-size-xs;
+  color: $font-gray-3;
 }
 
 .search-result-taxon-select {
