@@ -13,11 +13,11 @@
 
 .observation-desc {
   color: $font-gray-1;
-  margin: $area-gap $area-gap 0 $area-gap;
+  margin: $area-gap $area-gap 0 var(--td-spacer-2);
 }
 
 .edit-button-wrapper {
-  margin: var(--td-spacer-4) $area-gap;
+  margin: var(--td-spacer-4) var(--td-spacer-2);
 }
 
 .identifications-pannel {}

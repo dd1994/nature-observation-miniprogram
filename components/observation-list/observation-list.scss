@@ -1,11 +1,11 @@
 @import "../../theme.scss";
 
 .observation-list {
-  margin: $area-gap-xxs;
+  margin: var(--spacer-mini);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: $area-gap-xxs;
-  grid-column-gap: $area-gap-xxs;
+  grid-row-gap: var(--spacer-mini);
+  grid-column-gap: var(--spacer-mini);
 }
 
 .observation-list__item {
@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding-left: $area-gap-xxs;
+  padding-left: var(--spacer-mini);
   background-color: $bg-trans;
 
   display: flex;
@@ -48,5 +48,5 @@
 }
 
 .observation-list__item__fullscreen {
-  padding: 2px $area-gap-xxs;
+  padding: 2px var(--spacer-mini);
 }

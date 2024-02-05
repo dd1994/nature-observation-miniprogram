@@ -4,7 +4,7 @@
   padding: $area-gap-xs 0;
   font-size: $font-size-s;
   border-bottom: 1px solid $border-color;
-  margin: 0 $area-gap;
+  margin: 0 var(--td-spacer-2);
 }
 
 .identifications-item-user {

@@ -2,20 +2,20 @@
 
 .page-container {
   margin: 0;
-  padding: $area-gap;
+  padding: var(--td-spacer-2);
   min-height: 100vh;
   background-color: #fff;
 }
 
 .search-result-taxon-list {
-  margin-top: $area-gap;
+  margin-top: var(--td-spacer-2);
 }
 
 .search-result-taxon-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: $area-gap $area-gap-xxs $area-gap var(--td-spacer-1);
+  margin: $area-gap var(--spacer-mini) $area-gap var(--td-spacer-1);
 }
 
 .search-result-taxon-item-chinese-name {
