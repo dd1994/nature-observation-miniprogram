@@ -40,7 +40,7 @@
         <t-icon name="time" size="20px" />
       </view>
       <view class="create-form-item-content">
-        <picker mode="date" value="{{observedOn}}" bindchange="observedOnChange">
+        <picker style="width: 100%;" mode="date" value="{{observedOn}}" bindchange="observedOnChange">
           <view wx:if="{{observedOn}}" class="create-form-item-content">{{observedOn}}</view>
           <view wx:else class="create-form-item-placeholder">观察时间</view>
         </picker>
