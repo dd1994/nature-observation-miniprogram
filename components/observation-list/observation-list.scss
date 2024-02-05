@@ -39,7 +39,7 @@
 
 .observation-list__item__text {
   color: #fff;
-  font-size: $font-size;
+  font-size: var(--td-font-size);
 
   /* 名称过长时省略 */
   overflow: hidden;

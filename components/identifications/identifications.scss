@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: $font-size;
+    font-size: var(--td-font-size);
     color: var(--td-primary-color-8);
   }
 }
@@ -34,7 +34,7 @@
 
   .taxon-common-name {
     color: $font-gray-1;
-    font-size: $font-size;
+    font-size: var(--td-font-size);
   }
 
   .taxon-scientific-name {
