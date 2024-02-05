@@ -6,7 +6,6 @@ page {
 }
 
 .page-container {
-  font-size: var(--td-font-size-m);
   margin: 0 0 var(--td-spacer-2) 0;
 }
 
@@ -51,7 +50,7 @@ page {
 
 .create-form-item-icon-wrapper {
   margin-right: var(--td-spacer);
-  color: var(--td-font-gray-3);;
+  color: var(--td-font-gray-3);
 }
 
 .create-form-item__right-icon {
@@ -95,7 +94,7 @@ page {
 }
 
 .create-form-item-content__scientific_name {
-  font-size: var(--td-font-size-xs);
+  font-size: var(--td-font-size-s);
   color: var(--td-font-gray-3);
 }
 
