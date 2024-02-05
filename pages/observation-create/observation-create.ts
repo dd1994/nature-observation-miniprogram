@@ -150,7 +150,7 @@ Page({
     this.setData({ observedOn: e.detail.value })
   },
   artificialChange(e) {
-    this.setData({ artificial: e.detail.checked })
+    this.setData({ artificial: e.detail.value })
   },
   onShow() {
     // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象

@@ -62,7 +62,7 @@
         <view class="create-form-item-content__artificial-label">
           是否人工圈养或栽培
         </view>
-        <t-checkbox t-class="create-form-item-checkbox" checked="{{artificial}}" icon="rectangle" bind:change="artificialChange" t-class-icon="create-form-item-checkbox-icon" />
+        <t-switch size="small" value="{{artificial}}" bind:change="artificialChange" />
       </view>
     </view>
   </view>

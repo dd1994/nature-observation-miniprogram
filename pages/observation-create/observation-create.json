@@ -6,7 +6,7 @@
     "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-divider": "tdesign-miniprogram/divider/divider",
-    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+    "t-switch": "tdesign-miniprogram/switch/switch",
     "t-button": "tdesign-miniprogram/button/button"
   }
 }
