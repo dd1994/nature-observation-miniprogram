@@ -6,7 +6,7 @@ page {
 }
 
 .page-container {
-  font-size: $font-size-m;
+  font-size: var(--td-font-size-m);
   margin: 0 0 $area-gap 0;
 }
 
@@ -46,7 +46,7 @@ page {
 
 .create-form-item-placeholder {
   color: $font-gray-3 !important;
-  font-size: $font-size-m !important;
+  font-size: var(--td-font-size-m) !important;
 }
 
 .create-form-item-icon-wrapper {
@@ -62,7 +62,7 @@ page {
 }
 
 .create-form-item-content {
-  font-size: $font-size-m;
+  font-size: var(--td-font-size-m);
   display: flex;
   align-items: center;
   justify-content: flex-start;
