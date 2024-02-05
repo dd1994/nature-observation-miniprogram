@@ -6,6 +6,11 @@ page {
   --td-cell-vertical-padding: 32rpx;
   --td-cell-horizontal-padding: 32rpx;
 
+  --td-font-gray-1: rgba(0, 0, 0, 0.9);
+  --td-font-gray-2: rgba(0, 0, 0, 0.6);
+  --td-font-gray-3: rgba(0, 0, 0, 0.4);
+  --td-font-gray-4: rgba(0, 0, 0, 0.2);
+
   --td-font-size: $font-size-xs;
   --td-font-size-xs: $font-size-xs; // 字号-一级字号
   --td-font-size-s: $font-size-s; // 字号-二级字号

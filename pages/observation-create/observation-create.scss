@@ -67,6 +67,7 @@ page {
   align-items: center;
   justify-content: flex-start;
   flex: 1;
+  --td-switch-unchecked-color: var(--td-font-gray-4);
 }
 
 .create-form-item-content__artificial-label {
