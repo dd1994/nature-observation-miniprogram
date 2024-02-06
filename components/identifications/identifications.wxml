@@ -6,11 +6,10 @@
     </view>
 
     <view class="dentifications-item-taxon">
-      <taxon-cell taxon="{{item}}" />
-      <!-- <view data-taxon="{{item}}" bind:tap="openTaxonDetail" hover arrow class="id-taxon-wrapper">
+      <view data-taxon="{{item}}" bind:tap="openTaxonDetail" hover arrow class="id-taxon-wrapper">
         <view class="taxon-common-name">{{item.common_name}}</view>
         <view class="taxon-scientific-name">{{item.scientific_name}}</view>
-      </view> -->
+      </view>
       <view wx:if="{{item.user_id !== userProfile.id}}" class="id-agree" bind:tap="agreeID" data-taxon="{{item}}">
         <t-icon size="20px" name="check" />
         同意
