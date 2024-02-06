@@ -11,6 +11,7 @@
     "t-button": "tdesign-miniprogram/button/button",
     "observation-detail-topbar": "../../components/observation-detail-topbar/observation-detail-topbar",
     "identifications": "../../components/identifications/identifications",
-    "taxon-cell": "../../components/taxon-cell/taxon-cell"
+    "taxon-cell": "../../components/taxon-cell/taxon-cell",
+    "user-name-and-avatar": "../../components/user-name-and-avatar/user-name-and-avatar"
   }
 }

@@ -24,4 +24,11 @@
   margin-left: var(--td-spacer-3);
 }
 
+.img-bottom-info {
+  padding: var(--td-spacer-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .identifications-pannel {}
