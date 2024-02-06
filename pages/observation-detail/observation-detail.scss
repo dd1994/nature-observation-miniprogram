@@ -30,27 +30,8 @@
   align-items: center;
   justify-content: space-between;
 
-  .img-bottom-info-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .taxon-info {
-    line-height: 1.3;
-    margin-right: var(--td-spacer-2);
-  }
-
-  .taxon-common-name {}
-
-  .taxon-scientific-name {
+  .observation-on-time {
     color: var(--td-font-gray-3);
-    font-size: var(--td-font-size-s);
-  }
-
-  .taxon-indictor-icon {
-    color: var(--td-font-gray-3);
-    font-size: var(--td-font-size-xl);
   }
 }
 
