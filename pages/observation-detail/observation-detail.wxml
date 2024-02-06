@@ -15,10 +15,10 @@
       </view>
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
         <view slot="title" style="display: flex; align-items: center;">
-          <t-icon name="location" style="margin-right: 4px;" /> {{recommend_address_name}}
+          <t-icon name="location" style="margin-right: 4px;" /> 观察位置
         </view>
-        <view class="observed-on-time" slot="description">
-          {{formattedObservedOn}}
+        <view class="observation-location-name" slot="description">
+          {{recommend_address_name}}
         </view>
       </t-cell>
 
