@@ -1,6 +1,7 @@
 @import "../../theme.scss";
 
 .custom-tabs {
+  font-size: var(--td-font-size-base) !important;
   border-top: 1px solid var(--td-border-color);
 }
 
