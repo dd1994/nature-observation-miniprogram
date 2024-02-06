@@ -22,6 +22,7 @@
         </view>
       </view>
     </view>
+
     <view class="create-form-item-wrapper">
       <view class="create-form-item-icon-wrapper">
         <t-icon name="location" size="20px" />
@@ -35,6 +36,7 @@
         </view>
       </view>
     </view>
+
     <view class="create-form-item-wrapper">
       <view class="create-form-item-icon-wrapper">
         <t-icon name="time" size="20px" />
@@ -51,7 +53,7 @@
       <view class="create-form-item-icon-wrapper">
         <t-icon name="edit-1" size="20px" />
       </view>
-      <t-input placeholder-class="create-form-item-placeholder" borderless value="{{description}}" placeholder="添加备注(选填)" maxcharacter="{{100}}" bind:change="descriptionChange" />
+      <t-input placeholder-class="create-form-item-placeholder" borderless value="{{description}}" placeholder="备注(选填)" maxcharacter="{{100}}" bind:change="descriptionChange" />
     </view>
 
     <view class="create-form-item-wrapper">
@@ -62,7 +64,7 @@
         <view bind:tap="toggleArtificial" class="create-form-item-content__artificial-label">
           是否人工圈养或栽培
         </view>
-        <t-switch size="small" value="{{artificial}}" bind:change="artificialChange" />
+        <t-checkbox size="small" checked="{{artificial}}" bind:change="artificialChange" />
       </view>
     </view>
   </view>

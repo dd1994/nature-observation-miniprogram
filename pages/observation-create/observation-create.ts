@@ -151,7 +151,7 @@ Page({
     this.setData({ observedOn: e.detail.value })
   },
   artificialChange(e) {
-    this.setData({ artificial: e.detail.value })
+    this.setData({ artificial: e.detail.checked })
   },
   toggleArtificial() {
     this.setData({ artificial: !this.data.artificial })
