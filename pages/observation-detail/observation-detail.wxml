@@ -3,6 +3,14 @@
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" loop="{{false}}" list="{{swiperList}}" height="{{'600rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
   <view class="img-bottom-info">
     <user-name-and-avatar userProfile="{{userProfile}}"></user-name-and-avatar>
+    <view class="img-bottom-info-right">
+      <view class="taxon-info">
+        <view class="taxon-common-name">{{common_name}}</view>
+        <view class="taxon-scientific-name">{{scientific_name}}</view>
+      </view>
+      <t-icon class="taxon-indictor-icon" name="chevron-right" />
+    </view>
+
   </view>
   <!-- <taxon-cell taxon="{{observationDetail}}"></taxon-cell> -->
   <t-tabs split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs">

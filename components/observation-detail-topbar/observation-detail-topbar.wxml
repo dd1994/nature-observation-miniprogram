@@ -1,6 +1,0 @@
-<view class="observation-detail-topbar">
-  <user-name-and-avatar userProfile="{{userProfile}}"></user-name-and-avatar>
-  <view class="observation-detail-topbar__right">
-    {{formattedObservedOn}}
-  </view>
-</view>
