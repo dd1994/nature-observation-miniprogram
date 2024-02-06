@@ -13,7 +13,7 @@
   </view> -->
 
   <view class="cell-group">
-    <t-cell title="物种信息" bordered="{{false}}" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
+    <t-cell title="物种百科" bordered="{{false}}" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
   </view>
 
   <view class="cell-group">
