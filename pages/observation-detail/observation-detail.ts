@@ -7,6 +7,7 @@ const computedBehavior = require('miniprogram-computed').behavior;
 import { createIdentification } from '../../utils/service/identifications'
 import UserProfileBehavior from "../../components/user-profile/user-profile";
 import { getImgQuality } from "../../utils/img";
+import moment from "moment";
 // pages/observation-detail/observation-detail.js
 Page({
   behaviors: [computedBehavior, UserProfileBehavior],
@@ -62,6 +63,9 @@ Page({
     },
     isOwner(data) {
       return data.observationDetail?.user_id === data.userProfile?.id
+    },
+    formattedObservedOn(data) {
+      return moment(data.observedOn).format("YYYY-MM-DD")
     }
   },
   viewMapDetail() {

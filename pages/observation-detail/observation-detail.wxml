@@ -9,9 +9,12 @@
       <view wx:if="{{description}}" class="observation-desc">
         <text>{{description}}</text>
       </view>
-      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" description="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
-        <view style="display: flex; align-items: center;" slot="title">
-          <t-icon name="location" style="margin-right: 4px;" />观察位置
+      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
+        <view slot="title" style="display: flex; align-items: center;">
+          <t-icon name="location" style="margin-right: 4px;" /> {{recommend_address_name}}
+        </view>
+        <view class="observed-on-time" slot="description">
+          {{formattedObservedOn}}
         </view>
       </t-cell>
 
