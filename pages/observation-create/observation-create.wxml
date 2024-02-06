@@ -23,6 +23,14 @@
       </view>
     </view>
 
+
+    <view class="create-form-item-wrapper create-form-item-wrapper-note">
+      <view class="create-form-item-icon-wrapper">
+        <t-icon name="edit-1" size="20px" />
+      </view>
+      <t-input placeholder-class="create-form-item-placeholder" borderless value="{{description}}" placeholder="备注" maxcharacter="{{100}}" bind:change="descriptionChange" />
+    </view>
+
     <view class="create-form-item-wrapper">
       <view class="create-form-item-icon-wrapper">
         <t-icon name="location" size="20px" />
@@ -47,13 +55,6 @@
           <view wx:else class="create-form-item-placeholder">观察时间</view>
         </picker>
       </view>
-    </view>
-
-    <view class="create-form-item-wrapper create-form-item-wrapper-note">
-      <view class="create-form-item-icon-wrapper">
-        <t-icon name="edit-1" size="20px" />
-      </view>
-      <t-input placeholder-class="create-form-item-placeholder" borderless value="{{description}}" placeholder="备注(选填)" maxcharacter="{{100}}" bind:change="descriptionChange" />
     </view>
 
     <view class="create-form-item-wrapper">
