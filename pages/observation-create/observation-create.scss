@@ -64,11 +64,14 @@ page {
   align-items: center;
   justify-content: flex-start;
   flex: 1;
-  --td-switch-unchecked-color: rgba(0, 0, 0, 0.1);
 }
 
 .create-form-item-content__artificial-label {
-  margin-right: var(--td-spacer);
+  flex: 1;
+}
+
+.artificial-checkbox-icon {
+  margin-right: 0 !important;
 }
 
 .create-form-save-button {
