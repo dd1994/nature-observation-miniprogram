@@ -8,6 +8,7 @@ page {
 .page-container {
   margin: 0 0 var(--td-spacer-2) 0;
   --td-checkbox-vertical-padding: 0;
+  --td-checkbox-icon-size: var(--td-font-size-xl);
 }
 
 .create-form {
