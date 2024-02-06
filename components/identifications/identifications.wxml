@@ -1,7 +1,7 @@
 <view class="identifications-list">
   <view class="identifications-item" wx:for="{{formattedIdentifications}}" wx:key="id">
     <view class="identifications-item-user">
-      <user-name-and-avatar color="rgba(0,0,0,0.7)" userProfile="{{item}}" />
+      <user-name-and-avatar userProfile="{{item}}" />
       <view style="margin-left: 8px;">鉴定于 {{item.created_from_now}}</view>
     </view>
 
