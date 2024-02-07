@@ -14,7 +14,7 @@
 
   <view class="cell-group">
     <t-cell title="物种百科" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
-    <t-cell title="识别工具" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="browse" />
+    <t-cell title="识别工具" url="/pages/taxon-picker/taxon-picker?hidePicker=1" bordered="{{false}}" hover arrow leftIcon="browse" />
   </view>
 
   <view class="cell-group">
