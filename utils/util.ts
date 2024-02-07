@@ -63,7 +63,7 @@ export function requestPromiseWithLogin(params) {
 
 export const formatExifGPSLongitude = (GPSLongitude, GPSLongitudeRef) => {
   if (GPSLongitude?.length) {
-    const value = (GPSLongitude[0] + (GPSLongitude[1] / 60) + (GPSLongitude[2] / 3600)).toFixed(6)
+    const value = (GPSLongitude[0] + (GPSLongitude[1] / 60) + (GPSLongitude[2] / 3600)).toFixed(12)
     const ref = GPSLongitudeRef === 'E' ? 1 : -1
     return ref * value
   }
@@ -72,7 +72,7 @@ export const formatExifGPSLongitude = (GPSLongitude, GPSLongitudeRef) => {
 
 export const formatExifGPSLatitude = (GPSLatitude, GPSLatitudeRef) => {
   if (GPSLatitude?.length) {
-    const value = (GPSLatitude[0] + (GPSLatitude[1] / 60) + (GPSLatitude[2] / 3600)).toFixed(6)
+    const value = (GPSLatitude[0] + (GPSLatitude[1] / 60) + (GPSLatitude[2] / 3600)).toFixed(12)
     const ref = GPSLatitudeRef === 'N' ? 1 : -1
     return ref * value
   }
