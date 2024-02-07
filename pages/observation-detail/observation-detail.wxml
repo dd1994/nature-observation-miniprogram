@@ -1,6 +1,6 @@
 <view class="page-container">
   <!-- <observation-detail-topbar userProfile="{{userProfile}}" observedOn="{{observationDetail.observed_on}}" /> -->
-  <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" loop="{{false}}" list="{{swiperList}}" height="{{'600rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
+  <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" loop="{{false}}" list="{{swiperList}}" height="{{'560rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
   <view class="img-bottom-info">
     <user-name-and-avatar userProfile="{{userProfile}}"></user-name-and-avatar>
     <view class="observation-on-time">
