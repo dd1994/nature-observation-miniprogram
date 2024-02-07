@@ -9,8 +9,8 @@
   "setting": {
     "coverView": true,
     "es6": true,
-    "postcss": true,
-    "minified": true,
+    "postcss": false,
+    "minified": false,
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmRelationList": [],
@@ -23,7 +23,9 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "uglifyFileName": true
+    "uglifyFileName": false,
+    "minifyWXSS": false,
+    "minifyWXML": false
   },
   "condition": {},
   "editorSetting": {

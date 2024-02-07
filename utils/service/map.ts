@@ -1,4 +1,5 @@
-const key = '4BVBZ-M7ACQ-MKQ5E-4UCDH-46TUQ-EUB6H'; //使用在腾讯位置服务申请的key
+const QMapKey = '4BVBZ-M7ACQ-MKQ5E-4UCDH-46TUQ-EUB6H'; //使用在腾讯位置服务申请的key
+const AMapKey = '377d2da6f4c386061ba9085a3bd42a34'
 const referer = '自然记录'; //调用插件的app的名称
 
 import { requestPromise } from "../util"
@@ -8,13 +9,13 @@ export const translateGPS = async (params: { lng: string, lat: string }) => {
     const res = await requestPromise({
       url: 'https://apis.map.qq.com/ws/coord/v1/translate',
       data: {
-        key,
+        key: QMapKey,
         type: 1,
         locations: `${params.lat},${params.lng}`
       }
     })
     // @ts-ignore
-    const { lat, lng } = res?.data?.result?.locations?.[0] || params
+    const { lat, lng } = res?.data?.locations?.[0] || params
     return { lat, lng }
   } catch (error) {
     console.error(error)
@@ -23,16 +24,17 @@ export const translateGPS = async (params: { lng: string, lat: string }) => {
 }
 export const fetchAdressByGPS = ({ lng, lat }) => {
   return requestPromise({
-    url: 'https://apis.map.qq.com/ws/geocoder/v1',
+    url: 'https://restapi.amap.com/v3/geocode/regeo',
     data: {
-      key,
-      location: `${lat},${lng}`
+      key: AMapKey,
+      location: `${lng},${lat}`,
+      radius: 1, // 限制距离，距离太大会搜出奇怪的结果
     }
   })
 }
 
 export function goToLocationSelector({ lat, lng }) {
-  let url = 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
+  let url = 'plugin://chooseLocation/index?key=' + QMapKey + '&referer=' + referer
   if (lat && lng) {
     url = url + '&location=' + JSON.stringify({
       latitude: lat,

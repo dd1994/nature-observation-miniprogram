@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 const computedBehavior = require('miniprogram-computed').behavior;
-import { goToLocationSelector, fetchAdressByGPS, translateGPS } from '../../utils/service/qMap'
+import { goToLocationSelector, fetchAdressByGPS, translateGPS } from '../../utils/service/map'
 const chooseLocation = requirePlugin('chooseLocation');
 import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
@@ -113,25 +113,24 @@ Page({
           lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
         })
         const res: any = await fetchAdressByGPS({ lng, lat })
-        const result = res?.data?.result
-
+        const result = res?.data?.regeocode
         if (result) {
           this.setData({
             location: {
               // 标准地址
-              standard_address: result.formatted_addresses.standard_address,
-              // 市
-              city: result.address_component.city,
+              standard_address: result.formatted_address,
+              // 市，如果是直辖市，为空
+              city: result.addressComponent.city,
               // 区/县
-              district: result.address_component.district,
+              district: result.addressComponent.district,
               // 维度
               latitude: lat,
               // 经度
               longitude: lng,
               // 展示地址
-              recommend_address_name: result.formatted_addresses.recommend,
+              recommend_address_name: result.formatted_address,
               // 省
-              province: result.address_component.province,
+              province: result.addressComponent.province,
             }
           })
         }
