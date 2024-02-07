@@ -37,8 +37,16 @@ page {
   justify-content: flex-start;
   width: 100%;
   --td-input-vertical-padding: 0;
-  padding: var(--td-spacer-2);
+  padding: var(--td-spacer-1) var(--td-spacer-2);
   line-height: 1.3; // 使换行时看起来更加紧凑
+
+  &:first-child {
+    padding-top: var(--td-spacer-1);
+  }
+
+  &:last-child {
+    padding-bottom: var(--td-spacer-2);
+  }
 }
 
 .create-form-item-placeholder {
@@ -67,7 +75,7 @@ page {
 }
 
 .create-form-item-content__artificial-label {
-  flex: 1;
+  margin-right: var(--td-spacer);
 }
 
 .artificial-checkbox-icon {
