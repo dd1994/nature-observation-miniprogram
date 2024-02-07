@@ -10,7 +10,11 @@
         <view class="taxon-common-name">{{item.common_name}}</view>
         <view class="taxon-scientific-name">{{item.scientific_name}}</view>
       </view>
-      <view wx:if="{{item.user_id !== userProfile.id}}" class="id-agree" bind:tap="agreeID" data-taxon="{{item}}">
+      <!-- "{{item.user_id === userProfile.id}}"  -->
+      <!-- 不展示同意按钮的情况：
+      1. 是自己的鉴定
+      2. 之前已经出现过该鉴定 -->
+      <view wx:if="{{!((item.user_id === userProfile.id) || (index !== 0 && item.scientific_name === formattedIdentifications[index - 1].scientific_name))}}" class="id-agree" bind:tap="agreeID" data-taxon="{{item}}">
         <t-icon size="20px" name="check" />
         同意
       </view>
