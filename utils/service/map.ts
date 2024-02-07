@@ -7,15 +7,16 @@ import { requestPromise } from "../util"
 export const translateGPS = async (params: { lng: string, lat: string }) => {
   try {
     const res = await requestPromise({
-      url: 'https://apis.map.qq.com/ws/coord/v1/translate',
+      url: 'https://restapi.amap.com/v3/assistant/coordinate/convert',
       data: {
-        key: QMapKey,
+        key: AMapKey,
         type: 1,
-        locations: `${params.lat},${params.lng}`
+        coordsys: 'gps',
+        locations: `${params.lng},${params.lat}`
       }
     })
     // @ts-ignore
-    const { lat, lng } = res?.data?.locations?.[0] || params
+    const [lng, lat] = res.data.locations.split(',') || [params.lng, params.lat]
     return { lat, lng }
   } catch (error) {
     console.error(error)
