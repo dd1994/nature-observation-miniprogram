@@ -1,6 +1,8 @@
 import { fetchObservationList } from "../../utils/service/observations"
+const computedBehavior = require('miniprogram-computed').behavior;
 
 const ObservationsBehavior = Behavior({
+  behaviors: [computedBehavior],
   data: {
     observations: [],
     pageSize: 20,
@@ -33,6 +35,12 @@ const ObservationsBehavior = Behavior({
       })
       this.fetchObservationList()
     },
+  },
+  // @ts-ignore
+  computed: {
+    allLoaded(data) {
+      return data.observations.length === data.total
+    }
   }
 })
 

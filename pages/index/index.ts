@@ -1,7 +1,6 @@
 import ObservationsBehavior from '../../components/observations/observation';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
-import { fetchObservationList } from '../../utils/service/observations'
 import { needFirstLogin } from '../../utils/util';
 const computedBehavior = require('miniprogram-computed').behavior;
 const app = getApp()
@@ -37,6 +36,9 @@ Page({
     }
   },
   onReachBottom() {
+    if (this.data.allLoaded) {
+      return
+    }
     this.setData({
       pageIndex: this.data.pageIndex + 1
     })
