@@ -23,3 +23,10 @@
 .custom-tabs {
   font-size: var(--td-font-size-base) !important;
 }
+
+.search-icon {
+  position: fixed;
+  top: var(--td-spacer-1);
+  right: var(--td-spacer-2);
+  z-index: 999;
+}
