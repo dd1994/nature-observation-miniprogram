@@ -13,23 +13,23 @@ const ObservationsBehavior = Behavior({
   },
   methods: {
     async fetchObservationList() {
-      this.setData({
-        loading: true,
-      })
-      const res = await fetchObservationList({ pageIndex: this.data.pageIndex, pageSize: this.data.pageSize })
+      this.setData({ loading: true })
+      try {
+        const res = await fetchObservationList({ pageIndex: this.data.pageIndex, pageSize: this.data.pageSize })
 
-      this.setData({
-        observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
-        total: res?.data?.data?.total_count || 0
-      })
-      if (!this.data.observations.length && (this.pageIndex === 1)) {
         this.setData({
-          isEmpty: true
+          observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
+          total: res?.data?.data?.total_count || 0
         })
-      } else {
-        this.setData({
-          isEmpty: false
-        })
+        if (!this.data.observations.length && (this.pageIndex === 1)) {
+          this.setData({ isEmpty: true })
+        } else {
+          this.setData({ isEmpty: false })
+        }
+      } catch (error) {
+
+      } finally {
+        this.setData({ loading: false })
       }
     },
     resetAndFetchObservations() {
