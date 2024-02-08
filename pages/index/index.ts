@@ -8,16 +8,18 @@ Page({
   behaviors: [computedBehavior, UserProfileBehavior],
   data: {
     observations: [],
-    limit: 20,
-    offset: 0,
+    pageSize: 20,
+    pageIndex: 1,
+    total: 0,
     isEmpty: false,
   },
-  resetAndFetchObservations() {
-    return fetchObservationList().then(res => {
+  fetchObservationList() {
+    return fetchObservationList({ pageIndex: this.data.pageIndex, pageSize: this.data.pageSize }).then(res => {
       this.setData({
-        observations: res?.data?.data || []
+        // @ts-ignore
+        observations: (this.data.observations || []).concat(res?.data?.data || [])
       })
-      if (!this.data.observations.length) {
+      if (!this.data.observations.length && (this.pageIndex === 1)) {
         this.setData({
           isEmpty: true
         })
@@ -27,6 +29,13 @@ Page({
         })
       }
     })
+  },
+  resetAndFetchObservations() {
+    this.setData({
+      pageIndex: 1,
+      observations: []
+    })
+    this.fetchObservationList()
   },
   async onAddIconTap() {
     if (needFirstLogin()) {
@@ -54,6 +63,12 @@ Page({
     if (app.globalData.indexPageNeedRefresh) {
       this.resetAndFetchObservations()
     }
+  },
+  onReachBottom() {
+    this.setData({
+      pageIndex: this.data.pageIndex + 1
+    })
+    this.fetchObservationList()
   },
   onPullDownRefresh() {
     this.resetAndFetchObservations().finally(() => {

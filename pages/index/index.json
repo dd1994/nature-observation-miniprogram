@@ -1,6 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "我的",
+  "onReachBottomDistance": 20,
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar",
     "t-button": "tdesign-miniprogram/button/button",
