@@ -13,3 +13,9 @@ App({
     indexPageNeedRefresh: false, // 用于首页是否需要刷新的标记
   }
 })
+
+// {
+//   "pagePath": "pages/explore/index",
+//   "iconPath": "@iconPath2",
+//   "selectedIconPath": "@selectedIconPath2"
+// },

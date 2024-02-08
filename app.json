@@ -22,11 +22,6 @@
         "selectedIconPath": "@selectedIconPath1"
       },
       {
-        "pagePath": "pages/explore/index",
-        "iconPath": "@iconPath2",
-        "selectedIconPath": "@selectedIconPath2"
-      },
-      {
         "pagePath": "pages/mine/mine",
         "iconPath": "@iconPath3",
         "selectedIconPath": "@selectedIconPath3"
