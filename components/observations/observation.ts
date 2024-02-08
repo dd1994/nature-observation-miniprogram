@@ -9,24 +9,28 @@ const ObservationsBehavior = Behavior({
     pageIndex: 1,
     total: 0,
     isEmpty: false,
+    loading: true,
   },
   methods: {
-    fetchObservationList() {
-      return fetchObservationList({ pageIndex: this.data.pageIndex, pageSize: this.data.pageSize }).then((res: any) => {
-        this.setData({
-          observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
-          total: res?.data?.data?.total_count || 0
-        })
-        if (!this.data.observations.length && (this.pageIndex === 1)) {
-          this.setData({
-            isEmpty: true
-          })
-        } else {
-          this.setData({
-            isEmpty: false
-          })
-        }
+    async fetchObservationList() {
+      this.setData({
+        loading: true,
       })
+      const res = await fetchObservationList({ pageIndex: this.data.pageIndex, pageSize: this.data.pageSize })
+
+      this.setData({
+        observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
+        total: res?.data?.data?.total_count || 0
+      })
+      if (!this.data.observations.length && (this.pageIndex === 1)) {
+        this.setData({
+          isEmpty: true
+        })
+      } else {
+        this.setData({
+          isEmpty: false
+        })
+      }
     },
     resetAndFetchObservations() {
       this.setData({
