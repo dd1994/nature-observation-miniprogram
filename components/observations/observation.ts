@@ -9,7 +9,7 @@ const ObservationsBehavior = Behavior({
     pageIndex: 1,
     total: 0,
     isEmpty: false,
-    loading: false,
+    loading: true,
   },
   methods: {
     async fetchObservationList() {
