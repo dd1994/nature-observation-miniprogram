@@ -37,7 +37,7 @@ const ObservationsBehavior = Behavior({
         pageIndex: 1,
         observations: []
       })
-      this.fetchObservationList()
+      return this.fetchObservationList()
     },
   },
   // @ts-ignore
