@@ -11,6 +11,10 @@ Component({
     },
     userProfile: {
       type: Object,
+    },
+    allLoaded: {
+      type: Boolean,
+      value: false
     }
   },
   data: {
