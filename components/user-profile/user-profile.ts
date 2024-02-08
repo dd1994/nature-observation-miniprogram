@@ -1,5 +1,3 @@
-import { getUserProfile } from "../../utils/service/user"
-
 const UserProfileBehavior = Behavior({
   data: {
     userProfile: {},
