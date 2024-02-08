@@ -13,7 +13,7 @@
         <view>物种列表</view>
       </t-tab-panel>
     </t-tabs>
-    <t-icon class="search-icon" size="48rpx" name="search" />
+    <t-icon class="search-icon" size="46rpx" name="search" />
   </view>
   <add-observation-button wx:if="{{!isEmpty}}" bind:tap="onAddIconTap" />
 </view>
