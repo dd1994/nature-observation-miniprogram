@@ -21,7 +21,7 @@ const ObservationsBehavior = Behavior({
           observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
           total: res?.data?.data?.total_count || 0
         })
-        if (!this.data.observations.length && (this.pageIndex === 1)) {
+        if (!this.data.observations.length && (this.data.pageIndex === 1)) {
           this.setData({ isEmpty: true })
         } else {
           this.setData({ isEmpty: false })

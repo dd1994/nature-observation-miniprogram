@@ -12,8 +12,8 @@
 }
 
 .empty-tips__or {
-  margin: 10px 0;
-  color: rgba(0, 0, 0, 0.6);
+  margin: var(--td-spacer-1) 0;
+  color: var(--td-font-gray-3);
 }
 
 .custom-tab-content {
