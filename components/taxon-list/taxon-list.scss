@@ -11,37 +11,19 @@
 
   &:first-child {
     .taxon-rank {
-      color: var(--td-primary-color-10);
+      color: var(--td-error-color-6);
     }
   }
 
   &:nth-child(2) {
     .taxon-rank {
-      color: var(--td-primary-color-9);
+      color: var(--td-warning-color-5);
     }
   }
 
   &:nth-child(3) {
     .taxon-rank {
-      color: var(--td-primary-color-8);
-    }
-  }
-
-  &:nth-child(4) {
-    .taxon-rank {
-      color: var(--td-primary-color-7);
-    }
-  }
-
-  &:nth-child(5) {
-    .taxon-rank {
-      color: var(--td-primary-color-6);
-    }
-  }
-
-  &:nth-child(6) {
-    .taxon-rank {
-      color: var(--td-primary-color-5);
+      color: var(--td-warning-color-3);
     }
   }
 }

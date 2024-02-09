@@ -1,5 +1,5 @@
 <view>
-  <t-cell bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow t-class="taxon-name-cell">
+  <t-cell bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover t-class="taxon-name-cell">
     <slot slot="note"></slot>
     <view class="taxon-name-cell__description" slot="description">{{taxon.scientific_name}}</view>
   </t-cell>
