@@ -1,5 +1,43 @@
-.taxon-rank {
-  // font-weight: bolder;
-  font-size: var(--td-font-size-xl);
-  color: var(--td-font-gray-1);
+.taxon-item-wrapper {
+  .taxon-rank {
+    // font-weight: bolder;
+    font-size: var(--td-font-size-xl);
+    color: var(--td-font-gray-3);
+  }
+
+  &:first-child {
+    .taxon-rank {
+      color: var(--td-primary-color-10);
+    }
+  }
+
+  &:nth-child(2) {
+    .taxon-rank {
+      color: var(--td-primary-color-9);
+    }
+  }
+
+  &:nth-child(3) {
+    .taxon-rank {
+      color: var(--td-primary-color-8);
+    }
+  }
+
+  &:nth-child(4) {
+    .taxon-rank {
+      color: var(--td-primary-color-7);
+    }
+  }
+
+  &:nth-child(5) {
+    .taxon-rank {
+      color: var(--td-primary-color-6);
+    }
+  }
+
+  &:nth-child(6) {
+    .taxon-rank {
+      color: var(--td-primary-color-5);
+    }
+  }
 }
