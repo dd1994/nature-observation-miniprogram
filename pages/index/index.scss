@@ -1,6 +1,8 @@
 @import "../../theme.scss";
 
-.index-page {}
+.index-page {
+  font-size: var(--td-font-size-m)
+}
 
 .empty-tips {
   height: 100vh;
@@ -21,7 +23,7 @@
 }
 
 .custom-tabs {
-  font-size: var(--td-font-size-base) !important;
+  font-size: var(--td-font-size-m) !important;
 }
 
 .search-icon {

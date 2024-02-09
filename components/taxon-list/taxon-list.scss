@@ -1,1 +1,5 @@
-/* components/taxon-list/taxon-list.wxss */
+.taxon-rank {
+  // font-weight: bolder;
+  font-size: var(--td-font-size-xl);
+  color: var(--td-font-gray-1);
+}

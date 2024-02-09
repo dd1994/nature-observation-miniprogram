@@ -1,7 +1,7 @@
 <view>
-  <view wx:for="{{taxon}}">
-    <taxon-cell taxon="{{item}}">
-      <view>{{item.observation_count}}</view>
+  <view>
+    <taxon-cell taxon="{{item}}" wx:for="{{taxon}}">
+      <view class="taxon-rank">{{item.observation_count}}</view>
     </taxon-cell>
   </view>
 </view>
