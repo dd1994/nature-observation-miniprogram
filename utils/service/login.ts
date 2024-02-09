@@ -7,6 +7,7 @@ export const login = () => {
       success(res) {
         wx.request({
           url: apiDomain + '/api/v1/login',
+          method: 'POST',
           data: {
             code: res.code
           },
