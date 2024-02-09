@@ -1,5 +1,5 @@
 <view>
   <view wx:for="{{taxon}}">
-    {{item.common_name}}
+    <taxon-cell taxon="{{item}}"></taxon-cell>
   </view>
 </view>

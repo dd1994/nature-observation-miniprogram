@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "taxon-cell": "../taxon-cell/taxon-cell"
+  }
 }

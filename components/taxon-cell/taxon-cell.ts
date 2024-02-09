@@ -8,6 +8,7 @@ Component({
    */
   properties: {
     taxon: {
+      type: Object,
       value: {}
     }
   },
