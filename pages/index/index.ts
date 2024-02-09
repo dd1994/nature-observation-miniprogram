@@ -1,4 +1,4 @@
-import ObservationsBehavior from '../../components/observations/observation';
+import ObservationsBehavior from '../../components/observation-list/observationBehavior';
 import TaxonBehavior from '../../components/taxon/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
