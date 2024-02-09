@@ -3,11 +3,16 @@ import TaxonBehavior from '../../components/taxon-list/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
 import { needFirstLogin } from '../../utils/util';
+import { TabType } from './constant';
 const computedBehavior = require('miniprogram-computed').behavior;
 const app = getApp()
 Page({
   behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior],
   data: {
+    activeTab: TabType.observations,
+  },
+  activeTabChange(e) {
+    this.setData({ activeTab: e.detail.value })
   },
   async onAddIconTap() {
     if (needFirstLogin()) {
@@ -39,13 +44,23 @@ Page({
     }
   },
   onReachBottom() {
-    if (this.data.observationsAllLoaded) {
-      return
+    if (this.data.activeTab === TabType.observations) {
+      if (this.data.observationsAllLoaded) {
+        return
+      }
+      this.setData({
+        observationsPageIndex: this.data.observationsPageIndex + 1
+      })
+      this.fetchObservationList()
+    } else {
+      if (this.data.taxonAllLoaded) {
+        return
+      }
+      this.setData({
+        taxonPageIndex: this.data.taxonPageIndex + 1
+      })
+      this.fetchTaxonList()
     }
-    this.setData({
-      pageIndex: this.data.observationsPageIndex + 1
-    })
-    this.fetchObservationList()
   },
   onPullDownRefresh() {
     this.resetAndFetchObservations().finally(() => {
