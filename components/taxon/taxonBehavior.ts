@@ -38,7 +38,7 @@ const TaxonBehavior = Behavior({
         taxonPageIndex: 1,
         taxon: []
       })
-      return this.fetchObservationList()
+      return this.fetchTaxonList()
     },
   },
   // @ts-ignore

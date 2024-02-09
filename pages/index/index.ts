@@ -1,11 +1,12 @@
 import ObservationsBehavior from '../../components/observations/observation';
+import TaxonBehavior from '../../components/taxon/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
 import { needFirstLogin } from '../../utils/util';
 const computedBehavior = require('miniprogram-computed').behavior;
 const app = getApp()
 Page({
-  behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior],
+  behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior],
   data: {
   },
   async onAddIconTap() {
@@ -29,18 +30,20 @@ Page({
   },
   onLoad() {
     this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
   },
   onShow() {
     if (app.globalData.indexPageNeedRefresh) {
       this.resetAndFetchObservations()
+      this.resetAndFetchTaxon()
     }
   },
   onReachBottom() {
-    if (this.data.allLoaded) {
+    if (this.data.observationsAllLoaded) {
       return
     }
     this.setData({
-      pageIndex: this.data.pageIndex + 1
+      pageIndex: this.data.observationsPageIndex + 1
     })
     this.fetchObservationList()
   },
@@ -54,7 +57,7 @@ Page({
       return `记录(${data.observationsTotal})`
     },
     tab2Title(data) {
-      return `物种(${data.observations.length})`
+      return `物种(${data.taxonTotal})`
     },
     tab3Title(data) {
       return `鉴定(${data.observations.length})`
