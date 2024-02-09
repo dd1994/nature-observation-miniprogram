@@ -5,7 +5,7 @@
     <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
   </view>
   <view wx:else>
-    <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" defaultValue="{{0}}" t-class-item="custom-tabs" t-class-content="custom-tab-content">
+    <t-tabs space-evenly="{{false}}" swipeable="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" defaultValue="{{0}}" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <t-tab-panel label="{{tab1Title}}" value="0">
         <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </t-tab-panel>
