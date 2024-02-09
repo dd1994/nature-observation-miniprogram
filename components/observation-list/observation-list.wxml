@@ -10,7 +10,5 @@
     </view>
   </view>
 
-  <view wx:if="{{allLoaded}}" class="all-loaded-tips">
-    <t-footer text="到底了~"></t-footer>
-  </view>
+  <list-footer allLoaded="{{allLoaded}}"></list-footer>
 </view>

@@ -1,0 +1,3 @@
+<view wx:if="{{allLoaded}}" class="all-loaded-tips">
+  <t-footer text="到底了~"></t-footer>
+</view>
