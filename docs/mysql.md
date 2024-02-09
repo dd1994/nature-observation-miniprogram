@@ -21,7 +21,6 @@ province	省
 city	市	
 district	县/区	
 recommend_address_name	推荐展示位置名	
-standard_address	标准位置名	
 // 3. 物种信息	
 common_name	物种名
 scientific_name	拉丁名	

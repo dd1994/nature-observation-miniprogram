@@ -26,7 +26,6 @@ export const generateSaveParamsFromData = (data: any) => {
     'city': data.location?.city || null,
     'district': data.location?.district || null,
     "recommend_address_name": data.location?.recommend_address_name || null,
-    "standard_address": data.location?.standard_address || null,
   }
 
   const params = {
@@ -57,7 +56,6 @@ export const generateDataFromRes = (res) => {
       "city": res.city,
       "district": res.district,
       "recommend_address_name": res.recommend_address_name,
-      "standard_address": res.standard_address,
     },
     originTaxonName: res.scientific_name,
     taxon: {

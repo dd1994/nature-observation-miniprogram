@@ -117,8 +117,6 @@ Page({
         if (result) {
           this.setData({
             location: {
-              // 标准地址
-              standard_address: result.formatted_address,
               // 市，如果是直辖市，为空
               city: result.addressComponent.city,
               // 区/县
@@ -163,7 +161,6 @@ Page({
         location: {
           ..._.pick(location, ['latitude', 'longitude', 'province', 'city', 'district']),
           recommend_address_name: location.name,
-          standard_address: location.address
         }
       })
     }
