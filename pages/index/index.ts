@@ -51,7 +51,7 @@ Page({
   },
   computed: {
     tab1Title(data) {
-      return `记录(${data.total})`
+      return `记录(${data.observationsTotal})`
     },
     tab2Title(data) {
       return `物种(${data.observations.length})`

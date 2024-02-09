@@ -43,7 +43,7 @@ const TaxonBehavior = Behavior({
   },
   // @ts-ignore
   computed: {
-    allLoaded(data) {
+    taxonAllLoaded(data) {
       return (data.taxon.length === data.taxonTotal) && (data.taxonLoading === false)
     }
   }

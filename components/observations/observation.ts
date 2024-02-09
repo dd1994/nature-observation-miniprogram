@@ -5,36 +5,36 @@ const ObservationsBehavior = Behavior({
   behaviors: [computedBehavior],
   data: {
     observations: [],
-    pageSize: 20,
-    pageIndex: 1,
-    total: 0,
-    isEmpty: false,
-    loading: true,
+    observationsPageSize: 20,
+    observationsPageIndex: 1,
+    observationsTotal: 0,
+    observationsIsEmpty: false,
+    observationsIsLoading: true,
   },
   methods: {
     async fetchObservationList() {
-      this.setData({ loading: true })
+      this.setData({ observationsIsLoading: true })
       try {
-        const res: any = await fetchObservationList({ pageIndex: this.data.pageIndex, pageSize: this.data.pageSize })
+        const res: any = await fetchObservationList({ pageIndex: this.data.observationsPageIndex, pageSize: this.data.observationsPageSize })
 
         this.setData({
           observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
-          total: res?.data?.data?.total_count || 0
+          observationsTotal: res?.data?.data?.total_count || 0
         })
-        if (!this.data.observations.length && (this.data.pageIndex === 1)) {
-          this.setData({ isEmpty: true })
+        if (!this.data.observations.length && (this.data.observationsPageIndex === 1)) {
+          this.setData({ observationsIsEmpty: true })
         } else {
-          this.setData({ isEmpty: false })
+          this.setData({ observationsIsEmpty: false })
         }
       } catch (error) {
 
       } finally {
-        this.setData({ loading: false })
+        this.setData({ observationsIsLoading: false })
       }
     },
     resetAndFetchObservations() {
       this.setData({
-        pageIndex: 1,
+        observationsPageIndex: 1,
         observations: []
       })
       return this.fetchObservationList()
@@ -42,8 +42,8 @@ const ObservationsBehavior = Behavior({
   },
   // @ts-ignore
   computed: {
-    allLoaded(data) {
-      return (data.observations.length === data.total) && (data.loading === false)
+    observationsAllLoaded(data) {
+      return (data.observations.length === data.observationsTotal) && (data.observationsIsLoading === false)
     }
   }
 })
