@@ -1,6 +1,6 @@
 <view class="page-container">
   <t-search focus value="{{inputWords}}" placeholder="搜索记录" bind:change="searchWords" />
   <view>
-    <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
+    <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{false}}"></observation-list>
   </view>
 </view>

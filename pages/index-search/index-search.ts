@@ -20,4 +20,13 @@ Page({
     }
     this.resetAndFetchObservations()
   }, 2000),
+  onReachBottom() {
+    if (this.data.observationsAllLoaded) {
+      return
+    }
+    this.setData({
+      observationsPageIndex: this.data.observationsPageIndex + 1
+    })
+    this.fetchObservationList()
+  }
 })
