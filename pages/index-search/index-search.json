@@ -4,6 +4,7 @@
     "t-divider": "tdesign-miniprogram/divider/divider",
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
-    "t-loading": "tdesign-miniprogram/loading/loading"
+    "t-loading": "tdesign-miniprogram/loading/loading",
+    "observation-list": "/components/observation-list/observation-list"
   }
 }
