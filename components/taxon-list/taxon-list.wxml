@@ -1,5 +1,5 @@
 <view class="taxon-list">
-  <view class="taxon-item-wrapper" wx:for="{{taxon}}">
+  <view wx:key="scientific_name" class="taxon-item-wrapper" wx:for="{{taxon}}">
     <taxon-cell taxon="{{item}}">
       <view class="taxon-rank">{{item.observation_count}}</view>
     </taxon-cell>

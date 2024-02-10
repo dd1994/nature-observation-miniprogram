@@ -63,6 +63,7 @@ Page({
     }
   },
   onPullDownRefresh() {
+    this.resetAndFetchTaxon()
     this.resetAndFetchObservations().finally(() => {
       wx.stopPullDownRefresh()
     })

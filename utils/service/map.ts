@@ -29,7 +29,7 @@ export const fetchAdressByGPS = ({ lng, lat }) => {
     data: {
       key: AMapKey,
       location: `${lng},${lat}`,
-      radius: 1, // 限制距离，距离太大会搜出奇怪的结果
+      radius: 10, // 限制距离，距离太大会搜出奇怪的结果
     }
   })
 }
