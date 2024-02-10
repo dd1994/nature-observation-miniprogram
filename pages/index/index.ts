@@ -67,6 +67,11 @@ Page({
       wx.stopPullDownRefresh()
     })
   },
+  gotoIndexSearch() {
+    wx.navigateTo({
+      url: "/pages/index-search/index-search"
+    })
+  },
   computed: {
     tab1Title(data) {
       return `记录(${data.observationsTotal})`

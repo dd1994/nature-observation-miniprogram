@@ -10,7 +10,8 @@
     "pages/taxon-detail/taxon-detail",
     "pages/setting/setting",
     "pages/about/about",
-    "pages/profile-setting/profile-setting"
+    "pages/profile-setting/profile-setting",
+    "pages/index-search/index-search"
   ],
   "tabBar": {
     "borderStyle": "@borderStyle",

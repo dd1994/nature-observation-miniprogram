@@ -13,7 +13,7 @@
         <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}"></taxon-list>
       </t-tab-panel>
     </t-tabs>
-    <t-icon class="search-icon" size="46rpx" name="search" />
+    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="46rpx" name="search" />
   </view>
   <add-observation-button wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap" />
 </view>
