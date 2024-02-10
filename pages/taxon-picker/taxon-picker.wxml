@@ -12,7 +12,7 @@
       <t-checkbox wx:if="{{!hidePicker}}" data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" />
     </view>
     <view wx:if="{{searchLoading}}" class="loading-wrapper">
-      <t-loading theme="spinner" size="40rpx" text="加载中..." inheritColor class="wrapper" />
+      <t-loading theme="spinner" size="40rpx" text="搜索中..." inheritColor class="wrapper" />
     </view>
   </view>
 </view>

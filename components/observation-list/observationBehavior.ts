@@ -9,7 +9,7 @@ const ObservationsBehavior = Behavior({
     observationsPageIndex: 1,
     observationsTotal: 0,
     observationsIsEmpty: false,
-    observationsIsLoading: true,
+    observationsIsLoading: false,
     q: {}
   },
   methods: {

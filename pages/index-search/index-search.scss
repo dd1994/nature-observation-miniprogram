@@ -4,11 +4,13 @@
   background-color: #fff;
 }
 
-.observation-list-wrapper {
-  background-color: var(--default-bg);
-  min-height: 100vh;
-}
-
 .search-input-wrapper {
   margin: var(--spacer-mini);
+}
+
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--td-spacer-5);
 }

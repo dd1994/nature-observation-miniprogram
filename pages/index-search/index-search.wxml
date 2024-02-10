@@ -2,6 +2,9 @@
   <view class="search-input-wrapper">
     <t-search focus value="{{inputWords}}" placeholder="搜索记录" bind:change="searchWords" />
   </view>
+  <view wx:if="{{observationsIsLoading}}" class="loading-wrapper">
+    <t-loading theme="spinner" size="40rpx" text="搜索中..." inheritColor />
+  </view>
   <view class="observation-list-wrapper">
     <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{false}}"></observation-list>
   </view>
