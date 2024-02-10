@@ -1,8 +1,11 @@
 <view class="setting-page-container">
   <view class="cell-group">
-    <t-cell title="编辑个人资料" hover bordered arrow url="/pages/profile-setting/profile-setting" />
+    <t-cell title="编辑个人资料" hover bordered="{{false}}" arrow url="/pages/profile-setting/profile-setting" />
   </view>
   <view class="cell-group">
     <t-cell title="关于" hover bordered="{{false}}" arrow url="/pages/about/about" />
+  </view>
+  <view class="cell-group">
+    <t-cell t-class-title="logout-btn" title="退出" hover bordered="{{false}}" />
   </view>
 </view>

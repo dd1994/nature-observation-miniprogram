@@ -3,6 +3,10 @@
   min-height: 100vh;
 }
 
+.logout-btn {
+  justify-content: center;
+}
+
 .cell-group:not(:first-child) {
   margin-top: 20px;
 }
