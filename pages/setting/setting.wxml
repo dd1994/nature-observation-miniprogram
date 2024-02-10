@@ -1,5 +1,8 @@
-<view>
+<view class="setting-page-container">
   <view class="cell-group">
-    <t-cell title="编辑个人资料" hover arrow leftIcon="user-1" url="/pages/profile-setting/profile-setting" />
+    <t-cell title="编辑个人资料" hover bordered arrow url="/pages/profile-setting/profile-setting" />
+  </view>
+  <view class="cell-group">
+    <t-cell title="关于" hover bordered="{{false}}" arrow url="/pages/about/about" />
   </view>
 </view>
