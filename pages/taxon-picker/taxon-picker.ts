@@ -45,7 +45,7 @@ Page({
     this.setData({
       searchLoading: true
     })
-    searchTaxon({ name: this.data.inputWords }).then(res => {
+    searchTaxon({ name: this.data.inputWords }).then((res: any) => {
       this.setData({
         searchLoading: false,
         searchResult: []

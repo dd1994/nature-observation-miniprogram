@@ -1,22 +1,22 @@
-// pages/index-search/index-search.ts
-Page({
+import _ from 'lodash';
+import ObservationsBehavior from '../../components/observation-list/observationBehavior';
+import { validRankList } from '../../components/taxon-tree/util';
+import UserProfileBehavior from '../../components/user-profile/user-profile';
+import { fetchObservationList } from '../../utils/service/observations';
 
-  /**
-   * 页面的初始数据
-   */
+Page({
+  behaviors: [UserProfileBehavior, ObservationsBehavior],
   data: {
     inputWords: '',
-    searchResult: [],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad() {
-
-  },
-
-  searchWords() {
-
-  }
+  searchWords: _.throttle(function (e) {
+    // 请求接口
+    this.setData({
+      inputWords: e.detail.value
+    })
+    if (!this.data.inputWords.length) {
+      return this.setData({ observations: [] })
+    }
+    this.resetAndFetchObservations()
+  }, 2000),
 })
