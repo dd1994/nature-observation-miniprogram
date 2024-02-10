@@ -12,7 +12,8 @@ Page({
   searchWords: _.throttle(function (e) {
     // 请求接口
     this.setData({
-      inputWords: e.detail.value
+      inputWords: e.detail.value,
+      q: { common_name: e.detail.value }
     })
     if (!this.data.inputWords.length) {
       return this.setData({ observations: [] })

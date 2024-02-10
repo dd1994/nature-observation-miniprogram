@@ -10,12 +10,13 @@ const ObservationsBehavior = Behavior({
     observationsTotal: 0,
     observationsIsEmpty: false,
     observationsIsLoading: true,
+    q: {}
   },
   methods: {
     async fetchObservationList() {
       this.setData({ observationsIsLoading: true })
       try {
-        const res: any = await fetchObservationList({ pageIndex: this.data.observationsPageIndex, pageSize: this.data.observationsPageSize })
+        const res: any = await fetchObservationList({ pageIndex: this.data.observationsPageIndex, pageSize: this.data.observationsPageSize, q: this.data.q })
 
         this.setData({
           observations: (this.data.observations || []).concat(res?.data?.data?.list || []),
@@ -35,7 +36,7 @@ const ObservationsBehavior = Behavior({
     resetAndFetchObservations() {
       this.setData({
         observationsPageIndex: 1,
-        observations: []
+        observations: [],
       })
       return this.fetchObservationList()
     },

@@ -1,13 +1,14 @@
 import { apiDomain } from "../constant"
 import { requestPromise, requestPromiseWithLogin } from "../util"
 
-export function fetchObservationList({ pageIndex, pageSize }: { pageIndex: number, pageSize: number }) {
+export function fetchObservationList({ pageIndex, pageSize, q }: { pageIndex: number, pageSize: number, q?: any }) {
   return requestPromiseWithLogin({
     url: apiDomain + '/api/v1/observations',
     method: 'POST',
     data: {
       pageIndex,
       pageSize,
+      q
     }
   })
 }
