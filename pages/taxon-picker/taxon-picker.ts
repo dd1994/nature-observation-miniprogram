@@ -11,7 +11,6 @@ Page({
    */
   data: {
     inputWords: '',
-    taxonDetailDialogVisible: false,
     searchResult: [],
     searchLoading: false,
     hidePicker: false
@@ -28,9 +27,6 @@ Page({
     })
   },
   viewTaxonDetail(e) {
-    this.setData({
-      taxonDetailDialogVisible: true
-    })
     openTaxonDetail(e.currentTarget.dataset.taxon)
   },
   viewTaxonWhenHidePicker(e) {
