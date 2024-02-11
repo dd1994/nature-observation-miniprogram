@@ -6,7 +6,7 @@ Page({
     userProfile: null
   },
   getUserProfile() {
-    return getUserProfile().then(res => {
+    return getUserProfile().then((res: any) => {
       this.setData({
         userProfile: res?.data?.data
       })
@@ -31,7 +31,7 @@ Page({
       user_name: this.data?.userProfile?.user_name,
       bio: this.data?.userProfile?.bio,
       avatar: this.data.avatar
-    }).then(res => {
+    }).then((res: any) => {
       if (res?.data?.success) {
         wx.showToast({
           title: '保存成功',
@@ -44,6 +44,18 @@ Page({
         })
       }, 1500);
       this.getUserProfile()
+    })
+  },
+  uploadAvatar() {
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album'],
+    }).then((res: any) => {
+      if (res?.tempFiles?.length) {
+        console.log(res?.tempFiles?.[0]?.tempFilePath)
+        console.log(res?.tempFiles?.[0]?.size)
+      }
     })
   },
   onLoad() {

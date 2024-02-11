@@ -1,5 +1,5 @@
 <view>
-  <view class="avatar-setting" slot="add-content">
+  <view bind:tap="uploadAvatar" class="avatar-setting" slot="add-content">
     <view>头像</view>
     <t-avatar size="large" class="avatar-example" image="{{userProfile.avatar}}" />
   </view>
