@@ -30,6 +30,15 @@ page {
   border-bottom: none;
 }
 
+.optional-tips {
+  background-color: var(--default-bg);
+  color: var(--td-font-gray-3);
+  padding-bottom: var(--td-spacer);
+  padding-left: var(--td-spacer-2);
+  line-height: 1;
+  // font-size: var(--td-font-size-base);
+}
+
 .create-form-item-wrapper {
   box-sizing: border-box;
   display: flex;
@@ -56,7 +65,7 @@ page {
 
 .create-form-item-icon-wrapper {
   margin-right: var(--td-spacer);
-  color: var(--td-font-gray-3);
+  color: var(--td-font-gray-1);
 }
 
 .create-form-item__right-icon {

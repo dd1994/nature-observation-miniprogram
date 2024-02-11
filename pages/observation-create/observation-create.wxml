@@ -23,6 +23,7 @@
       </view>
     </view>
 
+    <view class="optional-tips">可选填的部分</view>
     <view>
       <view class="create-form-item-wrapper create-form-item-wrapper-note">
         <view class="create-form-item-icon-wrapper">
