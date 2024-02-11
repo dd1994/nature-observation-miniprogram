@@ -57,6 +57,7 @@ Page({
       count: 1,
       mediaType: ['image'],
       sourceType: ['album'],
+      sizeType: ['compressed']
     }).then((res: any) => {
       if (res?.tempFiles?.length) {
         const uuid = (new UUID(1)).toString()

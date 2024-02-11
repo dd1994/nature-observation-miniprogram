@@ -2,8 +2,8 @@
   <view class="cell-group">
     <t-cell bordered="{{false}}" title="{{displayName}}" bind:tap="login" hover arrow>
       <view class="avatar" slot="left-icon">
-        <t-avatar wx:if="{{user.avatar}}" size="large" shape="round" image="{{user.avatar}}" />
-        <t-avatar wx:else size="large" shape="round" icon="user" />
+        <t-avatar wx:if="{{user.avatar}}" size="large" image="{{user.avatar}}" />
+        <t-avatar wx:else size="large" icon="user" />
       </view>
     </t-cell>
   </view>
