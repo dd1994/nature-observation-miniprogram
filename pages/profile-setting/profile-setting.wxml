@@ -1,6 +1,10 @@
 <view>
-  <t-input value="{{userProfile.user_name}}" maxlength="{{20}}" label="名字" placeholder="请输入名字" bind:change="nameChange" />
-  <t-textarea value="{{userProfile.bio}}" maxlength="{{300}}" label="个人简介" bind:change="bioChange" placeholder="填写个人简介，让别人更了解你" />
+  <view class="avatar-setting" slot="add-content">
+    <view>头像</view>
+    <t-avatar size="large" class="avatar-example" image="{{userProfile.avatar}}" />
+  </view>
+  <t-input value="{{userProfile.user_name}}" maxlength="{{20}}" label="昵称" placeholder="请输入昵称" bind:change="nameChange" />
+  <t-textarea value="{{userProfile.bio}}" maxlength="{{300}}" label="介绍自己" bind:change="bioChange" placeholder="填写个人简介，让别人更了解你" />
   <view class="user-profile-save-button">
     <t-button bind:tap="save" block theme="primary" size="large">保存</t-button>
   </view>
