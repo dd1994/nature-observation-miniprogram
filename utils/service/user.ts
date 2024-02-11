@@ -15,3 +15,7 @@ export function updateUserProfile(params: any) {
     data: params
   })
 }
+
+export const getUserAvatarUrl = (uuid) => {
+  return 'https://nature-observation-user-avatar.oss-cn-beijing.aliyuncs.com/' + uuid
+}

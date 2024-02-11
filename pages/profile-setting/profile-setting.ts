@@ -1,15 +1,21 @@
-import { getUserProfile, updateUserProfile } from "../../utils/service/user"
+import UUID from "pure-uuid"
+import { showErrorTips } from "../../utils/feedBack"
+import uploadOSS, { avatarHost } from "../../utils/service/uploadOSS"
+import { getUserAvatarUrl, getUserProfile, updateUserProfile } from "../../utils/service/user"
 
 // pages/profile-setting/profile-setting.ts
 Page({
   data: {
-    userProfile: null
+    userProfile: null,
+    avatarUUID: null,
   },
   getUserProfile() {
     return getUserProfile().then((res: any) => {
+      const userProfile = res?.data?.data
       this.setData({
-        userProfile: res?.data?.data
+        userProfile
       })
+      this.setData({ avatarUUID: userProfile.avatar })
     })
   },
   fieldChange(field: string, val: string) {
@@ -30,7 +36,7 @@ Page({
     return updateUserProfile({
       user_name: this.data?.userProfile?.user_name,
       bio: this.data?.userProfile?.bio,
-      avatar: this.data.avatar
+      avatar: this.data?.avatarUUID
     }).then((res: any) => {
       if (res?.data?.success) {
         wx.showToast({
@@ -53,8 +59,20 @@ Page({
       sourceType: ['album'],
     }).then((res: any) => {
       if (res?.tempFiles?.length) {
-        console.log(res?.tempFiles?.[0]?.tempFilePath)
-        console.log(res?.tempFiles?.[0]?.size)
+        const uuid = (new UUID(1)).toString()
+        const task = uploadOSS({
+          filePath: res?.tempFiles?.[0]?.tempFilePath,
+          key: uuid,
+          url: avatarHost,
+          success: (res) => {
+            this.fieldChange('avatar', getUserAvatarUrl(uuid))
+            this.setData({ avatarUUID: uuid })
+          },
+          fail: (err) => {
+            showErrorTips('图片上传失败，请稍后重试')
+            console.error(err)
+          }
+        })
       }
     })
   },
