@@ -1,12 +1,10 @@
 .user-profile-save-button {
-  margin: 60rpx 100rpx;
+  margin: var(--td-spacer-5) var(--td-spacer-2) var(--td-spacer-2) var(--td-spacer-2);
 }
 
 .avatar-setting {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: var(--td-spacer-2);
-  padding-bottom: var(--td-spacer-2);
-  border-bottom: 1px solid var(--td-border-color);
+  margin: 0 var(--td-spacer-2);
 }
