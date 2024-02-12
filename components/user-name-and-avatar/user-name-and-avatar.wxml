@@ -1,4 +1,5 @@
 <view class="user-name-and-avatar">
-  <image class="user__avatar" src="../../static/me.png" mode="" />
+  <t-avatar t-class="user__avatar" size="80rpx" image="{{userProfile.avatar}}" />
+
   <view class="user-name" style="color: {{color}}">{{userProfile.user_name}}</view>
 </view>
