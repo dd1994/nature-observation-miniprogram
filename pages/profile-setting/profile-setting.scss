@@ -1,3 +1,11 @@
+page {
+  font-size: var(--td-font-size-m);
+}
+
+.textarea-label {
+  font-size: var(--td-font-size-m) !important;
+}
+
 .user-profile-save-button {
   margin: var(--td-spacer-5) var(--td-spacer-2) var(--td-spacer-2) var(--td-spacer-2);
 }
