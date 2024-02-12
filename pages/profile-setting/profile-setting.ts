@@ -7,7 +7,6 @@ import { getUserAvatarUrl, getUserProfile, updateUserProfile } from "../../utils
 Page({
   data: {
     userProfile: null,
-    avatarUUID: null,
   },
   getUserProfile() {
     return getUserProfile().then((res: any) => {
@@ -15,7 +14,6 @@ Page({
       this.setData({
         userProfile
       })
-      this.setData({ avatarUUID: userProfile.avatar })
     })
   },
   fieldChange(field: string, val: string) {
@@ -36,7 +34,7 @@ Page({
     return updateUserProfile({
       user_name: this.data?.userProfile?.user_name,
       bio: this.data?.userProfile?.bio,
-      avatar: this.data?.avatarUUID
+      avatar: this.data?.userProfile?.avatar
     }).then((res: any) => {
       if (res?.data?.success) {
         wx.showToast({
@@ -66,8 +64,8 @@ Page({
           key: uuid,
           url: avatarHost,
           success: (res) => {
-            this.fieldChange('avatar', getUserAvatarUrl(uuid))
-            this.setData({ avatarUUID: uuid })
+            this.fieldChange('avatarUrl', getUserAvatarUrl(uuid))
+            this.fieldChange('avatar', uuid)
           },
           fail: (err) => {
             showErrorTips('图片上传失败，请稍后重试')
