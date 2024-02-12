@@ -19,5 +19,6 @@
         同意
       </view>
     </view>
+    <t-divider></t-divider>
   </view>
 </view>
