@@ -1,5 +1,7 @@
 <view class="setting-page-container">
   <t-cell title="编辑个人资料" hover arrow url="/pages/profile-setting/profile-setting" />
   <t-cell title="关于自然记录" hover arrow url="/pages/about/about" />
-  <t-cell t-class-title="logout-btn" title="退出账号" hover bordered="{{false}}" arrow />
+  <view class="cell-group">
+    <t-cell t-class-title="logout-btn" title="退出账号" hover />
+  </view>
 </view>

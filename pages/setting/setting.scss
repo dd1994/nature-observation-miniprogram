@@ -4,9 +4,9 @@
 }
 
 .logout-btn {
-  // justify-content: center;
+  justify-content: center;
 }
 
 .cell-group:not(:first-child) {
-  margin-top: 20px;
+  margin-top: var(--td-spacer-4);
 }
