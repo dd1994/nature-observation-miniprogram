@@ -4,7 +4,7 @@
     <t-avatar size="large" class="avatar-example" image="{{userProfile.avatarUrl}}" />
   </view>
   <t-divider></t-divider>
-  <t-input value="{{userProfile.user_name}}" maxlength="{{20}}" label="昵称" borderless placeholder="请输入昵称" bind:change="nameChange" />
+  <t-input value="{{userProfile.user_name}}" maxlength="{{20}}" label="昵称" borderless placeholder="请输入昵称" align="right" bind:change="nameChange" />
   <t-divider></t-divider>
   <t-textarea t-class-label="textarea-label" value="{{userProfile.bio}}" maxlength="{{400}}" label="介绍自己" bind:change="bioChange" placeholder="填写个人简介，让别人更了解你" />
   <view class="user-profile-save-button">
