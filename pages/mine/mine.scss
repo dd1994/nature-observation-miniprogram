@@ -4,9 +4,16 @@ page {
   background-color: var(--default-bg);
 }
 
-.taxon-cell,
-.setting-cell {
+.taxon-cell {
   --td-cell-left-icon-color: #0052d9;
+}
+
+.setting-cell {
+  --td-cell-left-icon-color: #8e56dd;
+}
+
+.about-us {
+  --td-cell-left-icon-color: #029cd4;
 }
 
 .cell-group:not(:first-child) {
