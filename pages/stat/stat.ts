@@ -9,10 +9,10 @@ Page({
    */
   data: {
     ecTaxonPie: {
-      onInit: initTaxonPie
+      lazyLoad: true,
     },
     ecTaxonMap: {
-      onInit: initTaxonMap
+      lazyLoad: true,
     },
   },
 
@@ -26,8 +26,15 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
+  onReady: function () {
+    // 获取组件
+    this.ecTaxonPieComponent = this.selectComponent('#echart-taxon-pie');
+    this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
 
+    setTimeout(() => {
+      this.ecTaxonPieComponent.init(initTaxonPie)
+      this.ecTaxonMapComponent.init(initTaxonMap)
+    }, 1000)
   },
 
   /**
