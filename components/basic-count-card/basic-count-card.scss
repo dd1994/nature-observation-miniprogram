@@ -1,7 +1,13 @@
 .basic-count-card {
+  background-color: #ffffff;
+  margin-top: var(--td-spacer-4);
+}
+
+.basic-count-card__list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .basic-count-card__item {
@@ -12,7 +18,7 @@
 }
 
 .basic-count-card__item__count {
-  font-size: var(--td-font-size-l);
+  font-size: var(--td-font-size-xl);
   color: var(--td-primary-color-7);
 }
 

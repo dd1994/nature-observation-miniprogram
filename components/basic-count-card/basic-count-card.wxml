@@ -1,37 +1,41 @@
 <view class="basic-count-card">
-  <view class="basic-count-card__item">
-    <view class="basic-count-card__item__count">
-      100
-    </view>
-    <view class="basic-count-card__item__name">
-      记录
-    </view>
-  </view>
+  <t-cell bordered="{{false}}" arrow>
+    <view slot="title" class="basic-count-card__list">
+      <view class="basic-count-card__item">
+        <view class="basic-count-card__item__count">
+          100
+        </view>
+        <view class="basic-count-card__item__name">
+          记录
+        </view>
+      </view>
 
-  <view class="basic-count-card__item">
-    <view class="basic-count-card__item__count">
-      100
-    </view>
-    <view class="basic-count-card__item__name">
-      物种
-    </view>
-  </view>
+      <view class="basic-count-card__item">
+        <view class="basic-count-card__item__count">
+          100
+        </view>
+        <view class="basic-count-card__item__name">
+          物种
+        </view>
+      </view>
 
-  <view class="basic-count-card__item">
-    <view class="basic-count-card__item__count">
-      100
-    </view>
-    <view class="basic-count-card__item__name">
-      照片
-    </view>
-  </view>
+      <view class="basic-count-card__item">
+        <view class="basic-count-card__item__count">
+          100
+        </view>
+        <view class="basic-count-card__item__name">
+          照片
+        </view>
+      </view>
 
-  <view class="basic-count-card__item">
-    <view class="basic-count-card__item__count">
-      100
+      <view class="basic-count-card__item">
+        <view class="basic-count-card__item__count">
+          100
+        </view>
+        <view class="basic-count-card__item__name">
+          鉴定
+        </view>
+      </view>
     </view>
-    <view class="basic-count-card__item__name">
-      鉴定
-    </view>
-  </view>
+  </t-cell>
 </view>
