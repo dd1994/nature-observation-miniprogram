@@ -58,7 +58,8 @@ export function initTaxonPie(canvas, width, height, dpr) {
         borderWidth: 2,
         color: function (colors) {
           var colorList = [
-            generatePieChartColor(['#e48d85', '#c4544a']),
+            generatePieChartColor(['#f49d0c', '#d87607']),
+            generatePieChartColor(['#d54941', '#f6685d']),
             generatePieChartColor(['#c69cff', '#ad75fe']),
             generatePieChartColor(['#41b8f2', '#029cd4']),
             '#ad75fe',

@@ -17,7 +17,6 @@ page {
 }
 
 .basic-info {
-  padding-bottom: var(--td-spacer-5);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: var(--td-spacer-2);
