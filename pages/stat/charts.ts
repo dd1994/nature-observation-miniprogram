@@ -1,6 +1,7 @@
 import * as echarts from '../../components/ec-canvas/echarts';
 import geoJson from '../../utils/libs/chinaMap';
 import wordCloud from "../../components/echarts-wordcloud/wordCloud";
+import { statBgColor } from '../../utils/constant';
 
 wordCloud({
   createCanvas: function () {
@@ -10,7 +11,6 @@ wordCloud({
   },
 });
 
-const bgColor = '#0bae31'
 export function initTaxonPie(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {
     width: width,
@@ -37,7 +37,7 @@ export function initTaxonPie(canvas, width, height, dpr) {
       },
       itemStyle: {
         borderRadius: 5,
-        borderColor: bgColor,
+        borderColor: statBgColor,
         borderWidth: 2,
         color: function (colors) {
           var colorList = [
@@ -143,6 +143,9 @@ export function initTaxonMap(canvas, width, height, dpr) {
         type: 'map',
         map: 'china',
         data: data,
+        itemStyle: {
+          borderColor: statBgColor,
+        }
       },
     ],
   };
