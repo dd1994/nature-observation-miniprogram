@@ -27,5 +27,8 @@
     <view class="container">
       <ec-canvas id="echart-taxon-pie" canvas-id="echart-taxon-pie" ec="{{ ecTaxonPie }}"></ec-canvas>
     </view>
+    <view class="container">
+      <ec-canvas id="echart-taxon-map" canvas-id="echart-taxon-map" ec="{{ ecTaxonMap }}"></ec-canvas>
+    </view>
   </view>
 </view>

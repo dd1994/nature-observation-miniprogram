@@ -1,6 +1,6 @@
 // pages/stat/stat.ts
 
-import { initTaxonPie } from "./charts";
+import { initTaxonMap, initTaxonPie } from "./charts";
 
 Page({
 
@@ -10,7 +10,10 @@ Page({
   data: {
     ecTaxonPie: {
       onInit: initTaxonPie
-    }
+    },
+    ecTaxonMap: {
+      onInit: initTaxonMap
+    },
   },
 
   /**

@@ -1,6 +1,5 @@
 {
   "navigationStyle": "custom",
-  "renderer": "skyline",
   "usingComponents": {
     "t-navbar": "tdesign-miniprogram/navbar/navbar",
     "ec-canvas": "../../components/ec-canvas/ec-canvas"
