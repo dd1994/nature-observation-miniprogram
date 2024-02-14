@@ -30,5 +30,8 @@
     <view class="container">
       <ec-canvas id="echart-taxon-map" canvas-id="echart-taxon-map" ec="{{ ecTaxonMap }}"></ec-canvas>
     </view>
+    <view class="container">
+      <ec-canvas id="echart-month-bar" canvas-id="echart-month-bar" ec="{{ ecMonthBarChart }}"></ec-canvas>
+    </view>
   </view>
 </view>
