@@ -10,7 +10,6 @@ function initChart(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
   var option = {
-    backgroundColor: "#ffffff",
     series: [{
       label: {
         normal: {
@@ -29,12 +28,6 @@ function initChart(canvas, width, height, dpr) {
       }, {
         value: 10,
         name: '杭州'
-      }, {
-        value: 20,
-        name: '广州'
-      }, {
-        value: 38,
-        name: '上海'
       }]
     }]
   };
