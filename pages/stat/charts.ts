@@ -2,7 +2,16 @@ import * as echarts from '../../components/ec-canvas/echarts';
 import geoJson from '../../utils/libs/chinaMap';
 import wordCloud from "../../components/echarts-wordcloud/wordCloud";
 import { statBgColor } from '../../utils/constant';
-
+import { getRandomInt } from '../../utils/util';
+const mapColors = [
+  '#b5c7ff',
+  '#8eabff',
+  '#618dff',
+  '#366ef4',
+  '#0052d9',
+  '#003cab',
+  '#002a7c'
+]
 wordCloud({
   createCanvas: function () {
     return wx.createOffscreenCanvas({
@@ -135,34 +144,19 @@ export function initTaxonMap(canvas, width, height, dpr) {
     { "name": "南海诸岛", "value": 15000 }
   ]
   const option = {
-    visualMap: {
-      left: 'right',
-      min: 100,
-      max: 30000,
-      inRange: {
-        color: [
-          '#313695',
-          '#4575b4',
-          '#74add1',
-          '#abd9e9',
-          '#e0f3f8',
-          '#ffffbf',
-          '#fee090',
-          '#fdae61',
-          '#f46d43',
-          '#d73027',
-          '#a50026'
-        ]
-      },
-      text: ['High', 'Low'],
-      calculable: true
-    },
     series: [
       {
         name: '地图',
         type: 'map',
         map: 'china',
-        data: data,
+        data: data.map(i => {
+          return {
+            ...i,
+            itemStyle: {
+              areaColor: mapColors[getRandomInt(mapColors.length)]
+            }
+          }
+        }),
         itemStyle: {
           borderColor: statBgColor,
         }

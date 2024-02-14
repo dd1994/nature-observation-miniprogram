@@ -69,6 +69,11 @@ export const formatExifGPSLongitude = (GPSLongitude, GPSLongitudeRef) => {
   }
 }
 
+export function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
 
 export const formatExifGPSLatitude = (GPSLatitude, GPSLatitudeRef) => {
   if (GPSLatitude?.length) {
