@@ -105,16 +105,32 @@ export function initTaxonMap(canvas, width, height, dpr) {
   ]
   const option = {
     visualMap: {
-      min: 0,
-      max: 20000,
+      left: 'right',
+      min: 100,
+      max: 30000,
       inRange: {
-        color: ['#e0ffff', '#006edd']
-      }
+        color: [
+          '#313695',
+          '#4575b4',
+          '#74add1',
+          '#abd9e9',
+          '#e0f3f8',
+          '#ffffbf',
+          '#fee090',
+          '#fdae61',
+          '#f46d43',
+          '#d73027',
+          '#a50026'
+        ]
+      },
+      text: ['High', 'Low'],
+      calculable: true
     },
     series: [
       {
+        name: '地图',
         type: 'map',
-        mapType: 'china',
+        map: 'china',
         data: data,
       },
     ],
