@@ -1,6 +1,8 @@
 // pages/stat/stat.ts
 
 import { initTaxonMap, initTaxonPie } from "./charts";
+import * as echarts from '../../components/ec-canvas/echarts';
+import geoJson from '../../utils/libs/chinaMap';
 
 Page({
 
@@ -33,6 +35,7 @@ Page({
 
     setTimeout(() => {
       this.ecTaxonPieComponent.init(initTaxonPie)
+      echarts.registerMap('china', geoJson);
       this.ecTaxonMapComponent.init(initTaxonMap)
     }, 1000)
   },
