@@ -1,5 +1,5 @@
 <view>
-  <t-navbar class="custom-navbar" title="我的统计" t-class-title="nav-title" />
+  <t-navbar class="custom-navbar" title="我的统计" t-class-title="nav-title" left-arrow />
   <view class="basic-info">
     <view class="basic-info__item">
       记录
@@ -36,9 +36,9 @@
     <!-- <view class="container">
       <ec-canvas id="echart-calendar-chart" canvas-id="echart-calendar-chart" ec="{{ ecCalendarChart }}"></ec-canvas>
     </view> -->
-        <view class="container">
+    <view class="container">
       <ec-canvas id="echart-wordcloud-chart" canvas-id="echart-wordcloud-chart" ec="{{ ecWordCloudChart }}"></ec-canvas>
     </view>
-    
+
   </view>
 </view>
