@@ -144,6 +144,9 @@ export function initTaxonMap(canvas, width, height, dpr) {
     { "name": "南海诸岛", "value": 15000 }
   ]
   const option = {
+    label: {
+      color: statBgColor,
+    },
     series: [
       {
         name: '地图',
@@ -158,8 +161,11 @@ export function initTaxonMap(canvas, width, height, dpr) {
             },
             emphasis: {
               itemStyle: {
-                areaColor: color
+                areaColor: color,
               },
+              label: {
+                color: '#FFF',
+              }
             }
           }
         }),
