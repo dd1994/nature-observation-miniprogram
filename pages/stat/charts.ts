@@ -246,7 +246,7 @@ export function initWordCloudChart(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
 
-  
+
   const option = {
     tooltip: {
       confine: true,
@@ -254,26 +254,14 @@ export function initWordCloudChart(canvas, width, height, dpr) {
     series: [
       {
         type: "wordCloud",
-        gridSize: 2,
-        sizeRange: [12, 50],
-        rotationRange: [0, 90],
+        sizeRange: [6, 50],
+        rotationRange: [0, 0],
         //渲染的梯度就是 rotationStep ，这个值越小，词云里出现的角度种类就越多
-        rotationStep: 90,
-        shape: "circle",
-        // width: 375,
-        // height: 200,
-        drawOutOfBound: true,
+        rotationStep: 0,
+        shape: "square",
         textStyle: {
           color: function () {
-            return (
-              "rgb(" +
-              [
-                Math.round(Math.random() * 160),
-                Math.round(Math.random() * 160),
-                Math.round(Math.random() * 160),
-              ].join(",") +
-              ")"
-            );
+            return "#FFF"
           },
         },
         emphasis: {
@@ -283,18 +271,6 @@ export function initWordCloudChart(canvas, width, height, dpr) {
           },
         },
         data: [
-          {
-            name: "Sam S Club",
-            value: 10000,
-            textStyle: {
-              color: "black",
-            },
-            emphasis: {
-              textStyle: {
-                color: "red",
-              },
-            },
-          },
           {
             name: "Macys",
             value: 6181,
