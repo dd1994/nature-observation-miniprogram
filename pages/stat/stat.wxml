@@ -25,7 +25,7 @@
   <view class="taxon-stat">
     <view class="stat_title">物种</view>
     <view class="container">
-      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+      <ec-canvas id="echart-taxon-pie" canvas-id="echart-taxon-pie" ec="{{ ecTaxonPie }}"></ec-canvas>
     </view>
   </view>
 </view>

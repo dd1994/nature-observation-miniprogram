@@ -1,7 +1,7 @@
 // pages/stat/stat.ts
 import * as echarts from '../../components/ec-canvas/echarts';
 
-function initChart(canvas, width, height, dpr) {
+function initTaxonPie(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {
     width: width,
     height: height,
@@ -64,8 +64,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ec: {
-      onInit: initChart
+    ecTaxonPie: {
+      onInit: initTaxonPie
     }
   },
 
