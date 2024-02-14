@@ -287,7 +287,7 @@ export function initWordCloudChart(canvas, width, height, dpr) {
         rotationRange: [0, 0],
         //渲染的梯度就是 rotationStep ，这个值越小，词云里出现的角度种类就越多
         rotationStep: 0,
-        shape: "circle",
+        shape: "square",
         textStyle: {
           color: function () {
             return "#FFF"
