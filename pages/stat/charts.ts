@@ -150,10 +150,16 @@ export function initTaxonMap(canvas, width, height, dpr) {
         type: 'map',
         map: 'china',
         data: data.map(i => {
+          const color = mapColors[getRandomInt(mapColors.length)]
           return {
             ...i,
             itemStyle: {
-              areaColor: mapColors[getRandomInt(mapColors.length)]
+              areaColor: color
+            },
+            emphasis: {
+              itemStyle: {
+                areaColor: color
+              },
             }
           }
         }),
