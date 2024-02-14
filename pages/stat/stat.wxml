@@ -23,7 +23,7 @@
     </view>
   </view>
   <view class="taxon-stat">
-    <view class="stat_title">物种</view>
+    <!-- <view class="stat_title">物种</view> -->
     <view class="container">
       <ec-canvas id="echart-taxon-pie" canvas-id="echart-taxon-pie" ec="{{ ecTaxonPie }}"></ec-canvas>
     </view>

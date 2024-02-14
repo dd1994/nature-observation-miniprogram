@@ -1,5 +1,6 @@
 import * as echarts from '../../components/ec-canvas/echarts';
 import geoJson from '../../utils/libs/chinaMap';
+const bgColor = '#0bae31'
 export function initTaxonPie(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {
     width: width,
@@ -26,7 +27,7 @@ export function initTaxonPie(canvas, width, height, dpr) {
       },
       itemStyle: {
         borderRadius: 5,
-        borderColor: '#16d142',
+        borderColor: bgColor,
         borderWidth: 2,
         color: function (colors) {
           var colorList = [
