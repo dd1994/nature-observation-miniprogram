@@ -2,11 +2,18 @@ page {
   background-color: #16d142;
   padding: var(--td-spacer-5) var(--td-spacer-2);
   box-sizing: border-box;
+  color: #fff;
 }
 
 .custom-navbar {
   --td-navbar-color: #fff;
   --td-navbar-bg-color: #16d142;
+}
+
+.stat_title {
+  font-size: var(--td-font-size-xl);
+  font-family: sans-serif;
+  font-weight: bolder;
 }
 
 .basic-info {
@@ -21,7 +28,6 @@ page {
   align-items: baseline;
   justify-content: flex-start;
   font-weight: bolder;
-  color: #fff;
   font-size: var(--td-font-size-base);
 
   .basic-info__item_count {

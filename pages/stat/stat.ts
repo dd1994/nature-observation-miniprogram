@@ -19,7 +19,7 @@ function initChart(canvas, width, height, dpr) {
       },
       type: 'pie',
       radius: ['30%', '60%'],
-      // center: ['50%', '50%'],
+      center: ['50%', '30%'],
       itemStyle: {
         borderRadius: 5,
         borderColor: '#16d142',
