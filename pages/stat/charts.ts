@@ -155,12 +155,20 @@ export function initMonthBar(canvas, width, height, dpr) {
       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
+      splitLine: { show: false },
+    },
+    tooltip: {
+      show: true
     },
     series: [
       {
         data: [120, 200, 150, 80, 70, 110, 130],
-        type: 'bar'
+        type: 'bar',
+        itemStyle: {
+          color: '#618dff',
+          borderRadius: [6, 6, 0, 0]
+        }
       }
     ]
   };
