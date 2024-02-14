@@ -10,7 +10,7 @@
     "coverView": true,
     "es6": true,
     "postcss": false,
-    "minified": false,
+    "minified": true,
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmRelationList": [],
@@ -24,8 +24,8 @@
       "outputPath": ""
     },
     "uglifyFileName": false,
-    "minifyWXSS": false,
-    "minifyWXML": false
+    "minifyWXSS": true,
+    "minifyWXML": true
   },
   "condition": {},
   "editorSetting": {
