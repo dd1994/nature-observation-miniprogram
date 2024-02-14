@@ -152,11 +152,27 @@ export function initMonthBar(canvas, width, height, dpr) {
   const option = {
     xAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      axisLabel: {
+        textStyle: {
+          color: '#eee'
+        }
+      },
+      axisTick: {
+        show: false // 隐藏x轴刻度
+      },
+      axisLine: {
+        show: false // 隐藏x轴刻度
+      }
     },
     yAxis: {
       type: 'value',
       splitLine: { show: false },
+      axisLabel: {
+        textStyle: {
+          color: '#eee'
+        }
+      }
     },
     tooltip: {
       show: true
