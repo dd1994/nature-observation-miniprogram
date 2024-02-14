@@ -1,1 +1,22 @@
-/* components/basic-count-card/basic-count-card.wxss */
+.basic-count-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.basic-count-card__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.basic-count-card__item__count {
+  font-size: var(--td-font-size-l);
+  color: var(--td-primary-color-7);
+}
+
+.basic-count-card__item__name {
+  font-size: var(--td-font-size-s);
+  color: var(--td-font-gray-2);
+}
