@@ -13,21 +13,38 @@ function initChart(canvas, width, height, dpr) {
     series: [{
       label: {
         normal: {
-          fontSize: 14
+          fontSize: 14,
+          color: "#ffffff"
         }
       },
       type: 'pie',
-      center: ['50%', '50%'],
-      radius: ['20%', '40%'],
+      radius: ['30%', '60%'],
+      // center: ['50%', '50%'],
+      itemStyle: {
+        borderRadius: 5,
+        borderColor: '#16d142',
+        borderWidth: 2,
+        color: function (colors) {
+          var colorList = [
+            '#029cd4',
+            '#ad75fe',
+            '#ff79cd',
+            '#ef6567',
+            '#f9c956',
+            '#75bedc'
+          ];
+          return colorList[colors.dataIndex];
+        }
+      },
       data: [{
         value: 55,
-        name: '北京'
+        name: '昆虫'
       }, {
         value: 20,
-        name: '武汉'
+        name: '植物'
       }, {
         value: 10,
-        name: '杭州'
+        name: '鸟类'
       }]
     }]
   };
