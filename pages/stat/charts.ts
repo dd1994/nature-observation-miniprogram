@@ -78,11 +78,31 @@ export function initTaxonMap(canvas, width, height, dpr) {
 
   // 模拟数据
   const data = [
-    { "name": "台湾", "value": 20000 },
-    { "name": "河北", "value": 2000 },
-    { "name": "山西", "value": 2000 },
-    { "name": "内蒙古", "value": 2000 },
-    { "name": "辽宁", "value": 2000 },
+    {
+      "name": "台湾", "value": 20000, itemStyle: {
+        areaColor: '#d54941'
+      }
+    },
+    {
+      "name": "河北", "value": 2000, itemStyle: {
+        areaColor: '#fff0ed'
+      }
+    },
+    {
+      "name": "山西", "value": 2000, itemStyle: {
+        areaColor: '#fff0ed'
+      }
+    },
+    {
+      "name": "内蒙古", "value": 2000, itemStyle: {
+        areaColor: '#d54941'
+      }
+    },
+    {
+      "name": "辽宁", "value": 2000, itemStyle: {
+        areaColor: '#d54941'
+      }
+    },
     { "name": "吉林", "value": 2000 },
     { "name": "黑龙江", "value": 0 },
     { "name": "江苏", "value": 10000 },
