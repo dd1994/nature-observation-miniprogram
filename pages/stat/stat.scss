@@ -1,8 +1,25 @@
 page {
-  background-color: #7ef79a;
+  background-color: #3fe966;
 }
 
 .custom-navbar {
   --td-navbar-color: #fff;
-  --td-navbar-bg-color: #7ef79a;
+  --td-navbar-bg-color: #3fe966;
+}
+
+.basic-info {
+  padding: var(--td-spacer-5) var(--td-spacer-2);
+}
+
+.basic-info__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  font-weight: bolder;
+  color: #fff;
+  font-size: var(--td-font-size-base);
+
+  .basic-info__item_count {
+    font-size: var(--td-font-size-xl);
+  }
 }

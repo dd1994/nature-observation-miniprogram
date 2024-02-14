@@ -1,3 +1,10 @@
 <view>
   <t-navbar class="custom-navbar" title="我的统计" t-class-title="nav-title" />
+  <view class="basic-info">
+    <view class="basic-info__item">
+      记录
+      <view class="basic-info__item_count">100</view>
+      条
+    </view>
+  </view>
 </view>
