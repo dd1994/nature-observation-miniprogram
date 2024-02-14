@@ -18,8 +18,13 @@ function initChart(canvas, width, height, dpr) {
         }
       },
       type: 'pie',
-      radius: ['30%', '60%'],
+      radius: ['30%', '55%'],
       center: ['50%', '30%'],
+      labelLine: {
+        lineStyle: {
+          color: '#fff'
+        },
+      },
       itemStyle: {
         borderRadius: 5,
         borderColor: '#16d142',
