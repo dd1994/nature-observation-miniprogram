@@ -36,5 +36,9 @@
     <!-- <view class="container">
       <ec-canvas id="echart-calendar-chart" canvas-id="echart-calendar-chart" ec="{{ ecCalendarChart }}"></ec-canvas>
     </view> -->
+        <view class="container">
+      <ec-canvas id="echart-wordcloud-chart" canvas-id="echart-wordcloud-chart" ec="{{ ecWordCloudChart }}"></ec-canvas>
+    </view>
+    
   </view>
 </view>
