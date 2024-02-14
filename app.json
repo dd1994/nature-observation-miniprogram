@@ -11,7 +11,8 @@
     "pages/setting/setting",
     "pages/about/about",
     "pages/profile-setting/profile-setting",
-    "pages/index-search/index-search"
+    "pages/index-search/index-search",
+    "pages/stat/stat"
   ],
   "tabBar": {
     "borderStyle": "@borderStyle",
