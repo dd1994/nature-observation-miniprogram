@@ -1,6 +1,6 @@
 // pages/stat/stat.ts
 
-import { initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
+import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
 import * as echarts from '../../components/ec-canvas/echarts';
 import geoJson from '../../utils/libs/chinaMap';
 
@@ -17,6 +17,9 @@ Page({
       lazyLoad: true,
     },
     ecMonthBarChart: {
+      lazyLoad: true,
+    },
+    ecCalendarChart: {
       lazyLoad: true,
     }
   },
@@ -36,13 +39,14 @@ Page({
     this.ecTaxonPieComponent = this.selectComponent('#echart-taxon-pie');
     this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
     this.ecMonthBarChartComponent = this.selectComponent("#echart-month-bar")
+    this.ecCalendarChartComponent = this.selectComponent('#echart-calendar-chart')
 
     setTimeout(() => {
       this.ecTaxonPieComponent.init(initTaxonPie)
       echarts.registerMap('china', geoJson);
       this.ecTaxonMapComponent.init(initTaxonMap)
       this.ecMonthBarChartComponent.init(initMonthBar)
-
+      this.ecCalendarChartComponent.init(initCalendarChart)
     }, 1000)
   },
 

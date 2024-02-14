@@ -176,3 +176,40 @@ export function initMonthBar(canvas, width, height, dpr) {
   chart.setOption(option);
   return chart;
 }
+
+export function initCalendarChart(canvas, width, height, dpr) {
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // new
+  });
+  canvas.setChart(chart);
+
+
+  const option = {
+    xAxis: {
+      type: 'category',
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+      type: 'value',
+      splitLine: { show: false },
+    },
+    tooltip: {
+      show: true
+    },
+    series: [
+      {
+        data: [120, 200, 150, 80, 70, 110, 130],
+        type: 'bar',
+        itemStyle: {
+          color: '#618dff',
+          borderRadius: [6, 6, 0, 0]
+        }
+      }
+    ]
+  };
+
+  chart.setOption(option);
+  return chart;
+}

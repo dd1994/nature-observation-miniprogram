@@ -33,5 +33,8 @@
     <view class="container">
       <ec-canvas id="echart-month-bar" canvas-id="echart-month-bar" ec="{{ ecMonthBarChart }}"></ec-canvas>
     </view>
+    <view class="container">
+      <ec-canvas id="echart-calendar-chart" canvas-id="echart-calendar-chart" ec="{{ ecCalendarChart }}"></ec-canvas>
+    </view>
   </view>
 </view>
