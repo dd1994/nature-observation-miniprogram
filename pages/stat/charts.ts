@@ -166,7 +166,11 @@ export function initMonthBar(canvas, width, height, dpr) {
         data: [120, 200, 150, 80, 70, 110, 130],
         type: 'bar',
         itemStyle: {
-          color: '#618dff',
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: '#366ef4' },
+            // { offset: 0.5, color: '#618dff'},
+            { offset: 1, color: '#0052d9' }
+          ]),
           borderRadius: [6, 6, 0, 0]
         }
       }
@@ -187,27 +191,19 @@ export function initCalendarChart(canvas, width, height, dpr) {
 
 
   const option = {
-    xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    visualMap: {
+      show: false,
+      min: 0,
+      max: 1000
     },
-    yAxis: {
-      type: 'value',
-      splitLine: { show: false },
+    calendar: {
+      range: '2023'
     },
-    tooltip: {
-      show: true
-    },
-    series: [
-      {
-        data: [120, 200, 150, 80, 70, 110, 130],
-        type: 'bar',
-        itemStyle: {
-          color: '#618dff',
-          borderRadius: [6, 6, 0, 0]
-        }
-      }
-    ]
+    series: {
+      type: 'heatmap',
+      coordinateSystem: 'calendar',
+      data: [['2023-01-02', 900], ['2023-01-02', 877], ['2023-01-02', 699]]
+    }
   };
 
   chart.setOption(option);
