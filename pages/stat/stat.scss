@@ -1,14 +1,17 @@
 page {
-  background-color: #3fe966;
+  background-color: #16d142;
 }
 
 .custom-navbar {
   --td-navbar-color: #fff;
-  --td-navbar-bg-color: #3fe966;
+  --td-navbar-bg-color: #16d142;
 }
 
 .basic-info {
   padding: var(--td-spacer-5) var(--td-spacer-2);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--td-spacer-2);
 }
 
 .basic-info__item {
@@ -20,6 +23,6 @@ page {
   font-size: var(--td-font-size-base);
 
   .basic-info__item_count {
-    font-size: var(--td-font-size-xl);
+    font-size: var(--td-font-size-xxl);
   }
 }
