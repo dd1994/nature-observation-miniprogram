@@ -22,4 +22,9 @@
       次
     </view>
   </view>
+  <view class="taxon-stat">
+    <view class="container">
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
 </view>
