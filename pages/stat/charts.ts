@@ -12,6 +12,14 @@ const mapColors = [
   '#003cab',
   '#002a7c'
 ]
+
+const generatePieChartColor = ([color1, color2]) => {
+  return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+    { offset: 0, color: color1 },
+    // { offset: 0.5, color: '#618dff'},
+    { offset: 1, color: color2 }
+  ])
+}
 wordCloud({
   createCanvas: function () {
     return wx.createOffscreenCanvas({
@@ -37,8 +45,8 @@ export function initTaxonPie(canvas, width, height, dpr) {
         }
       },
       type: 'pie',
-      radius: ['30%', '55%'],
-      center: ['50%', '30%'],
+      radius: ['25%', '55%'],
+      center: ['50%', '50%'],
       labelLine: {
         lineStyle: {
           color: '#fff'
@@ -50,7 +58,9 @@ export function initTaxonPie(canvas, width, height, dpr) {
         borderWidth: 2,
         color: function (colors) {
           var colorList = [
-            '#029cd4',
+            generatePieChartColor(['#e48d85', '#c4544a']),
+            generatePieChartColor(['#c69cff', '#ad75fe']),
+            generatePieChartColor(['#41b8f2', '#029cd4']),
             '#ad75fe',
             '#ff79cd',
             '#ef6567',
