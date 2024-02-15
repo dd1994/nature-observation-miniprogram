@@ -12,7 +12,8 @@
     "pages/about/about",
     "pages/profile-setting/profile-setting",
     "pages/index-search/index-search",
-    "pages/stat/stat"
+    "pages/stat/stat",
+    "pages/import-export/import-export"
   ],
   "tabBar": {
     "borderStyle": "@borderStyle",
