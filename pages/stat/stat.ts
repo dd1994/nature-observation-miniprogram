@@ -1,6 +1,6 @@
 // pages/stat/stat.ts
 
-import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie, initWordCloudChart } from "./charts";
+import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
 import * as echarts from '../../components/ec-canvas/echarts';
 import geoJson from '../../utils/libs/chinaMap';
 
@@ -19,9 +19,6 @@ Page({
     ecMonthBarChart: {
       lazyLoad: true,
     },
-    ecWordCloudChart: {
-      lazyLoad: true
-    }
     // ecCalendarChart: {
     //   lazyLoad: true,
     // }
@@ -42,7 +39,6 @@ Page({
     this.ecTaxonPieComponent = this.selectComponent('#echart-taxon-pie');
     this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
     this.ecMonthBarChartComponent = this.selectComponent("#echart-month-bar")
-    this.ecWordCloudChart = this.selectComponent("#echart-wordcloud-chart")
     // this.ecCalendarChartComponent = this.selectComponent('#echart-calendar-chart')
 
     setTimeout(() => {
@@ -50,7 +46,6 @@ Page({
       echarts.registerMap('china', geoJson);
       this.ecTaxonMapComponent.init(initTaxonMap)
       this.ecMonthBarChartComponent.init(initMonthBar)
-      this.ecWordCloudChart.init(initWordCloudChart)
       // this.ecCalendarChartComponent.init(initCalendarChart)
     }, 1000)
   },

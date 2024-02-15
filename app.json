@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/stat/stat",
     "pages/index/index",
     "pages/explore/index",
     "pages/observation-create/observation-create",
@@ -11,8 +12,7 @@
     "pages/setting/setting",
     "pages/about/about",
     "pages/profile-setting/profile-setting",
-    "pages/index-search/index-search",
-    "pages/stat/stat"
+    "pages/index-search/index-search"
   ],
   "tabBar": {
     "borderStyle": "@borderStyle",
