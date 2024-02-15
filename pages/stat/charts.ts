@@ -230,9 +230,8 @@ export function initMonthBar(canvas, width, height, dpr) {
         type: 'bar',
         itemStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: '#366ef4' },
-            // { offset: 0.5, color: '#618dff'},
-            { offset: 1, color: '#0052d9' }
+            { offset: 0, color: '#8e56dd' },
+            { offset: 1, color: '#7137bf' }
           ]),
           borderRadius: [6, 6, 0, 0]
         }
