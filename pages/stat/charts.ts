@@ -45,20 +45,24 @@ export function initTaxonPie(canvas, width, height, dpr) {
         },
       },
       itemStyle: {
-        borderRadius: 5,
+        borderRadius: 6,
         borderColor: statBgColor,
-        borderWidth: 2,
+        borderWidth: 3,
         color: function (colors) {
+          const defaultGreenColor = generatePieChartColor(['#3fe966', '#16d142'])
           var colorList = [
             generatePieChartColor(['#f49d0c', '#d87607']),
-            generatePieChartColor(['#d54941', '#f6685d']),
             generatePieChartColor(['#c69cff', '#ad75fe']),
+            defaultGreenColor,
             generatePieChartColor(['#41b8f2', '#029cd4']),
-            '#ad75fe',
-            '#ff79cd',
-            '#ef6567',
-            '#f9c956',
-            '#75bedc'
+            defaultGreenColor,
+            defaultGreenColor,
+            defaultGreenColor,
+            defaultGreenColor,
+            defaultGreenColor,
+            defaultGreenColor,
+            defaultGreenColor,
+            defaultGreenColor,
           ];
           return colorList[colors.dataIndex];
         }
