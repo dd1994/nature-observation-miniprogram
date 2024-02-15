@@ -14,7 +14,7 @@
 
   <view class="cell-group">
     <t-cell t-class="taxon-cell" bordered="{{false}}" title="物种百科" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
-    <t-cell t-class="batch-import" bordered="{{false}}" title="批量导入" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="activity" />
+    <t-cell t-class="batch-import" bordered="{{false}}" title="导入导出" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="activity" />
   </view>
 
   <view class="cell-group">
