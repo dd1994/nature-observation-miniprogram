@@ -1,5 +1,5 @@
 <view>
-  <t-cell bordered="{{false}}" title="本地图片批量导入" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="backup" />
+  <t-cell bordered="{{false}}" title="本地图片批量导入(测试版)" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="backup" />
 
   <t-cell bordered="{{false}}" title="从 iNaturalist 导入" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="backup" />
 
