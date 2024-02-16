@@ -1,2 +1,3 @@
-<!--pages/import-from-inaturalist/import-from-inaturalist.wxml-->
-<text>pages/import-from-inaturalist/import-from-inaturalist.wxml</text>
+<view>
+  <t-button bind:tap="uploadFile" theme="primary" icon="backup" content="上传 CSV 文件" size="medium" class="margin"></t-button>
+</view>

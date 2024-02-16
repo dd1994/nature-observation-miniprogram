@@ -16,7 +16,6 @@ export const generateSaveParamsFromData = (data: any) => {
   }
 
   const otherInfo = {
-    license: null
   }
 
   const locationInfo = {

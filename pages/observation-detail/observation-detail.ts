@@ -44,7 +44,7 @@ Page({
       return data.observationDetail?.common_name
     },
     recommend_address_name(data) {
-      return data.observationDetail?.city + data.observationDetail?.recommend_address_name
+      return data.observationDetail?.recommend_address_name
     },
     description(data) {
       return data.observationDetail?.description
