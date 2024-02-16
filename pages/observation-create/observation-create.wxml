@@ -63,10 +63,10 @@
           <t-icon name="user" size="20px" />
         </view>
         <view class="create-form-item-content">
-          <view bind:tap="toggleArtificial" class="create-form-item-content__artificial-label">
+          <view bind:tap="toggleCaptiveCultivated" class="create-form-item-content__artificial-label">
             是否人工圈养或栽培
           </view>
-          <t-checkbox t-class-icon="artificial-checkbox-icon" size="small" checked="{{artificial}}" bind:change="artificialChange" />
+          <t-checkbox t-class-icon="artificial-checkbox-icon" size="small" checked="{{captive_cultivated}}" bind:change="captiveCultivatedChange" />
         </view>
       </view>
 

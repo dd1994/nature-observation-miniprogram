@@ -20,7 +20,7 @@ Page({
     description: '', // 备注
     observedOn: moment().format(defaultTimeFormat), // 观察时间
     location: null, // 观察地址信息
-    artificial: false, // 是否人工圈养或栽培
+    captive_cultivated: false, // 是否人工圈养或栽培
     taxon: null, // 观察物种
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
     notSelectedTaxonTips: false,
@@ -147,11 +147,11 @@ Page({
   observedOnChange(e) {
     this.setData({ observedOn: e.detail.value })
   },
-  artificialChange(e) {
-    this.setData({ artificial: e.detail.checked })
+  captiveCultivatedChange(e) {
+    this.setData({ captive_cultivated: e.detail.checked })
   },
-  toggleArtificial() {
-    this.setData({ artificial: !this.data.artificial })
+  toggleCaptiveCultivated() {
+    this.setData({ captive_cultivated: !this.data.captive_cultivated })
   },
   onShow() {
     // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象

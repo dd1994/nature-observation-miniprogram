@@ -1,3 +1,0 @@
-<view>
-  <t-button bind:tap="uploadFile" theme="primary" icon="backup" content="上传 CSV 文件" size="medium" class="margin"></t-button>
-</view>

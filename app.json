@@ -13,8 +13,7 @@
     "pages/profile-setting/profile-setting",
     "pages/index-search/index-search",
     "pages/stat/stat",
-    "pages/import-export/import-export",
-    "pages/import-from-inaturalist/import-from-inaturalist"
+    "pages/import-export/import-export"
   ],
   "tabBar": {
     "borderStyle": "@borderStyle",

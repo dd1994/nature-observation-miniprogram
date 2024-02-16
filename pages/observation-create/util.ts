@@ -5,7 +5,7 @@ export const generateSaveParamsFromData = (data: any) => {
   const basicInfo = {
     description: data.description,
     observed_on: moment(data.observedOn, defaultTimeFormat).format('x'),
-    artificial: data.artificial
+    captive_cultivated: data.captive_cultivated
   }
   const taxonInfo = {
     common_name: data.taxon.preferred_common_name,
@@ -47,7 +47,7 @@ export const generateDataFromRes = (res) => {
   return {
     description: res.description,
     observedOn: moment(res.observed_on).format(defaultTimeFormat),
-    "artificial": !!res.artificial,
+    "captive_cultivated": !!res.captive_cultivated,
     location: {
       "latitude": res.latitude,
       "longitude": res.longitude,
