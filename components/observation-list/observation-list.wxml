@@ -10,5 +10,5 @@
     </view>
   </view>
 
-  <list-footer allLoaded="{{allLoaded}}"></list-footer>
+  <list-footer allLoaded="{{allLoaded && (formattedObservations.length > 20)}}"></list-footer>
 </view>

@@ -4,5 +4,5 @@
       <view class="taxon-rank">{{item.observation_count}}</view>
     </taxon-cell>
   </view>
-  <list-footer allLoaded="{{allLoaded}}"></list-footer>
+  <list-footer allLoaded="{{allLoaded && (taxon.length > 20)}}"></list-footer>
 </view>
