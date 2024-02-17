@@ -1,7 +1,7 @@
 <view class="page-container">
   <view class="create-form">
     <view class="create-image-uplader-wrapper">
-      <t-upload draggable max="{{30}}" config="{{tUploadConfig.uploadConfig}}" mediaType="{{['image']}}" files="{{fileList}}" bind:add="onAddUploadFiles" bind:remove="onRemoveUploadFile">
+      <t-upload draggable max="{{20}}" config="{{tUploadConfig.uploadConfig}}" mediaType="{{['image']}}" files="{{fileList}}" bind:add="onAddUploadFiles" bind:remove="onRemoveUploadFile">
       </t-upload>
     </view>
 
