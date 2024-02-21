@@ -1,7 +1,28 @@
-.observation-add-icon {
+.index-page {
+  font-size: var(--td-font-size-m)
+}
+
+.empty-tips {
+  height: 100vh;
+  margin: 0 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-tips__or {
+  margin: var(--td-spacer-1) 0;
+  color: var(--td-font-gray-3);
+}
+
+.custom-tabs {
+  font-size: var(--td-font-size-m) !important;
+}
+
+.search-icon {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
-  width: 60px;
-  height: 60px;
+  top: var(--td-spacer-1);
+  right: var(--td-spacer-2);
+  z-index: 999;
 }

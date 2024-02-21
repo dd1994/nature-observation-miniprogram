@@ -4,6 +4,9 @@
     "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "observation-list": "/components/observation-list/observation-list",
+    "taxon-list": "/components/taxon-list/taxon-list",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "add-observation-button": "/components/add-observation-button/add-observation-button"
   }
 }
