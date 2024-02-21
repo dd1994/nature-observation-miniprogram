@@ -7,6 +7,9 @@ import { getUserProfile } from './utils/service/user'
 
 App({
   onLaunch() {
+    wx.setEnableDebug({
+      enableDebug: true,
+    })
   },
   globalData: {
     userInfo: null,
