@@ -1,4 +1,5 @@
 import FullscreenBehavior from "../../components/fullscreen/fullscreen";
+import { showErrorTips } from "../../utils/feedBack";
 import { login } from "../../utils/service/login";
 import { getUserProfile } from "../../utils/service/user"
 import { isLogin } from "../../utils/util";
@@ -21,7 +22,7 @@ Page({
   },
   async login() {
     if (isLogin()) {
-      return
+      return showErrorTips('个人主页正在开发中，敬请期待~')
     }
     wx.showLoading({
       title: '登录中...'
