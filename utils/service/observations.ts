@@ -1,7 +1,7 @@
 import { apiDomain } from "../constant"
 import { requestPromise, requestPromiseWithLogin } from "../util"
 
-export function fetchObservationList({ pageIndex, pageSize, q, needLogin = false }: { pageIndex: number, pageSize: number, q?: any, needLogin?: boolean }) {
+export function fetchObservationList({ pageIndex, pageSize, q, needLogin = true }: { pageIndex: number, pageSize: number, q?: any, needLogin?: boolean }) {
   if (needLogin) {
     return requestPromiseWithLogin({
       url: apiDomain + '/api/v1/observations',
