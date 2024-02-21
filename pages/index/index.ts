@@ -10,6 +10,7 @@ Page({
   behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior],
   data: {
     activeTab: TabType.observations,
+    needLogin: true,
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })

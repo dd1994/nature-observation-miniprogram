@@ -12,16 +12,15 @@ Page({
   behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior],
   data: {
     activeTab: TabType.observations,
+    needLogin: false,
   },
-  methods: {
-    activeTabChange(e) {
-      this.setData({ activeTab: e.detail.value })
-    },
-    onAddIconTap() {
-      wx.navigateTo({
-        url: "/pages/observation-create/observation-create",
-      })
-    }
+  activeTabChange(e) {
+    this.setData({ activeTab: e.detail.value })
+  },
+  onAddIconTap() {
+    wx.navigateTo({
+      url: "/pages/observation-create/observation-create",
+    })
   },
   onLoad() {
     this.resetAndFetchObservations()

@@ -1,23 +1,28 @@
 import { apiDomain } from "../constant"
 import { requestPromise, requestPromiseWithLogin } from "../util"
 
-export function fetchObservationList({ pageIndex, pageSize, q }: { pageIndex: number, pageSize: number, q?: any }) {
-  return requestPromiseWithLogin({
-    url: apiDomain + '/api/v1/observations',
-    method: 'POST',
-    data: {
-      pageIndex,
-      pageSize,
-      q
-    }
-  })
-}
-
-export function fetchObservationExploreList() {
-  return requestPromise({
-    url: apiDomain + '/api/v1/observations/explore',
-    method: 'POST',
-  })
+export function fetchObservationList({ pageIndex, pageSize, q, needLogin = false }: { pageIndex: number, pageSize: number, q?: any, needLogin?: boolean }) {
+  if (needLogin) {
+    return requestPromiseWithLogin({
+      url: apiDomain + '/api/v1/observations',
+      method: 'POST',
+      data: {
+        pageIndex,
+        pageSize,
+        q
+      }
+    })
+  } else {
+    return requestPromise({
+      url: apiDomain + '/api/v1/observations/explore',
+      method: 'POST',
+      data: {
+        pageIndex,
+        pageSize,
+        q
+      }
+    })
+  }
 }
 
 export function createObservation(params) {
