@@ -65,7 +65,7 @@ Page({
       return data.observationDetail?.user_id === data.userProfile?.id
     },
     formattedObservedOn(data) {
-      return moment(data.observedOn).format("YYYY-MM-DD")
+      return moment(data.observationDetail?.observed_on).format("YYYY-MM-DD")
     }
   },
   viewMapDetail() {
