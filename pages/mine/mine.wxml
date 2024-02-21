@@ -2,12 +2,13 @@
   <view class="cell-group">
     <t-cell bordered="{{false}}" title="{{displayName}}" bind:tap="login" hover arrow>
       <view class="avatar" slot="left-icon">
-        <t-avatar size="large" image="{{user.avatarUrl}}" />
+        <t-avatar wx:if="{{user.avatar}}" size="large" image="{{user.avatarUrl}}" />
+        <t-avatar wx:else size="large" icon="user" />
       </view>
     </t-cell>
   </view>
 
-  <basic-count-card />
+  <basic-count-card wx:if="{{user}}" />
   <!-- <view wx:if="{{user}}" class="mine-cell-group">
     <t-cell title="我的统计" hover arrow leftIcon="chart-pie" />
   </view> -->
