@@ -1,3 +1,5 @@
+import { showErrorTips } from "../../utils/feedBack"
+
 // components/basic-count-card/basic-count-card.ts
 Component({
 
@@ -22,6 +24,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    showTips() {
+      showErrorTips("统计页面正在开发中，敬请期待~")
+    }
   }
 })
