@@ -8,7 +8,7 @@
     </t-cell>
   </view>
 
-  <basic-count-card wx:if="{{user}}" />
+  <basic-count-card wx:if="{{user}}" statCount="{{statCount}}" />
   <!-- <view wx:if="{{user}}" class="mine-cell-group">
     <t-cell title="我的统计" hover arrow leftIcon="chart-pie" />
   </view> -->

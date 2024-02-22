@@ -1,7 +1,7 @@
 import FullscreenBehavior from "../../components/fullscreen/fullscreen";
 import { showErrorTips } from "../../utils/feedBack";
 import { login } from "../../utils/service/login";
-import { getUserProfile } from "../../utils/service/user"
+import { getUserProfile, getUserStatCount } from "../../utils/service/user"
 import { isLogin } from "../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
 
@@ -10,7 +10,8 @@ Page({
   behaviors: [computedBehavior, FullscreenBehavior],
   data: {
     user: null,
-    loginLoding: false
+    loginLoding: false,
+    statCount: {},
   },
   computed: {
     displayName(data) {
@@ -49,6 +50,16 @@ Page({
           user: userInfo
         })
         app.globalData.userInfo = userInfo
+      }
+    })
+
+    getUserStatCount().then(res => {
+      // @ts-ignore
+      if (res?.data?.success) {
+        // @ts-ignore
+        this.setData({
+          statCount: res.data.data
+        })
       }
     })
   },

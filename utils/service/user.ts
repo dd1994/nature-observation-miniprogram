@@ -8,6 +8,13 @@ export function getUserProfile() {
   })
 }
 
+export function getUserStatCount() {
+  return requestPromiseWithLogin({
+    url: apiDomain + '/api/v1/user/getStatCount',
+    method: 'POST',
+  })
+}
+
 export function updateUserProfile(params: any) {
   return requestPromiseWithLogin({
     url: apiDomain + '/api/v1/user/updateUserProfile',
