@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "navigationBarTitleText": "探索",
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
