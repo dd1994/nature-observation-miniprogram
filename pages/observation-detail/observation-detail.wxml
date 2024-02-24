@@ -1,5 +1,5 @@
 <view class="page-container">
-  <view class="img-bottom-info">
+  <view class="img-top-info">
     <user-name-and-avatar userProfile="{{observationDetail}}"></user-name-and-avatar>
     <view class="observation-on-time">
       {{formattedObservedOn}}
