@@ -8,6 +8,7 @@ Page({
   behaviors: [UserProfileBehavior, ObservationsBehavior],
   data: {
     inputWords: '',
+    needLogin: false,
   },
   searchWords: _.throttle(function (e) {
     // 请求接口
