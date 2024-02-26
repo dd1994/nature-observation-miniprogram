@@ -24,7 +24,7 @@ Page({
     taxon: null, // 观察物种
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
     notSelectedTaxonTips: false,
-    noticeBarVisible: app.globalData.noticeBarVisible,
+    noticeBarVisible: false,
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -48,7 +48,10 @@ Page({
     this.setData({
       noticeBarVisible: false,
     })
-    app.globalData.noticeBarVisible = false
+    wx.setStorage({
+      key: 'noticeBarVisible',
+      data: false,
+    })
   },
   goToSearchLocation() {
     goToLocationSelector({
@@ -183,6 +186,14 @@ Page({
       this.setData({ id: options.id })
       this.fetchObservationDetail()
     }
+
+    const key = 'noticeBarVisible'
+    const naticeBarVisible = wx.getStorageSync(key)
+    if (naticeBarVisible === "") {
+      this.setData({
+        noticeBarVisible: true
+      })
+    }
   },
   fetchObservationDetail() {
     fetchObservationDetail(this.data.id).then((res: any) => {
@@ -231,6 +242,10 @@ Page({
     fn(params, this.data.id).then((res: any) => {
       if (res?.data?.success) {
         showSuccessTips('保存成功')
+        wx.setStorage({
+          key: 'noticeBarVisible',
+          data: false,
+        })
         setTimeout(() => {
           this.goToIndexAndRefresh()
         }, 1000)
