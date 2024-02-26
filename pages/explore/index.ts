@@ -30,6 +30,7 @@ Page({
     if (app.globalData.indexPageNeedRefresh) {
       this.resetAndFetchObservations()
       this.resetAndFetchTaxon()
+      app.globalData.indexPageNeedRefresh = false
     }
   },
   onReachBottom() {

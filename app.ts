@@ -14,6 +14,7 @@ App({
   globalData: {
     userInfo: null,
     indexPageNeedRefresh: false, // 用于首页是否需要刷新的标记
+    noticeBarVisible: true,
   }
 })
 

@@ -24,6 +24,7 @@ Page({
     taxon: null, // 观察物种
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
     notSelectedTaxonTips: false,
+    noticeBarVisible: app.globalData.noticeBarVisible,
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -41,6 +42,13 @@ Page({
     taxonChanged(data) {
       return data.isEdit && (data.originTaxonName !== data.taxon?.name)
     }
+  },
+  noticeBarClick(e) {
+    const { trigger } = e.detail;
+    this.setData({
+      noticeBarVisible: false,
+    })
+    app.globalData.noticeBarVisible = false
   },
   goToSearchLocation() {
     goToLocationSelector({
