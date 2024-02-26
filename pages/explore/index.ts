@@ -1,9 +1,6 @@
-import { fetchObservationExploreList, fetchObservationList } from "../../utils/service/observations"
 import ObservationsBehavior from '../../components/observation-list/observationBehavior';
 import TaxonBehavior from '../../components/taxon-list/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
-import { login } from '../../utils/service/login';
-import { needFirstLogin } from '../../utils/util';
 import { TabType } from './../index/constant';
 const app = getApp()
 
