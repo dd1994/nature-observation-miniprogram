@@ -2,7 +2,7 @@ import FullscreenBehavior from "../../components/fullscreen/fullscreen";
 import { showErrorTips } from "../../utils/feedBack";
 import { login } from "../../utils/service/login";
 import { getUserProfile, getUserStatCount } from "../../utils/service/user"
-import { isLogin } from "../../utils/util";
+import { isLogin, needFirstLogin } from "../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
 
 const app = getApp()
@@ -38,6 +38,20 @@ Page({
     } finally {
       wx.hideLoading()
     }
+  },
+  async onAddIconTap() {
+    if (needFirstLogin()) {
+      await login()
+      app.globalData.indexPageNeedRefresh = true
+    }
+    wx.navigateTo({
+      url: "/pages/observation-create/observation-create",
+      events: {
+        refresh: () => {
+          this.resetAndFetchObservations()
+        }
+      }
+    })
   },
   getUserProfile() {
     getUserProfile().then(res => {
