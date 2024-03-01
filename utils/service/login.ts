@@ -1,5 +1,6 @@
 import { apiDomain } from "../constant"
 import { getUserProfile } from "./user"
+const app = getApp()
 
 export const login = () => {
   return new Promise((resolve, reject) => {
@@ -23,6 +24,7 @@ export const login = () => {
                   data: res.data.data,
                 })
               })
+              app.globalData.indexPageNeedRefresh = true
               resolve(true)
             } else {
               // @ts-ignore
