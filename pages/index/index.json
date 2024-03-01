@@ -1,6 +1,6 @@
 {
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "我的",
+  "navigationBarTitleText": "我的记录",
   "onReachBottomDistance": 600,
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
