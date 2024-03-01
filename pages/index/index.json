@@ -9,6 +9,6 @@
     "taxon-list": "/components/taxon-list/taxon-list",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
-    "add-observation-button": "/components/add-observation-button/add-observation-button"
+    "t-fab": "tdesign-miniprogram/fab/fab"
   }
 }

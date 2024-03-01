@@ -9,5 +9,5 @@
   </t-tabs>
   <t-icon bind:click="gotoIndexSearch" class="search-icon" size="46rpx" name="search" />
   <t-icon bind:click="gotoIndexSearch" class="search-icon" size="46rpx" name="search" />
-  <add-observation-button bind:tap="onAddIconTap" />
+  <t-fab icon="image-add" bind:click="onAddIconTap" aria-label="增加"></t-fab>
 </view>

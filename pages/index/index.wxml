@@ -15,5 +15,5 @@
     </t-tabs>
     <t-icon bind:click="gotoIndexSearch" class="search-icon" size="46rpx" name="search" />
   </view>
-  <add-observation-button wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap" />
+  <t-fab icon="image-add" wx:if="{{!observationsIsEmpty}}" bind:click="onAddIconTap" aria-label="增加"></t-fab>
 </view>
