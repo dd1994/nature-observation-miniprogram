@@ -1,7 +1,7 @@
 <view>
   <view bind:tap="uploadAvatar" class="avatar-setting" slot="add-content">
     <view>头像</view>
-    <t-avatar size="large" class="avatar-example" image="{{userProfile.avatarUrl}}" />
+    <t-avatar size="large" shape="round" class="avatar-example" image="{{userProfile.avatarUrl}}" />
   </view>
   <t-divider></t-divider>
   <t-input value="{{userProfile.user_name}}" maxlength="{{20}}" label="昵称" borderless placeholder="请输入昵称" align="right" bind:change="nameChange" />
