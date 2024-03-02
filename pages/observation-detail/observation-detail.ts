@@ -8,6 +8,8 @@ import { createIdentification } from '../../utils/service/identifications'
 import UserProfileBehavior from "../../components/user-profile/user-profile";
 import { getImgQuality } from "../../utils/img";
 import moment from "moment";
+import { needFirstLogin } from "../../utils/util";
+import { login } from "../../utils/service/login";
 // pages/observation-detail/observation-detail.js
 Page({
   behaviors: [computedBehavior, UserProfileBehavior],
@@ -91,8 +93,8 @@ Page({
       current: this.data.photos[index],
     })
   },
-  onLoad(options) {
-    fetchObservationDetail(options.id).then(res => {
+  fetchObservationDetail(id?: string) {
+    fetchObservationDetail(id || this.data.observationDetail?.id).then(res => {
       // @ts-ignore
       const data = res?.data?.[0]
       if (data) {
@@ -103,6 +105,9 @@ Page({
     }).then(() => {
       this.fetchIdentificationList()
     })
+  },
+  onLoad(options) {
+    this.fetchObservationDetail(options.id)
   },
   openTaxonDetail() {
     openTaxonDetail({
@@ -119,7 +124,10 @@ Page({
       })
     })
   },
-  agreeID(e) {
+  async agreeID(e) {
+    if (needFirstLogin()) {
+      await login()
+    }
     const ID = e.detail
     createIdentification({
       observation_id: this.data.id,
@@ -130,12 +138,16 @@ Page({
       taxon_id: ID.taxon_id,
     }).then(() => {
       showSuccessTips('添加鉴定成功')
-      this.fetchIdentificationList()
+      this.fetchObservationDetail()
     }).catch(err => {
       showErrorTips('添加鉴定失败，请稍后重试')
     })
   },
-  addIdentification() {
+  async addIdentification() {
+    if (needFirstLogin()) {
+      await login()
+    }
+
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
       events: {
@@ -149,7 +161,7 @@ Page({
             taxon_id: taxon.id,
           }).then(() => {
             showSuccessTips('添加鉴定成功')
-            this.fetchIdentificationList()
+            this.fetchObservationDetail()
           }).catch(err => {
             showErrorTips('添加鉴定失败，请稍后重试')
           })
