@@ -298,10 +298,9 @@ function base64ToArrayBuffer(base64, contentType) {
   return buffer;
 }
 
-function handleBinaryFile(binFile, fileExtension = 'heif') {
-  var data = fileExtension === "heif" ? findEXIFinHEIC(binFile) : findEXIFinJPEG(binFile)
+function handleBinaryFile(binFile) {
+  var data = findEXIFinJPEG(binFile)
   var iptcdata = findIPTCinJPEG(binFile);
-  console.log(data)
   return {
     data: data,
     iptcdata: iptcdata
