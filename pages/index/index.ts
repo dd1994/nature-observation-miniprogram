@@ -21,12 +21,7 @@ Page({
       app.globalData.indexPageNeedRefresh = true
     }
     wx.navigateTo({
-      url: "/pages/observation-create/observation-create",
-      events: {
-        refresh: () => {
-          this.resetAndFetchObservations()
-        }
-      }
+      url: "/pages/observation-create/observation-create"
     })
   },
   goToExplore() {
