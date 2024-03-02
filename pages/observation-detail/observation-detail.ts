@@ -11,6 +11,8 @@ import moment from "moment";
 import { needFirstLogin } from "../../utils/util";
 import { login } from "../../utils/service/login";
 // pages/observation-detail/observation-detail.js
+const app = getApp()
+
 Page({
   behaviors: [computedBehavior, UserProfileBehavior],
   data: {
@@ -127,6 +129,7 @@ Page({
   async agreeID(e) {
     if (needFirstLogin()) {
       await login()
+      app.globalData.indexPageNeedRefresh = true
     }
     const ID = e.detail
     createIdentification({
@@ -146,6 +149,7 @@ Page({
   async addIdentification() {
     if (needFirstLogin()) {
       await login()
+      app.globalData.indexPageNeedRefresh = true
     }
 
     wx.navigateTo({
