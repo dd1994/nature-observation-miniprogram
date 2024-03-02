@@ -246,6 +246,10 @@ Page({
           key: 'noticeBarVisible',
           data: false,
         })
+        wx.setStorage({
+          key: 'newComer',
+          data: false
+        })
         setTimeout(() => {
           this.goToIndexAndRefresh()
         }, 1000)
