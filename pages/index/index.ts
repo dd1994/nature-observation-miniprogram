@@ -20,21 +20,27 @@ Page({
       await login()
       app.globalData.indexPageNeedRefresh = true
     }
-    wx.chooseMedia({
-      count: 20,
-      sourceType: ['album'],
-      sizeType: ['original'],
-      mediaType: ['image'],
-      success(res) {
-        const files = res?.tempFiles || []
-        wx.navigateTo({
-          url: `/pages/observation-create/observation-create?files=${encodeURIComponent(JSON.stringify(files))}`
-        })
-      }
-    })
-    // wx.navigateTo({
-    //   url: "/pages/observation-create/observation-create"
-    // })
+    const isNewComer = wx.getStorageSync('newComer')
+    if (isNewComer === false) {
+      wx.chooseMedia({
+        count: 20,
+        sourceType: ['album'],
+        sizeType: ['original'],
+        mediaType: ['image'],
+        success(res) {
+          const files = res?.tempFiles || []
+          if (files.length) {
+            wx.navigateTo({
+              url: `/pages/observation-create/observation-create?files=${encodeURIComponent(JSON.stringify(files))}`
+            })
+          }
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: "/pages/observation-create/observation-create"
+      })
+    }
   },
   goToExplore() {
     wx.switchTab({

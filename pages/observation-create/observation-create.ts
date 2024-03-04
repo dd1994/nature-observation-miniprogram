@@ -189,11 +189,9 @@ Page({
 
     if (options.files) {
       try {
-        debugger
         const files = JSON.parse(decodeURIComponent(options.files)).map(file => {
           return mapFileList(file)
         })
-        debugger
         if (files.length) {
           files.forEach(file => this.uploadFile(file))
         }
