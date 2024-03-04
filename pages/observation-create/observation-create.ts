@@ -8,7 +8,7 @@ import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips, showSuccessTips } from '../../utils/feedBack';
-import { generateDataFromRes, generateSaveParamsFromData } from './util';
+import { generateDataFromRes, generateSaveParamsFromData, mapFileList } from './util';
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 import uploadOSS from '../../utils/service/uploadOSS';
 const app = getApp()
@@ -185,6 +185,21 @@ Page({
       // 编辑状态
       this.setData({ id: options.id })
       this.fetchObservationDetail()
+    }
+
+    if (options.files) {
+      try {
+        debugger
+        const files = JSON.parse(decodeURIComponent(options.files)).map(file => {
+          return mapFileList(file)
+        })
+        debugger
+        if (files.length) {
+          files.forEach(file => this.uploadFile(file))
+        }
+      } catch (error) {
+
+      }
     }
 
     const key = 'noticeBarVisible'

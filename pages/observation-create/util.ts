@@ -75,3 +75,20 @@ export const generateDataFromRes = (res) => {
     })
   }
 }
+
+// 选中文件之后，计算一个随机的短文件名
+const getRandFileName = (filePath: string) => {
+  const extIndex = filePath.lastIndexOf('.');
+  const extName = extIndex === -1 ? '' : filePath.substr(extIndex);
+  return parseInt(`${Date.now()}${Math.floor(Math.random() * 900 + 100)}`, 10).toString(36) + extName;
+}
+
+export const mapFileList = (file) => {
+  return {
+    "name": getRandFileName(file.tempFilePath),
+    "fileType": "image",
+    "url": file.tempFilePath,
+    "size": file.size,
+    "percent": 0
+  }
+}

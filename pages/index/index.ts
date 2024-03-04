@@ -20,9 +20,21 @@ Page({
       await login()
       app.globalData.indexPageNeedRefresh = true
     }
-    wx.navigateTo({
-      url: "/pages/observation-create/observation-create"
+    wx.chooseMedia({
+      count: 20,
+      sourceType: ['album'],
+      sizeType: ['original'],
+      mediaType: ['image'],
+      success(res) {
+        const files = res?.tempFiles || []
+        wx.navigateTo({
+          url: `/pages/observation-create/observation-create?files=${encodeURIComponent(JSON.stringify(files))}`
+        })
+      }
     })
+    // wx.navigateTo({
+    //   url: "/pages/observation-create/observation-create"
+    // })
   },
   goToExplore() {
     wx.switchTab({
