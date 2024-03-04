@@ -1,6 +1,8 @@
 import ObservationsBehavior from '../../components/observation-list/observationBehavior';
 import TaxonBehavior from '../../components/taxon-list/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
+import { login } from '../../utils/service/login';
+import { needFirstLogin } from '../../utils/util';
 import { TabType } from './../index/constant';
 const app = getApp()
 
@@ -14,10 +16,33 @@ Page({
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
   },
-  onAddIconTap() {
-    wx.navigateTo({
-      url: "/pages/observation-create/observation-create",
-    })
+  async onAddIconTap() {
+    if (needFirstLogin()) {
+      await login()
+      app.globalData.indexPageNeedRefresh = true
+    }
+
+    const isNewComer = wx.getStorageSync('newComer')
+    if (isNewComer === false) {
+      wx.chooseMedia({
+        count: 20,
+        sourceType: ['album'],
+        sizeType: ['original'],
+        mediaType: ['image'],
+        success(res) {
+          const files = res?.tempFiles || []
+          if (files.length) {
+            wx.navigateTo({
+              url: `/pages/observation-create/observation-create?files=${encodeURIComponent(JSON.stringify(files))}`
+            })
+          }
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: "/pages/observation-create/observation-create"
+      })
+    }
   },
   onLoad() {
     this.resetAndFetchObservations()
