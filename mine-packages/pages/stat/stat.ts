@@ -47,7 +47,18 @@ Page({
       }
     })
     // @ts-ignore
-    getUserProvinceStatCount({user_id: options.user_id}).then(res => {
+    getUserProvinceStatCount({ user_id: options.user_id }).then(res => {
+      // @ts-ignore
+      const formattedRes = (res?.data?.data || []).map(i => {
+        return {
+          // 去掉末尾的 省/市，因为地图数据没有这个
+          name: i.province.replace('省', '').replace('市', ''),
+          value: i.count,
+        }
+      })
+      this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
+      this.ecTaxonMapComponent.init(initTaxonMap)
+      // this.ecTaxonMapComponent.init(initTaxonMap)
     })
   },
 
@@ -60,11 +71,10 @@ Page({
     this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
     this.ecMonthBarChartComponent = this.selectComponent("#echart-month-bar")
     // this.ecCalendarChartComponent = this.selectComponent('#echart-calendar-chart')
+    echarts.registerMap('china', geoJson);
 
     setTimeout(() => {
       this.ecTaxonPieComponent.init(initTaxonPie)
-      echarts.registerMap('china', geoJson);
-      this.ecTaxonMapComponent.init(initTaxonMap)
       this.ecMonthBarChartComponent.init(initMonthBar)
       // this.ecCalendarChartComponent.init(initCalendarChart)
     }, 1000)
