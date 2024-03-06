@@ -21,6 +21,14 @@
       ]
     }
   ],
+  "preloadRule": {
+    "pages/mine/mine": {
+      "network": "all",
+      "packages": [
+        "mine-packages"
+      ]
+    }
+  },
   "tabBar": {
     "borderStyle": "@borderStyle",
     "backgroundColor": "@backgroundColor",
