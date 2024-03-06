@@ -2,15 +2,23 @@ import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
 import { statBgColor } from '../../../utils/constant';
 import { getRandomInt } from '../../../utils/util';
-const mapColors = [
-  '#b5c7ff',
-  '#8eabff',
-  '#618dff',
-  '#366ef4',
-  '#0052d9',
-  '#003cab',
-  '#002a7c'
-]
+import * as _ from 'lodash';
+
+
+const getProvinceColor = (data, max, min) => {
+  const colors = [
+    '#b5c7ff',
+    '#8eabff',
+    '#618dff',
+    '#366ef4',
+    '#0052d9',
+    '#003cab',
+    '#002a7c'
+  ]
+  const step = (max - min) / colors.length
+  const index = Math.floor((data - min) / step)
+  return colors[index - 1] || '#b5c7ff'
+}
 
 const generatePieChartColor = ([color1, color2]) => {
   return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
@@ -85,6 +93,9 @@ export function initTaxonPie(canvas, width, height, dpr) {
 }
 
 export const generateInitTaxonMap = (data: any[]) => {
+  const max = _.maxBy(data, 'value').value
+  const min = _.minBy(data, 'value').value
+
   function initTaxonMap(canvas, width, height, dpr) {
     const chart = echarts.init(canvas, null, {
       width: width,
@@ -92,7 +103,7 @@ export const generateInitTaxonMap = (data: any[]) => {
       devicePixelRatio: dpr // new
     });
     canvas.setChart(chart);
-  
+
     const option = {
       label: {
         color: statBgColor,
@@ -103,7 +114,7 @@ export const generateInitTaxonMap = (data: any[]) => {
           type: 'map',
           map: 'china',
           data: data.map(i => {
-            const color = mapColors[getRandomInt(mapColors.length)]
+            const color = getProvinceColor(i.value, max, min)
             return {
               ...i,
               itemStyle: {
@@ -125,7 +136,7 @@ export const generateInitTaxonMap = (data: any[]) => {
         },
       ],
     };
-  
+
     chart.setOption(option);
     return chart;
   }
@@ -218,3 +229,4 @@ export function initCalendarChart(canvas, width, height, dpr) {
   chart.setOption(option);
   return chart;
 }
+
