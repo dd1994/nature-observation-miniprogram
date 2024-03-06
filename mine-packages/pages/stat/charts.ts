@@ -84,108 +84,55 @@ export function initTaxonPie(canvas, width, height, dpr) {
   return chart;
 }
 
-export function initTaxonMap(canvas, width, height, dpr) {
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr // new
-  });
-  canvas.setChart(chart);
-
-  // 模拟数据
-  const data = [
-    {
-      "name": "台湾", "value": 20000, itemStyle: {
-        areaColor: '#d54941'
-      }
-    },
-    {
-      "name": "河北", "value": 2000, itemStyle: {
-        areaColor: '#fff0ed'
-      }
-    },
-    {
-      "name": "山西", "value": 2000, itemStyle: {
-        areaColor: '#fff0ed'
-      }
-    },
-    {
-      "name": "内蒙古", "value": 2000, itemStyle: {
-        areaColor: '#d54941'
-      }
-    },
-    {
-      "name": "辽宁", "value": 2000, itemStyle: {
-        areaColor: '#d54941'
-      }
-    },
-    { "name": "吉林", "value": 2000 },
-    { "name": "黑龙江", "value": 0 },
-    { "name": "江苏", "value": 10000 },
-    { "name": "浙江", "value": 10000 },
-    { "name": "安徽", "value": 10000 },
-    { "name": "福建", "value": 6500 },
-    { "name": "江西", "value": 6500 },
-    { "name": "山东", "value": 6500 },
-    { "name": "河南", "value": 6500 },
-    { "name": "湖北", "value": 1500 },
-    { "name": "湖南", "value": 100 },
-    { "name": "广东", "value": 20000 },
-    { "name": "广西", "value": 1500 },
-    { "name": "海南", "value": 1000 },
-    { "name": "四川", "value": 3000 },
-    { "name": "贵州", "value": 3000 },
-    { "name": "云南", "value": 3000 },
-    { "name": "西藏", "value": 3000 },
-    { "name": "陕西", "value": 100 },
-    { "name": "甘肃", "value": 5000 },
-    { "name": "青海", "value": 2000 },
-    { "name": "宁夏", "value": 2000 },
-    { "name": "新疆", "value": 2000 },
-    { "name": "北京", "value": 2000 },
-    { "name": "天津", "value": 2000 },
-    { "name": "上海", "value": 2000 },
-    { "name": "重庆", "value": 200 },
-    { "name": "香港", "value": 200 },
-    { "name": "澳门", "value": 200 },
-    { "name": "南海诸岛", "value": 15000 }
-  ]
-  const option = {
-    label: {
-      color: statBgColor,
-    },
-    series: [
-      {
-        name: '地图',
-        type: 'map',
-        map: 'china',
-        data: data.map(i => {
-          const color = mapColors[getRandomInt(mapColors.length)]
-          return {
-            ...i,
-            itemStyle: {
-              areaColor: color
-            },
-            emphasis: {
+export const generateInitTaxonMap = (data: any[]) => {
+  function initTaxonMap(canvas, width, height, dpr) {
+    const chart = echarts.init(canvas, null, {
+      width: width,
+      height: height,
+      devicePixelRatio: dpr // new
+    });
+    canvas.setChart(chart);
+  
+    const option = {
+      label: {
+        color: statBgColor,
+      },
+      series: [
+        {
+          name: '地图',
+          type: 'map',
+          map: 'china',
+          data: data.map(i => {
+            const color = mapColors[getRandomInt(mapColors.length)]
+            return {
+              ...i,
               itemStyle: {
-                areaColor: color,
+                areaColor: color
               },
-              label: {
-                color: '#FFF',
+              emphasis: {
+                itemStyle: {
+                  areaColor: color,
+                },
+                label: {
+                  color: '#FFF',
+                }
               }
             }
+          }),
+          itemStyle: {
+            borderColor: statBgColor,
           }
-        }),
-        itemStyle: {
-          borderColor: statBgColor,
-        }
-      },
-    ],
-  };
+        },
+      ],
+    };
+  
+    chart.setOption(option);
+    return chart;
+  }
 
-  chart.setOption(option);
-  return chart;
+  return initTaxonMap
 }
+
 
 export function initMonthBar(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {

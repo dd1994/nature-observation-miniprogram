@@ -1,6 +1,6 @@
 // pages/stat/stat.ts
 
-import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
+import { generateInitTaxonMap, initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
 import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
 import { getUserStatCountWithoutLogin } from "../../../utils/service/user";
@@ -57,7 +57,7 @@ Page({
         }
       })
       this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
-      this.ecTaxonMapComponent.init(initTaxonMap)
+      this.ecTaxonMapComponent.init(generateInitTaxonMap(formattedRes))
       // this.ecTaxonMapComponent.init(initTaxonMap)
     })
   },
