@@ -3,7 +3,7 @@
 import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
 import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
-import { getUserStatCount } from "../../../utils/service/user";
+import { getUserStatCountWithoutLogin } from "../../../utils/service/user";
 
 Page({
 
@@ -20,6 +20,7 @@ Page({
     ecMonthBarChart: {
       lazyLoad: true,
     },
+    user_id: null,
     statCount: {}
     // ecCalendarChart: {
     //   lazyLoad: true,
@@ -29,8 +30,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-    getUserStatCount().then(res => {
+  onLoad(options) {
+    this.setData({
+      user_id: options.user_id
+    })
+    // @ts-ignore
+    getUserStatCountWithoutLogin({ user_id: options.user_id }).then(res => {
       // @ts-ignore
       if (res?.data?.success) {
         // @ts-ignore

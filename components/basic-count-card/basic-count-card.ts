@@ -1,8 +1,8 @@
 import { showErrorTips } from "../../utils/feedBack"
-
+const computedBehavior = require('miniprogram-computed').behavior
 // components/basic-count-card/basic-count-card.ts
 Component({
-
+  behaviors: [computedBehavior],
   /**
    * 组件的属性列表
    */
@@ -10,6 +10,9 @@ Component({
     statCount: {
       type: Object,
       value: {}
+    },
+    userId: {
+      type: String
     }
   },
 
@@ -18,6 +21,12 @@ Component({
    */
   data: {
 
+  },
+  // @ts-ignore
+  computed: {
+    userStatUrl(data) {
+      return `/mine-packages/pages/stat/stat?user_id=${data?.userId}`
+    }
   },
 
   /**

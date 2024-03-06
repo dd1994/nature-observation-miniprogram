@@ -54,3 +54,13 @@ export function deleteObservation(id) {
     method: 'post',
   })
 }
+
+export function getUserProvinceStatCount({ user_id }: { user_id: string }) {
+  return requestPromiseWithLogin({
+    url: apiDomain + '/api/v1/observations/province-count',
+    method: 'POST',
+    data: {
+      user_id
+    }
+  })
+}

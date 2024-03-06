@@ -1,5 +1,5 @@
 import { apiDomain } from "../constant";
-import { requestPromiseWithLogin } from "../util";
+import { requestPromise, requestPromiseWithLogin } from "../util";
 
 export function getUserProfile() {
   return requestPromiseWithLogin({
@@ -12,6 +12,14 @@ export function getUserStatCount() {
   return requestPromiseWithLogin({
     url: apiDomain + '/api/v1/user/getStatCount',
     method: 'POST',
+  })
+}
+
+export function getUserStatCountWithoutLogin({ user_id }: { user_id: string }) {
+  return requestPromise({
+    url: apiDomain + '/api/v1/user/getStatCount',
+    method: 'POST',
+    data: { user_id }
   })
 }
 
