@@ -113,10 +113,6 @@ export const generateInitTaxonMap = (data: any[]) => {
           name: '地图',
           type: 'map',
           map: 'china',
-          tooltip: {
-            trigger: 'item',
-            formatter: '{a}{b}{c}'
-          },
           data: data.map(i => {
             const color = getProvinceColor(i.value, max, min)
             return {
@@ -129,7 +125,9 @@ export const generateInitTaxonMap = (data: any[]) => {
                   areaColor: color,
                 },
                 label: {
-                  color: '#FFF',
+                  color: "#d54941",
+                  fontSize: 20,
+                  formatter: '{b}：{c}条记录'
                 }
               }
             }
