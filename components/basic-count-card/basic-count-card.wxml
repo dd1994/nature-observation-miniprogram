@@ -1,5 +1,5 @@
 <view class="basic-count-card">
-  <t-cell bordered="{{false}}" hover arrow bind:tap="showTips">
+  <t-cell bordered="{{false}}" hover arrow url="/mine-packages/pages/stat/stat">
     <view slot="title" class="basic-count-card__list">
       <view class="basic-count-card__item">
         <view class="basic-count-card__item__count">

@@ -1,8 +1,8 @@
 // pages/stat/stat.ts
 
 import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
-import * as echarts from '../../components/ec-canvas/echarts';
-import geoJson from '../../utils/libs/chinaMap';
+import * as echarts from '../../../components/ec-canvas/echarts';
+import geoJson from '../../../utils/libs/chinaMap';
 
 Page({
 
