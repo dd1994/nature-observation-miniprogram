@@ -4,6 +4,7 @@ import { initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./c
 import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
 import { getUserStatCountWithoutLogin } from "../../../utils/service/user";
+import { getUserProvinceStatCount } from "../../../utils/service/observations";
 
 Page({
 
@@ -44,6 +45,9 @@ Page({
           statCount: res.data.data
         })
       }
+    })
+    // @ts-ignore
+    getUserProvinceStatCount({user_id: options.user_id}).then(res => {
     })
   },
 
