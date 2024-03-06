@@ -67,15 +67,15 @@ Page({
    */
   onReady: function () {
     // 获取组件
-    this.ecTaxonPieComponent = this.selectComponent('#echart-taxon-pie');
-    this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
-    this.ecMonthBarChartComponent = this.selectComponent("#echart-month-bar")
+    // this.ecTaxonPieComponent = this.selectComponent('#echart-taxon-pie');
+    // this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
+    // this.ecMonthBarChartComponent = this.selectComponent("#echart-month-bar")
     // this.ecCalendarChartComponent = this.selectComponent('#echart-calendar-chart')
     echarts.registerMap('china', geoJson);
 
     setTimeout(() => {
-      this.ecTaxonPieComponent.init(initTaxonPie)
-      this.ecMonthBarChartComponent.init(initMonthBar)
+      // this.ecTaxonPieComponent.init(initTaxonPie)
+      // this.ecMonthBarChartComponent.init(initMonthBar)
       // this.ecCalendarChartComponent.init(initCalendarChart)
     }, 1000)
   },

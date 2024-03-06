@@ -30,15 +30,15 @@
   </view>
   <view class="taxon-stat">
     <!-- <view class="stat_title">物种</view> -->
-    <view class="container">
+    <!-- <view class="container">
       <ec-canvas id="echart-taxon-pie" canvas-id="echart-taxon-pie" ec="{{ ecTaxonPie }}"></ec-canvas>
-    </view>
+    </view> -->
     <view class="container">
       <ec-canvas id="echart-taxon-map" canvas-id="echart-taxon-map" ec="{{ ecTaxonMap }}"></ec-canvas>
     </view>
-    <view class="container">
+    <!-- <view class="container">
       <ec-canvas id="echart-month-bar" canvas-id="echart-month-bar" ec="{{ ecMonthBarChart }}"></ec-canvas>
-    </view>
+    </view> -->
     <!-- <view class="container">
       <ec-canvas id="echart-calendar-chart" canvas-id="echart-calendar-chart" ec="{{ ecCalendarChart }}"></ec-canvas>
     </view> -->
