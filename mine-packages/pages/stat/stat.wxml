@@ -3,22 +3,28 @@
   <view class="basic-info">
     <view class="basic-info__item">
       记录
-      <view class="basic-info__item_count">178</view>
+      <view class="basic-info__item_count">{{statCount.observations || 0}}</view>
       条
     </view>
     <view class="basic-info__item">
       物种
-      <view class="basic-info__item_count">159</view>
+      <view class="basic-info__item_count">
+        {{statCount.taxon || 0}}
+      </view>
       种
     </view>
     <view class="basic-info__item">
       照片
-      <view class="basic-info__item_count">120</view>
+      <view class="basic-info__item_count">
+        {{statCount.photos || 0}}
+      </view>
       张
     </view>
     <view class="basic-info__item">
       鉴定
-      <view class="basic-info__item_count">160</view>
+      <view class="basic-info__item_count">
+        {{statCount.id || 0}}
+      </view>
       次
     </view>
   </view>
