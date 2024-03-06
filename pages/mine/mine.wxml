@@ -19,8 +19,8 @@
   </view>
 
   <view class="cell-group">
-    <t-cell t-class="setting-cell" wx:if="{{user}}" title="设置" hover arrow bordered="{{false}}" leftIcon="setting" url="/pages/setting/setting" />
-    <t-cell title="关于" t-class="about-us" hover arrow url="/pages/about/about" leftIcon="user-1" />
+    <t-cell t-class="setting-cell" wx:if="{{user}}" title="设置" hover arrow bordered="{{false}}" leftIcon="setting" url="/mine-packages/pages/setting/setting" />
+    <t-cell title="关于" t-class="about-us" hover arrow url="/mine-packages/pages/about/about" leftIcon="user-1" />
   </view>
   <t-fab icon="image-add" bind:click="onAddIconTap" aria-label="增加"></t-fab>
 </view>

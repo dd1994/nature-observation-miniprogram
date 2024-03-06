@@ -26,7 +26,8 @@
     "uglifyFileName": false,
     "minifyWXSS": true,
     "minifyWXML": true,
-    "condition": false
+    "condition": false,
+    "ignoreUploadUnusedFiles": false
   },
   "condition": {},
   "editorSetting": {

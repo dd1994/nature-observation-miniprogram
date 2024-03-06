@@ -8,12 +8,18 @@
     "pages/observation-detail/observation-detail",
     "pages/observation-map/observation-map",
     "pages/taxon-detail/taxon-detail",
-    "pages/setting/setting",
-    "pages/about/about",
-    "pages/profile-setting/profile-setting",
-    "pages/index-search/index-search",
-    "pages/stat/stat",
-    "pages/import-export/import-export"
+    "pages/index-search/index-search"
+  ],
+  "subPackages": [
+    {
+      "root": "mine-packages",
+      "pages": [
+        "pages/setting/setting",
+        "pages/about/about",
+        "pages/profile-setting/profile-setting",
+        "pages/stat/stat"
+      ]
+    }
   ],
   "tabBar": {
     "borderStyle": "@borderStyle",

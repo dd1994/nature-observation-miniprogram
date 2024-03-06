@@ -1,7 +1,7 @@
 import UUID from "pure-uuid"
-import { showErrorTips } from "../../utils/feedBack"
-import uploadOSS, { avatarHost } from "../../utils/service/uploadOSS"
-import { getUserAvatarUrl, getUserProfile, updateUserProfile } from "../../utils/service/user"
+import { showErrorTips } from "../../../utils/feedBack"
+import uploadOSS, { avatarHost } from "../../../utils/service/uploadOSS"
+import { getUserAvatarUrl, getUserProfile, updateUserProfile } from "../../../utils/service/user"
 
 // pages/profile-setting/profile-setting.ts
 Page({

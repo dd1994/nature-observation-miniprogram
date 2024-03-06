@@ -1,7 +1,7 @@
-import * as echarts from '../../components/ec-canvas/echarts';
-import geoJson from '../../utils/libs/chinaMap';
-import { statBgColor } from '../../utils/constant';
-import { getRandomInt } from '../../utils/util';
+import * as echarts from '../../../components/ec-canvas/echarts';
+import geoJson from '../../../utils/libs/chinaMap';
+import { statBgColor } from '../../../utils/constant';
+import { getRandomInt } from '../../../utils/util';
 const mapColors = [
   '#b5c7ff',
   '#8eabff',
