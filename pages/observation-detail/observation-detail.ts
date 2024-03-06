@@ -158,7 +158,7 @@ Page({
         backFromSearchPage: (taxon) => {
           createIdentification({
             observation_id: this.data.id,
-            common_name: taxon.preferred_common_name,
+            common_name: taxon.preferred_common_name || taxon.name,
             scientific_name: taxon.name,
             taxon_rank: taxon.rank,
             iconic_taxon_name: taxon.iconic_taxon_name,
