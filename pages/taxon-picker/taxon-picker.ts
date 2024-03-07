@@ -55,9 +55,11 @@ Page({
         this.setData({
           searchResult: (res?.data || [])
             .map(i => {
+              const matched_term = (i.matched_term && (i.matched_term !== i.preferred_common_name)) ? `（${i.matched_term}）` : ''
               return {
                 ...i,
-                rank: i.rank === 'hybrid' ? 'species' : i.rank
+                rank: i.rank === 'hybrid' ? 'species' : i.rank,
+                displayName: (i.preferred_common_name || i.name) + matched_term
               }
             })
             .filter(i => {

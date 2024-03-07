@@ -6,7 +6,7 @@
 
     <view wx:key="name" wx:for="{{searchResult}}" data-taxon="{{item}}" bind:tap="viewTaxonWhenHidePicker" class="search-result-taxon-item">
       <view data-taxon="{{item}}" class="search-result-taxon-item-left" bind:tap="viewTaxonDetail">
-        <view class="search-result-taxon-item-chinese-name">{{item.preferred_common_name || item.name}}</view>
+        <view class="search-result-taxon-item-chinese-name">{{item.displayName}}</view>
         <view class="search-result-taxon-item-name">{{item.name}}</view>
       </view>
       <t-checkbox wx:if="{{!hidePicker}}" data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" />
