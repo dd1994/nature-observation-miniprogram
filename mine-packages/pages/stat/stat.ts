@@ -5,9 +5,9 @@ import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
 import { getUserStatCountWithoutLogin } from "../../../utils/service/user";
 import { getUserProvinceStatCount } from "../../../utils/service/observations";
-
+const computedBehavior = require('miniprogram-computed').behavior;
 Page({
-
+  behaviors: [computedBehavior],
   /**
    * 页面的初始数据
    */
@@ -29,6 +29,16 @@ Page({
     // }
   },
 
+  computed: {
+    provinceCount(data) {
+      return (data?.locationCount || [])
+        .filter(i => i.province).length
+    },
+    cityCount(data) {
+      return (data?.locationCount || [])
+        .filter(i => i.city).length
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -86,47 +96,5 @@ Page({
       // this.ecMonthBarChartComponent.init(initMonthBar)
       // this.ecCalendarChartComponent.init(initCalendarChart)
     }, 1000)
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
   }
 })

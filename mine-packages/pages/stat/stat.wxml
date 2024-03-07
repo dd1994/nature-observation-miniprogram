@@ -29,6 +29,17 @@
     </view>
   </view>
   <view class="location-stat">
+    <view class="basic-info__item">
+      走过了
+      <view class="basic-info__item_count">
+        {{provinceCount}}
+      </view>
+      个省，
+      <view class="basic-info__item_count">
+        {{cityCount}}
+      </view>
+      个市
+    </view>
     <view class="container">
       <ec-canvas id="echart-taxon-map" canvas-id="echart-taxon-map" ec="{{ ecTaxonMap }}"></ec-canvas>
     </view>
