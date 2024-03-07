@@ -22,7 +22,8 @@ Page({
       lazyLoad: true,
     },
     user_id: null,
-    statCount: {}
+    statCount: {},
+    locationCount: [],
     // ecCalendarChart: {
     //   lazyLoad: true,
     // }
@@ -48,16 +49,21 @@ Page({
     })
     // @ts-ignore
     getUserProvinceStatCount({ user_id: options.user_id }).then(res => {
+      this.setData({
+        // @ts-ignore
+        locationCount: res?.data?.data || []
+      })
+
       // @ts-ignore
       const formattedRes = (res?.data?.data || [])
-      .filter(i => i.province)
-      .map(i => {
-        return {
-          // 去掉末尾的 省/市，因为地图数据没有这个
-          name: i.province.replace('省', '').replace('市', ''),
-          value: i.count,
-        }
-      })
+        .filter(i => i.province)
+        .map(i => {
+          return {
+            // 去掉末尾的 省/市，因为地图数据没有这个
+            name: i.province.replace('省', '').replace('市', ''),
+            value: i.count,
+          }
+        })
       this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
       this.ecTaxonMapComponent.init(generateInitTaxonMap(formattedRes))
       // this.ecTaxonMapComponent.init(initTaxonMap)
