@@ -49,7 +49,9 @@ Page({
     // @ts-ignore
     getUserProvinceStatCount({ user_id: options.user_id }).then(res => {
       // @ts-ignore
-      const formattedRes = (res?.data?.data || []).map(i => {
+      const formattedRes = (res?.data?.data || [])
+      .filter(i => i.province)
+      .map(i => {
         return {
           // 去掉末尾的 省/市，因为地图数据没有这个
           name: i.province.replace('省', '').replace('市', ''),
