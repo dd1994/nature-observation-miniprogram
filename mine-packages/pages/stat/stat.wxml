@@ -38,7 +38,7 @@
       <view class="basic-info__item_count">
         {{cityCount}}
       </view>
-      个市
+      个城市
     </view>
     <view class="container">
       <ec-canvas id="echart-taxon-map" canvas-id="echart-taxon-map" ec="{{ ecTaxonMap }}"></ec-canvas>
