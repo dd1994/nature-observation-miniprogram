@@ -43,7 +43,7 @@
     <view class="basic-info__item">
       有
       <view class="basic-info__item_count">
-        228
+        {{dateCount}}
       </view>
       天进行了自然观察
     </view>

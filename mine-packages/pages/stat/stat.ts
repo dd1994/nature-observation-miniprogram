@@ -4,7 +4,7 @@ import { generateInitTaxonMap, initCalendarChart, initMonthBar, initTaxonMap, in
 import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
 import { getUserStatCountWithoutLogin } from "../../../utils/service/user";
-import { getUserProvinceStatCount } from "../../../utils/service/observations";
+import { getUserDateStatCount, getUserProvinceStatCount } from "../../../utils/service/observations";
 const computedBehavior = require('miniprogram-computed').behavior;
 Page({
   behaviors: [computedBehavior],
@@ -24,6 +24,7 @@ Page({
     user_id: null,
     statCount: {},
     locationCount: [],
+    dateCount: 0,
     // ecCalendarChart: {
     //   lazyLoad: true,
     // }
@@ -77,6 +78,13 @@ Page({
       this.ecTaxonMapComponent = this.selectComponent('#echart-taxon-map');
       this.ecTaxonMapComponent.init(generateInitTaxonMap(formattedRes))
       // this.ecTaxonMapComponent.init(initTaxonMap)
+    })
+    // @ts-ignore
+    getUserDateStatCount({ user_id: options.user_id }).then(res => {
+      this.setData({
+        // @ts-ignore
+        dateCount: res?.data?.data?.[0]?.count || 0
+      })
     })
   },
 
