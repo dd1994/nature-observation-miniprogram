@@ -40,6 +40,13 @@
       </view>
       个城市
     </view>
+    <view class="basic-info__item">
+      有
+      <view class="basic-info__item_count">
+        228
+      </view>
+      天进行了自然观察
+    </view>
     <view class="container">
       <ec-canvas id="echart-taxon-map" canvas-id="echart-taxon-map" ec="{{ ecTaxonMap }}"></ec-canvas>
     </view>
