@@ -1,2 +1,13 @@
-<!--pages/filter-panel/filter-panel.wxml-->
-<text>pages/filter-panel/filter-panel.wxml</text>
+<view>
+物种
+</view>
+<view>
+地点
+</view>
+<view>
+时间
+</view>
+
+<view>
+排序
+</view>
