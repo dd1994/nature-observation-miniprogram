@@ -88,6 +88,11 @@ Page({
       url: "/pages/index-search/index-search"
     })
   },
+  gotoFilterPanel() {
+    wx.navigateTo({
+      url: "/pages/filter-panel/filter-panel"
+    })
+  },
   computed: {
     tab1Title(data) {
       return `记录(${data.observationsTotal})`

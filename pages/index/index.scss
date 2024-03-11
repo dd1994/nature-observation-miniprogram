@@ -28,3 +28,11 @@
   right: var(--td-spacer-2);
   z-index: 999;
 }
+
+.filter-icon {
+  position: fixed;
+  top: var(--td-spacer-1);
+  right: var(--td-spacer-5);
+  padding: 0 10px;
+  z-index: 999;
+}
