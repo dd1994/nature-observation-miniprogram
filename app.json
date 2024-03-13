@@ -8,8 +8,7 @@
     "pages/observation-map/observation-map",
     "pages/taxon-detail/taxon-detail",
     "pages/index-search/index-search",
-    "pages/taxon-picker/taxon-picker",
-    "pages/filter-panel/filter-panel"
+    "pages/taxon-picker/taxon-picker"
   ],
   "subPackages": [
     {
