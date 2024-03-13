@@ -70,19 +70,6 @@ Component({
           })
         }
         return res
-      }).then(res => {
-        if (res?.data?.zwzsutu) {
-          fetchPlantFrpsPhoto({ appphoto: res.data.zwzsutu }).then(res => {
-            if (res?.data) {
-              this.setData({
-                frpsContent: {
-                  ...this.data.frpsContent,
-                  photoUrl: "https://img1.iplant.cn/imgf/b/" + res.data
-                }
-              })
-            }
-          })
-        }
       })
     },
     fetchPlantFocnDetail() {
