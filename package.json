@@ -4,6 +4,6 @@
     "miniprogram-computed": "^4.4.0",
     "moment": "^2.29.4",
     "pure-uuid": "^1.8.1",
-    "tdesign-miniprogram": "^1.2.5"
+    "tdesign-miniprogram": "^1.2.9"
   }
 }
