@@ -1,0 +1,4 @@
+<!--components/filter-panel/filter-panel.wxml-->
+<view class="filter-panel-container">
+  我是筛选
+</view>

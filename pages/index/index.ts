@@ -11,6 +11,7 @@ Page({
   data: {
     activeTab: TabType.observations,
     needLogin: true,
+    filterPanelVisible: false,
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
@@ -88,10 +89,15 @@ Page({
       url: "/pages/index-search/index-search"
     })
   },
-  gotoFilterPanel() {
-    wx.navigateTo({
-      url: "/pages/filter-panel/filter-panel"
+  openFilterPanel() {
+    this.setData({
+      filterPanelVisible: true,
     })
+  },
+  onFilterPanelVisibleChange(e) {
+    this.setData({
+      filterPanelVisible: e.detail.visible,
+    });
   },
   computed: {
     tab1Title(data) {
