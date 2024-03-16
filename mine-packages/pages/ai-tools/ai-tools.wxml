@@ -1,6 +1,6 @@
 <view>
   <view class="cell-group">
-    <t-cell title="晓虫" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png" />
+    <t-cell title="晓虫" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/1.jpeg" />
   </view>
 
   <view class="cell-group">
