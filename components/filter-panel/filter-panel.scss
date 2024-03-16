@@ -1,3 +1,9 @@
 .filter-panel-container {
   width: 600rpx;
+  margin: var(--td-spacer-1);
+}
+
+.filter-panel__title {
+  font-size: var(--td-font-size-m);
+  font-weight: bolder;
 }
