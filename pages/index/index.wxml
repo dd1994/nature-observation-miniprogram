@@ -13,7 +13,7 @@
         <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}"></taxon-list>
       </t-tab-panel>
     </t-tabs>
-    <t-icon bind:click="openFilterPanel" class="filter-icon" size="52rpx" name="adjustment" />
+    <!-- <t-icon bind:click="openFilterPanel" class="filter-icon" size="52rpx" name="adjustment" /> -->
     <t-icon bind:click="gotoIndexSearch" class="search-icon" size="52rpx" name="search" />
   </view>
   <t-fab icon="image-add" wx:if="{{!observationsIsEmpty}}" bind:click="onAddIconTap" aria-label="增加"></t-fab>
