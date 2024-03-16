@@ -1,1 +1,8 @@
-/* mine-packages/pages/ai-tools/ai-tools.wxss */
+page {
+  background-color: var(--default-bg);
+  --td-cell-left-icon-color: rgba(0, 0, 0, 0.9);
+}
+
+.cell-group:not(:first-child) {
+  margin-top: var(--td-spacer-4);
+}

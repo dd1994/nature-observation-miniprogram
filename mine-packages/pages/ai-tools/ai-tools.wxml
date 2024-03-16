@@ -1,2 +1,17 @@
-<!--mine-packages/pages/ai-tools/ai-tools.wxml-->
-<text>mine-packages/pages/ai-tools/ai-tools.wxml</text>
+<view>
+  <view class="cell-group">
+    <t-cell title="晓虫" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png" />
+  </view>
+
+  <view class="cell-group">
+    <t-cell title="懂鸟" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png" />
+  </view>
+  <view class="cell-group">
+    <t-cell bordered="{{false}}" title="形色" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png" />
+    <t-cell title="花伴侣" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png" />
+  </view>
+
+  <view class="cell-group">
+    <t-cell bordered="{{false}}" title="文浩识蝶" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png" />
+  </view>
+</view>
