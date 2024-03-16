@@ -48,9 +48,10 @@ Component({
   computed: {
     formattedIdentifications(data) {
       return data.identifications.map(i => {
+        const created_from_now = moment(i.created_at).fromNow()
         return {
           ...i,
-          created_from_now: moment(i.created_at).fromNow()
+          created_from_now: created_from_now === '几秒后' ? '几秒前' : created_from_now
         }
       })
     }
