@@ -17,7 +17,8 @@
         "pages/setting/setting",
         "pages/about/about",
         "pages/profile-setting/profile-setting",
-        "pages/stat/stat"
+        "pages/stat/stat",
+        "pages/ai-tools/ai-tools"
       ]
     }
   ],
