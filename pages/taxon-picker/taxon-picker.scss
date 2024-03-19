@@ -3,6 +3,7 @@
   padding: var(--td-spacer-2);
   min-height: 100vh;
   background-color: #fff;
+  --td-checkbox-icon-color: rgba(0, 0, 0, 0.6)
 }
 
 .search-result-taxon-list {
@@ -27,7 +28,11 @@
 }
 
 .search-result-taxon-select {
-  padding: 0 !important;
+  padding: 0 0 0 20px !important;
+}
+
+.search-result-taxon-item-left {
+  flex: 1;
 }
 
 .loading-wrapper {
