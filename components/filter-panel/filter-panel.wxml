@@ -1,7 +1,7 @@
 <!--components/filter-panel/filter-panel.wxml-->
 <view class="filter-panel-container">
-  <view class="filter-panel__title">地点筛选</view>
   <view class="filter-panel__title">物种筛选</view>
+  <view class="filter-panel__title">地点筛选</view>
   <view class="filter-panel__title">时间筛选</view>
   <view class="filter-panel__title">排序</view>
 </view>
