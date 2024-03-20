@@ -90,8 +90,8 @@ Page({
     })
   },
   openFilterPanel() {
-    this.setData({
-      filterPanelVisible: true,
+    wx.navigateTo({
+      url: "/pages/index-filter/index-filter"
     })
   },
   onFilterPanelVisibleChange(e) {

@@ -17,7 +17,4 @@
     <!-- <t-icon bind:click="gotoIndexSearch" class="search-icon" size="52rpx" name="search" /> -->
   </view>
   <t-fab icon="image-add" wx:if="{{!observationsIsEmpty}}" bind:click="onAddIconTap" aria-label="增加"></t-fab>
-  <t-popup visible="{{filterPanelVisible}}" bind:visible-change="onFilterPanelVisibleChange" placement="left">
-    <filter-panel></filter-panel>
-  </t-popup>
 </view>
