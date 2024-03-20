@@ -1,7 +1,11 @@
 <!--components/filter-panel/filter-panel.wxml-->
 <view class="filter-panel-container">
   <view class="filter-panel__title">物种筛选</view>
-  <view class="filter-panel__title">地点筛选</view>
-  <view class="filter-panel__title">时间筛选</view>
-  <view class="filter-panel__title">排序</view>
+  <t-search model:value="{{taxon}}" placeholder="输入物种名" />
+  <view class="apply-filter-button">
+    <t-button theme="primary" size="large" block>搜索</t-button>
+  </view>
+  <!-- <view class="filter-panel__title">拍摄地点</view>
+  <view class="filter-panel__title">拍摄时间</view>
+  <view class="filter-panel__title">排序</view> -->
 </view>

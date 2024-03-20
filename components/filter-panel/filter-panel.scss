@@ -1,9 +1,17 @@
 .filter-panel-container {
   width: 600rpx;
   margin: var(--td-spacer-1);
+  height: 100vh;
 }
 
 .filter-panel__title {
   font-size: var(--td-font-size-m);
-  font-weight: bolder;
+  margin-bottom: var(--td-spacer-1);
+}
+
+.apply-filter-button {
+  position: absolute;
+  bottom: var(--td-spacer-3);
+  left: var(--td-spacer-1);
+  right: var(--td-spacer-1);
 }
