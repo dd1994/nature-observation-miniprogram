@@ -21,7 +21,7 @@ Page({
       return data.statusBarHeight + data.navBarHeight
     }
   },
-  async login() {
+  async gotoUserHome() {
     if (isLogin()) {
       return wx.navigateTo({
         url: '/mine-packages/pages/user-home/user-home'

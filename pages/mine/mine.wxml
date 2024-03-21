@@ -1,6 +1,6 @@
 <view class="page-mine">
   <view class="cell-group">
-    <t-cell bordered="{{false}}" title="{{displayName}}" bind:tap="login" hover arrow>
+    <t-cell bordered="{{false}}" title="{{displayName}}" bind:tap="gotoUserHome" hover arrow>
       <view class="avatar" slot="left-icon">
         <t-avatar wx:if="{{user.avatar}}" shape="round" size="large" image="{{user.avatarUrl}}" />
         <t-avatar wx:else size="large" shape="round" image="https://nature-observation-user-avatar.oss-cn-beijing.aliyuncs.com/me.png" />
