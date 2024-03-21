@@ -1,3 +1,2 @@
 <view>
-  {{user_id}}
 </view>
