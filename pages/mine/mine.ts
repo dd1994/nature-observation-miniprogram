@@ -23,7 +23,9 @@ Page({
   },
   async login() {
     if (isLogin()) {
-      return showErrorTips('个人主页正在开发中，敬请期待~')
+      return wx.navigateTo({
+        url: '/mine-packages/pages/user-home/user-home'
+      })
     }
     wx.showLoading({
       title: '登录中...'

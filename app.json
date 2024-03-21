@@ -19,7 +19,8 @@
         "pages/about/about",
         "pages/profile-setting/profile-setting",
         "pages/stat/stat",
-        "pages/ai-tools/ai-tools"
+        "pages/ai-tools/ai-tools",
+        "pages/user-home/user-home"
       ]
     }
   ],
