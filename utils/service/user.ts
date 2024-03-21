@@ -8,6 +8,14 @@ export function getUserProfile() {
   })
 }
 
+export function getUserProfileWithOutLogin(user_id) {
+  return requestPromise({
+    url: apiDomain + '/api/v1/user/getUserProfile',
+    method: 'POST',
+    data: { user_id }
+  })
+}
+
 export function getUserStatCount() {
   return requestPromiseWithLogin({
     url: apiDomain + '/api/v1/user/getStatCount',

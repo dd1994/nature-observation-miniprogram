@@ -24,7 +24,7 @@ Page({
   async gotoUserHome() {
     if (isLogin()) {
       return wx.navigateTo({
-        url: '/mine-packages/pages/user-home/user-home'
+        url: `/mine-packages/pages/user-home/user-home?user_id=${this.data.user?.id}`
       })
     }
     wx.showLoading({
