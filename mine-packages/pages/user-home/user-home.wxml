@@ -1,5 +1,4 @@
 <view>
-  <t-avatar wx:if="{{userProfile.avatar}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
-  <t-avatar wx:else size="large" shape="round" image="https://nature-observation-user-avatar.oss-cn-beijing.aliyuncs.com/me.png" />
+  <t-avatar wx:if="{{userProfile.avatarUrl}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
   {{userProfile.user_name}}
 </view>
