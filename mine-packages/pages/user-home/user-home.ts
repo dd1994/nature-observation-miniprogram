@@ -10,6 +10,7 @@ Page({
     activeTab: TabType.observations,
     user_id: null,
     userProfile: null,
+    needLogin: false,
   },
   computed: {
     tab1Title(data) {
