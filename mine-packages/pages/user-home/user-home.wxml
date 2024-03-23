@@ -1,7 +1,15 @@
 <view class="user-home-container">
-  <t-avatar wx:if="{{userProfile.avatarUrl}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
-  {{userProfile.user_name}}
-  {{userProfile.bio}}
+  <view class="user-home-header">
+    <t-avatar wx:if="{{userProfile.avatarUrl}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
+    <view class="user-home-header__right">
+      <view class="user-nickname">
+        {{userProfile.user_name}}
+      </view>
+      <view class="user-bio">
+        {{userProfile.bio}}
+      </view>
+    </view>
+  </view>
   <view>
     <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <t-tab-panel label="{{tab1Title}}" value="0">
