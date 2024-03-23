@@ -22,6 +22,15 @@
 
 .user-nickname {
   font-size: var(--td-font-size-xl);
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.user-nickname__stat {
+  font-size: var(--td-font-size-s);
+  margin-left: var(--td-spacer);
+  color: var(--td-primary-color-7);
 }
 
 .user-bio {

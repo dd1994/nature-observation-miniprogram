@@ -4,6 +4,7 @@
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "observation-list": "/components/observation-list/observation-list",
-    "taxon-list": "/components/taxon-list/taxon-list"
+    "taxon-list": "/components/taxon-list/taxon-list",
+    "t-link": "tdesign-miniprogram/link/link"
   }
 }
