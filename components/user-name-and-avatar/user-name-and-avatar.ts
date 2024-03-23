@@ -26,6 +26,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    gotoUserHome() {
+      wx.navigateTo({
+        url: `/mine-packages/pages/user-home/user-home?user_id=${this.data?.userProfile?.user_id}`
+      })
+    }
   }
 })
