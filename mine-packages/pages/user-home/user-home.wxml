@@ -4,7 +4,7 @@
     <view class="user-home-header__right">
       <view class="user-nickname">
         <view class="user-nickname__text">{{userProfile.user_name}}</view>
-        <view class="user-nickname__stat">查看统计</view>
+        <view bind:tap="openStatPage" class="user-nickname__stat">查看统计</view>
       </view>
       <view class="user-bio">
         {{userProfile.bio}}

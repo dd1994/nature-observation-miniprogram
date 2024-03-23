@@ -49,6 +49,11 @@ Page({
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
   },
+  openStatPage() {
+    wx.navigateTo({
+      url: `/mine-packages/pages/stat/stat?user_id=${this.data?.user_id}`
+    })
+  },
   getUserProfile() {
     getUserProfileWithOutLogin(this.data.user_id).then(res => {
       this.setData({
