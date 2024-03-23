@@ -1,4 +1,4 @@
-<view class="page-container">
+<view class="user-home-container">
   <t-avatar wx:if="{{userProfile.avatarUrl}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
   {{userProfile.user_name}}
   {{userProfile.bio}}
