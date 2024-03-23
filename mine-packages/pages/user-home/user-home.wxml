@@ -7,7 +7,7 @@
         <view bind:tap="openStatPage" class="user-nickname__stat">查看统计</view>
       </view>
       <view class="user-bio">
-        {{userProfile.bio}}
+        {{userProfile.bio || '这是一位神秘用户，还没有进行自我介绍~'}}
       </view>
     </view>
   </view>
