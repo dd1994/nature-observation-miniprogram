@@ -1,4 +1,8 @@
 <view>
   <t-avatar wx:if="{{userProfile.avatarUrl}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
   {{userProfile.user_name}}
+
+  <view>
+    个人主页正在开发中，敬请期待。
+  </view>
 </view>
