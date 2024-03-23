@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "t-avatar": "tdesign-miniprogram/avatar/avatar"
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "observation-list": "/components/observation-list/observation-list",
+    "taxon-list": "/components/taxon-list/taxon-list"
   }
 }
