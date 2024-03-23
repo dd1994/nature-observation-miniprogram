@@ -16,7 +16,7 @@ const ObservationsBehavior = Behavior({
     async fetchObservationList() {
       this.setData({ observationsIsLoading: true })
       try {
-        const res: any = await fetchObservationList({ pageIndex: this.data.observationsPageIndex, pageSize: this.data.observationsPageSize, q: this.data.q, needLogin: this.data.needLogin })
+        const res: any = await fetchObservationList({ pageIndex: this.data.observationsPageIndex, pageSize: this.data.observationsPageSize, q: this.data.q, needLogin: this.data.needLogin, user_id: this.data.user_id })
 
         this.setData({
           observations: (this.data.observations || []).concat(res?.data?.data?.list || []),

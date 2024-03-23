@@ -21,7 +21,7 @@ export const searchTaxon = ({ name }) => {
   })
 }
 
-export function fetchTaxonList({ pageIndex, pageSize, needLogin = true }: { pageIndex: number, pageSize: number, needLogin?: boolean }) {
+export function fetchTaxonList({ pageIndex, pageSize, needLogin = true, user_id }: { pageIndex: number, pageSize: number, needLogin?: boolean, user_id?: string }) {
   const fn = needLogin ? requestPromiseWithLogin : requestPromise
   return fn({
     url: apiDomain + (needLogin ? '/api/v1/taxon' : '/api/v1/taxon-explore'),
@@ -29,6 +29,7 @@ export function fetchTaxonList({ pageIndex, pageSize, needLogin = true }: { page
     data: {
       pageIndex,
       pageSize,
+      user_id
     }
   })
 }

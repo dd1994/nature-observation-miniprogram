@@ -16,7 +16,7 @@ const TaxonBehavior = Behavior({
     async fetchTaxonList() {
       this.setData({ taxonLoading: true })
       try {
-        const res: any = await fetchTaxonList({ pageIndex: this.data.taxonPageIndex, pageSize: this.data.taxonPageSize, needLogin: this.data.needLogin })
+        const res: any = await fetchTaxonList({ pageIndex: this.data.taxonPageIndex, pageSize: this.data.taxonPageSize, needLogin: this.data.needLogin, user_id: this.data.user_id })
 
         this.setData({
           taxon: (this.data.taxon || []).concat(res?.data?.data?.list || []),
