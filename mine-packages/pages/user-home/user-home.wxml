@@ -3,7 +3,7 @@
   {{userProfile.user_name}}
   {{userProfile.bio}}
   <view>
-    <t-tabs space-evenly="{{true}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
+    <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <t-tab-panel label="{{tab1Title}}" value="0">
         <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </t-tab-panel>
