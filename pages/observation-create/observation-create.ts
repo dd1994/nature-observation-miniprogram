@@ -54,9 +54,25 @@ Page({
     })
   },
   goToSearchLocation() {
-    goToLocationSelector({
-      lat: this.data.location?.latitude,
-      lng: this.data.location?.longitude
+    wx.chooseLocation({
+      latitude: this.data.location?.latitude,
+      longitude: this.data.location?.longitude
+    }).then((location) => {
+      if (location?.latitude) {
+        // 因为 wx.chooseLocation 没有返回省市县信息，所以需要用这个接口去获取一下。
+        this.fetchAndSetAddresByGPS({
+          lat: location?.latitude,
+          lng: location?.longitude,
+        }).then(() => {
+          const locationDetail = location.address ? `(${location.address})` : ''
+          this.setData({
+            location: {
+              ...this.data.location,
+              recommend_address_name: location?.name + locationDetail,
+            }
+          })
+        })
+      }
     })
   },
   removeLocation() {
@@ -101,6 +117,29 @@ Page({
 
     this.setTimeAndLocationFromParseImg(file.url)
   },
+  async fetchAndSetAddresByGPS({ lng, lat }) {
+    const res: any = await fetchAdressByGPS({ lng, lat })
+    const result = res?.data?.regeocode
+    if (result) {
+      this.setData({
+        location: {
+          // 市，如果是直辖市，为空
+          city: result.addressComponent.city,
+          // 区/县
+          district: result.addressComponent.district,
+          // 维度
+          latitude: lat,
+          // 经度
+          longitude: lng,
+          // 展示地址
+          recommend_address_name: result.formatted_address,
+          // 省
+          province: result.addressComponent.province,
+        }
+      })
+    }
+  },
+
   async setTimeAndLocationFromParseImg(fileUrl) {
     const { time, GPSInfo } = parseExifFromLocalImgUrl(fileUrl)
     if (time) {
@@ -123,26 +162,8 @@ Page({
           // @ts-ignore
           lat: formatExifGPSLatitude(GPSInfo.GPSLatitude, GPSInfo.GPSLatitudeRef)
         })
-        const res: any = await fetchAdressByGPS({ lng, lat })
-        const result = res?.data?.regeocode
-        if (result) {
-          this.setData({
-            location: {
-              // 市，如果是直辖市，为空
-              city: result.addressComponent.city,
-              // 区/县
-              district: result.addressComponent.district,
-              // 维度
-              latitude: lat,
-              // 经度
-              longitude: lng,
-              // 展示地址
-              recommend_address_name: result.formatted_address,
-              // 省
-              province: result.addressComponent.province,
-            }
-          })
-        }
+
+        this.fetchAndSetAddresByGPS({ lng, lat })
       } catch (error) {
         console.error(error)
       }
@@ -166,16 +187,16 @@ Page({
   },
   onShow() {
     // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
-    const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
-    if (location?.latitude) {
-      const locationDetail = location.address ? `(${location.address})` : ''
-      this.setData({
-        location: {
-          ..._.pick(location, ['latitude', 'longitude', 'province', 'city', 'district']),
-          recommend_address_name: location.name + locationDetail,
-        }
-      })
-    }
+    // const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
+    // if (location?.latitude) {
+    //   const locationDetail = location.address ? `(${location.address})` : ''
+    //   this.setData({
+    //     location: {
+    //       ..._.pick(location, ['latitude', 'longitude', 'province', 'city', 'district']),
+    //       recommend_address_name: location.name + locationDetail,
+    //     }
+    //   })
+    // }
   },
   onUnload() {
     // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
