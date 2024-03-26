@@ -2,8 +2,7 @@ import _ from 'lodash'
 import { getOSSUrlByKey, formatExifGPSLongitude, formatExifGPSLatitude } from '../../utils/util'
 const UUID = require("pure-uuid")
 const computedBehavior = require('miniprogram-computed').behavior;
-import { goToLocationSelector, fetchAdressByGPS, translateGPS } from '../../utils/service/map'
-const chooseLocation = requirePlugin('chooseLocation');
+import { fetchAdressByGPS, translateGPS } from '../../utils/service/map'
 import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
 import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
@@ -44,7 +43,6 @@ Page({
     }
   },
   noticeBarClick(e) {
-    const { trigger } = e.detail;
     this.setData({
       noticeBarVisible: false,
     })
@@ -95,7 +93,7 @@ Page({
     const task = uploadOSS({
       filePath: file.url,
       key: uuid,
-      success: (res) => {
+      success: () => {
         const index = this.data.fileList.findIndex(i => i.key === uuid)
         this.setData({
           [`fileList[${index}].status`]: 'done',
@@ -186,21 +184,8 @@ Page({
     this.setData({ captive_cultivated: !this.data.captive_cultivated })
   },
   onShow() {
-    // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
-    // const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
-    // if (location?.latitude) {
-    //   const locationDetail = location.address ? `(${location.address})` : ''
-    //   this.setData({
-    //     location: {
-    //       ..._.pick(location, ['latitude', 'longitude', 'province', 'city', 'district']),
-    //       recommend_address_name: location.name + locationDetail,
-    //     }
-    //   })
-    // }
   },
   onUnload() {
-    // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
-    chooseLocation.setLocation(null);
   },
   onLoad(options) {
     if (options.id) {
@@ -308,7 +293,7 @@ Page({
               title: res?.data?.success ? '删除成功' : '删除失败',
               icon: 'none'
             })
-          }).catch(err => {
+          }).catch(() => {
             showErrorTips('删除失败，请稍后重试')
           }).then(() => {
             setTimeout(() => {
