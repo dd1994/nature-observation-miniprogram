@@ -1,4 +1,10 @@
 <view class="taxon-list">
+  <view wx:if="{{taxon.length}}" class="taxon-list-tips">
+    <view>
+      记录物种
+    </view>
+    <view>记录次数</view>
+  </view>
   <view wx:key="scientific_name" class="taxon-item-wrapper" wx:for="{{taxon}}">
     <taxon-cell taxon="{{item}}">
       <view class="taxon-rank">{{item.observation_count}}</view>
