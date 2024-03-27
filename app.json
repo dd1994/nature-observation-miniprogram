@@ -5,7 +5,6 @@
     "pages/mine/mine",
     "pages/observation-create/observation-create",
     "pages/observation-detail/observation-detail",
-    "pages/observation-map/observation-map",
     "pages/taxon-detail/taxon-detail",
     "pages/index-search/index-search",
     "pages/taxon-picker/taxon-picker",

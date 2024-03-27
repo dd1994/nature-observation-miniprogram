@@ -73,6 +73,7 @@ Page({
     wx.openLocation({
       latitude: this.data.latitude,
       longitude: this.data.longitude,
+      name: this.data.recommend_address_name
     })
   },
   viewMapDetail() {
