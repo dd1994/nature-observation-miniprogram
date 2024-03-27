@@ -53,9 +53,6 @@ Page({
     description(data) {
       return data.observationDetail?.description
     },
-    mapUrl(data) {
-      return `/pages/observation-map/observation-map?longitude=${data.longitude}&latitude=${data.latitude}`
-    },
     longitude(data) {
       return data.observationDetail?.longitude
     },
@@ -71,6 +68,12 @@ Page({
     formattedObservedOn(data) {
       return moment(data.observationDetail?.observed_on).format("YYYY-MM-DD")
     }
+  },
+  openMap() {
+    wx.openLocation({
+      latitude: this.data.latitude,
+      longitude: this.data.longitude,
+    })
   },
   viewMapDetail() {
     this.setData({

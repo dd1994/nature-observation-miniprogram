@@ -14,7 +14,7 @@
       <view wx:if="{{description}}" class="observation-desc">
         <text>{{description}}</text>
       </view>
-      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow url="{{mapUrl}}">
+      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow bind:click="openMap">
         <view slot="title" style="display: flex; align-items: center;">
           <t-icon name="location" style="margin-right: 4px;" /> 观察位置
         </view>
