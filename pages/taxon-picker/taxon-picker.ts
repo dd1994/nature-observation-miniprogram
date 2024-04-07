@@ -62,9 +62,6 @@ Page({
                 displayName: (i.preferred_common_name || i.name) + matched_term
               }
             })
-            .filter(i => {
-              return validRankList.includes(i.rank)
-            })
         })
       }
     }).catch(err => {
