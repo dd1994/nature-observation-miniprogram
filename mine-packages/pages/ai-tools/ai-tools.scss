@@ -3,6 +3,19 @@ page {
   --td-cell-left-icon-color: rgba(0, 0, 0, 0.9);
 }
 
-.cell-group:not(:first-child) {
+.cell-group {
   margin-top: var(--td-spacer-4);
+}
+
+.cell-group:first-child {
+  margin-top: var(--td-spacer-1);
+}
+
+
+.group-title {
+  font-size: var(--td-font-size-base);
+  color: var(--td-font-gray-2);
+  margin-top: var(--spacer-mini);
+  margin-bottom: var(--space-mini);
+  margin-left: var(--td-spacer-2);
 }
