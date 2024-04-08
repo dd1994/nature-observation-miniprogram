@@ -1,6 +1,6 @@
 <view class="setting-page-container">
   <t-cell title="编辑个人资料" bordered="{{false}}" hover arrow url="../profile-setting/profile-setting" />
   <view class="cell-group">
-    <t-cell t-class-title="logout-btn" title="退出账号" hover />
+    <t-cell bind:click="logout" t-class-title="logout-btn" title="退出账号" hover />
   </view>
 </view>
