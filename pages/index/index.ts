@@ -86,7 +86,7 @@ Page({
   },
   gotoIndexSearch() {
     wx.navigateTo({
-      url: "/pages/index-search/index-search"
+      url: "/pages/index-search/index-search?needLogin=true"
     })
   },
   openFilterPanel() {

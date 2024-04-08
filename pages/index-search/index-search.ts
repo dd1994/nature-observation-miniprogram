@@ -29,5 +29,12 @@ Page({
       observationsPageIndex: this.data.observationsPageIndex + 1
     })
     this.fetchObservationList()
+  },
+  onLoad(options) {
+    if (options.needLogin) {
+      this.setData({
+        needLogin: true
+      })
+    }
   }
 })
