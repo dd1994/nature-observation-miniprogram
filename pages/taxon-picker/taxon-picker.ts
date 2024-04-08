@@ -3,7 +3,6 @@ const computedBehavior = require('miniprogram-computed').behavior
 import { searchTaxon } from '../../utils/service/taxon'
 import _ from 'lodash'
 import { openTaxonDetail } from '../../utils/openTaxonDetail';
-import { validRankList } from '../../components/taxon-tree/util';
 
 Page({
   behaviors: [computedBehavior],

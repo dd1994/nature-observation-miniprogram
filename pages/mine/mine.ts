@@ -1,5 +1,4 @@
 import FullscreenBehavior from "../../components/fullscreen/fullscreen";
-import { showErrorTips } from "../../utils/feedBack";
 import { login } from "../../utils/service/login";
 import { getUserProfile, getUserStatCount } from "../../utils/service/user"
 import { isLogin, needFirstLogin } from "../../utils/util";

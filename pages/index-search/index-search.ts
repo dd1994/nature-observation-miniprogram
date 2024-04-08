@@ -1,8 +1,6 @@
 import _ from 'lodash';
 import ObservationsBehavior from '../../components/observation-list/observationBehavior';
-import { validRankList } from '../../components/taxon-tree/util';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
-import { fetchObservationList } from '../../utils/service/observations';
 
 Page({
   behaviors: [UserProfileBehavior, ObservationsBehavior],
