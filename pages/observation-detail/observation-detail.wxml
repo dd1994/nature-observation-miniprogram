@@ -12,7 +12,7 @@
   <t-tabs split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs">
     <t-tab-panel label="信息" value="0">
       <view wx:if="{{description}}" class="observation-desc">
-        <text>{{description}}</text>
+        <text class="observation-desc__title">备注：</text><text>{{description}}</text>
       </view>
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow bind:click="openMap">
         <view slot="title" style="display: flex; align-items: center;">

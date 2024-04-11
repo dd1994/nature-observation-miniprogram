@@ -12,8 +12,13 @@
 }
 
 .observation-desc {
-  color: var(--td-font-gray-1);
+  color: var(--td-font-gray-2);
   margin: var(--td-spacer-2) var(--td-spacer-2) 0 var(--td-spacer-2);
+  font-size: var(--td-font-size-m);
+}
+
+.observation-desc__title {
+  color: var(--td-font-gray-1);
 }
 
 .edit-button-wrapper {
