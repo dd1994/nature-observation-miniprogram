@@ -24,6 +24,7 @@ Page({
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
     notSelectedTaxonTips: false,
     noticeBarVisible: false,
+    isSaving: false,
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -259,6 +260,12 @@ Page({
     const params = generateSaveParamsFromData(this.data)
 
     const fn = this.data.isEdit ? updateObservation : createObservation
+
+    wx.showLoading({ title: '保存中' })
+    this.setData({
+      isSaving: true
+    })
+
     fn(params, this.data.id).then((res: any) => {
       if (res?.data?.success) {
         showSuccessTips('保存成功')
@@ -279,6 +286,12 @@ Page({
     }).catch(err => {
       console.error(err)
       showErrorTips('保存失败，请稍后重试')
+      // @ts-ignore
+    }).finally(() => {
+      wx.hideLoading()
+      this.setData({
+        isSaving: false
+      })
     })
   },
   delete() {
