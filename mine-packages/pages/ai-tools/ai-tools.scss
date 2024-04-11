@@ -8,7 +8,7 @@ page {
 }
 
 .cell-group:first-child {
-  margin-top: var(--td-spacer-1);
+  margin-top: var(--td-spacer);
 }
 
 
@@ -16,6 +16,6 @@ page {
   font-size: var(--td-font-size-base);
   color: var(--td-font-gray-2);
   margin-top: var(--spacer-mini);
-  margin-bottom: var(--space-mini);
+  margin-bottom: var(--td-spacer);
   margin-left: var(--td-spacer-2);
 }
