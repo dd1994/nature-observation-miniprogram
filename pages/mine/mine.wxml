@@ -11,7 +11,7 @@
   <basic-count-card wx:if="{{user}}" statCount="{{statCount}}" userId="{{user.id}}" />
 
   <view class="cell-group">
-    <t-cell t-class="taxon-cell" bordered="{{false}}" title="识别工具推荐" url="/mine-packages/pages/ai-tools/ai-tools" hover arrow leftIcon="animation-1" />
+    <t-cell t-class="taxon-cell" bordered="{{false}}" title="识别工具" url="/mine-packages/pages/ai-tools/ai-tools" hover arrow leftIcon="animation-1" />
     <t-cell t-class="taxon-cell" bordered="{{false}}" title="物种查询" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" />
     <!-- <t-cell t-class="batch-import" bordered="{{false}}" title="导入导出" url="/pages/import-export/import-export" hover arrow leftIcon="backup" /> -->
   </view>
