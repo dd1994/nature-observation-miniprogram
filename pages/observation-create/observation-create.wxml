@@ -1,7 +1,7 @@
 <view class="page-container">
   <view class="create-form">
     <view class="create-image-uplader-wrapper">
-      <t-upload  max="{{20}}" config="{{tUploadConfig.uploadConfig}}" mediaType="{{['image']}}" files="{{fileList}}" bind:add="onAddUploadFiles" bind:remove="onRemoveUploadFile">
+      <t-upload max="{{15}}" config="{{tUploadConfig.uploadConfig}}" mediaType="{{['image']}}" files="{{fileList}}" bind:add="onAddUploadFiles" bind:remove="onRemoveUploadFile">
       </t-upload>
     </view>
     <!-- <t-notice-bar visible="{{noticeBarVisible}}" suffixIcon="close" content="拍照时打开定位，可自动解析地理位置 " bind:click="noticeBarClick"></t-notice-bar> -->
