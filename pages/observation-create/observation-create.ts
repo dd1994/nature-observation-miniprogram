@@ -288,7 +288,6 @@ Page({
       showErrorTips('保存失败，请稍后重试')
       // @ts-ignore
     }).finally(() => {
-      wx.hideLoading()
       this.setData({
         isSaving: false
       })
