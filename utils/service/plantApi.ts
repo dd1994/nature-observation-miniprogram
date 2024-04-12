@@ -31,9 +31,11 @@ export function fetchPlantFrpsPhoto({ appphoto }) {
 // 获取 Flora of China 中文翻译版
 export function fetchPlantFocnDetail({ name, success, fail }) {
   return requestPromise({
-    url: 'https://www.iplant.cn/ashx/getfocn.ashx',
+    url: apiDomain + '/api/v1/getfrpsContent',
+    method: 'POST',
     data: {
-      key: name
+      name,
+      lang: 'en'
     },
     success(res) {
       success(res)

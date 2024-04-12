@@ -80,9 +80,9 @@ Component({
       fetchPlantFocnDetail({
         name: this.data.taxon.name
       }).then((res) => {
-        if (res?.data) {
+        if (res?.data?.data) {
           this.setData({
-            focnContent: res.data
+            focnContent: res.data?.data
           })
         }
       })
