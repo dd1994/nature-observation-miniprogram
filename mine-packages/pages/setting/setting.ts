@@ -1,3 +1,5 @@
+import { showSuccessTips } from "../../../utils/feedBack"
+
 // pages/setting/setting.ts
 Page({
 
@@ -17,6 +19,7 @@ Page({
   logout() {
     wx.removeStorage({ key: 'token' })
     wx.removeStorage({ key: 'user' })
+    showSuccessTips('退出成功')
     wx.restartMiniProgram({ path: '/pages/index/index' })
   }
 })
