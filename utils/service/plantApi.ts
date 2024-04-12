@@ -1,12 +1,13 @@
+import { apiDomain } from "../constant"
+
 const { requestPromise } = require('../util')
 
 // 获取中国植物志内容
 export function fetchPlantFrpsDetail({ name, success, fail }) {
   return requestPromise({
-    url: 'https://www.iplant.cn/ashx/getfrps.ashx',
-    data: {
-      key: name
-    },
+    url: apiDomain + '/api/v1/getfrpsContent',
+    method: 'POST',
+    data: { name },
     success(res) {
       success(res)
     },

@@ -64,9 +64,9 @@ Component({
       fetchPlantFrpsDetail({
         name: this.data.taxon.name
       }).then((res) => {
-        if (res?.data?.frpsdesc) {
+        if (res?.data?.data?.frpsdesc) {
           this.setData({
-            frpsContent: res.data
+            frpsContent: res.data.data
           })
         }
         return res
