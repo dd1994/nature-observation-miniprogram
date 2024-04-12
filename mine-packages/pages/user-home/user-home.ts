@@ -47,6 +47,12 @@ Page({
       this.fetchTaxonList()
     }
   },
+  onPullDownRefresh() {
+    this.resetAndFetchTaxon()
+    this.resetAndFetchObservations().finally(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
   },

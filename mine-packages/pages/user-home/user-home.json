@@ -1,4 +1,6 @@
 {
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 1000,
   "usingComponents": {
     "t-avatar": "tdesign-miniprogram/avatar/avatar",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
