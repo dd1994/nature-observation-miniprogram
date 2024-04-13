@@ -48,6 +48,16 @@ Component({
     },
     nameList(data) {
       // return generateNameList(data.rankList, data.taxonTree)
+    },
+    formattedTaxonTree(data) {
+      return data.taxonTree.map(i => {
+        return {
+          id: i.id,
+          name: i.name,
+          rank: i.rank,
+          preferred_common_name: i.preferred_common_name,
+        }
+      })
     }
   }
 })
