@@ -1,9 +1,5 @@
-.taxon-name-cell {
-  line-height: 1 !important;
-  padding: 8px 16px !important;
-}
-
-.taxon-name-cell-title {
-  font-size: 14px !important;
-  color: rgba(0, 0, 0, 0.6);
+.taxon-tree-item {
+  font-size: var(--td-font-size-base) !important;
+  color: var(--td-font-gray-2);
+  padding: var(--td-spacer) var(--td-spacer-2) !important;
 }
