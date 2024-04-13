@@ -36,7 +36,8 @@ Component({
       openTaxonDetail({
         name: taxon.scientific_name,
         rank: taxon.taxon_rank,
-        iconic_taxon_name: taxon.iconic_taxon_name
+        iconic_taxon_name: taxon.iconic_taxon_name,
+        id: taxon.taxon_id,
       })
     },
     agreeID(e) {

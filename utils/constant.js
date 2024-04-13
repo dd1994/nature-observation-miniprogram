@@ -1,5 +1,5 @@
 export const defaultTimeFormat = 'YYYY-MM-DD'
 export const exifTimeFormat = 'YYYY:MM:DD HH:mm:ss'
-export const apiDomain = 'https://www.nature-notes.com'
-// export const apiDomain = 'http://192.168.3.179:7001'
+// export const apiDomain = 'https://www.nature-notes.com'
+export const apiDomain = 'http://192.168.3.179:7001'
 export const statBgColor = '#0bae31'

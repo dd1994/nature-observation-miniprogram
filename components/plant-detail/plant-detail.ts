@@ -12,6 +12,8 @@ Component({
   computed: {
     taxonTreeTitle(data) {
       const taxonTree = data.taxonTree
+      return '分类'
+
       if (taxonTree) {
         const rankList = selectLatest3LevelRank(data.taxon?.rank)
         return generateCombinedChineseNameFromRankList(rankList, data.taxonTree)

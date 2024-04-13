@@ -119,7 +119,8 @@ Page({
     openTaxonDetail({
       name: this.data.scientific_name,
       rank: this.data.rank,
-      iconic_taxon_name: this.data.iconic_taxon_name
+      iconic_taxon_name: this.data.iconic_taxon_name,
+      id: this.data.taxon_id
     })
   },
   fetchIdentificationList() {

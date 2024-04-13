@@ -1,6 +1,6 @@
 const computedBehavior = require('miniprogram-computed').behavior
 import { openBirdDetail, openMammalDetail } from '../../utils/openTaxonDetail'
-import { fetchTaxonTreeFromSp2000 } from '../../utils/service/taxon'
+import { fetchTaxonTree } from '../../utils/service/taxon'
 
 Page({
   behaviors: [computedBehavior],
@@ -19,9 +19,9 @@ Page({
     }
   },
   async fetchTaxonTree() {
-    const res = await fetchTaxonTreeFromSp2000({ rank: this.data.taxon.rank, name: this.data.taxon.name })
+    const res = await fetchTaxonTree({ rank: this.data.taxon.rank, name: this.data.taxon.name, id: this.data.taxon.id })
     this.setData({
-      taxonTree: res.data
+      taxonTree: res?.data?.data
     })
   },
   fetchDetail() {
@@ -61,7 +61,8 @@ Page({
     const taxon = {
       rank: decodeURIComponent(options.rank),
       name: decodeURIComponent(options.name),
-      "iconic_taxon_name": decodeURIComponent(options.iconic_taxon_name)
+      "iconic_taxon_name": decodeURIComponent(options.iconic_taxon_name),
+      id: decodeURIComponent(options.id)
     }
 
     this.setData({

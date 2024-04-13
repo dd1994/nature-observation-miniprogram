@@ -47,7 +47,7 @@ Component({
       return selectSubRankList(data.rank)
     },
     nameList(data) {
-      return generateNameList(data.rankList, data.taxonTree)
+      // return generateNameList(data.rankList, data.taxonTree)
     }
   }
 })

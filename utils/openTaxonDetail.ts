@@ -27,7 +27,8 @@ export const openTaxonDetail = (taxon) => {
       url: generateUrlWithParams('/pages/taxon-detail/taxon-detail', {
         name: taxon.name,
         rank: taxon.rank,
-        iconic_taxon_name: taxon.iconic_taxon_name
+        iconic_taxon_name: taxon.iconic_taxon_name,
+        id: taxon.id
       })
     })
   }

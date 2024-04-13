@@ -1,12 +1,12 @@
 import { apiDomain } from "../constant"
 import { generateUrlWithParams, requestPromise, requestPromiseWithLogin } from "../util"
 
-export const fetchTaxonTreeFromSp2000 = ({ rank, name }) => {
+export const fetchTaxonTree = ({ rank, name, id }) => {
   return requestPromise({
     url: apiDomain + '/api/v1/taxon/tree',
     method: 'POST',
     data: {
-      rank, name
+      rank, name, id
     }
   })
 }
