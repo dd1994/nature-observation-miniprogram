@@ -5,9 +5,9 @@ import './utils/libs/moment-zh-cn'
 
 App({
   onLaunch() {
-    wx.setEnableDebug({
-      enableDebug: true,
-    })
+    // wx.setEnableDebug({
+    //   enableDebug: true,
+    // })
   },
   globalData: {
     userInfo: null,
