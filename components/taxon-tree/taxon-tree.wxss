@@ -1,5 +1,13 @@
 .taxon-tree-item {
-  font-size: var(--td-font-size-base) !important;
-  color: var(--td-font-gray-2);
   padding: var(--td-spacer) var(--td-spacer-2) !important;
+}
+
+.taxon-tree-item__name {
+  font-size: var(--td-font-size-base) !important;
+  color: var(--td-font-gray-1);
+}
+
+.taxon-tree-item__info {
+  font-size: var(--td-font-size-xs) !important;
+  color: var(--td-font-gray-3);
 }

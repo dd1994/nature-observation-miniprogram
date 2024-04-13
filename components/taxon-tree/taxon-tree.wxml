@@ -1,6 +1,9 @@
 <!--components/taxon-tree/taxon-tree.wxml-->
 <view>
   <view class="taxon-tree-item" key="{{item.id}}" wx:for="{{taxonTree}}">
-    <view>{{item.preferred_common_name}}</view>
+    <view class="taxon-tree-item__name">{{item.preferred_common_name}}</view>
+    <view class="taxon-tree-item__info">
+      {{item.rank}} {{item.name}}
+    </view>
   </view>
 </view>
