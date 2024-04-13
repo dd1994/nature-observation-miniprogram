@@ -21,7 +21,7 @@ Page({
   async fetchTaxonTree() {
     const res = await fetchTaxonTree({ rank: this.data.taxon.rank, name: this.data.taxon.name, id: this.data.taxon.id })
     this.setData({
-      taxonTree: res?.data?.data
+      taxonTree: res?.data?.data || []
     })
   },
   fetchDetail() {

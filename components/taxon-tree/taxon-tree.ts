@@ -1,4 +1,5 @@
 const computedBehavior = require('miniprogram-computed').behavior
+import { RankChineseMap } from '../../utils/constant'
 import { generateNameList, selectSubRankList } from './util'
 // auditSpecialists: "Jin Xiaohua"
 // class: "Magnoliopsida"
@@ -50,11 +51,12 @@ Component({
       // return generateNameList(data.rankList, data.taxonTree)
     },
     formattedTaxonTree(data) {
-      return data.taxonTree.map(i => {
+      return (data.taxonTree || []).map(i => {
         return {
           id: i.id,
           name: i.name,
           rank: i.rank,
+          rankName: RankChineseMap[i.rank] || i.rank,
           preferred_common_name: i.preferred_common_name,
         }
       })
