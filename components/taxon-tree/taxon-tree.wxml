@@ -1,5 +1,7 @@
 <!--components/taxon-tree/taxon-tree.wxml-->
 <view>
+  <!-- hack: 这里折叠组件有个很奇怪的 bug，不加个东西无法展开， -->
+  <view style="height: 1px;"></view>
   <view class="taxon-tree-item" wx:key="id" wx:for="{{formattedTaxonTree}}">
     <view class="taxon-tree-item__name">{{item.preferred_common_name}}</view>
     <view class="taxon-tree-item__info">
