@@ -21,6 +21,7 @@ export const RankChineseMap = {
   subtribe: '亚族',
   genus: '属',
   subgenus: '亚属',
+  section: '组',
   species: '种',
   subspecies: '亚种',
   hybrid: '杂交',

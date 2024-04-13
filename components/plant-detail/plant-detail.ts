@@ -6,8 +6,12 @@ import { removeRichTextTag } from '../../utils/util'
 Component({
   behaviors: [computedBehavior],
   properties: {
-    taxon: {},
-    taxonTree: {}
+    taxon: {
+      value: {}
+    },
+    taxonTree: {
+      value: []
+    }
   },
   computed: {
     taxonTreeTitle(data) {
