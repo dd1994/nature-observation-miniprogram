@@ -3,7 +3,7 @@
     <t-collapse-panel header="{{taxonTreeTitle}}" value="{{0}}" t-class-content="taxon-tree-pannel-content">
       <taxon-tree taxonTree="{{taxonTree}}" rank="{{taxon.rank}}" />
     </t-collapse-panel>
-    <t-collapse-panel header="《中国动物志》介绍" value="{{1}}">
+    <!-- <t-collapse-panel header="《中国动物志》介绍" value="{{1}}">
       <view wx:if="{{faunaContent.length}}">
         <view wx:for-index="idx" class="taxon-detail-item" wx:for="{{faunaContent}}">
           <view class="desc-type-title">
@@ -21,7 +21,7 @@
         </view>
       </view>
       <view wx:else>暂未被《中国动物志》收录</view>
-    </t-collapse-panel>
+    </t-collapse-panel> -->
     <t-collapse-panel header="更多外部资源" value="{{3}}">
       <external-resource resource="{{externalResource}}" />
     </t-collapse-panel>
