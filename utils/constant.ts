@@ -22,6 +22,7 @@ export const RankChineseMap = {
   genus: '属',
   subgenus: '亚属',
   section: '组',
+  zoosection: '派',
   species: '种',
   subspecies: '亚种',
   hybrid: '杂交',
@@ -30,7 +31,6 @@ export const RankChineseMap = {
   // complex
   // form
   // zoosubsection
-  // zoosection
   // infraorder
   // stateofmatter
   // section
