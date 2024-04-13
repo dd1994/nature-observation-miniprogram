@@ -19,6 +19,7 @@ Component({
   },
   computed: {
     taxonTreeTitle(data) {
+      return '分类'
       const taxonTree = data.taxonTree
       if (taxonTree) {
         const rankList = selectLatest3LevelRank(data.taxon?.rank)

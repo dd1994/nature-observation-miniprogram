@@ -8,6 +8,6 @@
 }
 
 .taxon-tree-item__info {
-  font-size: var(--td-font-size-xs) !important;
+  font-size: var(--td-font-size-s) !important;
   color: var(--td-font-gray-3);
 }

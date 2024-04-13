@@ -33,9 +33,6 @@ Component({
   data: {
 
   },
-  computed: {
-
-  },
 
   /**
    * 组件的方法列表
@@ -43,9 +40,10 @@ Component({
   methods: {
 
   },
+  // @ts-ignore
   computed: {
     rankList(data) {
-      return selectSubRankList(data.rank)
+      // return selectSubRankList(data.rank)
     },
     nameList(data) {
       // return generateNameList(data.rankList, data.taxonTree)
