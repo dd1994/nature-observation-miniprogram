@@ -9,7 +9,8 @@
         <view class="search-result-taxon-item-chinese-name">{{item.displayName}}</view>
         <view class="search-result-taxon-item-name">{{item.name}}</view>
       </view>
-      <t-checkbox wx:if="{{!hidePicker}}" data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" />
+      <t-icon wx:if="{{!hidePicker}}" data-taxon="{{item}}" bind:tap="selectTaxon" name="check-circle-filled" size="24px" color="rgba(0, 0, 0, 0.4)" class="search-result-taxon-select" />
+      <!-- <t-checkbox wx:if="{{!hidePicker}}" data-taxon="{{item}}" t-class="search-result-taxon-select" icon="circle" bind:change="selectTaxon" /> -->
     </view>
     <view wx:if="{{searchLoading}}" class="loading-wrapper">
       <t-loading theme="spinner" size="40rpx" text="搜索中..." inheritColor class="wrapper" />
