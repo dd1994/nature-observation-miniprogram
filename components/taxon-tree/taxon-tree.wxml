@@ -6,9 +6,9 @@
     <t-loading theme="spinner" size="48rpx" text="加载中..." inheritColor />
   </view>
   <view class="taxon-tree-item" wx:key="id" wx:for="{{formattedTaxonTree}}">
-    <view class="taxon-tree-item__name">{{item.preferred_common_name}}</view>
-    <view class="taxon-tree-item__info">
+    <text selectable class="taxon-tree-item__name">{{item.preferred_common_name}}</text>
+    <text selectable class="taxon-tree-item__info">
       {{item.rankName}} {{item.name}}
-    </view>
+    </text>
   </view>
 </view>
