@@ -4,9 +4,11 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: var(--td-font-size-base);
+  margin-bottom: var(--td-spacer-5);
 }
 
 .resource-item__desc {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--td-font-gray-2);
+  font-size: var(--td-font-size-s);
 }
