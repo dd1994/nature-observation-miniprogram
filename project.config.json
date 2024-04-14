@@ -23,7 +23,7 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "uglifyFileName": false,
+    "uglifyFileName": true,
     "minifyWXSS": true,
     "minifyWXML": true,
     "condition": false,

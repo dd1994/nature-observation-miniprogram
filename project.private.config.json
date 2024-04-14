@@ -4,6 +4,7 @@
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": true,
-    "bigPackageSizeSupport": false
+    "bigPackageSizeSupport": false,
+    "autoAudits": true
   }
 }
