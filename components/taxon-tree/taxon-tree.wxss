@@ -11,3 +11,10 @@
   font-size: var(--td-font-size-s) !important;
   color: var(--td-font-gray-3);
 }
+
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--td-spacer-5) 0;
+}

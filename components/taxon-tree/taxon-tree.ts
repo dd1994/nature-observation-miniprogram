@@ -8,6 +8,10 @@ Component({
       type: Array,
       value: [],
     },
+    taxonTreeLoading: {
+      value: false,
+      type: Boolean
+    }
   },
 
   /**

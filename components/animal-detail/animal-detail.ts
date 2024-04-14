@@ -7,8 +7,18 @@ const computedBehavior = require('miniprogram-computed').behavior
 Component({
   behaviors: [computedBehavior],
   properties: {
-    taxon: {},
-    taxonTree: {}
+    taxon: {
+      value: {},
+      type: Object
+    },
+    taxonTree: {
+      value: [],
+      type: Array
+    },
+    taxonTreeLoading: {
+      value: false,
+      type: Boolean
+    }
   },
 
   /**

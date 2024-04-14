@@ -1,7 +1,7 @@
 <view class="page-container">
   <t-collapse defaultValue="{{[0]}}" expandMutex expandIcon>
     <t-collapse-panel header="{{taxonTreeTitle}}" value="{{0}}" t-class-content="taxon-tree-pannel-content">
-      <taxon-tree taxonTree="{{taxonTree}}" rank="{{taxon.rank}}" />
+      <taxon-tree taxonTree="{{taxonTree}}" rank="{{taxon.rank}}" taxonTreeLoading="{{taxonTreeLoading}}" />
     </t-collapse-panel>
     <!-- <t-collapse-panel header="《中国动物志》介绍" value="{{1}}">
       <view wx:if="{{faunaContent.length}}">

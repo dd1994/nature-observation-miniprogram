@@ -1,4 +1,5 @@
 const computedBehavior = require('miniprogram-computed').behavior
+import { showErrorTips } from '../../utils/feedBack'
 import { openBirdDetail, openMammalDetail } from '../../utils/openTaxonDetail'
 import { fetchTaxonTree } from '../../utils/service/taxon'
 
@@ -9,6 +10,7 @@ Page({
       type: Object
     },
     taxonTree: null,
+    taxonTreeLoading: false
   },
   computed: {
     taxonGroup(data) {
@@ -19,10 +21,21 @@ Page({
     }
   },
   async fetchTaxonTree() {
-    const res = await fetchTaxonTree({ rank: this.data.taxon.rank, name: this.data.taxon.name, id: this.data.taxon.id })
     this.setData({
-      taxonTree: res?.data?.data || []
+      taxonTreeLoading: true
     })
+    try {
+      const res = await fetchTaxonTree({ rank: this.data.taxon.rank, name: this.data.taxon.name, id: this.data.taxon.id })
+      this.setData({
+        taxonTree: res?.data?.data || []
+      })
+    } catch (e) {
+      showErrorTips("获取分类失败，请稍后重试~")
+    } finally {
+      this.setData({
+        taxonTreeLoading: false
+      })
+    }
   },
   fetchDetail() {
     const taxon = this.data.taxon

@@ -7,12 +7,19 @@ Component({
   behaviors: [computedBehavior],
   properties: {
     taxon: {
-      value: {}
+      value: {},
+      type: Object
     },
     taxonTree: {
-      value: []
+      value: [],
+      type: Array
+    },
+    taxonTreeLoading: {
+      value: false,
+      type: Boolean
     }
   },
+  // @ts-ignore
   computed: {
     taxonTreeTitle(data) {
       const taxonTree = data.taxonTree
