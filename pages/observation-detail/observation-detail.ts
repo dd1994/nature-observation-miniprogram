@@ -178,4 +178,10 @@ Page({
       }
     })
   },
+  onShareAppMessage() {
+    return {
+      title: '生灵觅迹，记录身边的自然',
+      path: `pages/observation-detail/observation-detail?id=${this.data.id}`
+    }
+  }
 })
