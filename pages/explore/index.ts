@@ -95,5 +95,11 @@ Page({
     tab3Title(data) {
       return `鉴定(${data.observations.length})`
     },
+  },
+  onShareAppMessage() {
+    return {
+      title: '生灵觅迹，记录身边的自然',
+      path: "pages/explore/index"
+    }
   }
 })

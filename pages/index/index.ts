@@ -114,5 +114,11 @@ Page({
         // 'offsetTop': data.statusBarHeight
       }
     }
+  },
+  onShareAppMessage() {
+    return {
+      title: '生灵觅迹，记录身边的自然',
+      path: "pages/index/index"
+    }
   }
 })
