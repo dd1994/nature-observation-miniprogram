@@ -93,5 +93,11 @@ Page({
 
   onShow() {
     this.getUserProfile()
+  },
+  onShareAppMessage() {
+    return {
+      title: '生灵觅迹，记录身边的自然',
+      path: "pages/mine/mine"
+    }
   }
 })
