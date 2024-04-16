@@ -36,7 +36,6 @@ export const RankChineseMap = {
   // stateofmatter
   // section
   // infraclass
-  // epifamily
   // supersect
   // unknown
   // supertribe
