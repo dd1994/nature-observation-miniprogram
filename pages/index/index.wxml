@@ -1,6 +1,6 @@
 <view class="index-page">
   <view class="empty-tips" wx:if="{{observationsIsEmpty}}">
-    <t-button block theme="primary" bind:tap="onAddIconTap">开始记录</t-button>
+    <t-button block theme="primary" bind:tap="onAddIconTap">上传记录</t-button>
     <view class="empty-tips__or">或者</view>
     <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
   </view>
