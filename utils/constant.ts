@@ -15,6 +15,7 @@ export const RankChineseMap = {
   suborder: '亚目',
   infraorder: '下目',
   superfamily: '总科',
+  epifamily: "领科",
   family: '科',
   subfamily: '亚科',
   tribe: '族',
