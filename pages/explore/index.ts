@@ -49,10 +49,10 @@ Page({
     this.resetAndFetchTaxon()
   },
   onShow() {
-    if (app.globalData.indexPageNeedRefresh) {
+    if (app.globalData.explorePageNeedRefresh) {
       this.resetAndFetchObservations()
       this.resetAndFetchTaxon()
-      app.globalData.indexPageNeedRefresh = false
+      app.globalData.explorePageNeedRefresh = false
     }
   },
   onReachBottom() {

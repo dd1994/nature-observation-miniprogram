@@ -317,6 +317,7 @@ Page({
   },
   goToIndexAndRefresh() {
     app.globalData.indexPageNeedRefresh = true
+    app.globalData.explorePageNeedRefresh = true
 
     wx.switchTab({
       url: '/pages/index/index',

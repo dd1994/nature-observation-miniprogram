@@ -12,6 +12,7 @@ App({
   globalData: {
     userInfo: null,
     indexPageNeedRefresh: false, // 用于首页是否需要刷新的标记
+    explorePageNeedRefresh: false, // 用于发现页是否需要刷新的标记
   }
 })
 
