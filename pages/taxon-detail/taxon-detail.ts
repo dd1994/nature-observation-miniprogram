@@ -41,11 +41,6 @@ Page({
   fetchDetail() {
     const taxon = this.data.taxon
     const defaultAction = () => {
-      wx.showToast({
-        title: '暂时没有更多关于该物种的信息了~',
-        icon: 'none',
-        duration: 2500
-      })
     }
 
     const defaultAnimalAction = () => {
