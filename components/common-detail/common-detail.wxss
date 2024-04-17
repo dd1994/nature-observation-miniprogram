@@ -1,0 +1,26 @@
+/* components/animal-detail/animal-detail.wxss */
+.page-container {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.taxon-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.desc-type-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.taxon-detail-item {
+  margin-bottom: 10px;
+}
+
+
+.taxon-tree-pannel-content {
+  padding: 0 !important;
+}

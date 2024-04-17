@@ -1,0 +1,7 @@
+<view class="page-container">
+  <t-collapse defaultValue="{{[0]}}" expandMutex expandIcon>
+    <t-collapse-panel header="{{taxonTreeTitle}}" value="{{0}}" t-class-content="taxon-tree-pannel-content">
+      <taxon-tree taxonTree="{{taxonTree}}" rank="{{taxon.rank}}" taxonTreeLoading="{{taxonTreeLoading}}" />
+    </t-collapse-panel>
+  </t-collapse>
+</view>

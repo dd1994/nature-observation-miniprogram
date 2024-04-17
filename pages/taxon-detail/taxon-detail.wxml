@@ -1,4 +1,5 @@
 <view>
   <plant-detail wx:if="{{taxonGroup === 'Plantae'}}" taxon="{{taxon}}" taxonTree="{{taxonTree}}" taxonTreeLoading="{{taxonTreeLoading}}" />
-  <animal-detail wx:if="{{useAnimalDB}}" taxon="{{taxon}}" taxonTree="{{taxonTree}}" taxonTreeLoading="{{taxonTreeLoading}}" />
+  <animal-detail wx:elif="{{useAnimalDB}}" taxon="{{taxon}}" taxonTree="{{taxonTree}}" taxonTreeLoading="{{taxonTreeLoading}}" />
+  <common-detail wx:else taxon="{{taxon}}" taxonTree="{{taxonTree}}" taxonTreeLoading="{{taxonTreeLoading}}" />
 </view>

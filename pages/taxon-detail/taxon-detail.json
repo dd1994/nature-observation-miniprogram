@@ -2,6 +2,7 @@
   "usingComponents": {
     "t-popup": "tdesign-miniprogram/popup/popup",
     "plant-detail": "../../components/plant-detail/plant-detail",
-    "animal-detail": "../../components/animal-detail/animal-detail"
+    "animal-detail": "../../components/animal-detail/animal-detail",
+    "common-detail": "../../components/common-detail/common-detail"
   }
 }
