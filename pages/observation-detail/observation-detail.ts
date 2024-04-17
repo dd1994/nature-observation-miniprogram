@@ -183,5 +183,10 @@ Page({
       title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`,
       path: `pages/observation-detail/observation-detail?id=${this.data.id}`
     }
+  },
+  onShareTimeline() {
+    return {
+      title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`
+    }
   }
 })
