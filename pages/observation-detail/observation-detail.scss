@@ -13,12 +13,16 @@
 
 .observation-desc {
   color: var(--td-font-gray-2);
-  margin: var(--td-spacer-2) var(--td-spacer-2) 0 var(--td-spacer-2);
-  font-size: var(--td-font-size-m);
+  margin: var(--td-spacer-2) var(--td-spacer-2) var(--td-spacer-2) var(--td-spacer-2);
+  font-size: var(--td-font-size-base);
 }
 
 .observation-desc__title {
   color: var(--td-font-gray-1);
+  font-size: var(--td-font-size-m);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .edit-button-wrapper {

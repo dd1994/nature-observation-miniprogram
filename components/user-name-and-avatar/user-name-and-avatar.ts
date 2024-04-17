@@ -11,7 +11,7 @@ Component({
     },
     color: {
       type: String,
-      value: 'rgba(0, 0, 0, 0.4)'
+      value: 'rgba(0, 0, 0, 0.6)'
     }
   },
 
