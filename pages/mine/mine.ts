@@ -99,5 +99,10 @@ Page({
       title: '生灵觅迹，记录身边的自然',
       path: "pages/mine/mine"
     }
+  },
+  onShareTimeline() {
+    return {
+      title: '生灵觅迹，记录身边的自然'
+    }
   }
 })
