@@ -1,5 +1,5 @@
 <view>
-  <t-navbar class="custom-navbar" title="统计详情" t-class-title="nav-title" left-arrow />
+  <t-navbar class="custom-navbar" title="{{ navTitle }}" t-class-title="nav-title" left-arrow />
   <view class="basic-info">
     <view class="basic-info__item">
       记录

@@ -39,6 +39,10 @@ Page({
     cityCount(data) {
       return (data?.locationCount || [])
         .filter(i => i.city).length
+    },
+    navTitle(data) {
+      const userName = data?.userProfile?.user_name
+      return userName ? `${userName}的统计` : ''
     }
   },
   /**
@@ -117,13 +121,13 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: `${this.data?.userProfile?.user_name}的自然观察统计`,
+      title: this.data?.navTitle,
       path: `mine-packages/pages/stat/stat?user_id=${this.data.user_id}`
     }
   },
   onShareTimeline() {
     return {
-      title: `${this.data?.userProfile?.user_name}的自然观察统计`,
+      title: this.data?.navTitle,
     }
   }
 })
