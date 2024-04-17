@@ -180,7 +180,7 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: '生灵觅迹，记录身边的自然',
+      title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`,
       path: `pages/observation-detail/observation-detail?id=${this.data.id}`
     }
   }
