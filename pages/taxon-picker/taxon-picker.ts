@@ -80,5 +80,11 @@ Page({
         hidePicker: true
       })
     }
+  },
+  onShareAppMessage() {
+    return {
+      title: `物种查询`,
+      path: "pages/taxon-picker/taxon-picker?hidePicker=1"
+    }
   }
 })
