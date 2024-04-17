@@ -261,7 +261,6 @@ Page({
 
     const fn = this.data.isEdit ? updateObservation : createObservation
 
-    wx.showLoading({ title: '保存中' })
     this.setData({
       isSaving: true
     })
