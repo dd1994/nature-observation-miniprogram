@@ -27,6 +27,9 @@ Page({
   openDongniao() {
     this.openByAppId('wx0d6a77cb8b27cf91')
   },
+  openDongliangpa() {
+    this.openByAppId('wxfa3bd55035d29110')
+  },
   openGuanniaojun() {
     this.openByAppId('wx9ea5ac1d223a7fe6')
   },
