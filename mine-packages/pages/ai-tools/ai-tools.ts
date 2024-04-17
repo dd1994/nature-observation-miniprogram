@@ -29,5 +29,11 @@ Page({
   },
   openGuanniaojun() {
     this.openByAppId('wx9ea5ac1d223a7fe6')
+  },
+  onShareAppMessage() {
+    return {
+      title: '智能动植物识别工具推荐',
+      path: "mine-packages/pages/ai-tools/ai-tools"
+    }
   }
 })
