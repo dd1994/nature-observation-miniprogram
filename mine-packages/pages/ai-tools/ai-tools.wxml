@@ -6,13 +6,14 @@
   </view>
 
   <view class="cell-group">
-    <view class="group-title">鸟类识别</view>
-    <t-cell title="懂鸟" bind:click="openDongniao" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png?x-oss-process=image/resize,p_20" />
-    <t-cell title="观鸟君" bind:click="openGuanniaojun" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/guaniaojun.png?x-oss-process=image/resize,p_20" />
-  </view>
-  <view class="cell-group">
     <view class="group-title">植物识别</view>
     <t-cell bordered="{{false}}" bind:click="openXingse" title="形色" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/2.jpeg?x-oss-process=image/resize,p_20" />
     <t-cell title="花伴侣" bind:click="openHuabanlv" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/3.png?x-oss-process=image/resize,p_50" />
+  </view>
+
+  <view class="cell-group">
+    <view class="group-title">鸟类识别</view>
+    <t-cell title="懂鸟" bind:click="openDongniao" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/0.png?x-oss-process=image/resize,p_20" />
+    <t-cell title="观鸟君" bind:click="openGuanniaojun" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/guaniaojun.png?x-oss-process=image/resize,p_20" />
   </view>
 </view>
