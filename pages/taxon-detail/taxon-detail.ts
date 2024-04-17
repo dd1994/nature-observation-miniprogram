@@ -89,8 +89,13 @@ Page({
   onShareAppMessage() {
     return {
       // todo: 分享标题加上中文名
-      title: `物种详情`,
+      title: `生灵觅迹：物种详情`,
       path: "pages/mine/mine"
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: `生灵觅迹：物种详情`
     }
   }
 })

@@ -83,8 +83,13 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: `物种查询`,
+      title: `生灵觅迹：物种查询`,
       path: "pages/taxon-picker/taxon-picker?hidePicker=1"
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: `生灵觅迹：物种查询`
     }
   }
 })
