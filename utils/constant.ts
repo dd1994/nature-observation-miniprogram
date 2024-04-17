@@ -15,6 +15,7 @@ export const RankChineseMap = {
   suborder: '亚目',
   infraorder: '下目',
   superfamily: '总科',
+  zoosubsection: '动物群落',
   epifamily: "领科",
   family: '科',
   subfamily: '亚科',
@@ -31,7 +32,6 @@ export const RankChineseMap = {
   // varietas: '品种',
   // complex
   // form
-  // zoosubsection
   // infraorder
   // stateofmatter
   // section
