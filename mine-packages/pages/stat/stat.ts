@@ -1,9 +1,9 @@
 // pages/stat/stat.ts
 
-import { generateInitTaxonMap, initCalendarChart, initMonthBar, initTaxonMap, initTaxonPie } from "./charts";
+import { generateInitTaxonMap } from "./charts";
 import * as echarts from '../../../components/ec-canvas/echarts';
 import geoJson from '../../../utils/libs/chinaMap';
-import { getUserStatCountWithoutLogin } from "../../../utils/service/user";
+import { getUserProfileWithOutLogin, getUserStatCountWithoutLogin } from "../../../utils/service/user";
 import { getUserDateStatCount, getUserProvinceStatCount } from "../../../utils/service/observations";
 const computedBehavior = require('miniprogram-computed').behavior;
 Page({
@@ -21,6 +21,7 @@ Page({
     ecMonthBarChart: {
       lazyLoad: true,
     },
+    userProfile: {},
     user_id: null,
     statCount: {},
     locationCount: [],
@@ -47,6 +48,7 @@ Page({
     this.setData({
       user_id: options.user_id
     })
+    this.getUserProfile()
     // @ts-ignore
     getUserStatCountWithoutLogin({ user_id: options.user_id }).then(res => {
       // @ts-ignore
@@ -87,6 +89,14 @@ Page({
       })
     })
   },
+  getUserProfile() {
+    getUserProfileWithOutLogin(this.data.user_id).then(res => {
+      this.setData({
+        // @ts-ignore
+        userProfile: res?.data?.data
+      })
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -104,5 +114,11 @@ Page({
       // this.ecMonthBarChartComponent.init(initMonthBar)
       // this.ecCalendarChartComponent.init(initCalendarChart)
     }, 1000)
+  },
+  onShareAppMessage() {
+    return {
+      title: `${this.data?.userProfile?.user_name}的自然观察统计`,
+      path: `mine-packages/pages/stat/stat?user_id=${this.data.user_id}`
+    }
   }
 })
