@@ -27,7 +27,8 @@ Page({
     try {
       const res = await fetchTaxonTree({ rank: this.data.taxon.rank, name: this.data.taxon.name, id: this.data.taxon.id })
       this.setData({
-        taxonTree: res?.data?.data || []
+        // @ts-ignore
+        taxonTree: (res?.data?.data || []).slice().reverse()
       })
     } catch (e) {
       showErrorTips("获取分类失败，请稍后重试~")
@@ -84,5 +85,12 @@ Page({
 
     this.fetchTaxonTree()
     this.fetchDetail()
+  },
+  onShareAppMessage() {
+    return {
+      // todo: 分享标题加上中文名
+      title: `物种详情`,
+      path: "pages/mine/mine"
+    }
   }
 })
