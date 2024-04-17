@@ -61,6 +61,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: '关于生灵觅迹',
+      path: "mine-packages/pages/about/about"
+    }
   }
 })
