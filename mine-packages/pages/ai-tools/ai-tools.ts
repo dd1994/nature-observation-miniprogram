@@ -35,5 +35,10 @@ Page({
       title: '智能动植物识别工具推荐',
       path: "mine-packages/pages/ai-tools/ai-tools"
     }
+  },
+  onShareTimeline() {
+    return {
+      title: '智能动植物识别工具推荐',
+    }
   }
 })
