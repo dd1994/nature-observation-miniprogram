@@ -68,5 +68,11 @@ Page({
         userProfile: res?.data?.data
       })
     })
+  },
+  onShareAppMessage() {
+    return {
+      title: `${this.data?.userProfile?.user_name}的个人主页`,
+      path: `mine-packages/pages/user-home/user-home?user_id=${this.data.user_id}`
+    }
   }
 })
