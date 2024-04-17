@@ -65,5 +65,10 @@ Page({
       title: '关于生灵觅迹',
       path: "mine-packages/pages/about/about"
     }
+  },
+  onShareTimeline() {
+    return {
+      title: '关于生灵觅迹',
+    }
   }
 })
