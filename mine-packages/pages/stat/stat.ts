@@ -121,5 +121,9 @@ Page({
       path: `mine-packages/pages/stat/stat?user_id=${this.data.user_id}`
     }
   },
-  
+  onShareTimeline() {
+    return {
+      title: `${this.data?.userProfile?.user_name}的自然观察统计`,
+    }
+  }
 })
