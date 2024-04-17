@@ -1,6 +1,5 @@
 // components/animal-detail/animal-detail.js
 import { fetchAnimalFaunaDetail } from '../../utils/service/plantApi'
-import { generateCombinedChineseNameFromRankList, selectLatest3LevelRank } from '../taxon-tree/util'
 
 const computedBehavior = require('miniprogram-computed').behavior
 
@@ -27,16 +26,10 @@ Component({
   data: {
     faunaContent: [] // 中国动物志
   },
+  // @ts-ignore
   computed: {
     taxonTreeTitle(data) {
       return '分类'
-      const taxonTree = data.taxonTree
-      if (taxonTree) {
-        const rankList = selectLatest3LevelRank(data.taxon?.rank)
-        return generateCombinedChineseNameFromRankList(rankList, data.taxonTree)
-      } else {
-        return '分类'
-      }
     },
     externalResource(data) {
       return [{
@@ -57,9 +50,9 @@ Component({
       fetchAnimalFaunaDetail({
         name: this.data.taxon.name
       }).then(res => {
-        if (res?.length) {
+        if (res?.data?.data?.length) {
           this.setData({
-            faunaContent: res
+            faunaContent: res?.data?.data
           })
         }
       })

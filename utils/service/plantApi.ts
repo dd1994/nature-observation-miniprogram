@@ -89,11 +89,11 @@ function fetchAnimalFaunaDetailDesc(name, descType) {
   })
 }
 export function fetchAnimalFaunaDetail({ name }) {
-  return fetchAnimalFaunaDetailDescType(name)
-    .then(descTypes => {
-      return Promise.all(descTypes
-        .map(descType => {
-          return fetchAnimalFaunaDetailDesc(name, descType)
-        }))
-    })
+  return requestPromise({
+    url: apiDomain + '/api/v1/taxon/animalFaunaDetail',
+    method: 'post',
+    data: {
+      name,
+    }
+  })
 }
