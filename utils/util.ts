@@ -17,7 +17,7 @@ const formatNumber = n => {
 }
 
 export function getOSSUrlByKey(key) {
-  return `https://observation-images.oss-cn-beijing.aliyuncs.com/${key}`
+  return `https://observation-images.nature-notes.com/${key}`
 }
 
 export const requestPromise = (params) => {
