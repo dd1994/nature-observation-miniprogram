@@ -132,6 +132,9 @@ Page({
     })
   },
   async agreeID(e) {
+    wx.showLoading({
+      title: ''
+    })
     if (needFirstLogin()) {
       await login()
       app.globalData.indexPageNeedRefresh = true
