@@ -2,6 +2,7 @@ import ObservationsBehavior from "../../../components/observation-list/observati
 import TaxonBehavior from "../../../components/taxon-list/taxonBehavior"
 import { TabType } from "../../../pages/index/constant";
 import { getUserProfileWithOutLogin } from "../../../utils/service/user"
+import { trimUrlParams } from "../../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
 
 Page({
@@ -63,7 +64,7 @@ Page({
   },
   previewUserAvatar() {
     wx.previewImage({
-      urls: [this.data.userProfile.avatarUrl]
+      urls: [trimUrlParams(this.data.userProfile.avatarUrl)]
     })
   },
   getUserProfile() {

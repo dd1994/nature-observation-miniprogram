@@ -20,6 +20,10 @@ export function getOSSUrlByKey(key) {
   return `https://observation-images.nature-notes.com/${key}`
 }
 
+export function trimUrlParams(url: string) {
+  return url.split("?")[0];
+}
+
 export const requestPromise = (params) => {
   return new Promise((resolve, reject) => {
     wx.request({
