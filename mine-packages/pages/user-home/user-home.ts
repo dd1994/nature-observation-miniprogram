@@ -61,6 +61,11 @@ Page({
       url: `/mine-packages/pages/stat/stat?user_id=${this.data?.user_id}`
     })
   },
+  previewUserAvatar() {
+    wx.previewImage({
+      urls: [this.data.userProfile.avatarUrl]
+    })
+  },
   getUserProfile() {
     getUserProfileWithOutLogin(this.data.user_id).then(res => {
       this.setData({
