@@ -58,6 +58,17 @@ page {
   }
 }
 
+.create-form-item-wrapper-note {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.create-form-item-note__textarea {
+  flex: 1;
+  padding: 0 !important;
+}
+
 .create-form-item-placeholder {
   color: var(--td-font-gray-3) !important;
   font-size: var(--td-font-size-m) !important;

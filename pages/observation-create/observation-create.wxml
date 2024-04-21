@@ -30,7 +30,7 @@
         <view class="create-form-item-icon-wrapper">
           <t-icon name="edit-1" size="20px" />
         </view>
-        <t-input placeholder-class="create-form-item-placeholder" borderless value="{{description}}" placeholder="备注" maxcharacter="{{100}}" bind:change="descriptionChange" />
+        <t-textarea t-class="create-form-item-note__textarea" placeholder-class="create-form-item-placeholder" borderless autosize value="{{description}}" placeholder="备注" maxcharacter="{{1000}}" bind:change="descriptionChange" />
       </view>
 
       <view class="create-form-item-wrapper">
