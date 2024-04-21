@@ -21,7 +21,7 @@ Page({
     mapVisible: false,
     identifications: [],
     fabButton: {
-      icon: 'share',
+      icon: 'share-1',
       openType: 'share',
     },
   },
