@@ -16,12 +16,22 @@ export function openMammalDetail(name) {
   });
 }
 
+export function openAmphibiaDetail(name) {
+  // 感谢懂鸟: https://mp.weixin.qq.com/s/FK1G67KM96yqMBYSdwcEHA
+  wx.openEmbeddedMiniProgram({
+    appId: 'wxfa3bd55035d29110',
+    path: 'pages/detail/detail?name=' + encodeURIComponent(name),
+  });
+}
+
 export const openTaxonDetail = (taxon) => {
   const isSpecies = (taxon?.rank === 'species')
   if ((taxon?.iconic_taxon_name === 'Aves') && isSpecies) {
     openBirdDetail(taxon.name)
   } else if ((taxon?.iconic_taxon_name === 'Mammalia') && isSpecies) {
     openMammalDetail(taxon.name)
+  } else if ((taxon?.iconic_taxon_name === 'Amphibia') && isSpecies) {
+    openAmphibiaDetail(taxon.name)
   } else {
     wx.navigateTo({
       url: generateUrlWithParams('/pages/taxon-detail/taxon-detail', {
