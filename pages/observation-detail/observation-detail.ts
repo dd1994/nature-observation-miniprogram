@@ -22,6 +22,7 @@ Page({
     identifications: [],
     fabButton: {
       icon: 'share-1',
+      theme: "light",
       openType: 'share',
     },
   },
