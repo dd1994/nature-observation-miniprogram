@@ -7,8 +7,8 @@
 
     <view class="dentifications-item-taxon">
       <view data-taxon="{{item}}" bind:tap="openTaxonDetail" hover arrow class="id-taxon-wrapper">
-        <view class="taxon-common-name">{{item.common_name}}</view>
-        <view class="taxon-scientific-name">{{item.scientific_name}}</view>
+        <text selectable class="taxon-common-name">{{item.common_name}}</text>
+        <text selectable class="taxon-scientific-name">{{item.scientific_name}}</text>
       </view>
       <!-- "{{item.user_id === userProfile.id}}"  -->
       <!-- 不展示同意按钮的情况：

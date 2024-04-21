@@ -31,6 +31,10 @@
 .id-taxon-wrapper {
   margin-top: var(--spacer-mini);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
   .taxon-common-name {
     color: var(--td-font-gray-1);
