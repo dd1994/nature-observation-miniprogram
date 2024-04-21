@@ -19,7 +19,11 @@ Page({
     observationDetail: {},
     currentPhoto: 0,
     mapVisible: false,
-    identifications: []
+    identifications: [],
+    fabButton: {
+      icon: 'share',
+      openType: 'share',
+    },
   },
   computed: {
     photos(data) {
