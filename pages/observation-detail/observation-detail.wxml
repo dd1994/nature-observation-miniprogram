@@ -15,7 +15,7 @@
           <t-icon name="edit-1" style="margin-right: 4px"></t-icon>
           <view>备注</view>
         </view>
-        <view>{{description}}</view>
+        <text selectable>{{description}}</text>
       </view>
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow bind:click="openMap">
         <view slot="title" style="display: flex; align-items: center;">
