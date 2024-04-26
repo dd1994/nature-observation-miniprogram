@@ -14,6 +14,7 @@ Page({
     searchResult: [],
     searchLoading: false,
     hidePicker: false,
+    needConfirm: false,
     showConfirm: false,
     selectedTaxon: null,
     comments: '',
@@ -25,10 +26,18 @@ Page({
   },
   selectTaxon(e) {
     this.setData({
-      showConfirm: true,
       selectedTaxon: e.target.dataset.taxon,
-      comments: '',
     })
+
+
+    if (this.data.needConfirm) {
+      this.setData({
+        showConfirm: true,
+        comments: '',
+      })
+    } else {
+      this.confirmSelectTaxon()
+    }
   },
   confirmSelectTaxon() {
     const eventChannel = this.getOpenerEventChannel();
@@ -100,6 +109,12 @@ Page({
     if (options.hidePicker) {
       this.setData({
         hidePicker: true
+      })
+    }
+
+    if (options.needConfirm) {
+      this.setData({
+        needConfirm: true
       })
     }
   },

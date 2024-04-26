@@ -166,7 +166,7 @@ Page({
     }
 
     wx.navigateTo({
-      url: '/pages/taxon-picker/taxon-picker',
+      url: '/pages/taxon-picker/taxon-picker?needConfirm=1',
       events: {
         backFromSearchPage: (taxon) => {
           createIdentification({
