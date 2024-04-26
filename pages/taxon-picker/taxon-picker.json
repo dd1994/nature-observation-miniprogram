@@ -5,6 +5,8 @@
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
     "t-loading": "tdesign-miniprogram/loading/loading",
-    "t-icon": "tdesign-miniprogram/icon/icon"
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog"
   }
 }

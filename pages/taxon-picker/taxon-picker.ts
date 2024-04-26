@@ -13,17 +13,30 @@ Page({
     inputWords: '',
     searchResult: [],
     searchLoading: false,
-    hidePicker: false
+    hidePicker: false,
+    showConfirm: false,
+    selectedTaxon: null,
   },
   computed: {
   },
   selectTaxon(e) {
+    this.setData({
+      showConfirm: true,
+      selectedTaxon: e.target.dataset.taxon
+    })
+  },
+  confirmSelectTaxon() {
     const eventChannel = this.getOpenerEventChannel();
     wx.navigateBack({
-      url: '/pages/observation-create/observation-create',
       complete: () => {
-        eventChannel.emit('backFromSearchPage', e.target.dataset.taxon)
+        eventChannel.emit('backFromSearchPage', this.data.selectedTaxon)
       }
+    })
+  },
+  cancelSelectTaxon() {
+    this.setData({
+      showConfirm: false,
+      selectedTaxon: null
     })
   },
   viewTaxonDetail(e) {
