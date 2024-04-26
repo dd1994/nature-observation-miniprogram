@@ -15,7 +15,14 @@
       <t-loading theme="spinner" size="48rpx" text="搜索中..." inheritColor class="wrapper" />
     </view>
     <t-dialog visible="{{showConfirm}}" confirm-btn="{{ { content: '添加鉴定', variant: 'base'} }}" cancel-btn="取消" bind:confirm="confirmSelectTaxon" bind:cancel="cancelSelectTaxon">
-      <view slot="content">哈哈哈哈</view>
+      <view slot="content" class="confirm-taxon-select-content">
+        <view class="selected-taxon-info">
+          <view class="selected-taxon-common-name">{{selectedTaxon.preferred_common_name || selectedTaxon.name}}</view>
+          <view class="selected-taxon-s-name">
+            {{selectedTaxon.name}}
+          </view>
+        </view>
+      </view>
     </t-dialog>
   </view>
 </view>

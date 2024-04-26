@@ -41,3 +41,15 @@
   justify-content: center;
   margin-top: var(--td-spacer-5);
 }
+
+.confirm-taxon-select-content {
+  .selected-taxon-common-name {
+    font-size: var(--td-font-size-l);
+    color: var(--td-font-gray-1);
+  }
+
+  .selected-taxon-s-name {
+    font-size: var(--td-font-size-base);
+    color: var(--td-font-gray-3);
+  }
+}
