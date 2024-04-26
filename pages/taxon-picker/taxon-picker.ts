@@ -16,27 +16,36 @@ Page({
     hidePicker: false,
     showConfirm: false,
     selectedTaxon: null,
+    comments: '',
   },
   computed: {
+  },
+  commentsChange(e) {
+    this.setData({ comments: e.detail.value })
   },
   selectTaxon(e) {
     this.setData({
       showConfirm: true,
-      selectedTaxon: e.target.dataset.taxon
+      selectedTaxon: e.target.dataset.taxon,
+      comments: '',
     })
   },
   confirmSelectTaxon() {
     const eventChannel = this.getOpenerEventChannel();
     wx.navigateBack({
       complete: () => {
-        eventChannel.emit('backFromSearchPage', this.data.selectedTaxon)
+        eventChannel.emit('backFromSearchPage', {
+          ...this.data.selectedTaxon,
+          comments: this.data.comments,
+        })
       }
     })
   },
   cancelSelectTaxon() {
     this.setData({
       showConfirm: false,
-      selectedTaxon: null
+      selectedTaxon: null,
+      comments: '',
     })
   },
   viewTaxonDetail(e) {

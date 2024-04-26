@@ -53,3 +53,15 @@
     color: var(--td-font-gray-3);
   }
 }
+
+.confirm-taxon-select-comments {
+  font-size: var(--td-font-size-base) !important;
+  color: var(--td-font-gray-3) !important;
+  padding: 0 !important;
+  margin-top: var(--td-spacer-3);
+}
+
+.create-form-item-placeholder {
+  font-size: var(--td-font-size-base) !important;
+  color: var(--td-font-gray-3) !important;
+}

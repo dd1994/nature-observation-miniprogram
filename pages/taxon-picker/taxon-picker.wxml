@@ -22,6 +22,8 @@
             {{selectedTaxon.name}}
           </view>
         </view>
+
+        <t-textarea t-class="confirm-taxon-select-comments" placeholder-class="create-form-item-placeholder" borderless autosize value="{{comments}}" placeholder="添加备注(选填)" maxcharacter="{{1000}}" bind:change="commentsChange" />
       </view>
     </t-dialog>
   </view>
