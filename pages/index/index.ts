@@ -59,7 +59,7 @@ Page({
       app.globalData.indexPageNeedRefresh = false
     }
   },
-  onReachBottom() {
+  bindscrolltolower() {
     if (this.data.activeTab === TabType.observations) {
       if (this.data.observationsAllLoaded) {
         return

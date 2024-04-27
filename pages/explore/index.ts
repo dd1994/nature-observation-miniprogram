@@ -48,14 +48,7 @@ Page({
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
   },
-  onShow() {
-    if (app.globalData.explorePageNeedRefresh) {
-      this.resetAndFetchObservations()
-      this.resetAndFetchTaxon()
-      app.globalData.explorePageNeedRefresh = false
-    }
-  },
-  onReachBottom() {
+  bindscrolltolower() {
     if (this.data.activeTab === TabType.observations) {
       if (this.data.observationsAllLoaded) {
         return
@@ -72,6 +65,13 @@ Page({
         taxonPageIndex: this.data.taxonPageIndex + 1
       })
       this.fetchTaxonList()
+    }
+  },
+  onShow() {
+    if (app.globalData.explorePageNeedRefresh) {
+      this.resetAndFetchObservations()
+      this.resetAndFetchTaxon()
+      app.globalData.explorePageNeedRefresh = false
     }
   },
   onPullDownRefresh() {

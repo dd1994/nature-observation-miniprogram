@@ -1,4 +1,5 @@
 import { getImgQuality } from "../../utils/img"
+import * as _ from 'lodash'
 
 const computedBehavior = require('miniprogram-computed').behavior
 
@@ -39,6 +40,9 @@ Component({
           }
         }
       })
+    },
+    bindscrolltolower() {
+      this.triggerEvent('scrolltolower')
     }
   },
   // @ts-ignore

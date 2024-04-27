@@ -29,7 +29,7 @@ Page({
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
   },
-  onReachBottom() {
+  bindscrolltolower() {
     if (this.data.activeTab === TabType.observations) {
       if (this.data.observationsAllLoaded) {
         return
