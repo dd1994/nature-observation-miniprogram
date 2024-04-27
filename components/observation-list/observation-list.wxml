@@ -8,15 +8,5 @@
       <view class="observation-list__item__img" style="background-image: url({{item.displayImg}})"></view>
     </view>
   </grid-view>
-  <!-- <view class="observation-list">
-    <view data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{formattedObservations}}">
-      <view class="observation-list__item__bottom">
-        <view class="observation-list__item__text">{{item.common_name}}
-        </view>
-      </view>
-      <view class="observation-list__item__img" style="background-image: url({{item.displayImg}})"></view>
-    </view>
-  </view> -->
-
   <list-footer allLoaded="{{allLoaded && (formattedObservations.length > 20)}}"></list-footer>
 </scroll-view>
