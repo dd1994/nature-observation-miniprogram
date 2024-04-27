@@ -1,4 +1,4 @@
-<view class="taxon-list">
+<scroll-view bindscrolltolower="bindscrolltolower" scroll-y type="custom" lower-threshold="{{1000}}" style="width: 100%; height: 100vh;" type="custom" class="taxon-list">
   <view wx:if="{{taxon.length}}" class="taxon-list-tips">
     <view>
       记录物种
@@ -11,4 +11,4 @@
     </taxon-cell>
   </view>
   <list-footer allLoaded="{{allLoaded && (taxon.length > 20)}}"></list-footer>
-</view>
+</scroll-view>

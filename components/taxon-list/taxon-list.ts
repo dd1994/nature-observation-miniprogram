@@ -27,6 +27,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    bindscrolltolower() {
+      this.triggerEvent('scrolltolower')
+    }
   }
 })
