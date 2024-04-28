@@ -84,9 +84,13 @@ Page({
       wx.stopPullDownRefresh()
     })
   },
-  gotoIndexSearch() {
+  gotoIndexFilter() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
+      success: (res) => {
+        // 发送一个事件
+        res.eventChannel.emit('setPlaceholder', { placeholder: '按类群过滤，比如“蜘蛛目”' })
+      },
       events: {
         backFromSearchPage: (taxon) => {
           if (!taxon?.id) {
@@ -108,6 +112,11 @@ Page({
     // wx.navigateTo({
     //   url: "/pages/index-search/index-search?needLogin=true"
     // })
+  },
+  gotoIndexSearch() {
+    wx.navigateTo({
+      url: "/pages/index-search/index-search?needLogin=true"
+    })
   },
   removeSearch() {
     this.setData({

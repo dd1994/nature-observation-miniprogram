@@ -81,12 +81,12 @@ Page({
     })
   },
 
-  gotoIndexSearch() {
+  gotoIndexFilter() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
       success: (res) => {
         // 发送一个事件
-        res.eventChannel.emit('setPlaceholder', { placeholder: '按类群过滤，比如“蜘蛛目”可过滤出所有蜘蛛' })
+        res.eventChannel.emit('setPlaceholder', { placeholder: '按类群过滤，比如“蜘蛛目”' })
       },
       events: {
         backFromSearchPage: (taxon) => {
@@ -105,6 +105,11 @@ Page({
           this.resetAndFetchTaxon()
         }
       }
+    })
+  },
+  gotoIndexSearch() {
+    wx.navigateTo({
+      url: "/pages/index-search/index-search"
     })
   },
   removeSearch() {
