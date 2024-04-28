@@ -11,12 +11,13 @@ const TaxonBehavior = Behavior({
     taxonTotal: 0,
     taxonIsEmpty: false,
     taxonLoading: true,
+    q: {}
   },
   methods: {
     async fetchTaxonList() {
       this.setData({ taxonLoading: true })
       try {
-        const res: any = await fetchTaxonList({ pageIndex: this.data.taxonPageIndex, pageSize: this.data.taxonPageSize, needLogin: this.data.needLogin, user_id: this.data.user_id })
+        const res: any = await fetchTaxonList({ pageIndex: this.data.taxonPageIndex, pageSize: this.data.taxonPageSize, needLogin: this.data.needLogin, user_id: this.data.user_id, q: this.data.q })
 
         this.setData({
           taxon: (this.data.taxon || []).concat(res?.data?.data?.list || []),

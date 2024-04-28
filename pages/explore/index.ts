@@ -85,10 +85,19 @@ Page({
       url: '/pages/taxon-picker/taxon-picker',
       events: {
         backFromSearchPage: (taxon) => {
+          if (!taxon?.id) {
+            return
+          }
+
           this.setData({
-            q: { taxon_id: taxon?.id }
+            q: {
+              taxon_id: taxon?.id,
+              preferred_common_name: taxon?.preferred_common_name || taxon?.name,
+              name: taxon?.name,
+            }
           })
           this.resetAndFetchObservations()
+          this.resetAndFetchTaxon()
         }
       }
     })
