@@ -86,8 +86,19 @@ Page({
   },
   gotoIndexSearch() {
     wx.navigateTo({
-      url: "/pages/index-search/index-search?needLogin=true"
+      url: '/pages/taxon-picker/taxon-picker',
+      events: {
+        backFromSearchPage: (taxon) => {
+          this.setData({
+            q: { taxon_id: taxon?.id }
+          })
+          this.resetAndFetchObservations()
+        }
+      }
     })
+    // wx.navigateTo({
+    //   url: "/pages/index-search/index-search?needLogin=true"
+    // })
   },
   openFilterPanel() {
     wx.navigateTo({
