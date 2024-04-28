@@ -109,6 +109,13 @@ Page({
     //   url: "/pages/index-search/index-search?needLogin=true"
     // })
   },
+  removeSearch() {
+    this.setData({
+      q: {}
+    })
+    this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
+  },
   openFilterPanel() {
     wx.navigateTo({
       url: "/pages/index-filter/index-filter"

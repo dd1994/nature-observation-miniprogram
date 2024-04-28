@@ -36,3 +36,17 @@
   padding: 0 10px;
   z-index: 999;
 }
+
+.search-taxon-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--td-font-size-base);
+  background-color: var(--td-font-gray-3);
+  padding: var(--td-spacer);
+  color: #fff;
+
+  .search-taxon-info__remove-icon {
+    padding-left: 15px; // 增大点击面积
+  }
+}
