@@ -1,5 +1,5 @@
 <view class="index-page">
-  <view class="empty-tips" wx:if="{{observationsIsEmpty}}">
+  <view class="empty-tips" wx:if="{{observationsIsEmpty && !q.taxon_id}}">
     <t-button block theme="primary" bind:tap="onAddIconTap">上传记录</t-button>
     <view class="empty-tips__or">或者</view>
     <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
@@ -7,9 +7,9 @@
   <view wx:else>
     <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <view class="search-taxon-info" wx:if="{{q.taxon_id}}" slot="middle">
-      <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
-      <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
-    </view>
+        <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
+        <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
+      </view>
       <t-tab-panel label="{{tab1Title}}" value="0">
         <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </t-tab-panel>
