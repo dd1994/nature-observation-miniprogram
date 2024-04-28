@@ -2,7 +2,7 @@
   <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
     <view class="search-taxon-info" wx:if="{{q.taxon_id}}" slot="middle">
       <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
-      <t-icon bind:click="removeSearch" name="close" size="52rpx" />
+      <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
     </view>
     <t-tab-panel label="{{tab1Title}}" value="0">
       <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
