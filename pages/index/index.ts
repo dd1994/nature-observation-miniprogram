@@ -89,15 +89,15 @@ Page({
       url: '/pages/taxon-picker/taxon-picker',
       events: {
         backFromSearchPage: (taxon) => {
-          if(!taxon?.id) {
+          if (!taxon?.id) {
             return
           }
-          
+
           this.setData({
             q: {
               taxon_id: taxon?.id,
-              preferred_common_name: taxon?.preferred_common_name || taxon?.name,
-              name: taxon?.name,
+              taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
+              taxon_name: taxon?.name,
             }
           })
           this.resetAndFetchObservations()

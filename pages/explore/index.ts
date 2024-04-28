@@ -80,6 +80,7 @@ Page({
       wx.stopPullDownRefresh()
     })
   },
+
   gotoIndexSearch() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -92,8 +93,8 @@ Page({
           this.setData({
             q: {
               taxon_id: taxon?.id,
-              preferred_common_name: taxon?.preferred_common_name || taxon?.name,
-              name: taxon?.name,
+              taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
+              taxon_name: taxon?.name,
             }
           })
           this.resetAndFetchObservations()
@@ -101,6 +102,13 @@ Page({
         }
       }
     })
+  },
+  removeSearch() {
+    this.setData({
+      q: {}
+    })
+    this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
   },
   computed: {
     tab1Title(data) {

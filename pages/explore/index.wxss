@@ -23,6 +23,15 @@
 .search-icon {
   position: fixed;
   top: var(--td-spacer-1);
-  right: var(--td-spacer-2);
+  right: var(--td-spacer);
   z-index: 999;
+}
+
+.search-taxon-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--td-font-gray-3);
+  padding: var(--td-spacer);
+  color: #fff;
 }
