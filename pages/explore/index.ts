@@ -84,6 +84,10 @@ Page({
   gotoIndexSearch() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
+      success: (res) => {
+        // 发送一个事件
+        res.eventChannel.emit('setPlaceholder', { placeholder: '按类群过滤，比如“蜘蛛目”可过滤出所有蜘蛛' })
+      },
       events: {
         backFromSearchPage: (taxon) => {
           if (!taxon?.id) {

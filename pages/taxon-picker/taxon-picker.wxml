@@ -1,6 +1,6 @@
 <!--pages/taxon-picker/taxon-picker.wxml-->
 <view class="page-container">
-  <t-search focus value="{{inputWords}}" placeholder="搜索物种，比如“银杏”" bind:change="searchWords" />
+  <t-search focus value="{{inputWords}}" placeholder="{{placeholder}}" bind:change="searchWords" />
 
   <view class="search-result-taxon-list">
     <view wx:key="name" wx:for="{{searchResult}}" data-taxon="{{item}}" class="search-result-taxon-item">
