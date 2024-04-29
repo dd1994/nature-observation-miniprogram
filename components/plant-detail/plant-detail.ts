@@ -54,6 +54,10 @@ Component({
           label: "CFH",
           url: `https://www.cfh.ac.cn/Spdb/spsearch.aspx?aname=${encodedName}`,
           desc: '超过2000万张用户上传的植物照片，以中国植物为主。拥有最全的植物中文别名数据库'
+        }, {
+          label: "GBIF",
+          url: `https://www.gbif.org/search?q=${encodeURIComponent(data.taxon.name)}`,
+          desc: "GBIF是一个由世界各国政府资助的国际网络和数据平台，旨在为任何人，在任何地方，提供关于地球上所有类型生命的数据的开放获取。"
         }]
     }
   },
