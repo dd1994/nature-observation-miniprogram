@@ -34,7 +34,9 @@
       <view class="identifications-pannel">
         <identifications identifications="{{identifications}}" userProfile="{{userProfile}}" bind:agreeID="agreeID" />
         <view class="edit-button-wrapper">
-          <t-button icon="filter-2" theme="primary" block size="medium" bind:tap="addIdentification">改进鉴定</t-button>
+          <t-button icon="filter-2" theme="primary" block size="medium" bind:tap="addIdentification">
+            {{isOwner ? '改进鉴定' : '帮忙鉴定'}}
+          </t-button>
         </view>
       </view>
     </t-tab-panel>
