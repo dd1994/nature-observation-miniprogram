@@ -80,10 +80,44 @@ Page({
       wx.stopPullDownRefresh()
     })
   },
+
+  gotoIndexFilter() {
+    wx.navigateTo({
+      url: '/pages/taxon-picker/taxon-picker',
+      success: (res) => {
+        // 发送一个事件
+        res.eventChannel.emit('setPlaceholder', { placeholder: '按类群过滤，比如“蜘蛛目”' })
+      },
+      events: {
+        backFromSearchPage: (taxon) => {
+          if (!taxon?.id) {
+            return
+          }
+
+          this.setData({
+            q: {
+              taxon_id: taxon?.id,
+              taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
+              taxon_name: taxon?.name,
+            }
+          })
+          this.resetAndFetchObservations()
+          this.resetAndFetchTaxon()
+        }
+      }
+    })
+  },
   gotoIndexSearch() {
     wx.navigateTo({
       url: "/pages/index-search/index-search"
     })
+  },
+  removeSearch() {
+    this.setData({
+      q: {}
+    })
+    this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
   },
   computed: {
     tab1Title(data) {

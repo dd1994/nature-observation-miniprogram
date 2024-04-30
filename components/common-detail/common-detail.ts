@@ -37,6 +37,10 @@ Component({
         label: "联盟图片",
         url: `https://image.cubg.cn/search?sort=default&text=${encodeURIComponent(data.taxon.name)}&shitu=-1&taxonId=`,
         desc: '索引了全球320个主题网站的720万张图片，涵盖全球45万个物种，图片鉴定基本准确可靠。'
+      }, {
+        label: "GBIF",
+        url: `https://www.gbif.org/search?q=${encodeURIComponent(data.taxon.name)}`,
+        desc: "GBIF是一个由世界各国政府资助的国际网络和数据平台，旨在为任何人，在任何地方，提供关于地球上所有类型生命的数据的开放获取。"
       }]
     }
   },

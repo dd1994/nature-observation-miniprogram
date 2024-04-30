@@ -1,6 +1,6 @@
 <!--pages/taxon-picker/taxon-picker.wxml-->
 <view class="page-container">
-  <t-search focus value="{{inputWords}}" placeholder="搜索物种，比如“银杏”" bind:change="searchWords" />
+  <t-search focus value="{{inputWords}}" placeholder-class="search-input-placeholder" placeholder="{{placeholder}}" bind:change="searchWords" />
 
   <view class="search-result-taxon-list">
     <view wx:key="name" wx:for="{{searchResult}}" data-taxon="{{item}}" class="search-result-taxon-item">
@@ -23,7 +23,7 @@
           </view>
         </view>
 
-        <t-textarea t-class="confirm-taxon-select-comments" placeholder-class="create-form-item-placeholder" borderless autosize value="{{comments}}" placeholder="添加备注(选填)" maxcharacter="{{1000}}" bind:change="commentsChange" />
+        <t-textarea t-class="confirm-taxon-select-comments" placeholder-class="confirm-taxon-select-comments__placeholder" borderless autosize value="{{comments}}" placeholder="添加备注(选填)" maxcharacter="{{1000}}" bind:change="commentsChange" />
       </view>
     </t-dialog>
   </view>

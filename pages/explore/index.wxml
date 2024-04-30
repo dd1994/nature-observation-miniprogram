@@ -3,6 +3,16 @@
   bind:scrolltolower="bindscrolltolower"
   bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list> -->
   <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
+    <view slot="middle">
+      <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
+        <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
+        <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
+      </view>
+
+      <view class="search-empty-tips" wx:if="{{observationsIsEmpty && q.taxon_id}}">
+        <t-empty icon="search" description="搜索结果为空，请尝试其他搜索条件" />
+      </view>
+    </view>
     <t-tab-panel label="{{tab1Title}}" value="0">
       <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
     </t-tab-panel>
@@ -11,5 +21,7 @@
     </t-tab-panel>
   </t-tabs>
   <t-icon bind:click="gotoIndexSearch" class="search-icon" size="52rpx" name="search" />
+  <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="52rpx" name="filter" />
+  <!-- <t-icon bind:click="gotoIndexSearch" class="search-icon" size="46rpx" name="search" /> -->
   <t-fab icon="image-add" bind:click="onAddIconTap" aria-label="增加"></t-fab>
 </view>

@@ -3,7 +3,7 @@ const computedBehavior = require('miniprogram-computed').behavior
 import { searchTaxon } from '../../utils/service/taxon'
 import _ from 'lodash'
 import { openTaxonDetail } from '../../utils/openTaxonDetail';
-
+import { defaultPlaceholder } from '../../utils/constant';
 Page({
   behaviors: [computedBehavior],
   /**
@@ -18,6 +18,7 @@ Page({
     showConfirm: false,
     selectedTaxon: null,
     comments: '',
+    placeholder: defaultPlaceholder
   },
   computed: {
   },
@@ -117,7 +118,21 @@ Page({
         needConfirm: true
       })
     }
+
+    const eventChannel = this.getOpenerEventChannel();
+    eventChannel.on('setPlaceholder', (res) => {
+      if (res?.placeholder) {
+        this.setData({
+          placeholder: res.placeholder
+        })
+      } else {
+        this.setData({
+          placeholder: defaultPlaceholder
+        })
+      }
+    })
   },
+
   onShareAppMessage() {
     return {
       title: `生灵觅迹：物种查询`,

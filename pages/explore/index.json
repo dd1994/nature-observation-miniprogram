@@ -9,6 +9,7 @@
     "taxon-list": "/components/taxon-list/taxon-list",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
-    "t-fab": "tdesign-miniprogram/fab/fab"
+    "t-fab": "tdesign-miniprogram/fab/fab",
+    "t-empty": "tdesign-miniprogram/empty/empty"
   }
 }
