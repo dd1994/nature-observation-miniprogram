@@ -3,7 +3,7 @@ export const exifTimeFormat = 'YYYY:MM:DD HH:mm:ss'
 export const apiDomain = 'https://www.nature-notes.com'
 // export const apiDomain = 'http://192.168.3.179:7001'
 export const statBgColor = '#0bae31'
-export const defaultPlaceholder = '搜索物种，比如“银杏”'
+export const defaultPlaceholder = '搜索物种中文名或拉丁名，比如“银杏”'
 
 export const RankChineseMap = {
   "kingdom": "界",
