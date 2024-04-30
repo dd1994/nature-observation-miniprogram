@@ -1,44 +1,44 @@
-@import "../../theme.scss";
+// @import "../../theme.scss";
 
-.observation-list__item {
-  aspect-ratio: 1.3;
-  position: relative;
-  border-radius: 2px;
-  overflow: hidden;
-}
+// .observation-list__item {
+//   aspect-ratio: 1.3;
+//   position: relative;
+//   border-radius: 2px;
+//   overflow: hidden;
+// }
 
-.observation-list__item__img {
-  /* 不要使用小程序 image 标签的 mode='aspectFill'，大量图片时会导致滚动时卡顿白屏  */
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
+// .observation-list__item__img {
+//   /* 不要使用小程序 image 标签的 mode='aspectFill'，大量图片时会导致滚动时卡顿白屏  */
+//   width: 100%;
+//   height: 100%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center center;
+// }
 
-.observation-list__item__bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-left: var(--spacer-mini);
-  background-color: var(--bg-trans);
+// .observation-list__item__bottom {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   padding-left: var(--spacer-mini);
+//   background-color: var(--bg-trans);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
 
-.observation-list__item__text {
-  color: #fff;
-  font-size: var(--td-font-size-m);
+// .observation-list__item__text {
+//   color: #fff;
+//   font-size: var(--td-font-size-m);
 
-  /* 名称过长时省略 */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+//   /* 名称过长时省略 */
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
 
-.observation-list__item__fullscreen-btn {
-  padding: 2px var(--spacer-mini);
-}
+// .observation-list__item__fullscreen-btn {
+//   padding: 2px var(--spacer-mini);
+// }

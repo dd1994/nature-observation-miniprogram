@@ -5,7 +5,7 @@
         <view class="observation-list__item__text">{{item.common_name}}
         </view>
       </view>
-      <view class="observation-list__item__img" style="background-image: url({{item.displayImg}})"></view>
+      <!-- <view class="observation-list__item__img" style="background-image: url({{item.displayImg}})"></view> -->
     </view>
   </grid-view>
   <list-footer allLoaded="{{allLoaded && (formattedObservations.length > 20)}}"></list-footer>
