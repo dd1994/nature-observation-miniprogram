@@ -2,6 +2,8 @@
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "发现",
   "onReachBottomDistance": 1000,
+  "renderer": "skyline",
+  "navigationStyle": "custom",
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
