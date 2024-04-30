@@ -28,7 +28,6 @@
         </taxon-list>
       </t-tab-panel>
     </t-tabs>
-    <!-- <t-icon bind:click="openFilterPanel" class="search-icon" size="52rpx" name="search" /> -->
     <t-icon bind:click="gotoIndexSearch" class="search-icon" size="52rpx" name="search" />
     <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="52rpx" name="filter" />
   </view>
