@@ -2,10 +2,8 @@
   <grid-view type="masonry" main-axis-gap="4" cross-axis-gap="4" padding="{{[4,4,4,4]}}">
     <view data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{formattedObservations}}">
       <image class="observation-list__item__img" src="{{item.displayImg}}" mode='aspectFill' alt="" srcset="" />
-
       <view class="observation-list__item__bottom">
-        <view class="observation-list__item__text">{{item.common_name}}
-        </view>
+        {{item.common_name}}
       </view>
     </view>
   </grid-view>
