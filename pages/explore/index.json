@@ -14,6 +14,7 @@
     "t-fab": "tdesign-miniprogram/fab/fab",
     "t-empty": "tdesign-miniprogram/empty/empty",
     "mp-tabs": "@miniprogram-component-plus/tabs",
-    "index-tab": "/components/index-tab/index-tab"
+    "index-tab": "/components/index-tab/index-tab",
+    "custom-nav": "/components/custom-nav/custom-nav"
   }
 }

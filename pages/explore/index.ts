@@ -12,6 +12,7 @@ Page({
   data: {
     activeTab: TabType.observations,
     needLogin: false,
+    top: 0,
     tabs: [
       { title: '记录' },
       { title: '物种' }
@@ -47,6 +48,13 @@ Page({
         url: "/pages/observation-create/observation-create"
       })
     }
+  },
+  onReady() {
+    const res = wx.getMenuButtonBoundingClientRect()
+    const top = res.bottom
+    this.setData({
+      top
+    })
   },
   onLoad() {
     this.resetAndFetchObservations()
