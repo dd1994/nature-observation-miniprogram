@@ -82,5 +82,4 @@
     <t-icon name="delete" style="margin-right: 5px;"></t-icon>
     删除这条记录
   </view>
-  <privacy />
 </view>
