@@ -1,4 +1,4 @@
-<scroll-view bindscrolltolower="bindscrolltolower" scroll-y type="custom" lower-threshold="{{1000}}" style="width: 100%; height: 100vh;" type="custom" class="observation-list-wrapper">
+<scroll-view bindscrolltolower="bindscrolltolower" scroll-y type="custom" lower-threshold="{{1000}}" style="width: 100%; height: 95vh;" type="custom" class="observation-list-wrapper">
   <grid-view type="masonry" main-axis-gap="4" cross-axis-gap="4" padding="{{[4,4,4,4]}}">
     <view data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{formattedObservations}}">
       <image class="observation-list__item__img" src="{{item.displayImg}}" mode='aspectFill' alt="" srcset="" />
