@@ -18,6 +18,7 @@ Page({
     ]
   },
   activeTabChange(e) {
+    debugger
     this.setData({ activeTab: e.detail.value })
   },
   async onAddIconTap() {

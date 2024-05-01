@@ -1,0 +1,17 @@
+.tabs-header {
+  height: 50px;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .tabs-header__item {
+    margin-right: 20px;
+  }
+
+  .tabs-header__item-active {
+    color: var(--td-primary-color-7);
+    border-bottom: 2px solid var(--td-primary-color-7);
+  }
+}
