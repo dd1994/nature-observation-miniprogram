@@ -30,15 +30,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 32px; // 目的是和左侧对齐：tab字体(18px) * lineHeight(2)
+  height: 40px; // 目的是和左侧对齐：tab字体(18px) * lineHeight(2)
 }
 
 .search-icon {
-  padding: 0 5px;
+  padding: 0 var(--spacer-mini);
 }
 
 .filter-icon {
-  padding: 0 5px;
+  padding: 0 var(--spacer-mini);
 }
 
 .search-taxon-info {

@@ -1,16 +1,16 @@
 .tabs-header {
-  color: black;
+  color: var(--td-font-gray-1);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-left: var(--td-spacer-2);
   font-size: 16px;
-  line-height: 2;
+  line-height: 2.5;
   margin-bottom: var(--spacer-mini);
 
   .tabs-header__item {
     // padding: 0 var(--td-spacer-2);
-    margin-right: var(--td-spacer-3);
+    margin-right: var(--td-spacer-2);
   }
 
   .tabs-header__item-active {
