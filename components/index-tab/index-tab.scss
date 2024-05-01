@@ -5,9 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: var(--td-spacer-2);
 
   .tabs-header__item {
-    margin-right: 20px;
+    padding: 0 var(--td-spacer-2);
+    margin-right: var(--td-spacer-2);
   }
 
   .tabs-header__item-active {
