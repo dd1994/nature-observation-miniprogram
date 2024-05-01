@@ -22,16 +22,23 @@
   font-size: var(--td-font-size-m) !important;
 }
 
-.search-icon {
-  position: fixed;
-  right: var(--td-spacer-5);
-  z-index: 999;
-}
-
-.filter-icon {
+.tab-right-wrapper {
   position: fixed;
   right: var(--td-spacer);
   z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 36px; // 目的是和左侧对齐：tab字体(18px) * lineHeight(2)
+}
+
+.search-icon {
+  padding: 0 5px;
+}
+
+.filter-icon {
+  padding: 0 5px;
 }
 
 .search-taxon-info {
