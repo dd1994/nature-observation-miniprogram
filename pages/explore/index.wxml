@@ -1,5 +1,6 @@
 <view class="index-page" style="padding-top: {{top + 'px'}}">
-  <index-tab tabs="{{tabs}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}">
+  <!-- skyline 不能使用 computed，非常难受。。。 -->
+  <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}">
   </index-tab>
   <view>
     <view class="search-taxon-info" wx:if="{{q.taxon_id}}">

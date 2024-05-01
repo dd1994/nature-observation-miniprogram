@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: flex-start;
   margin-left: var(--td-spacer-2);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 2;
+  margin-bottom: var(--spacer-mini);
 
   .tabs-header__item {
-    padding: 0 var(--td-spacer-2);
-    margin-right: var(--td-spacer-2);
+    // padding: 0 var(--td-spacer-2);
+    margin-right: var(--td-spacer-3);
   }
 
   .tabs-header__item-active {

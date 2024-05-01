@@ -1,6 +1,6 @@
 <view>
   <view class="tabs-header">
-    <view class="tabs-header__item {{activeTab === index ? 'tabs-header__item-active' : ''}}" data-item="{{index}}" bind:tap="onTabChange" wx:key="title" wx:for="{{tabs}}">
+    <view class="tabs-header__item {{activeTab === item.value ? 'tabs-header__item-active' : ''}}" data-item="{{item.value}}" bind:tap="onTabChange" wx:key="value" wx:for="{{tabs}}">
       {{item.title}}
     </view>
   </view>

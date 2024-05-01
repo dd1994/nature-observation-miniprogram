@@ -12,11 +12,7 @@ Page({
   data: {
     activeTab: TabType.observations,
     needLogin: false,
-    top: 0,
-    tabs: [
-      { title: '记录' },
-      { title: '物种' }
-    ]
+    top: 0
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
@@ -130,17 +126,6 @@ Page({
     })
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
-  },
-  computed: {
-    tab1Title(data) {
-      return `记录(${data.observationsTotal})`
-    },
-    tab2Title(data) {
-      return `物种(${data.taxonTotal})`
-    },
-    tab3Title(data) {
-      return `鉴定(${data.observations.length})`
-    },
   },
   onShareAppMessage() {
     return {
