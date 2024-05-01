@@ -12,8 +12,13 @@ Page({
   data: {
     activeTab: TabType.observations,
     needLogin: false,
+    tabs: [
+      { title: '记录' },
+      { title: '物种' }
+    ]
   },
   activeTabChange(e) {
+    debugger
     this.setData({ activeTab: e.detail.value })
   },
   async onAddIconTap() {

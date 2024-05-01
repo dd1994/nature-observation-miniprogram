@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@miniprogram-component-plus/tabs": "^1.0.0",
     "lodash": "^4.17.21",
     "miniprogram-computed": "^4.4.0",
     "moment": "^2.29.4",
