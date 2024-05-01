@@ -11,10 +11,10 @@
       </view>
     </view> -->
     <block wx:for="{{tabs}}" wx:key="title">
-      <view slot="tab-content-{{index}}" label="{{tab1Title}}" value="0">
+      <view slot="tab-content-0">
         <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </view>
-      <view slot="tab-content-{{index}}" label="{{tab2Title}}" value="1">
+      <view slot="tab-content-1">
         <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
       </view>
     </block>
