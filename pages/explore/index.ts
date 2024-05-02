@@ -45,16 +45,14 @@ Page({
       })
     }
   },
-  onReady() {
+  onLoad() {
+    this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
     const res = wx.getMenuButtonBoundingClientRect()
     const top = res.bottom
     this.setData({
       top
     })
-  },
-  onLoad() {
-    this.resetAndFetchObservations()
-    this.resetAndFetchTaxon()
   },
   bindscrolltolower() {
     if (this.data.activeTab === TabType.observations) {

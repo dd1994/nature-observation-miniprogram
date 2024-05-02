@@ -49,16 +49,15 @@ Page({
       url: '/pages/explore/index'
     })
   },
-  onReady() {
+  onLoad() {
+    this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
+
     const res = wx.getMenuButtonBoundingClientRect()
     const top = res.bottom
     this.setData({
       top
     })
-  },
-  onLoad() {
-    this.resetAndFetchObservations()
-    this.resetAndFetchTaxon()
   },
   onShow() {
     if (app.globalData.indexPageNeedRefresh) {
