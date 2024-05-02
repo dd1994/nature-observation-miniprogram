@@ -2,7 +2,7 @@
 @import "../../utils/css/skyline-reset.scss";
 
 .index-page {
-  font-size: var(--td-font-size-m)
+  font-size: var(--td-font-size-m);
 }
 
 .empty-tips {
@@ -17,6 +17,10 @@
 .empty-tips__or {
   margin: var(--td-spacer-1) 0;
   color: var(--td-font-gray-3);
+}
+
+.empty-tips__btn {
+  width: 100% !important;
 }
 
 

@@ -1,8 +1,8 @@
 <view class="index-page" style="padding-top: {{top + 'px'}}">
   <view class="empty-tips" wx:if="{{observationsIsEmpty && !q.taxon_id}}">
-    <t-button block theme="primary" bind:tap="onAddIconTap">上传记录</t-button>
+    <button class="empty-tips__btn" type="primary" bind:tap="onAddIconTap">上传记录</button>
     <view class="empty-tips__or">或者</view>
-    <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
+    <button class="empty-tips__btn" type="primary" plain="true" bind:tap="goToExplore">先随便逛逛</button>
   </view>
   <view wx:else>
     <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}">
@@ -26,7 +26,7 @@
       <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
     </view>
   </view>
-  <view class="tab-right-wrapper" style="top: {{top + 'px'}}">
+  <view class="tab-right-wrapper" wx:if="{{!observationsIsEmpty}}" style="top: {{top + 'px'}}">
     <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
     <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.9)" name="filter" />
   </view>
