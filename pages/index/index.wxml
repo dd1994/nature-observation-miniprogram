@@ -19,11 +19,13 @@
       </view>
     </view>
 
-    <view wx:if="{{activeTab === 0}}">
-      <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
-    </view>
-    <view wx:if="{{activeTab === 1}}">
-      <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+    <view style="height: {{scollViewHeight  + 'px'}};">
+      <block wx:if="{{activeTab === 0}}">
+        <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
+      </block>
+      <block wx:if="{{activeTab === 1}}">
+        <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+      </block>
     </view>
   </view>
   <view class="tab-right-wrapper" wx:if="{{!observationsIsEmpty}}" style="top: {{top + 'px'}}">
