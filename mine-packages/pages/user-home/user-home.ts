@@ -55,7 +55,7 @@ Page({
       this.fetchTaxonList()
     }
   },
-  onPullDownRefresh() {
+  refresh() {
     this.resetAndFetchTaxon()
     this.resetAndFetchObservations().finally(() => {
       wx.stopPullDownRefresh()

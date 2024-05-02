@@ -12,7 +12,7 @@
     </view>
   </view>
   <view>
-    <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}">
+    <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
     </index-tab>
     <view wx:if="{{activeTab === 0}}">
       <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
