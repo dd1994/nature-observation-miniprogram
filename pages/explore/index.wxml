@@ -12,11 +12,13 @@
       <t-empty icon="search" description="搜索结果为空，请尝试其他搜索条件" />
     </view>
   </view>
-  <view style="height: {{scollViewHeight  + 'px'}};" wx:if="{{activeTab === 0}}">
-    <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
-  </view>
-  <view style="height: {{scollViewHeight   + 'px'}};" wx:if="{{activeTab === 1}}">
-    <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+  <view style="height: {{scollViewHeight  + 'px'}};">
+    <block wx:if="{{activeTab === 0}}">
+      <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
+    </block>
+    <block wx:if="{{activeTab === 1}}">
+      <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+    </block>
   </view>
   <view class="tab-right-wrapper" style="top: {{top + 'px'}}">
     <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
