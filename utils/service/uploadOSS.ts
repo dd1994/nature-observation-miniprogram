@@ -12,6 +12,9 @@ function uploadOSS({ filePath, key, success, fail, url = observationPhotoHost })
     url: url,
     filePath: filePath,
     name: 'file', // 必须填file。
+    // @ts-ignore
+    useHighPerformanceMode: true,
+    enableHttp2: true,
     formData: {
       key: key // files[index].key,
       // policy,
