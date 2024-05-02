@@ -12,7 +12,8 @@ Page({
   data: {
     activeTab: TabType.observations,
     needLogin: false,
-    top: 0
+    top: 0,
+    scollViewHeight: 0,
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
@@ -49,9 +50,13 @@ Page({
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
     const res = wx.getMenuButtonBoundingClientRect()
+    const windowInfo = wx.getWindowInfo()
     const top = res.bottom
+
+    // 必须要给 scoll-view 一个固定高度
     this.setData({
-      top
+      top,
+      scollViewHeight: windowInfo.windowHeight - top - 46
     })
   },
   bindscrolltolower() {
