@@ -80,7 +80,7 @@ Page({
       app.globalData.explorePageNeedRefresh = false
     }
   },
-  onPullDownRefresh() {
+  refresh() {
     this.resetAndFetchTaxon()
     this.resetAndFetchObservations().finally(() => {
       wx.stopPullDownRefresh()

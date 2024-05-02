@@ -26,6 +26,10 @@ Component({
       this.triggerEvent('onTabChange', {
         value: e.currentTarget.dataset.item
       })
+
+      if (e.currentTarget.dataset.item === this.data.activeTab) {
+        this.triggerEvent('refresh')
+      }
     }
   }
 })
