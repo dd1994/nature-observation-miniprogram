@@ -12,6 +12,7 @@ Page({
     activeTab: TabType.observations,
     needLogin: true,
     filterPanelVisible: false,
+    top: 0
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
@@ -46,6 +47,13 @@ Page({
   goToExplore() {
     wx.switchTab({
       url: '/pages/explore/index'
+    })
+  },
+  onReady() {
+    const res = wx.getMenuButtonBoundingClientRect()
+    const top = res.bottom
+    this.setData({
+      top
     })
   },
   onLoad() {

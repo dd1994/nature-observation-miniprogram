@@ -2,6 +2,8 @@
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "我的记录",
   "onReachBottomDistance": 1000,
+  "renderer": "skyline",
+  "navigationStyle": "custom",
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
@@ -12,6 +14,8 @@
     "t-fab": "tdesign-miniprogram/fab/fab",
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-dialog": "tdesign-miniprogram/dialog/dialog",
-    "t-empty": "tdesign-miniprogram/empty/empty"
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "index-tab": "/components/index-tab/index-tab",
+    "custom-nav": "/components/custom-nav/custom-nav"
   }
 }

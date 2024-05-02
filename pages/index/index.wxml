@@ -1,35 +1,36 @@
-<view class="index-page">
+<view class="index-page" style="padding-top: {{top + 'px'}}">
   <view class="empty-tips" wx:if="{{observationsIsEmpty && !q.taxon_id}}">
     <t-button block theme="primary" bind:tap="onAddIconTap">上传记录</t-button>
     <view class="empty-tips__or">或者</view>
     <t-button block theme="primary" variant="outline" bind:tap="goToExplore">先随便逛逛</t-button>
   </view>
   <view wx:else>
-    <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
-      <view slot="middle">
-        <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
-          <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
-          <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
-        </view>
+    <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}">
+    </index-tab>
 
-        <view class="search-empty-tips" wx:if="{{observationsIsEmpty && q.taxon_id}}">
-          <t-empty icon="search" description="搜索结果为空，请尝试其他搜索条件" />
-        </view>
+    <view>
+      <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
+        <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
+        <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
       </view>
-      <t-tab-panel label="{{tab1Title}}" value="0">
-        <observation-list 
-        bind:scrolltolower="bindscrolltolower"
-        bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
-      </t-tab-panel>
-      <t-tab-panel label="{{tab2Title}}" value="1">
-        <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}"
-        bind:scrolltolower="bindscrolltolower"
-        >
-        </taxon-list>
-      </t-tab-panel>
-    </t-tabs>
-    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="52rpx" name="search" />
-    <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="52rpx" name="filter" />
+
+      <view class="search-empty-tips" wx:if="{{observationsIsEmpty && q.taxon_id}}">
+        <t-empty icon="search" description="搜索结果为空，请尝试其他搜索条件" />
+      </view>
+    </view>
+
+    <view wx:if="{{activeTab === 0}}">
+      <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
+    </view>
+    <view wx:if="{{activeTab === 1}}">
+      <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+    </view>
+
+    <view class="tab-right-wrapper" style="top: {{top + 'px'}}">
+      <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
+      <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.9)" name="filter" />
+    </view>
+
   </view>
   <t-fab icon="image-add" wx:if="{{!observationsIsEmpty}}" bind:click="onAddIconTap" aria-label="增加"></t-fab>
 </view>
