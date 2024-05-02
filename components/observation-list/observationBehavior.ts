@@ -5,7 +5,7 @@ const ObservationsBehavior = Behavior({
   behaviors: [computedBehavior],
   data: {
     observations: [],
-    observationsPageSize: 20,
+    observationsPageSize: 50,
     observationsPageIndex: 1,
     observationsTotal: 0,
     observationsIsEmpty: false,

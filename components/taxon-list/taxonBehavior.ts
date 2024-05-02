@@ -6,7 +6,7 @@ const TaxonBehavior = Behavior({
   behaviors: [computedBehavior],
   data: {
     taxon: [],
-    taxonPageSize: 20,
+    taxonPageSize: 50,
     taxonPageIndex: 1,
     taxonTotal: 0,
     taxonIsEmpty: false,
