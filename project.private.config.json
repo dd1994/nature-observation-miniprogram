@@ -3,7 +3,7 @@
   "projectname": "nature-observation-miniprogram",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false,
+    "urlCheck": true,
     "bigPackageSizeSupport": false,
     "autoAudits": true,
     "skylineRenderEnable": false
