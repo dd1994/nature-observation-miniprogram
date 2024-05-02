@@ -12,6 +12,7 @@ Page({
     user_id: null,
     userProfile: null,
     needLogin: false,
+    top: 0,
   },
   computed: {
     tab1Title(data) {
@@ -28,6 +29,12 @@ Page({
     this.getUserProfile()
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
+
+    const res = wx.getMenuButtonBoundingClientRect()
+    const top = res.bottom
+    this.setData({
+      top
+    })
   },
   bindscrolltolower() {
     if (this.data.activeTab === TabType.observations) {

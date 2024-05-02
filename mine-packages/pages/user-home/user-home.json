@@ -1,12 +1,15 @@
 {
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 1000,
+  "renderer": "skyline",
+  "navigationStyle": "custom",
   "usingComponents": {
     "t-avatar": "tdesign-miniprogram/avatar/avatar",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "observation-list": "/components/observation-list/observation-list",
     "taxon-list": "/components/taxon-list/taxon-list",
-    "t-link": "tdesign-miniprogram/link/link"
+    "t-link": "tdesign-miniprogram/link/link",
+    "index-tab": "/components/index-tab/index-tab"
   }
 }
