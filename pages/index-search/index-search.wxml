@@ -6,6 +6,6 @@
     <t-loading theme="spinner" size="48rpx" text="搜索中..." inheritColor />
   </view>
   <view class="observation-list-wrapper">
-    <observation-list bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{false}}"></observation-list>
+    <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{false}}"></observation-list>
   </view>
 </view>

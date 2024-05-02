@@ -19,7 +19,7 @@ Page({
     }
     this.resetAndFetchObservations()
   }, 2000),
-  onReachBottom() {
+  bindscrolltolower() {
     if (this.data.observationsAllLoaded) {
       return
     }
