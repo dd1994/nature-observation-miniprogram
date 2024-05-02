@@ -1,8 +1,6 @@
 {
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 1000,
-  "renderer": "skyline",
-  "navigationStyle": "custom",
   "usingComponents": {
     "t-avatar": "tdesign-miniprogram/avatar/avatar",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",

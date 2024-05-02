@@ -1,4 +1,4 @@
-<view class="user-home-container" style="padding-top: {{top + 'px'}}">
+<view class="user-home-container">
   <view class="user-home-header">
     <t-avatar bind:tap="previewUserAvatar" wx:if="{{userProfile.avatarUrl}}" shape="round" size="large" image="{{userProfile.avatarUrl}}" />
     <view class="user-home-header__right">
@@ -14,11 +14,13 @@
   <view>
     <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
     </index-tab>
-    <view wx:if="{{activeTab === 0}}">
-      <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
-    </view>
-    <view wx:if="{{activeTab === 1}}">
-      <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+    <view style="height: 90vh;">
+      <block wx:if="{{activeTab === 0}}">
+        <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
+      </block>
+      <block wx:if="{{activeTab === 1}}">
+        <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+      </block>
     </view>
     <!-- <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
       <t-tab-panel label="{{tab1Title}}" value="0">
