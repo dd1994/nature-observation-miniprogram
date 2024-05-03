@@ -62,7 +62,7 @@
     "skyline": {
       "defaultDisplayBlock": true,
       "disableABTest": true,
-      "sdkVersionBegin": "3.0.0",
+      "sdkVersionBegin": "2.31.1",
       "sdkVersionEnd": "15.255.255"
     }
   },

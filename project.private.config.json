@@ -6,6 +6,7 @@
     "urlCheck": true,
     "bigPackageSizeSupport": false,
     "autoAudits": true,
-    "skylineRenderEnable": false
-  }
+    "skylineRenderEnable": true
+  },
+  "libVersion": "3.0.2"
 }
