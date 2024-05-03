@@ -6,6 +6,7 @@ export const parseExifFromLocalImgUrl = (localUrl) => {
   // 两次 json 操作是为了格式化
   var exifInfo = JSON.parse(JSON.stringify(EXIF.handleBinaryFile(base64File)));
 
+  // iOS 上只有 DateTimeOriginal
   const time = exifInfo?.data?.DateTime || exifInfo?.data?.DateTimeOriginal
   let GPSInfo
   if (exifInfo?.data?.GPSLatitude) {
