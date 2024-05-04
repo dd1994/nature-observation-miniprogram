@@ -32,5 +32,5 @@
     <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
     <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.9)" name="filter" />
   </view>
-  <t-fab icon="image-add" wx:if="{{!observationsIsEmpty}}" bind:click="onAddIconTap" aria-label="增加"></t-fab>
+  <fab icon="add" wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap"></fab>
 </view>

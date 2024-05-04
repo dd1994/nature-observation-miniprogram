@@ -1,8 +1,8 @@
 {
   "usingComponents": {
-    "t-fab": "tdesign-miniprogram/fab/fab",
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-avatar": "tdesign-miniprogram/avatar/avatar",
-    "basic-count-card": "../../components/basic-count-card/basic-count-card"
+    "basic-count-card": "../../components/basic-count-card/basic-count-card",
+    "fab": "/components/fab/fab"
   }
 }

@@ -1,0 +1,20 @@
+.fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--td-primary-color-7);
+
+  border-radius: 50%;
+
+  position: fixed;
+
+  width: 110rpx;
+  height: 110rpx;
+
+  right: 30rpx;
+  bottom: 100rpx;
+
+  box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 5%),
+    0 8px 10px 1px rgba(0, 0, 0, 6%),
+    0 5px 5px -3px rgba(0, 0, 0, 10%);
+}

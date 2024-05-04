@@ -5,15 +5,11 @@
   "renderer": "skyline",
   "navigationStyle": "custom",
   "usingComponents": {
-    "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "observation-list": "/components/observation-list/observation-list",
     "taxon-list": "/components/taxon-list/taxon-list",
-    "t-tabs": "tdesign-miniprogram/tabs/tabs",
-    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
-    "t-fab": "tdesign-miniprogram/fab/fab",
     "t-empty": "tdesign-miniprogram/empty/empty",
     "index-tab": "/components/index-tab/index-tab",
-    "custom-nav": "/components/custom-nav/custom-nav"
+    "fab": "/components/fab/fab"
   }
 }
