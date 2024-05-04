@@ -300,10 +300,10 @@ function base64ToArrayBuffer(base64, contentType) {
 
 function handleBinaryFile(binFile) {
   var data = findEXIFinJPEG(binFile)
-  var iptcdata = findIPTCinJPEG(binFile);
+  // var iptcdata = findIPTCinJPEG(binFile);
   return {
     data: data,
-    iptcdata: iptcdata
+    // iptcdata: iptcdata
   }
 }
 
