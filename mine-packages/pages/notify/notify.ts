@@ -18,7 +18,12 @@ Page({
   fetchNotifyList() {
     fetchNotifyList().then((res: any) => {
       this.setData({
-        notifyList: res?.data || []
+        notifyList: (res?.data || []).map(i => {
+          return {
+            ...i,
+            created_at: moment(i.created_at).fromNow()
+          }
+        })
       })
     })
   }
