@@ -1,2 +1,7 @@
-<!--mine-packages/pages/notify/notify.wxml-->
-<text>mine-packages/pages/notify/notify.wxml</text>
+<view>
+  <view class="notify-list">
+    <view wx:for="{{notifyList}}" wx:key="id" class="notify-list__item">
+      <t-cell title="{{item.title}}" description="{{item.desc}}" align="top" image="https://tdesign.gtimg.com/mobile/demos/avatar1.png" hover bordered="{{false}}" />
+    </view>
+  </view>
+</view>
