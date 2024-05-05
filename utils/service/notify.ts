@@ -8,11 +8,10 @@ export function fetchNotifyCount() {
   })
 }
 
-export function fetchNotifyList(params) {
+export function fetchNotifyList() {
   return requestPromiseWithLogin({
     method: 'POST',
     url: apiDomain + '/api/v1/notify',
-    data: params
   })
 }
 
