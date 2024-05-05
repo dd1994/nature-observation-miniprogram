@@ -1,3 +1,10 @@
 .notify-list__item-read {
   opacity: 0.3;
 }
+
+.empty-notify {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

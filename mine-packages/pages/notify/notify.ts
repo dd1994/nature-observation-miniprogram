@@ -8,6 +8,7 @@ Page({
    */
   data: {
     notifyList: [],
+    allNotifyLoaded: false,
   },
   onShow() {
     this.fetchNotifyList()
@@ -18,6 +19,7 @@ Page({
   fetchNotifyList() {
     fetchNotifyList().then((res: any) => {
       this.setData({
+        allNotifyLoaded: true,
         notifyList: (res?.data || []).map(i => {
           return {
             ...i,

@@ -1,5 +1,8 @@
 <view>
-  <view class="notify-list">
+  <view class="empty-notify" wx:if="{{allNotifyLoaded && !notifyList.length}}">
+    <t-empty icon="mail" description="当他人帮助你鉴定时，会收到消息通知" />
+  </view>
+  <view wx:else class="notify-list">
     <view wx:for="{{notifyList}}" wx:key="id" class="notify-list__item {{item.read ? 'notify-list__item-read' : ''}}">
       <t-cell bind:click="viewNotify" title="{{item.title}}" data-item="{{item}}" description="{{item.desc}}" url="{{item.url}}" image="{{item.left_image}}" hover bordered="{{false}}">
         <view slot="description">

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "通知",
   "usingComponents": {
     "t-cell": "tdesign-miniprogram/cell/cell",
-    "t-avatar": "tdesign-miniprogram/avatar/avatar"
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-empty": "tdesign-miniprogram/empty/empty"
   }
 }
