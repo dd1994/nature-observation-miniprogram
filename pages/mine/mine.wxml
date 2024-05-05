@@ -1,5 +1,12 @@
 <view class="page-mine">
-  <view class="cell-group">
+  <t-navbar title="" t-class-title="nav-title">
+    <view slot="left">
+      <t-badge count="2" class="wrapper">
+        <t-icon name="mail" size="48rpx" color="rgab(0,0,0,0.9)" />
+      </t-badge>
+    </view>
+  </t-navbar>
+  <view>
     <t-cell bordered="{{false}}" title="{{displayName}}" bind:tap="gotoUserHome" hover arrow>
       <view class="avatar" slot="left-icon">
         <t-avatar wx:if="{{user.avatar}}" shape="round" size="large" image="{{user.avatarUrl}}" />

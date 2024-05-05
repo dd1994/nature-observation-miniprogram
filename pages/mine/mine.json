@@ -1,8 +1,12 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-avatar": "tdesign-miniprogram/avatar/avatar",
     "basic-count-card": "../../components/basic-count-card/basic-count-card",
-    "fab": "/components/fab/fab"
+    "fab": "/components/fab/fab",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-badge": "tdesign-miniprogram/badge/badge"
   }
 }
