@@ -1,5 +1,6 @@
 import FullscreenBehavior from "../../components/fullscreen/fullscreen";
 import { login } from "../../utils/service/login";
+import { fetchNotifyCount } from "../../utils/service/notify";
 import { getUserProfile, getUserStatCount } from "../../utils/service/user"
 import { isLogin, needFirstLogin } from "../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
@@ -11,6 +12,7 @@ Page({
     user: null,
     loginLoding: false,
     statCount: {},
+    unReadCount: 0,
   },
   computed: {
     displayName(data) {
@@ -93,6 +95,16 @@ Page({
           statCount: res.data.data
         })
       }
+    })
+
+    fetchNotifyCount().then((res: any) => {
+      this.setData({
+        unReadCount: res?.data?.data || 0
+      })
+    }).catch(() => {
+      this.setData({
+        unReadCount: 0
+      })
     })
   },
 
