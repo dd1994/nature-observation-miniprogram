@@ -1,7 +1,7 @@
 <view>
   <view class="notify-list">
     <view wx:for="{{notifyList}}" wx:key="id" class="notify-list__item {{item.read ? 'notify-list__item-read' : ''}}">
-      <t-cell title="{{item.title}}" description="{{item.desc}}" url="{{item.url}}" image="{{item.left_image}}" hover bordered="{{false}}">
+      <t-cell bind:click="viewNotify" data-item="{{item}}" title="{{item.title}}" description="{{item.desc}}" url="{{item.url}}" image="{{item.left_image}}" hover bordered="{{false}}">
         <t-avatar wx:if="{{item.right_image}}" slot="note" class="avatar-example" t-class-content="external-class-content" shape="round" image="{{item.right_image}}"></t-avatar>
       </t-cell>
     </view>

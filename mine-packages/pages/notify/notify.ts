@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { fetchNotifyList } from '../../../utils/service/notify'
+import { fetchNotifyList, readNotify } from '../../../utils/service/notify'
 moment.locale('zh-cn')
 
 Page({
@@ -11,6 +11,9 @@ Page({
   },
   onLoad() {
     this.fetchNotifyList()
+  },
+  viewNotify(e) {
+    readNotify(e.currentTarget.dataset.item.id)
   },
   fetchNotifyList() {
     fetchNotifyList().then((res: any) => {
