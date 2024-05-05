@@ -12,8 +12,6 @@ Page({
   onShow() {
     this.fetchNotifyList()
   },
-  onLoad() {
-  },
   viewNotify(e) {
     readNotify(e.currentTarget.dataset.item.id)
   },
