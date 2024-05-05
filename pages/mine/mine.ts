@@ -40,6 +40,11 @@ Page({
       wx.hideLoading()
     }
   },
+  viewNotify() {
+    wx.navigateTo({
+      url: '/mine-packages/pages/notify/notify'
+    })
+  },
   async onAddIconTap() {
     if (needFirstLogin()) {
       await login()

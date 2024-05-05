@@ -19,7 +19,8 @@
         "pages/profile-setting/profile-setting",
         "pages/stat/stat",
         "pages/ai-tools/ai-tools",
-        "pages/user-home/user-home"
+        "pages/user-home/user-home",
+        "pages/notify/notify"
       ]
     }
   ],
