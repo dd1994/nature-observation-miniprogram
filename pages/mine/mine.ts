@@ -88,8 +88,8 @@ Page({
     getUserStatCount().then(res => {
       // @ts-ignore
       if (res?.data?.success) {
-        // @ts-ignore
         this.setData({
+          // @ts-ignore
           statCount: res.data.data
         })
       }
