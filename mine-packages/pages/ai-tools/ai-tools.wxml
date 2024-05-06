@@ -21,4 +21,6 @@
     <view class="group-title">两爬识别</view>
     <t-cell title="懂两爬" bind:click="openDongliangpa" bordered="{{false}}" hover arrow image="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/5.png?x-oss-process=image/resize,p_20" />
   </view>
+
+  <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>
 </view>
