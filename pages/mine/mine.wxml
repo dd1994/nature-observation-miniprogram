@@ -1,6 +1,6 @@
 <view class="page-mine">
   <t-navbar title="" t-class-title="nav-title">
-    <view slot="left">
+    <view wx:if="{{user}}" slot="left">
       <t-badge count="{{unReadCount}}" bind:tap="viewNotify">
         <t-icon style="margin-left: 8rpx;" name="mail" size="48rpx" color="rgab(0,0,0,0.9)" />
       </t-badge>
