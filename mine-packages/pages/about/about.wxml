@@ -1,3 +1,11 @@
 <view>
+  <view style="display: flex;align-items: center;justify-content: center;">
+    <image mode="widthFix" style="width: 500rpx;" show-menu-by-longpress src="https://nature-observation-util-images.oss-cn-beijing.aliyuncs.com/group-qr-code.jpg"></image>
+  </view>
+  <view style="margin: 0 20px;font-weight: bold;">
+    👆🏻👆🏻👆🏻如果您有任何建议，欢迎长按二维码识别加入用户反馈群。
+  </view>
+  <br />
+  <br />
   <remote-rich-text url="about"></remote-rich-text>
 </view>
