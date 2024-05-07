@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    fabButton: {
+      icon: 'share-1',
+      theme: "light",
+      openType: 'share',
+    },
   },
 
   /**
