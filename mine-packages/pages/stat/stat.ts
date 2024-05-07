@@ -26,6 +26,11 @@ Page({
     statCount: {},
     locationCount: [],
     dateCount: 0,
+    fabButton: {
+      icon: 'share-1',
+      theme: "light",
+      openType: 'share',
+    },
     // ecCalendarChart: {
     //   lazyLoad: true,
     // }

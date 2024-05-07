@@ -11,7 +11,12 @@ Page({
     activeTab: TabType.observations,
     user_id: null,
     userProfile: null,
-    needLogin: false
+    needLogin: false,
+    fabButton: {
+      icon: 'share-1',
+      theme: "light",
+      openType: 'share',
+    },
   },
   computed: {
     tab1Title(data) {

@@ -8,6 +8,7 @@
     "observation-list": "/components/observation-list/observation-list",
     "taxon-list": "/components/taxon-list/taxon-list",
     "t-link": "tdesign-miniprogram/link/link",
-    "index-tab": "/components/index-tab/index-tab"
+    "index-tab": "/components/index-tab/index-tab",
+    "t-fab": "tdesign-miniprogram/fab/fab"
   }
 }

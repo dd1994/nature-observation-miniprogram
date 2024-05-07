@@ -63,6 +63,6 @@
     <!-- <view class="container">
       <ec-canvas id="echart-calendar-chart" canvas-id="echart-calendar-chart" ec="{{ ecCalendarChart }}"></ec-canvas>
     </view> -->
-
+    <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>
   </view>
 </view>

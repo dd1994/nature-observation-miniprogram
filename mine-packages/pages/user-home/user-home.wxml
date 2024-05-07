@@ -22,13 +22,6 @@
         <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
       </block>
     </view>
-    <!-- <t-tabs space-evenly="{{false}}" sticky stickyProps="{{stickyProps}}" split="{{false}}" swipeable="{{false}}" defaultValue="0" value="{{activeTab}}" bind:change="activeTabChange" t-class-item="custom-tabs" t-class-content="custom-tab-content">
-      <t-tab-panel label="{{tab1Title}}" value="0">
-        <observation-list bind:refresh="resetAndFetchObservations" bind:scrolltolower="bindscrolltolower" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
-      </t-tab-panel>
-      <t-tab-panel label="{{tab2Title}}" value="1">
-        <taxon-list taxon="{{taxon}}" bind:scrolltolower="bindscrolltolower" allLoaded="{{taxonAllLoaded}}"></taxon-list>
-      </t-tab-panel>
-    </t-tabs> -->
+    <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>
   </view>
 </view>
