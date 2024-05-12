@@ -1,6 +1,6 @@
-<view class="index-page" style="padding-top: {{top + 'px'}}">
+<view class="index-page" style="padding-top: {{tabTop + 'px'}}">
   <!-- skyline 不能使用 computed，非常难受。。。 -->
-  <index-tab tabs="{{[{value: 0, title: '记录' + '(' + observationsTotal + ')'}, {value: 1, title: '物种' + '(' + taxonTotal + ')'}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
+  <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}, {value: 2, title: '鉴定', num: taxonTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
   </index-tab>
   <view>
     <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
@@ -20,9 +20,9 @@
       <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
     </block>
   </view>
-  <view class="tab-right-wrapper" style="top: {{top + 'px'}}">
-    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
-    <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.9)" name="filter" />
+  <view class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
+    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.6)" name="search" />
+    <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.6)" name="filter" />
   </view>
   <fab icon="add" bind:tap="onAddIconTap" />
 </view>
