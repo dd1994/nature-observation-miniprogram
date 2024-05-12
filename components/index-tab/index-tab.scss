@@ -3,8 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 16px;
-  line-height: 1.5;
   margin-bottom: var(--spacer-mini);
 
   .tabs-header__item {
@@ -12,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: var(--spacer-mini) var(--td-spacer-1);
 
     .tabs-header__item__count {
       font-size: var(--td-font-size-xl);
