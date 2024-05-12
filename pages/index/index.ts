@@ -12,8 +12,10 @@ Page({
     activeTab: TabType.observations,
     needLogin: true,
     filterPanelVisible: false,
-    top: 0,
-    scollViewHeight: 0
+    tabTop: 0,
+    filterIconTop: 0,
+    filterIconHeight: 0,
+    scollViewHeight: 0,
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
@@ -56,12 +58,16 @@ Page({
 
     const res = wx.getMenuButtonBoundingClientRect()
     const windowInfo = wx.getWindowInfo()
-    const top = res.bottom
+    const tabTop = res.bottom
+    const filterIconTop = res.top
+    const filterIconHeight = res.height
 
     // 必须要给 scoll-view 一个固定高度
     this.setData({
-      top,
-      scollViewHeight: windowInfo.windowHeight - top - 46
+      tabTop,
+      filterIconTop,
+      filterIconHeight,
+      scollViewHeight: windowInfo.windowHeight - tabTop - 46
     })
   },
   onShow() {
