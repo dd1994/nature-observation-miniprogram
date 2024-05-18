@@ -15,8 +15,6 @@
     </t-cell>
   </view>
 
-  <basic-count-card wx:if="{{user}}" statCount="{{statCount}}" userId="{{user.id}}" />
-
   <view class="cell-group">
     <t-cell t-class="taxon-cell" bordered="{{false}}" title="识别工具" url="/mine-packages/pages/ai-tools/ai-tools" hover arrow leftIcon="bookmark" />
     <!-- <t-cell t-class="taxon-cell" bordered="{{false}}" title="物种查询" url="/pages/taxon-picker/taxon-picker?hidePicker=1" hover arrow leftIcon="search" /> -->
