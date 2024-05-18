@@ -108,11 +108,15 @@ Page({
     }
   },
   refresh() {
-    this.resetAndFetchTaxon()
-    this.resetAndFetchObservations().finally(() => {
-      wx.stopPullDownRefresh()
-    })
-    this.resetAndFetchIndexId()
+    if (this.data.activeTab === TabType.observations) {
+      this.resetAndFetchObservations().finally(() => {
+        wx.stopPullDownRefresh()
+      })
+    } else if (this.data.activeTab === TabType.taxon) {
+      this.resetAndFetchTaxon()
+    } else {
+      this.resetAndFetchIndexId()
+    }
   },
   gotoIndexFilter() {
     wx.navigateTo({

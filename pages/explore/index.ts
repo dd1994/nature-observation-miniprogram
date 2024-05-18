@@ -92,10 +92,13 @@ Page({
     }
   },
   refresh() {
-    this.resetAndFetchTaxon()
-    this.resetAndFetchObservations().finally(() => {
-      wx.stopPullDownRefresh()
-    })
+    if (this.data.activeTab === TabType.observations) {
+      this.resetAndFetchObservations().finally(() => {
+        wx.stopPullDownRefresh()
+      })
+    } else {
+      this.resetAndFetchTaxon()
+    }
   },
 
   gotoIndexFilter() {
