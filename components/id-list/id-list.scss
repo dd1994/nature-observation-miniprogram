@@ -1,0 +1,38 @@
+.taxon-list {
+  background-color: #ffffff;
+}
+
+.taxon-list-tips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--td-font-size-s);
+  color: var(--td-font-gray-2);
+  margin: var(--td-spacer-1) var(--td-spacer-2);
+}
+
+.taxon-item-wrapper {
+  .taxon-rank {
+    // font-weight: bolder;
+    font-size: var(--td-font-size-xl);
+    color: var(--td-font-gray-3);
+  }
+
+  &:first-child {
+    .taxon-rank {
+      color: var(--td-error-color-6);
+    }
+  }
+
+  &:nth-child(2) {
+    .taxon-rank {
+      color: var(--td-warning-color-5);
+    }
+  }
+
+  &:nth-child(3) {
+    .taxon-rank {
+      color: var(--td-warning-color-3);
+    }
+  }
+}

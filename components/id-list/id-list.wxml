@@ -1,0 +1,14 @@
+<scroll-view bindscrolltolower="bindscrolltolower" scroll-y type="custom" lower-threshold="{{1000}}" style="width: 100%; height: 100%;" type="custom" class="taxon-list">
+  <view wx:if="{{ids.length}}" class="taxon-list-tips">
+    <view>
+      鉴定物种
+    </view>
+    <view>鉴定次数</view>
+  </view>
+  <view wx:key="scientific_name" class="taxon-item-wrapper" wx:for="{{ids}}">
+    <taxon-cell taxon="{{item}}">
+      <view class="taxon-rank">{{item.count}}</view>
+    </taxon-cell>
+  </view>
+  <list-footer allLoaded="{{allLoaded && (ids.length > 20)}}"></list-footer>
+</scroll-view>

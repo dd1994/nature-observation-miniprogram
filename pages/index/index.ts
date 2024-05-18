@@ -1,3 +1,4 @@
+import IdBehavior from '../../components/id-list/idBehavior';
 import ObservationsBehavior from '../../components/observation-list/observationBehavior';
 import TaxonBehavior from '../../components/taxon-list/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
@@ -7,7 +8,7 @@ import { TabType } from './constant';
 const computedBehavior = require('miniprogram-computed').behavior;
 const app = getApp()
 Page({
-  behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior],
+  behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior, IdBehavior],
   data: {
     activeTab: TabType.observations,
     needLogin: true,
@@ -55,6 +56,7 @@ Page({
   onLoad() {
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
+    this.resetAndFetchIndexId()
 
     const res = wx.getMenuButtonBoundingClientRect()
     const windowInfo = wx.getWindowInfo()
@@ -74,6 +76,7 @@ Page({
     if (app.globalData.indexPageNeedRefresh) {
       this.resetAndFetchObservations()
       this.resetAndFetchTaxon()
+      this.resetAndFetchIndexId()
       app.globalData.indexPageNeedRefresh = false
     }
   },
@@ -86,7 +89,7 @@ Page({
         observationsPageIndex: this.data.observationsPageIndex + 1
       })
       this.fetchObservationList()
-    } else {
+    } else if (this.data.activeTab === TabType.taxon) {
       if (this.data.taxonAllLoaded) {
         return
       }
@@ -94,6 +97,14 @@ Page({
         taxonPageIndex: this.data.taxonPageIndex + 1
       })
       this.fetchTaxonList()
+    } else {
+      if (this.data.idAllLoaded) {
+        return
+      }
+      this.setData({
+        idPageIndex: this.data.idPageIndex + 1
+      })
+      this.fetchIndexIdList()
     }
   },
   refresh() {
@@ -101,6 +112,7 @@ Page({
     this.resetAndFetchObservations().finally(() => {
       wx.stopPullDownRefresh()
     })
+    this.resetAndFetchIndexId()
   },
   gotoIndexFilter() {
     wx.navigateTo({
@@ -124,6 +136,7 @@ Page({
           })
           this.resetAndFetchObservations()
           this.resetAndFetchTaxon()
+          this.resetAndFetchIndexId()
         }
       }
     })
@@ -142,6 +155,7 @@ Page({
     })
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
+    this.resetAndFetchIndexId()
   },
   openFilterPanel() {
     wx.navigateTo({
