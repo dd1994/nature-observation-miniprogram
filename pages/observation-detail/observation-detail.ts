@@ -2,6 +2,8 @@ import { openTaxonDetail } from "../../utils/openTaxonDetail";
 import { fetchIdentificationList } from "../../utils/service/identifications";
 import { fetchObservationDetail } from "../../utils/service/observations"
 import { showErrorTips, showSuccessTips } from "../../utils/feedBack"
+import _ from 'lodash';
+
 
 const computedBehavior = require('miniprogram-computed').behavior;
 import { createIdentification } from '../../utils/service/identifications'
@@ -27,6 +29,9 @@ Page({
     },
   },
   computed: {
+    taxonInfo(data) {
+      return _.pick(data.observationDetail, 'scientific_name', 'taxon_rank', 'iconic_taxon_name', 'taxon_id', 'common_name')
+    },
     photos(data) {
       return (data.observationDetail?.photos || []).map(i => i.url)
     },

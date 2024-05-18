@@ -1,5 +1,11 @@
 <view>
-  <t-cell bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow t-class="taxon-name-cell">
+  <block wx:if="{{taxon.photos}}">
+    <t-cell bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow image="{{taxon.photos}}" t-class="taxon-name-cell">
+      <slot slot="note"></slot>
+      <view class="taxon-name-cell__description" slot="description">{{taxon.scientific_name}}</view>
+    </t-cell>
+  </block>
+  <t-cell wx:else bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow t-class="taxon-name-cell">
     <slot slot="note"></slot>
     <view class="taxon-name-cell__description" slot="description">{{taxon.scientific_name}}</view>
   </t-cell>

@@ -7,7 +7,7 @@
   </view>
   <!-- <observation-detail-topbar userProfile="{{userProfile}}" observedOn="{{observationDetail.observed_on}}" /> -->
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" loop="{{true}}" list="{{swiperList}}" height="{{'560rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
-  <taxon-cell taxon="{{observationDetail}}"></taxon-cell>
+  <taxon-cell taxon="{{taxonInfo}}"></taxon-cell>
   <t-tabs split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs">
     <t-tab-panel label="信息" value="0">
       <view wx:if="{{description}}" class="observation-desc">
