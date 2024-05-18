@@ -2,15 +2,6 @@
   background-color: #ffffff;
 }
 
-.taxon-list-tips {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: var(--td-font-size-s);
-  color: var(--td-font-gray-2);
-  margin: var(--td-spacer-1) var(--td-spacer-2);
-}
-
 .taxon-item-wrapper {
   .taxon-rank {
     // font-weight: bolder;
