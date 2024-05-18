@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "taxon-cell": "../taxon-cell/taxon-cell",
-    "list-footer": "../list-footer/list-footer"
+    "list-footer": "../list-footer/list-footer",
+    "t-empty": "tdesign-miniprogram/empty/empty"
   }
 }
