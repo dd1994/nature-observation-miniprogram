@@ -29,8 +29,8 @@
     </view>
   </view>
   <view class="tab-right-wrapper" wx:if="{{!observationsIsEmpty}}" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
-    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.6)" name="search" />
-    <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.6)" name="filter" />
+    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
+    <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.9)" name="filter-1" />
   </view>
   <fab icon="add" wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap"></fab>
 </view>
