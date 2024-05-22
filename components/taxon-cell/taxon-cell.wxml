@@ -1,6 +1,8 @@
 <view>
-  <t-cell wx:if="{{taxon.photos}}" bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow image="{{taxon.photos + '?x-oss-process=image/resize,p_20/format,webp'}}" t-class="taxon-name-cell">
+  <t-cell wx:if="{{taxon.photos}}" bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow t-class="taxon-name-cell">
     <slot slot="note"></slot>
+    <t-avatar slot="left-icon" class="avatar-example" t-class-content="external-class-content" shape="round" image="{{taxon.photos + '?x-oss-process=image/resize,p_10/format,webp'}}"></t-avatar>
+
     <view class="taxon-name-cell__description" slot="description">{{taxon.scientific_name}}</view>
   </t-cell>
   <t-cell wx:else bordered="{{false}}" bind:click="openTaxonDetail" title="{{taxon.common_name}}" hover arrow t-class="taxon-name-cell">
