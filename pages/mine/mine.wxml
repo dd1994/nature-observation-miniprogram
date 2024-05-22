@@ -2,7 +2,9 @@
   <t-navbar title="" t-class-title="nav-title">
     <view wx:if="{{user}}" slot="left">
       <t-badge count="{{unReadCount}}" bind:tap="viewNotify">
-        <t-icon style="margin-left:   8rpx;" name="mail" size="48rpx" color="rgba(0,0,0,0.9)" />
+        <view hover-class="common-hover-class">
+          <t-icon style="margin-left: 8rpx;" name="mail" size="48rpx" color="rgba(0,0,0,0.9)" />
+        </view>
       </t-badge>
     </view>
   </t-navbar>
