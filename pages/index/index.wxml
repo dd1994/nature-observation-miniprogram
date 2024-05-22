@@ -32,8 +32,14 @@
     </view>
   </view>
   <view class="tab-right-wrapper" wx:if="{{!observationsIsEmpty}}" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
-    <t-icon bind:click="gotoIndexSearch" class="search-icon" size="24px" color="rgba(0,0,0,0.9)" name="search" />
-    <t-icon bind:click="gotoIndexFilter" class="filter-icon" size="24px" color="rgba(0,0,0,0.9)" name="filter-1" />
+    <view hover-class="common-hover-class" class="search-icon">
+      <t-icon bind:click="gotoIndexSearch" size="24px" color="rgba(0,0,0,0.9)" name="search" />
+    </view>
+
+    <view hover-class="common-hover-class" class="filter-icon">
+      <t-icon bind:click="gotoIndexFilter" size="24px" color="rgba(0,0,0,0.9)" name="filter-1" />
+    </view>
+
   </view>
   <fab icon="add" wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap"></fab>
 </view>
