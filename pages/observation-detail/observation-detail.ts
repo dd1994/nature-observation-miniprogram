@@ -105,7 +105,7 @@ Page({
     const index = e.detail.index
     wx.previewImage({
       urls: this.data.photos,
-      showmenu: true, //this.data.isOwner,
+      showmenu: this.data.isOwner,
       current: this.data.photos[index],
     })
   },
