@@ -212,30 +212,6 @@ Page({
       // 编辑状态
       this.setData({ id: options.id })
       this.fetchObservationDetail()
-    } else {
-      // 为 iOS 用户获取观察位置缓存
-      try {
-        const deviceInfo = wx.getDeviceInfo()
-        console.log('deviceInfo', deviceInfo.platform)
-        if (!deviceInfo.platform.toLowerCase().includes('ios')) {
-          return
-        }
-
-        wx.getStorage({ key: locationExpirationKey })
-          .then(res => {
-            if (Date.now() < res.data) {
-              wx.getStorage({ key: locationKey })
-                .then(res2 => {
-                  if (res2.data) {
-                    this.setData({
-                      location: res2.data
-                    })
-                  }
-                })
-            }
-          })
-      } catch (error) {
-      }
     }
 
     if (options.files) {
@@ -257,6 +233,32 @@ Page({
       this.setData({
         noticeBarVisible: true
       })
+    }
+
+    if (!options.id) {
+      // 为 iOS 用户获取观察位置缓存
+      try {
+        const deviceInfo = wx.getDeviceInfo()
+        if (!deviceInfo.platform.toLowerCase().includes('ios')) {
+          return
+        }
+
+        wx.getStorage({ key: locationExpirationKey })
+          .then(res => {
+            if (Date.now() < res.data) {
+              wx.getStorage({ key: locationKey })
+                .then(res2 => {
+                  if (res2.data) {
+                    this.setData({
+                      location: res2.data
+                    })
+                  }
+                })
+            }
+          })
+      } catch (error) {
+        console.error(error)
+      }
     }
   },
   fetchObservationDetail() {
