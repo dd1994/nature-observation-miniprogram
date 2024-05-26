@@ -214,17 +214,28 @@ Page({
       this.fetchObservationDetail()
     } else {
       // 为 iOS 用户获取观察位置缓存
-      wx.getStorage({ key: locationExpirationKey })
-        .then(res => {
-          if (Date.now() < res.data) {
-            wx.getStorage({ key: locationKey })
-              .then(res2 => {
-                this.setData({
-                  location: res2.data
+      try {
+        const deviceInfo = wx.getDeviceInfo()
+        console.log('deviceInfo', deviceInfo.platform)
+        if (!deviceInfo.platform.toLowerCase().includes('ios')) {
+          return
+        }
+
+        wx.getStorage({ key: locationExpirationKey })
+          .then(res => {
+            if (Date.now() < res.data) {
+              wx.getStorage({ key: locationKey })
+                .then(res2 => {
+                  if (res2.data) {
+                    this.setData({
+                      location: res2.data
+                    })
+                  }
                 })
-              })
-          }
-        })
+            }
+          })
+      } catch (error) {
+      }
     }
 
     if (options.files) {
