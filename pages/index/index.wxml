@@ -1,5 +1,9 @@
 <view class="index-page" style="padding-top: {{tabTop + 'px'}}">
   <view class="empty-tips" wx:if="{{observationsIsEmpty && !q.taxon_id}}">
+    <view class="slogan">
+      <view>记录身边物种</view>
+      <view>参与公民科学</view>
+    </view>
     <button class="empty-tips__btn" type="primary" bind:tap="onAddIconTap">上传已有照片</button>
     <view class="empty-tips__or">或者</view>
     <button class="empty-tips__btn" type="primary" plain="true" bind:tap="goToExplore">先随便逛逛</button>

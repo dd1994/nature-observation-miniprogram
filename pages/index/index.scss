@@ -2,18 +2,25 @@
 
 .empty-tips {
   height: 100vh;
-  margin: 0 150rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .slogan {
+    font-size: var(--td-font-size-xxl);
+    margin-bottom: var(--td-spacer-6);
+    color: var(--td-font-gray-1);
+    font-style: italic;
+  }
 }
 
 .empty-tips__or {
-  margin: var(--td-spacer-1) 0;
+  margin: var(--td-spacer) 0;
+  font-size: var(--td-font-size-s);
   color: var(--td-font-gray-3);
 }
 
 .empty-tips__btn {
-  width: 100% !important;
+  width: 350rpx !important;
 }
