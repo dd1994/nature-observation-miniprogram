@@ -4,12 +4,16 @@ const UUID = require("pure-uuid")
 const computedBehavior = require('miniprogram-computed').behavior;
 import { fetchAdressByGPS, translateGPS } from '../../utils/service/map'
 import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
-import moment from 'moment'
+import moment, { defineLocale } from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips, showSuccessTips } from '../../utils/feedBack';
 import { generateDataFromRes, generateSaveParamsFromData, mapFileList } from './util';
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 import uploadOSS from '../../utils/service/uploadOSS';
+
+const locationExpirationKey = 'location_expiration'
+const locationKey = 'location'
+
 const app = getApp()
 Page({
   behaviors: [computedBehavior],
@@ -64,12 +68,26 @@ Page({
           lng: location?.longitude,
         }).then(() => {
           const locationDetail = location.address ? `(${location.address})` : ''
+          const locationData = {
+            ...this.data.location,
+            recommend_address_name: location?.name + locationDetail,
+          }
           this.setData({
-            location: {
-              ...this.data.location,
-              recommend_address_name: location?.name + locationDetail,
-            }
+            location: locationData
           })
+
+          if (!this.data.isEdit) {
+            var expiration = Date.now() + 3 * 60 * 60 * 1000; // 为 iOS 用户设置观察位置缓存 3 小时
+            wx.setStorage({
+              key: locationExpirationKey,
+              data: expiration,
+            });
+
+            wx.setStorage({
+              key: locationKey,
+              data: locationData,
+            })
+          }
         })
       }
     })
@@ -185,6 +203,7 @@ Page({
     this.setData({ captive_cultivated: !this.data.captive_cultivated })
   },
   onShow() {
+
   },
   onUnload() {
   },
@@ -193,6 +212,19 @@ Page({
       // 编辑状态
       this.setData({ id: options.id })
       this.fetchObservationDetail()
+    } else {
+      // 为 iOS 用户获取观察位置缓存
+      wx.getStorage({ key: locationExpirationKey })
+        .then(res => {
+          if (Date.now() < res.data) {
+            wx.getStorage({ key: locationKey })
+              .then(res2 => {
+                this.setData({
+                  location: res2.data
+                })
+              })
+          }
+        })
     }
 
     if (options.files) {
