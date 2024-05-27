@@ -71,6 +71,17 @@
         </view>
       </view>
 
+      <view wx:if="{{location.latitude}}" class="create-form-item-wrapper">
+        <view class="create-form-item-icon-wrapper">
+          <t-icon name="location-setting" size="20px" />
+        </view>
+        <view class="create-form-item-content">
+          <view bind:tap="toggleAddressHidden" class="create-form-item-content__artificial-label">
+            对他人隐藏详细位置
+          </view>
+          <t-checkbox t-class-icon="artificial-checkbox-icon" size="small" checked="{{address_hidden}}" bind:change="addressHiddenChange" />
+        </view>
+      </view>
     </view>
   </view>
 

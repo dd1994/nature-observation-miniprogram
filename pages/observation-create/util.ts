@@ -5,7 +5,8 @@ export const generateSaveParamsFromData = (data: any) => {
   const basicInfo = {
     description: data.description,
     observed_on: moment(data.observedOn, defaultTimeFormat).format('x'),
-    captive_cultivated: data.captive_cultivated
+    captive_cultivated: data.captive_cultivated,
+    address_hidden: data.address_hidden,
   }
   const taxonInfo = {
     common_name: data.taxon.preferred_common_name,
@@ -48,6 +49,7 @@ export const generateDataFromRes = (res) => {
     description: res.description,
     observedOn: moment(res.observed_on).format(defaultTimeFormat),
     "captive_cultivated": !!res.captive_cultivated,
+    address_hidden: !!res.address_hidden,
     location: {
       "latitude": res.latitude,
       "longitude": res.longitude,

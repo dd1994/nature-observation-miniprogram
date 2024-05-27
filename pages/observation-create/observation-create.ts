@@ -24,6 +24,7 @@ Page({
     observedOn: moment().format(defaultTimeFormat), // 观察时间
     location: null, // 观察地址信息
     captive_cultivated: false, // 是否人工圈养或栽培
+    address_hidden: false,
     taxon: null, // 观察物种
     originTaxonName: null, // 用来保存从服务端获取的物种，编辑时会用到，如果修改了，会生成一条新的鉴定记录
     notSelectedTaxonTips: false,
@@ -202,10 +203,11 @@ Page({
   toggleCaptiveCultivated() {
     this.setData({ captive_cultivated: !this.data.captive_cultivated })
   },
-  onShow() {
-
+  addressHiddenChange(e) {
+    this.setData({ address_hidden: e.detail.checked })
   },
-  onUnload() {
+  toggleAddressHidden() {
+    this.setData({ address_hidden: !this.data.address_hidden })
   },
   onLoad(options) {
     if (options.id) {
