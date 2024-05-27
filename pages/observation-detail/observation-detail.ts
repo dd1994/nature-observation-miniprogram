@@ -58,7 +58,11 @@ Page({
       return data.observationDetail?.common_name
     },
     recommend_address_name(data) {
-      return data.observationDetail?.recommend_address_name
+      if (data.observationDetail?.address_hidden) {
+        return (data.observationDetail?.city || '') + (data.observationDetail?.district || '')
+      } else {
+        return data.observationDetail?.recommend_address_name
+      }
     },
     description(data) {
       return data.observationDetail?.description

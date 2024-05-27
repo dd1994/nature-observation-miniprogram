@@ -17,7 +17,16 @@
         </view>
         <text selectable>{{description}}</text>
       </view>
-      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name}}" hover arrow bind:click="openMap">
+      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name && !observationDetail.address_hidden}}" hover arrow bind:click="openMap">
+        <view slot="title" style="display: flex; align-items: center;">
+          <t-icon name="location" style="margin-right: 4px;" /> 观察位置
+        </view>
+        <view class="observation-location-name" slot="description">
+          {{recommend_address_name}}
+        </view>
+      </t-cell>
+
+      <t-cell bordered="{{false}}" wx:if="{{recommend_address_name && observationDetail.address_hidden}}">
         <view slot="title" style="display: flex; align-items: center;">
           <t-icon name="location" style="margin-right: 4px;" /> 观察位置
         </view>
