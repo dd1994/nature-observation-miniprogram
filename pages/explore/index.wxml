@@ -4,7 +4,7 @@
   </index-tab>
   <view>
     <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
-      <text selectable>{{q.taxon_preferred_common_name}} {{q.taxon_name}}</text>
+      <text selectable>{{q.taxon_preferred_common_name || q.taxon_name}}</text>
       <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
     </view>
 
