@@ -9,7 +9,7 @@
     <button class="empty-tips__btn" type="primary" plain="true" bind:tap="goToExplore">先随便逛逛</button>
   </view>
   <view wx:else>
-    <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}, {value: 2, title: '鉴定记录', num: idTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
+    <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}, {value: 2, title: '鉴定', num: idTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
     </index-tab>
 
     <view>
