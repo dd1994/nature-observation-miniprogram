@@ -7,7 +7,13 @@ Component({
       value: {}
     },
     url: {
+      // 如果配置了 url 直接跳转到 url
       type: String
+    },
+    defaultOpenTaxon: {
+      // 是否默认跳转到物种详情页
+      type: Boolean,
+      value: true,
     }
   },
   data: {
@@ -16,9 +22,11 @@ Component({
   methods: {
     openTaxonDetail() {
       if (this.data.url) {
-        wx.navigateTo({
+        return wx.navigateTo({
           url: this.data.url
         })
+      } else if (!this.data.defaultOpenTaxon) {
+        return
       } else {
         openTaxonDetail({
           name: this.data.taxon.scientific_name,
