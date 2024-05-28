@@ -54,9 +54,7 @@ Page({
     })
   },
   onLoad() {
-    this.resetAndFetchObservations()
-    this.resetAndFetchTaxon()
-    this.resetAndFetchIndexId()
+    this.resetAllTabAndFetch()
 
     const res = wx.getMenuButtonBoundingClientRect()
     const windowInfo = wx.getWindowInfo()
@@ -74,9 +72,7 @@ Page({
   },
   onShow() {
     if (app.globalData.indexPageNeedRefresh) {
-      this.resetAndFetchObservations()
-      this.resetAndFetchTaxon()
-      this.resetAndFetchIndexId()
+      this.resetAllTabAndFetch()
       app.globalData.indexPageNeedRefresh = false
     }
   },
@@ -118,6 +114,18 @@ Page({
       this.resetAndFetchIndexId()
     }
   },
+  applyTaxonFilter(e) {
+    const { taxon } = e.detail
+    this.setData({
+      q: {
+        taxon_id: taxon?.taxon_id,
+        taxon_preferred_common_name: taxon?.common_name || taxon?.scientific_name,
+        taxon_name: taxon?.scientific_name,
+      }
+    })
+    this.setData({ activeTab: TabType.observations })
+    this.resetAllTabAndFetch()
+  },
   gotoIndexFilter() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -138,15 +146,18 @@ Page({
               taxon_name: taxon?.name,
             }
           })
-          this.resetAndFetchObservations()
-          this.resetAndFetchTaxon()
-          this.resetAndFetchIndexId()
+          this.resetAllTabAndFetch()
         }
       }
     })
     // wx.navigateTo({
     //   url: "/pages/index-search/index-search?needLogin=true"
     // })
+  },
+  resetAllTabAndFetch() {
+    this.resetAndFetchObservations()
+    this.resetAndFetchTaxon()
+    this.resetAndFetchIndexId()
   },
   gotoIndexSearch() {
     wx.navigateTo({
@@ -157,9 +168,7 @@ Page({
     this.setData({
       q: {}
     })
-    this.resetAndFetchObservations()
-    this.resetAndFetchTaxon()
-    this.resetAndFetchIndexId()
+    this.resetAllTabAndFetch()
   },
   openFilterPanel() {
     wx.navigateTo({
