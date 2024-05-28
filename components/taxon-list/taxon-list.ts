@@ -29,6 +29,9 @@ Component({
   methods: {
     bindscrolltolower() {
       this.triggerEvent('scrolltolower')
+    },
+    applyTaxonFilter(e) {
+      this.triggerEvent('applyTaxonFilter',e.currentTarget.dataset)
     }
   }
 })

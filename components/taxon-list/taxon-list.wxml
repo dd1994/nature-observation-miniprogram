@@ -6,7 +6,7 @@
     <view>记录次数</view>
   </view>
   <view wx:key="scientific_name" class="taxon-item-wrapper" wx:for="{{taxon}}">
-    <taxon-cell taxon="{{item}}" defaultOpenTaxon="{{false}}">
+    <taxon-cell bind:tap="applyTaxonFilter" data-taxon="{{item}}" taxon="{{item}}" defaultOpenTaxon="{{false}}">
       <view class="taxon-rank">{{item.observation_count}}</view>
     </taxon-cell>
   </view>

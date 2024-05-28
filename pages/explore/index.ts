@@ -49,8 +49,7 @@ Page({
     }
   },
   onLoad() {
-    this.resetAndFetchObservations()
-    this.resetAndFetchTaxon()
+    this.resetAllTabAndFetch()
     const res = wx.getMenuButtonBoundingClientRect()
     const windowInfo = wx.getWindowInfo()
     const tabTop = res.bottom
@@ -86,8 +85,7 @@ Page({
   },
   onShow() {
     if (app.globalData.explorePageNeedRefresh) {
-      this.resetAndFetchObservations()
-      this.resetAndFetchTaxon()
+      this.resetAllTabAndFetch()
       app.globalData.explorePageNeedRefresh = false
     }
   },
@@ -100,7 +98,18 @@ Page({
       this.resetAndFetchTaxon()
     }
   },
-
+  applyTaxonFilter(e) {
+    const { taxon } = e.detail
+    this.setData({
+      q: {
+        taxon_id: taxon?.taxon_id,
+        taxon_preferred_common_name: taxon?.common_name || taxon?.scientific_name,
+        taxon_name: taxon?.scientific_name,
+      }
+    })
+    this.setData({ activeTab: TabType.observations })
+    this.resetAllTabAndFetch()
+  },
   gotoIndexFilter() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -136,6 +145,9 @@ Page({
     this.setData({
       q: {}
     })
+    this.resetAllTabAndFetch()
+  },
+  resetAllTabAndFetch() {
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
   },
