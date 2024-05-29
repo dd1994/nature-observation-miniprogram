@@ -105,15 +105,6 @@ Page({
         common_name: taxon?.common_name || taxon?.scientific_name,
       })
     })
-    // this.setData({
-    //   q: {
-    //     taxon_id: taxon?.taxon_id,
-    //     taxon_preferred_common_name: taxon?.common_name || taxon?.scientific_name,
-    //     taxon_name: taxon?.scientific_name,
-    //   }
-    // })
-    // this.setData({ activeTab: TabType.observations })
-    // this.resetAllTabAndFetch()
   },
   gotoIndexFilter() {
     wx.navigateTo({
