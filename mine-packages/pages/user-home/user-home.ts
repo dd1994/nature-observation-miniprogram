@@ -1,6 +1,7 @@
 import ObservationsBehavior from "../../../components/observation-list/observationBehavior"
 import TaxonBehavior from "../../../components/taxon-list/taxonBehavior"
 import { TabType } from "../../../pages/index/constant";
+import { openTaxonDetail } from "../../../utils/openTaxonDetail";
 import { getUserProfileWithOutLogin } from "../../../utils/service/user"
 import { trimUrlParams } from "../../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
@@ -52,6 +53,15 @@ Page({
       })
       this.fetchTaxonList()
     }
+  },
+  applyTaxonFilter(e) {
+    const { taxon } = e.detail
+    openTaxonDetail({
+      name: taxon.scientific_name,
+      rank: taxon.taxon_rank,
+      iconic_taxon_name: taxon.iconic_taxon_name,
+      id: taxon.taxon_id
+    })
   },
   refresh() {
     this.resetAndFetchTaxon()

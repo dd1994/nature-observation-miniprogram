@@ -19,7 +19,7 @@
         <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </block>
       <block wx:if="{{activeTab === 1}}">
-        <taxon-list taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+        <taxon-list bind:applyTaxonFilter="applyTaxonFilter"  taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
       </block>
     </view>
     <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>
