@@ -1,6 +1,6 @@
 <view class="page-container">
   <view class="search-input-wrapper">
-    <t-search focus value="{{inputWords}}" placeholder="搜索记录过的物种名" bind:change="searchWords" />
+    <t-search focus="{{autoFocus}}" value="{{inputWords}}" placeholder="搜索记录过的物种名" bind:change="searchWords" />
   </view>
   <view wx:if="{{observationsIsLoading && !observations.length}}" class="loading-wrapper">
     <t-loading theme="spinner" size="48rpx" text="搜索中..." inheritColor />

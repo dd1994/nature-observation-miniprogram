@@ -2,7 +2,7 @@ import ObservationsBehavior from '../../components/observation-list/observationB
 import TaxonBehavior from '../../components/taxon-list/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
-import { needFirstLogin } from '../../utils/util';
+import { generateUrlWithParams, needFirstLogin } from '../../utils/util';
 import { TabType } from './../index/constant';
 const app = getApp()
 
@@ -100,15 +100,20 @@ Page({
   },
   applyTaxonFilter(e) {
     const { taxon } = e.detail
-    this.setData({
-      q: {
-        taxon_id: taxon?.taxon_id,
-        taxon_preferred_common_name: taxon?.common_name || taxon?.scientific_name,
-        taxon_name: taxon?.scientific_name,
-      }
+    wx.navigateTo({
+      url: generateUrlWithParams("/pages/index-search/index-search", {
+        common_name: taxon?.common_name || taxon?.scientific_name,
+      })
     })
-    this.setData({ activeTab: TabType.observations })
-    this.resetAllTabAndFetch()
+    // this.setData({
+    //   q: {
+    //     taxon_id: taxon?.taxon_id,
+    //     taxon_preferred_common_name: taxon?.common_name || taxon?.scientific_name,
+    //     taxon_name: taxon?.scientific_name,
+    //   }
+    // })
+    // this.setData({ activeTab: TabType.observations })
+    // this.resetAllTabAndFetch()
   },
   gotoIndexFilter() {
     wx.navigateTo({

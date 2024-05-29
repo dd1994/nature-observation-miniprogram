@@ -7,6 +7,7 @@ Page({
   data: {
     inputWords: '',
     needLogin: false,
+    autoFocus: true,
   },
   searchWords: _.throttle(function (e) {
     // 请求接口
@@ -33,6 +34,15 @@ Page({
       this.setData({
         needLogin: true
       })
+    }
+
+    if (options.common_name) {
+      this.setData({
+        autoFocus: false,
+        inputWords: decodeURIComponent(options.common_name),
+        q: { common_name: decodeURIComponent(options.common_name) }
+      })
+      this.fetchObservationList()
     }
   }
 })
