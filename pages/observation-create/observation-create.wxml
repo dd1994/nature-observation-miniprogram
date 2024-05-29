@@ -86,11 +86,13 @@
   </view>
 
 
-  <view class="create-form-save-button">
-    <t-button loading="{{isSaving}}" bind:tap="save" block theme="primary" size="large">保存</t-button>
-  </view>
-  <view wx:if="{{isEdit}}" bind:tap="delete" class="delete-button">
-    <t-icon name="delete" style="margin-right: 5px;"></t-icon>
-    删除这条记录
+  <view class="bottom-btn-wrapper">
+    <view class="create-form-save-button">
+      <t-button loading="{{isSaving}}" bind:tap="save" block theme="primary" size="large">保存</t-button>
+    </view>
+    <view wx:if="{{isEdit}}" bind:tap="delete" class="delete-button">
+      <t-icon name="delete" style="margin-right: 5px;"></t-icon>
+      删除这条记录
+    </view>
   </view>
 </view>

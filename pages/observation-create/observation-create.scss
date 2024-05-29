@@ -102,6 +102,10 @@ page {
   margin-right: 0 !important;
 }
 
+.bottom-btn-wrapper {
+  margin-bottom: var(--td-spacer-5);
+}
+
 .create-form-save-button {
   margin: var(--td-spacer-5) var(--td-spacer-2) var(--td-spacer-2) var(--td-spacer-2);
 }
