@@ -21,6 +21,6 @@
         同意
       </view>
     </view>
-    <t-divider></t-divider>
+    <t-divider wx:if="{{index !== formattedIdentifications.length - 1}}"></t-divider>
   </view>
 </view>
