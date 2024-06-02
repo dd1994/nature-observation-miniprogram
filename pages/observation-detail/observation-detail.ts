@@ -22,6 +22,8 @@ Page({
     currentPhoto: 0,
     mapVisible: false,
     identifications: [],
+    backIconTop: 0,
+    backIconHeight: 0,
     fabButton: {
       icon: 'share-1',
       theme: "light",
@@ -81,6 +83,14 @@ Page({
     },
     formattedObservedOn(data) {
       return moment(data.observationDetail?.observed_on).format("YYYY-MM-DD")
+    },
+    backIconStyle(data) {
+      return `
+        position: fixed;
+        // height: ${data.backIconHeight}px;
+        top: ${data.backIconTop}px;
+        left: 10px;
+      `
     }
   },
   openMap() {
@@ -128,6 +138,12 @@ Page({
   },
   onLoad(options) {
     this.fetchObservationDetail(options.id)
+    const res = wx.getMenuButtonBoundingClientRect()
+
+    this.setData({
+      backIconTop: res.top,
+      backIconHeight: res.height,
+    })
   },
   openTaxonDetail() {
     openTaxonDetail({
