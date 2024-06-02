@@ -115,6 +115,14 @@ Page({
       mapVisible: e.detail.visible
     })
   },
+  back() {
+    wx.navigateBack({
+    }).catch(() => {
+      wx.switchTab({
+        url: '/pages/explore/index'
+      })
+    })
+  },
   onSwiperClick(e) {
     const index = e.detail.index
     wx.previewImage({
