@@ -111,7 +111,7 @@ Page({
       url: '/pages/taxon-picker/taxon-picker',
       success: (res) => {
         // 发送一个事件
-        res.eventChannel.emit('setPlaceholder', { placeholder: '过滤你感兴趣的类群，比如“蜘蛛目”' })
+        res.eventChannel.emit('setPlaceholder', { placeholder: '过滤感兴趣的类群，比如“蜘蛛目”' })
       },
       events: {
         backFromSearchPage: (taxon) => {
