@@ -149,13 +149,13 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: '生灵觅迹，记录身边的自然',
+      title: '记录身边物种，参与公民科学',
       path: "pages/explore/index"
     }
   },
   onShareTimeline() {
     return {
-      title: '生灵觅迹，记录身边的自然'
+      title: '记录身边物种，参与公民科学'
     }
   }
 })
