@@ -7,7 +7,7 @@
       <view class="img-top-info">
         <user-name-and-avatar userProfile="{{observationDetail}}"></user-name-and-avatar>
         <view class="observation-on-time">
-          {{formattedObservedOn}}
+          观察于<text style="margin-left: 8rpx;">{{formattedObservedOn}}</text>
         </view>
       </view>
       <view wx:if="{{description}}" class="observation-desc">

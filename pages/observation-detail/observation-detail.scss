@@ -42,9 +42,11 @@
   height: var(--td-spacer-5);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  color: var(--td-font-gray-2);
 
   .observation-on-time {
-    color: var(--td-font-gray-2);
+    margin-left: var(--spacer-mini);
+    // color: var(--td-font-gray-2);
   }
 }
