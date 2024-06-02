@@ -5,6 +5,11 @@
   // border-top: 1px solid var(--td-border-color);
 }
 
+.custom-divider {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .custom-track {
   width: 200rpx !important;
 }
@@ -46,10 +51,13 @@
   color: var(--td-font-gray-2);
 
   .observation-on-time {
+    font-size: var(--td-font-size-base);
     margin-left: var(--spacer-mini);
     // color: var(--td-font-gray-2);
   }
 }
+
+
 
 .back-icon {
   background-color: rgba(255, 255, 255, 0.6) !important;

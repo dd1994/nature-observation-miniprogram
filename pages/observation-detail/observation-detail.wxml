@@ -2,6 +2,7 @@
   <!-- <observation-detail-topbar userProfile="{{userProfile}}" observedOn="{{observationDetail.observed_on}}" /> -->
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" loop="{{true}}" list="{{swiperList}}" height="{{'750rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
   <taxon-cell taxon="{{taxonInfo}}"></taxon-cell>
+  <t-divider t-class="custom-divider" />
   <t-tabs swipeable="{{false}}" split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs" t-class-track="custom-track">
     <t-tab-panel label="信息" value="0">
       <view class="img-top-info">
