@@ -4,10 +4,12 @@
 
   <view class="search-result-taxon-list">
     <view wx:key="name" wx:for="{{searchResult}}" data-taxon="{{item}}" class="search-result-taxon-item">
-      <view data-taxon="{{item}}" class="search-result-taxon-item-left" bind:tap="viewTaxonDetail">
-        <view class="search-result-taxon-item-chinese-name">{{item.displayName}}</view>
-        <view class="search-result-taxon-item-name">{{item.name}}</view>
-      </view>
+      <picker data-taxon="{{item}}" bindchange="bindConfirmPickerChange" value="{{confirmPickerIndex}}" range="{{['查看', '选择']}}">
+        <view class="search-result-taxon-item-left">
+          <view class="search-result-taxon-item-chinese-name">{{item.displayName}}</view>
+          <view class="search-result-taxon-item-name">{{item.name}}</view>
+        </view>
+      </picker>
 
       <view hover-class="common-hover-class" class="search-result-taxon-select">
         <t-icon wx:if="{{!hidePicker}}" data-taxon="{{item}}" bind:tap="selectTaxon" name="check-circle-filled" size="24px" color="rgba(0, 0, 0, 0.4)" />

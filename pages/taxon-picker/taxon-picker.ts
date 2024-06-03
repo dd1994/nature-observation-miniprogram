@@ -18,7 +18,8 @@ Page({
     showConfirm: false,
     selectedTaxon: null,
     comments: '',
-    placeholder: defaultPlaceholder
+    placeholder: defaultPlaceholder,
+    confirmPickerIndex: '0',
   },
   computed: {
   },
@@ -27,7 +28,7 @@ Page({
   },
   selectTaxon(e) {
     this.setData({
-      selectedTaxon: e.target.dataset.taxon,
+      selectedTaxon: e.currentTarget.dataset.taxon,
     })
 
 
@@ -39,6 +40,17 @@ Page({
     } else {
       this.confirmSelectTaxon()
     }
+  },
+  bindConfirmPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    if (e.detail.value === '0') {
+      openTaxonDetail(e.currentTarget.dataset.taxon)
+    } else {
+      this.selectTaxon(e)
+    }
+    this.setData({
+      confirmPickerIndex: e.detail.value
+    })
   },
   confirmSelectTaxon() {
     const eventChannel = this.getOpenerEventChannel();
