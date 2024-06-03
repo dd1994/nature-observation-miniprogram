@@ -4,7 +4,7 @@
   <taxon-cell taxon="{{taxonInfo}}"></taxon-cell>
   <t-divider t-class="custom-divider" />
   <t-tabs swipeable="{{false}}" split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs" t-class-track="custom-track">
-    <t-tab-panel label="信息" value="0">
+    <t-tab-panel label="信息" value="0" icon="info-circle">
       <view class="img-top-info">
         <user-name-and-avatar userProfile="{{observationDetail}}"></user-name-and-avatar>
         <view class="observation-on-time">
@@ -40,7 +40,7 @@
         <t-button bind:tap="edit" icon="edit" theme="primary" block size="medium" variant="outline">编辑记录</t-button>
       </view>
     </t-tab-panel>
-    <t-tab-panel label="鉴定" value="1">
+    <t-tab-panel label="鉴定" value="1" icon="lightbulb">
       <view class="identifications-pannel">
         <identifications identifications="{{identifications}}" userProfile="{{userProfile}}" bind:agreeID="agreeID" />
         <view class="edit-button-wrapper">
