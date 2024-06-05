@@ -4,7 +4,7 @@
 
   <view class="search-result-taxon-list">
     <view wx:key="name" wx:for="{{searchResult}}" data-taxon="{{item}}" class="search-result-taxon-item">
-      <picker style="flex:1;" data-taxon="{{item}}" bindchange="bindConfirmPickerChange" value="{{confirmPickerIndex}}" range="{{['查看', '选择']}}">
+      <picker header-text="{{item.displayName}}" style="flex:1;" data-taxon="{{item}}" bindchange="bindConfirmPickerChange" value="{{confirmPickerIndex}}" range="{{['查看', '选择']}}">
         <view class="search-result-taxon-item-left">
           <view class="search-result-taxon-item-chinese-name">{{item.displayName}}</view>
           <view class="search-result-taxon-item-name">{{item.name}}</view>
