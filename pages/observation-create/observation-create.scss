@@ -1,5 +1,6 @@
 @import "../../theme.scss";
 @import "../../utils/libs/animate.scss";
+@import "../../utils/css/hover-class.scss";
 
 page {
   background-color: var(--default-bg);
@@ -30,13 +31,20 @@ page {
   border-bottom: none;
 }
 
+.add-more-info {
+  padding-top: var(--td-spacer);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .optional-tips {
   background-color: var(--default-bg);
   color: var(--td-font-gray-3);
   padding-bottom: var(--td-spacer);
   padding-left: var(--td-spacer-2);
   line-height: 1;
-  // font-size: var(--td-font-size-base);
+  font-size: var(--td-font-size-base);
 }
 
 .create-form-item-wrapper {

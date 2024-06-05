@@ -22,6 +22,12 @@
           </view>
         </view>
       </view>
+      <view wx:if="{{customFieldConfig.length}}">
+        <view hover-class="common-hover-class" class="optional-tips add-more-info">
+          <text>添加更多物种信息</text>
+          <t-icon name="chevron-down-s" size="48rpx" color="rgba(0, 0, 0, 0.3)" />
+        </view>
+      </view>
     </view>
 
     <view class="optional-tips">可选填的部分</view>
