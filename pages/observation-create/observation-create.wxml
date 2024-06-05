@@ -23,9 +23,19 @@
         </view>
       </view>
       <view wx:if="{{customFieldConfig.length}}">
-        <view hover-class="common-hover-class" class="optional-tips add-more-info">
+        <view bind:tap="toggleExpandCustomField" wx:if="{{!expandCustomField}}" hover-class="common-hover-class" class="optional-tips add-more-info">
           <text>添加更多物种信息</text>
           <t-icon name="chevron-down-s" size="48rpx" color="rgba(0, 0, 0, 0.3)" />
+        </view>
+        <view wx:if="{{expandCustomField}}">
+          <view wx:for="{{customFieldConfig}}" wx:key="id">
+            <view>{{item.name}}</view>
+          </view>
+        </view>
+
+        <view bind:tap="toggleExpandCustomField" wx:if="{{expandCustomField}}" hover-class="common-hover-class" class="optional-tips add-more-info">
+          <text>收起</text>
+          <t-icon name="chevron-up-s" size="48rpx" color="rgba(0, 0, 0, 0.3)" />
         </view>
       </view>
     </view>

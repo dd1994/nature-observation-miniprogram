@@ -32,6 +32,7 @@ Page({
     noticeBarVisible: false,
     isSaving: false,
     customFieldConfig: [],
+    expandCustomField: false,
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -272,6 +273,11 @@ Page({
         showErrorTips("获取数据失败")
       }
       this.setData(generateDataFromRes(data))
+    })
+  },
+  toggleExpandCustomField() {
+    this.setData({
+      expandCustomField: !this.data.expandCustomField
     })
   },
   fetchCustomFieldConfig(applicableTaxon) {
