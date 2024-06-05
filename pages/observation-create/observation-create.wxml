@@ -29,7 +29,14 @@
         </view>
         <view wx:if="{{expandCustomField}}">
           <view wx:for="{{customFieldConfig}}" wx:key="id">
-            <view>{{item.name}}</view>
+            <view class="custom-field-picker" wx:if="{{item.type === 'select'}}">
+              {{item.name}}
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{item.config.options}}" range-key="label">
+                <view class="picker">
+                  请选择
+                </view>
+              </picker>
+            </view>
           </view>
         </view>
 

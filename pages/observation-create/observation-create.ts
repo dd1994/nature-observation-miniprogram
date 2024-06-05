@@ -285,7 +285,16 @@ Page({
       fetchCustomFieldConfig(applicableTaxon).then(res => {
         this.setData({
           // @ts-ignore
-          customFieldConfig: res?.data || []
+          customFieldConfig: (res?.data || []).map(i => {
+            if (i.config) {
+              return {
+                ...i,
+                config: JSON.parse(i.config)
+              }
+            } else {
+              return i
+            }
+          })
         })
       }).catch(e => {
         this.setData({

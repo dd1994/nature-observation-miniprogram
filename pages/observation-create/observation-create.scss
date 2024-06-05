@@ -38,6 +38,12 @@ page {
   justify-content: flex-start;
 }
 
+.custom-field-picker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .optional-tips {
   background-color: var(--default-bg);
   color: var(--td-font-gray-3);
