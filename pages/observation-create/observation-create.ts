@@ -10,6 +10,7 @@ import { showErrorTips, showSuccessTips } from '../../utils/feedBack';
 import { generateDataFromRes, generateSaveParamsFromData, mapFileList } from './util';
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 import uploadOSS from '../../utils/service/uploadOSS';
+import { fetchCustomFieldConfig } from '../../utils/service/customField';
 
 const locationExpirationKey = 'location_expiration'
 const locationKey = 'location'
@@ -30,6 +31,7 @@ Page({
     notSelectedTaxonTips: false,
     noticeBarVisible: false,
     isSaving: false,
+    customFieldConfig: [],
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -272,6 +274,24 @@ Page({
       this.setData(generateDataFromRes(data))
     })
   },
+  fetchCustomFieldConfig(applicableTaxon) {
+    if (applicableTaxon) {
+      fetchCustomFieldConfig(applicableTaxon).then(res => {
+        this.setData({
+          // @ts-ignore
+          customFieldConfig: res?.data || []
+        })
+      }).catch(e => {
+        this.setData({
+          customFieldConfig: []
+        })
+      })
+    } else {
+      this.setData({
+        customFieldConfig: []
+      })
+    }
+  },
   goToSearch() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -280,6 +300,7 @@ Page({
           this.setData({
             taxon: taxon
           })
+          this.fetchCustomFieldConfig(taxon.iconic_taxon_name)
         }
       }
     })
