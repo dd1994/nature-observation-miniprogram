@@ -35,6 +35,11 @@
                 </view>
               </view>
             </picker>
+            <view wx:if="{{item.type === 'taxon'}}" hover-class="common-hover-class" class="custom-field-value__item__detail">
+              <view class="custom-field-value__item__detail__name">{{item.name}}</view>
+              <view class="custom-field-value__item__detail__value">{{customFieldValue[index].value || '请选择'}}
+              </view>
+            </view>
           </view>
         </view>
         <view hover-class="common-hover-class">
