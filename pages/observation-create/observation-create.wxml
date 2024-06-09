@@ -29,10 +29,10 @@
       </view>
       <view class="custom-field-wrapper" wx:if="{{customFieldConfig.length}}">
         <view hover-class="common-hover-class">
-          <picker header-text="{{item.name}}" bindchange="bindPickerChange" value="{{index}}" range="{{customFieldConfig}}" range-key="name">
+          <picker header-text="{{'补充更多物种信息'}}" bindchange="bindPickerChange" value="{{index}}" range="{{customFieldConfig}}" range-key="name">
             <view class="custom-field-picker">
-              <t-icon style="margin-right: 16rpx;" name="add" size="20px" color="rgba(0, 0, 0, 0.3)" />
-              <text> 添加更多物种信息</text>
+              <t-icon name="add" style="margin-right: 2px;" size="18px" />
+              <view>补充更多物种信息</view>
             </view>
           </picker>
         </view>

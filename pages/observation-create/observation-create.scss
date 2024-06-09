@@ -31,13 +31,18 @@ page {
   border-bottom: none;
 }
 
+.custom-field-wrapper {
+  padding-left: var(--td-spacer-2);
+  font-size: var(--td-font-size-base);
+  line-height: 1;
+}
+
 .custom-field-picker {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: var(--td-font-size-base);
   color: var(--td-font-gray-3);
-  padding: var(--td-spacer) 0 0 var(--td-spacer-2);
+  padding: var(--td-spacer) 0 0 0;
 }
 
 .optional-tips {
