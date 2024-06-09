@@ -51,7 +51,6 @@ Page({
       return data.isEdit && (data.originTaxonName !== data.taxon?.name)
     },
     customFieldValueDisplayList(data) {
-      debugger
       return data.customFieldValue
         .filter(i => data.customFieldConfig.find(j => j.id === i.id))
         .map(i => {
@@ -288,10 +287,8 @@ Page({
     })
   },
   fetchCustomFieldConfig(ancestor_ids) {
-    debugger
     if (ancestor_ids) {
       fetchCustomFieldConfig(ancestor_ids).then(res => {
-        debugger
         this.setData({
           // @ts-ignore
           customFieldConfig: (res?.data || []).map(i => {
@@ -326,6 +323,12 @@ Page({
         })
       })
     }
+  },
+  removeCustomItem(e) {
+    this.setData({
+      customFieldValue: (this.data.customFieldValue || [])
+        .filter(i => i.id !== e.currentTarget.dataset.id)
+    })
   },
   goToSearch() {
     wx.navigateTo({
