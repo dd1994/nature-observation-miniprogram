@@ -313,6 +313,16 @@ Page({
       })
     }
   },
+  bindCustomFieldValueChange(e) {
+    const index = e.detail.value
+    const id = e.currentTarget.dataset.id
+
+    const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.id === id)
+    const configItem = this.data.customFieldConfig?.find(i => i.id === id)
+    this.setData({
+      [`customFieldValue[${valueItemIndex}].value`]: configItem?.config?.options?.[index]?.value,
+    })
+  },
   bindPickerChange(e) {
     const selectId = this.data.customFieldConfig?.[e.detail.value]?.id
     if (selectId) {

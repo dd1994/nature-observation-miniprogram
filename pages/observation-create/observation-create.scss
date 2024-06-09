@@ -56,8 +56,23 @@ page {
   justify-content: flex-start;
 }
 
+
 .custom-field-value__remove {
   padding: var(--td-spacer-mini);
+}
+
+.custom-field-value__item__detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.custom-field-value__item__detail__name {
+  margin-right: var(--td-spacer);
+}
+
+.custom-field-value__item__detail__value {
+  color: var(--td-font-gray-2);
 }
 
 .optional-tips {

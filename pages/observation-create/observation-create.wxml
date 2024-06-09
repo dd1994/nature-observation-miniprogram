@@ -28,7 +28,13 @@
             <view bind:tap="removeCustomItem" data-id="{{item.id}}" class="custom-field-value__remove" hover-class="common-hover-class">
               <t-icon name="close" size="20px"></t-icon>
             </view>
-            <view hover-class="common-hover-class">{{item.name}}</view>
+            <picker wx:if="{{item.type === 'select'}}" header-text="{{item.name}}" data-id="{{item.id}}" bindchange="bindCustomFieldValueChange" range="{{item.config.options}}" range-key="label">
+              <view hover-class="common-hover-class" class="custom-field-value__item__detail">
+                <view class="custom-field-value__item__detail__name">{{item.name}}</view>
+                <view class="custom-field-value__item__detail__value">{{customFieldValue[index].value || '请选择'}}
+                </view>
+              </view>
+            </picker>
           </view>
         </view>
         <view hover-class="common-hover-class">
