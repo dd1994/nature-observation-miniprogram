@@ -56,8 +56,8 @@ Page({
         .map(i => {
           const item = data.customFieldConfig.find(j => j.id === i.id)
           return {
+            ...item,
             ...i,
-            name: item.name
           }
         })
     }
