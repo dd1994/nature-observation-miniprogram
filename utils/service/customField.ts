@@ -1,10 +1,10 @@
 import { apiDomain } from "../constant";
 import { requestPromise } from "../util";
 
-export function fetchCustomFieldConfig(applicableTaxon) {
+export function fetchCustomFieldConfig(ancestor_ids) {
   return requestPromise({
     method: 'POST',
     url: apiDomain + '/api/v1/custom-field',
-    data: { applicableTaxon }
+    data: { ancestor_ids }
   })
 }

@@ -32,7 +32,7 @@ Page({
     noticeBarVisible: false,
     isSaving: false,
     customFieldConfig: [],
-    expandCustomField: false,
+    customFieldValue: [],
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -49,6 +49,18 @@ Page({
     },
     taxonChanged(data) {
       return data.isEdit && (data.originTaxonName !== data.taxon?.name)
+    },
+    customFieldValueDisplayList(data) {
+      debugger
+      return data.customFieldValue
+        .filter(i => data.customFieldConfig.find(j => j.id === i.id))
+        .map(i => {
+          const item = data.customFieldConfig.find(j => j.id === i.id)
+          return {
+            ...i,
+            name: item.name
+          }
+        })
     }
   },
   noticeBarClick(e) {
@@ -275,14 +287,11 @@ Page({
       this.setData(generateDataFromRes(data))
     })
   },
-  toggleExpandCustomField() {
-    this.setData({
-      expandCustomField: !this.data.expandCustomField
-    })
-  },
-  fetchCustomFieldConfig(applicableTaxon) {
-    if (applicableTaxon) {
-      fetchCustomFieldConfig(applicableTaxon).then(res => {
+  fetchCustomFieldConfig(ancestor_ids) {
+    debugger
+    if (ancestor_ids) {
+      fetchCustomFieldConfig(ancestor_ids).then(res => {
+        debugger
         this.setData({
           // @ts-ignore
           customFieldConfig: (res?.data || []).map(i => {
@@ -307,6 +316,17 @@ Page({
       })
     }
   },
+  bindPickerChange(e) {
+    const selectId = this.data.customFieldConfig?.[e.detail.value]?.id
+    if (selectId) {
+      this.setData({
+        customFieldValue: this.data.customFieldValue.concat({
+          id: selectId,
+          value: null,
+        })
+      })
+    }
+  },
   goToSearch() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -315,7 +335,13 @@ Page({
           this.setData({
             taxon: taxon
           })
-          this.fetchCustomFieldConfig(taxon.iconic_taxon_name)
+          if (taxon.source === 'iNat') {
+            this.fetchCustomFieldConfig(taxon.ancestor_ids || [])
+          } else {
+            this.setData({
+              customFieldConfig: []
+            })
+          }
         }
       }
     })
