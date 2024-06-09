@@ -56,6 +56,10 @@ page {
   justify-content: flex-start;
 }
 
+.custom-field-value__remove {
+  padding: var(--td-spacer-mini);
+}
+
 .optional-tips {
   background-color: var(--default-bg);
   color: var(--td-font-gray-3);
