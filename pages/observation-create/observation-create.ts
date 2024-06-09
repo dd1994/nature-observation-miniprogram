@@ -323,9 +323,13 @@ Page({
       [`customFieldValue[${valueItemIndex}].value`]: configItem?.config?.options?.[index]?.value,
     })
   },
-  bindPickerChange(e) {
+  bindCustomFieldItemChange(e) {
     const selectId = this.data.customFieldConfig?.[e.detail.value]?.id
     if (selectId) {
+      const exist = this.data.customFieldValue?.find(i => i.id === selectId)
+      if (exist) {
+        return showErrorTips('请勿重复选择')
+      }
       this.setData({
         customFieldValue: this.data.customFieldValue.concat({
           id: selectId,
