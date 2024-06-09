@@ -315,12 +315,29 @@ Page({
   },
   bindCustomFieldValueChange(e) {
     const index = e.detail.value
-    const id = e.currentTarget.dataset.id
+    const customFieldId = e.currentTarget.dataset.id
 
-    const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.id === id)
-    const configItem = this.data.customFieldConfig?.find(i => i.id === id)
+    const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.id === customFieldId)
+    const configItem = this.data.customFieldConfig?.find(i => i.id === customFieldId)
     this.setData({
       [`customFieldValue[${valueItemIndex}].value`]: configItem?.config?.options?.[index]?.value,
+    })
+  },
+  customFieldValueGoToSearchTaxon(e) {
+    const customFieldId = e.currentTarget.dataset.id
+    const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.id === customFieldId)
+
+    wx.navigateTo({
+      url: '/pages/taxon-picker/taxon-picker',
+      events: {
+        backFromSearchPage: (taxon) => {
+          this.setData({
+            [`customFieldValue[${valueItemIndex}].value`]: taxon.id,
+            [`customFieldValue[${valueItemIndex}].extra`]: { taxon },
+          })
+
+        }
+      }
     })
   },
   bindCustomFieldItemChange(e) {
@@ -334,6 +351,7 @@ Page({
         customFieldValue: this.data.customFieldValue.concat({
           id: selectId,
           value: null,
+          extra: null
         })
       })
     }
@@ -344,7 +362,7 @@ Page({
         .filter(i => i.id !== e.currentTarget.dataset.id)
     })
   },
-  goToSearch() {
+  goToSearchTaxon() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
       events: {

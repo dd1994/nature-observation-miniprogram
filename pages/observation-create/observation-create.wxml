@@ -12,7 +12,7 @@
           <t-icon name="help-circle" size="20px" />
         </view>
 
-        <view bind:tap="goToSearch" class="create-form-item-content">
+        <view bind:tap="goToSearchTaxon" class="create-form-item-content">
           <view class="form-taxon-name" wx:if="{{taxon}}">
             {{taxon.preferred_common_name || taxon.name}}
             <text class="create-form-item-content__scientific_name">{{taxon.name}}</text>
@@ -35,9 +35,9 @@
                 </view>
               </view>
             </picker>
-            <view wx:if="{{item.type === 'taxon'}}" hover-class="common-hover-class" class="custom-field-value__item__detail">
+            <view data-id="{{item.id}}" bind:tap="customFieldValueGoToSearchTaxon" wx:if="{{item.type === 'taxon'}}" hover-class="common-hover-class" class="custom-field-value__item__detail">
               <view class="custom-field-value__item__detail__name">{{item.name}}</view>
-              <view class="custom-field-value__item__detail__value">{{customFieldValue[index].value || '请选择'}}
+              <view class="custom-field-value__item__detail__value">{{customFieldValue[index].extra.taxon.preferred_common_name || '请选择'}}
               </view>
             </view>
           </view>
