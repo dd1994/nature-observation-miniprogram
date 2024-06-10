@@ -37,7 +37,7 @@
             </picker>
             <view data-id="{{item.id}}" bind:tap="customFieldValueGoToSearchTaxon" wx:if="{{item.type === 'taxon'}}" hover-class="common-hover-class" class="custom-field-value__item__detail">
               <view class="custom-field-value__item__detail__name">{{item.name}}</view>
-              <view class="custom-field-value__item__detail__value">{{customFieldValue[index].extra.taxon.preferred_common_name || '请选择'}}
+              <view class="custom-field-value__item__detail__value">{{item.extra.taxon.preferred_common_name || '请选择'}}
               </view>
             </view>
           </view>

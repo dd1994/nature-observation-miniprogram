@@ -16,8 +16,6 @@ export const generateSaveParamsFromData = (data: any) => {
     taxon_id: data.taxon.id
   }
 
-  const otherInfo = {
-  }
 
   const locationInfo = {
     'latitude': data.location?.latitude || null,
@@ -28,11 +26,19 @@ export const generateSaveParamsFromData = (data: any) => {
     "recommend_address_name": data.location?.recommend_address_name || null,
   }
 
+  const customFieldInfo = {
+    customFieldValue: data.validCustomFieldValue.filter(i => i.value)
+  }
+
+  const otherInfo = {
+  }
+
   const params = {
     fileList: data.fileList,
     ...basicInfo,
     ...locationInfo,
     ...taxonInfo,
+    ...customFieldInfo,
     ...otherInfo
   }
 
