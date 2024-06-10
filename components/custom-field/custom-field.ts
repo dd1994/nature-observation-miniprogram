@@ -17,6 +17,10 @@ Component({
     showRemoveIcon: {
       type: Boolean,
       value: true,
+    },
+    needConfirm: {
+      type: Boolean,
+      value: false,
     }
   },
   data: {
@@ -60,16 +64,28 @@ Component({
       }
     },
     removeCustomItem(e) {
-      this.triggerEvent('customFieldValueChange', {
-        value: (this.data.customFieldValue || [])
-          .filter(i => i.customFieldConfigId !== e.currentTarget.dataset.id),
-        change: {
-          type: customFieldValueChangeType.remove,
-          value: (this.data.customFieldValue || [])
-            ?.find(i => i.customFieldConfigId === e.currentTarget.dataset.id)?.id
+      const name = this.data.customFieldConfig?.find(i => i.id === e.currentTarget.dataset.id)?.name
+      wx.showModal({
+        title: '提示',
+        content: `确认移除${name}吗?`
+      }).then((res) => {
+        if (res.cancel) {
+          return showErrorTips('已取消')
         }
-      }
-      )
+
+        if (res.confirm) {
+          this.triggerEvent('customFieldValueChange', {
+            value: (this.data.customFieldValue || [])
+              .filter(i => i.customFieldConfigId !== e.currentTarget.dataset.id),
+            change: {
+              type: customFieldValueChangeType.remove,
+              value: (this.data.customFieldValue || [])
+                ?.find(i => i.customFieldConfigId === e.currentTarget.dataset.id)?.id
+            }
+          }
+          )
+        }
+      })
     },
     bindCustomFieldValueChange(e) {
       const index = e.detail.value
