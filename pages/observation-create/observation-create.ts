@@ -381,7 +381,7 @@ Page({
   },
   customFieldValueChange(e) {
     this.setData({
-      customFieldValue: e.detail
+      customFieldValue: e.detail.value
     })
   }
 })

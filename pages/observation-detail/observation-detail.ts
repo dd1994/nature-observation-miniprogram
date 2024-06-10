@@ -13,6 +13,8 @@ import moment from "moment";
 import { needFirstLogin } from "../../utils/util";
 import { login } from "../../utils/service/login";
 import { CustomFieldBehavior } from "../../components/custom-field/custom-field-behavior";
+import { customFieldValueChangeType } from "../observation-create/util";
+import { removeCustomFieldValue, updateCustomFieldValue } from "../../utils/service/customField";
 // pages/observation-detail/observation-detail.js
 const app = getApp()
 
@@ -236,7 +238,15 @@ Page({
   },
   customFieldValueChange(e) {
     this.setData({
-      customFieldValue: e.detail
+      customFieldValue: e.detail.value
     })
+
+    if (e.detail?.change?.type === customFieldValueChangeType.remove) {
+      removeCustomFieldValue(e.detail?.change?.value)
+    } else if (e.detail?.change?.type === customFieldValueChangeType.udpate) {
+      updateCustomFieldValue({
+        observation_id: this.data.id, value: e.detail?.change?.value,
+      })
+    }
   }
 })

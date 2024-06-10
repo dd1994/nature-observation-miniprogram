@@ -1,5 +1,5 @@
 import { apiDomain } from "../constant";
-import { requestPromise } from "../util";
+import { requestPromise, requestPromiseWithLogin } from "../util";
 
 export function fetchCustomFieldConfig(taxon_id) {
   return requestPromise({
@@ -22,5 +22,21 @@ export function fetchCustomFieldValueHistory(observation_id) {
     method: 'POST',
     url: apiDomain + '/api/v1/get-custom-field-value-history',
     data: { observation_id }
+  })
+}
+
+export function removeCustomFieldValue(id) {
+  return requestPromiseWithLogin({
+    method: 'POST',
+    url: apiDomain + '/api/v1/remove-custom-field-value',
+    data: { id }
+  })
+}
+
+export function updateCustomFieldValue(params) {
+  return requestPromiseWithLogin({
+    method: 'POST',
+    url: apiDomain + '/api/v1/update-custom-field-value',
+    data: params
   })
 }

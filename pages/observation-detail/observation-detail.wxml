@@ -36,8 +36,8 @@
         </view>
       </t-cell>
 
-      <custom-field custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
-      
+      <custom-field showRemoveIcon="{{isOwner}}" custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
+
       <view wx:if="{{isOwner}}" class="edit-button-wrapper">
         <t-button bind:tap="edit" icon="edit" theme="primary" block size="medium" variant="outline">编辑记录</t-button>
       </view>

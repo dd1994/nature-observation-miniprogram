@@ -1,3 +1,4 @@
+import { customFieldValueChangeType } from "../../pages/observation-create/util";
 import { showErrorTips } from "../../utils/feedBack";
 
 const computedBehavior = require('miniprogram-computed').behavior;
@@ -12,6 +13,10 @@ Component({
     customFieldValue: {
       type: Array,
       value: []
+    },
+    showRemoveIcon: {
+      type: Boolean,
+      value: true,
     }
   },
   data: {
@@ -42,17 +47,28 @@ Component({
         if (exist) {
           return showErrorTips('请勿重复选择')
         }
-        this.triggerEvent('customFieldValueChange',
-          this.data.customFieldValue.concat({
+        this.triggerEvent('customFieldValueChange', {
+          value: this.data.customFieldValue.concat({
             customFieldConfigId: selectId,
             value: null,
             extra: null
-          }))
+          }),
+          change: {
+            type: customFieldValueChangeType.new
+          }
+        })
       }
     },
     removeCustomItem(e) {
-      this.triggerEvent('customFieldValueChange', (this.data.customFieldValue || [])
-        .filter(i => i.customFieldConfigId !== e.currentTarget.dataset.id)
+      this.triggerEvent('customFieldValueChange', {
+        value: (this.data.customFieldValue || [])
+          .filter(i => i.customFieldConfigId !== e.currentTarget.dataset.id),
+        change: {
+          type: customFieldValueChangeType.remove,
+          value: (this.data.customFieldValue || [])
+            ?.find(i => i.customFieldConfigId === e.currentTarget.dataset.id)?.id
+        }
+      }
       )
     },
     bindCustomFieldValueChange(e) {
@@ -61,16 +77,25 @@ Component({
 
       const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.customFieldConfigId === customFieldId)
       const configItem = this.data.customFieldConfig?.find(i => i.id === customFieldId)
-      this.triggerEvent('customFieldValueChange', (this.data.customFieldValue || []).map((item, i) => {
-        if (i === valueItemIndex) {
-          return {
-            ...item,
+      this.triggerEvent('customFieldValueChange', {
+        value: (this.data.customFieldValue || []).map((item, i) => {
+          if (i === valueItemIndex) {
+            return {
+              ...item,
+              value: configItem?.config?.options?.[index]?.value
+            }
+          } else {
+            return item
+          }
+        }),
+        change: {
+          type: customFieldValueChangeType.udpate,
+          value: {
+            ...this.data.customFieldValue[valueItemIndex],
             value: configItem?.config?.options?.[index]?.value
           }
-        } else {
-          return item
         }
-      }))
+      })
     },
     customFieldValueGoToSearchTaxon(e) {
       const customFieldId = e.currentTarget.dataset.id
@@ -80,17 +105,27 @@ Component({
         url: '/pages/taxon-picker/taxon-picker',
         events: {
           backFromSearchPage: (taxon) => {
-            this.triggerEvent('customFieldValueChange', (this.data.customFieldValue || []).map((item, i) => {
-              if (i === valueItemIndex) {
-                return {
-                  ...item,
+            this.triggerEvent('customFieldValueChange', {
+              value: (this.data.customFieldValue || []).map((item, i) => {
+                if (i === valueItemIndex) {
+                  return {
+                    ...item,
+                    value: taxon.id,
+                    extra: { taxon }
+                  }
+                } else {
+                  return item
+                }
+              }),
+              change: {
+                type: customFieldValueChangeType.udpate,
+                value: {
+                  ...this.data.customFieldValue[valueItemIndex],
                   value: taxon.id,
                   extra: { taxon }
                 }
-              } else {
-                return item
               }
-            }))
+            })
           }
         }
       })

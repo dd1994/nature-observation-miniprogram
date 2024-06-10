@@ -103,3 +103,9 @@ export const mapFileList = (file) => {
     "percent": 0
   }
 }
+
+export const customFieldValueChangeType = {
+  'new': 'new',
+  'remove': 'remove',
+  'udpate': 'update'
+}
