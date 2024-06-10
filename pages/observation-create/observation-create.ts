@@ -4,7 +4,7 @@ const UUID = require("pure-uuid")
 const computedBehavior = require('miniprogram-computed').behavior;
 import { fetchAdressByGPS, translateGPS } from '../../utils/service/map'
 import { defaultTimeFormat, exifTimeFormat } from '../../utils/constant'
-import moment, { defineLocale } from 'moment'
+import moment from 'moment'
 import { fetchObservationDetail, createObservation, deleteObservation, updateObservation } from '../../utils/service/observations'
 import { showErrorTips, showSuccessTips } from '../../utils/feedBack';
 import { generateDataFromRes, generateSaveParamsFromData, mapFileList } from './util';
@@ -62,7 +62,7 @@ Page({
         })
     }
   },
-  noticeBarClick(e) {
+  noticeBarClick() {
     this.setData({
       noticeBarVisible: false,
     })
@@ -302,7 +302,7 @@ Page({
             }
           })
         })
-      }).catch(e => {
+      }).catch(() => {
         this.setData({
           customFieldConfig: []
         })
