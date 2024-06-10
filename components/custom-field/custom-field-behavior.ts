@@ -10,21 +10,6 @@ export const CustomFieldBehavior = Behavior({
   },
   // @ts-ignore
   computed: {
-    validCustomFieldValue(data) {
-      // 有效的自定义字段值，比如将一个鉴定的物种从昆虫改成植物后，“生活史阶段” 这个字段不再有效。
-      return data.customFieldValue
-        .filter(i => data.customFieldConfig.find(j => j.id === i.id))
-    },
-    customFieldValueDisplayList(data) {
-      return data.validCustomFieldValue
-        .map(i => {
-          const item = data.customFieldConfig.find(j => j.id === i.id)
-          return {
-            ...item,
-            ...i,
-          }
-        })
-    }
   },
   methods: {
     fetchCustomFieldConfig(taxon_id) {

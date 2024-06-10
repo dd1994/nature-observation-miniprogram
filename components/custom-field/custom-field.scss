@@ -1,0 +1,44 @@
+.custom-field-wrapper {
+  padding-left: var(--td-spacer-2);
+  font-size: var(--td-font-size-base);
+  line-height: 1;
+  color: var(--td-font-gray-3);
+}
+
+.custom-field-picker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--td-spacer) 0 0 0;
+}
+
+.custom-field-value-list {
+  line-height: 1.5;
+  padding: var(--td-spacer) 0 0 0;
+}
+
+.custom-field-value__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: var(--td-spacer);
+}
+
+
+.custom-field-value__remove {
+  padding: var(--td-spacer-mini);
+}
+
+.custom-field-value__item__detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.custom-field-value__item__detail__name {
+  margin-right: var(--td-spacer);
+}
+
+.custom-field-value__item__detail__value {
+  color: var(--td-font-gray-2);
+}

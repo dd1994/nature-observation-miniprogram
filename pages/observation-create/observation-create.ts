@@ -272,55 +272,6 @@ Page({
       this.setData(generateDataFromRes(data))
     })
   },
-  bindCustomFieldValueChange(e) {
-    const index = e.detail.value
-    const customFieldId = e.currentTarget.dataset.id
-
-    const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.id === customFieldId)
-    const configItem = this.data.customFieldConfig?.find(i => i.id === customFieldId)
-    this.setData({
-      [`customFieldValue[${valueItemIndex}].value`]: configItem?.config?.options?.[index]?.value,
-    })
-  },
-  customFieldValueGoToSearchTaxon(e) {
-    const customFieldId = e.currentTarget.dataset.id
-    const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.id === customFieldId)
-
-    wx.navigateTo({
-      url: '/pages/taxon-picker/taxon-picker',
-      events: {
-        backFromSearchPage: (taxon) => {
-          this.setData({
-            [`customFieldValue[${valueItemIndex}].value`]: taxon.id,
-            [`customFieldValue[${valueItemIndex}].extra`]: { taxon },
-          })
-
-        }
-      }
-    })
-  },
-  bindCustomFieldItemChange(e) {
-    const selectId = this.data.customFieldConfig?.[e.detail.value]?.id
-    if (selectId) {
-      const exist = this.data.customFieldValue?.find(i => i.id === selectId)
-      if (exist) {
-        return showErrorTips('请勿重复选择')
-      }
-      this.setData({
-        customFieldValue: this.data.customFieldValue.concat({
-          id: selectId,
-          value: null,
-          extra: null
-        })
-      })
-    }
-  },
-  removeCustomItem(e) {
-    this.setData({
-      customFieldValue: (this.data.customFieldValue || [])
-        .filter(i => i.id !== e.currentTarget.dataset.id)
-    })
-  },
   goToSearchTaxon() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -424,6 +375,11 @@ Page({
 
     wx.switchTab({
       url: '/pages/index/index',
+    })
+  },
+  customFieldValueChange(e) {
+    this.setData({
+      customFieldValue: e.detail
     })
   }
 })
