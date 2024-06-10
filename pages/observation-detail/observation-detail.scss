@@ -65,3 +65,14 @@
   width: 30px !important;
   // color: #FFF !important;
 }
+
+.custom-field-config-wrapper {
+  margin-left: var(--td-spacer-2);
+}
+
+.custom-field-config-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--td-font-size-m);
+}

@@ -36,7 +36,13 @@
         </view>
       </t-cell>
 
-      <custom-field showRemoveIcon="{{isOwner}}" custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
+      <view class="custom-field-config-wrapper" wx:if="{{customFieldConfig.length}}">
+        <view class="custom-field-config-title">
+          <t-icon name="task-add" style="margin-right: 4px;" />
+          <view>更多物种信息</view>
+        </view>
+        <custom-field showRemoveIcon="{{isOwner}}" custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
+      </view>
 
       <view wx:if="{{isOwner}}" class="edit-button-wrapper">
         <t-button bind:tap="edit" icon="edit" theme="primary" block size="medium" variant="outline">编辑记录</t-button>
