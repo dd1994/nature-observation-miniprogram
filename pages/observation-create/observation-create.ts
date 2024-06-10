@@ -11,13 +11,14 @@ import { generateDataFromRes, generateSaveParamsFromData, mapFileList } from './
 import { parseExifFromLocalImgUrl } from '../../utils/exif-util';
 import uploadOSS from '../../utils/service/uploadOSS';
 import { fetchCustomFieldConfig } from '../../utils/service/customField';
+import { CustomFieldBehavior } from '../../components/custom-field/custom-field-behavior';
 
 const locationExpirationKey = 'location_expiration'
 const locationKey = 'location'
 
 const app = getApp()
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [computedBehavior, CustomFieldBehavior],
   data: {
     id: null, // 编辑状态的观察 id
     fileList: [], // 上传的图片列表
@@ -31,8 +32,6 @@ Page({
     notSelectedTaxonTips: false,
     noticeBarVisible: false,
     isSaving: false,
-    customFieldConfig: [],
-    customFieldValue: [],
     tUploadConfig: {
       uploadConfig: {
         sourceType: ['album'],
@@ -49,21 +48,6 @@ Page({
     },
     taxonChanged(data) {
       return data.isEdit && (data.originTaxonName !== data.taxon?.name)
-    },
-    validCustomFieldValue(data) {
-      // 有效的自定义字段值，比如将一个鉴定的物种从昆虫改成植物后，“生活史阶段” 这个字段不再有效。
-      return data.customFieldValue
-        .filter(i => data.customFieldConfig.find(j => j.id === i.id))
-    },
-    customFieldValueDisplayList(data) {
-      return data.validCustomFieldValue
-        .map(i => {
-          const item = data.customFieldConfig.find(j => j.id === i.id)
-          return {
-            ...item,
-            ...i,
-          }
-        })
     }
   },
   noticeBarClick() {
@@ -287,33 +271,6 @@ Page({
       }
       this.setData(generateDataFromRes(data))
     })
-  },
-  fetchCustomFieldConfig(taxon_id) {
-    if (taxon_id) {
-      fetchCustomFieldConfig(taxon_id).then(res => {
-        this.setData({
-          // @ts-ignore
-          customFieldConfig: (res?.data || []).map(i => {
-            if (i.config) {
-              return {
-                ...i,
-                config: JSON.parse(i.config)
-              }
-            } else {
-              return i
-            }
-          })
-        })
-      }).catch(() => {
-        this.setData({
-          customFieldConfig: []
-        })
-      })
-    } else {
-      this.setData({
-        customFieldConfig: []
-      })
-    }
   },
   bindCustomFieldValueChange(e) {
     const index = e.detail.value
