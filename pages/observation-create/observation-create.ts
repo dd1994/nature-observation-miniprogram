@@ -288,9 +288,9 @@ Page({
       this.setData(generateDataFromRes(data))
     })
   },
-  fetchCustomFieldConfig(ancestor_ids) {
-    if (ancestor_ids) {
-      fetchCustomFieldConfig(ancestor_ids).then(res => {
+  fetchCustomFieldConfig(taxon_id) {
+    if (taxon_id) {
+      fetchCustomFieldConfig(taxon_id).then(res => {
         this.setData({
           // @ts-ignore
           customFieldConfig: (res?.data || []).map(i => {
@@ -373,7 +373,7 @@ Page({
             taxon: taxon
           })
           if (taxon.source === 'iNat') {
-            this.fetchCustomFieldConfig(taxon.ancestor_ids || [])
+            this.fetchCustomFieldConfig(taxon.id)
           } else {
             this.setData({
               customFieldConfig: []
