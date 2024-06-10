@@ -22,7 +22,9 @@
           </view>
         </view>
       </view>
-      <custom-field custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
+      <view class="custom-field-wrapper">
+        <custom-field custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
+      </view>
     </view>
 
     <view class="optional-tips">可选填的部分</view>

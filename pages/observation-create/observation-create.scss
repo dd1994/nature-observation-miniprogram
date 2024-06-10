@@ -131,3 +131,8 @@ page {
   font-size: var(--td-font-size-s);
   color: var(--td-font-gray-3);
 }
+
+.custom-field-wrapper {
+  margin-left: var(--td-spacer-2);
+  margin-top: var(--td-spacer)
+}

@@ -246,6 +246,8 @@ Page({
     } else if (e.detail?.change?.type === customFieldValueChangeType.udpate) {
       updateCustomFieldValue({
         observation_id: this.data.id, value: e.detail?.change?.value,
+      }).then(() => {
+        showSuccessTips('添加成功')
       })
     }
   }

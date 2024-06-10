@@ -68,6 +68,7 @@
 
 .custom-field-config-wrapper {
   margin-left: var(--td-spacer-2);
+  margin-top: var(--td-spacer-2);
 }
 
 .custom-field-config-title {
@@ -75,6 +76,7 @@
   align-items: center;
   justify-content: flex-start;
   font-size: var(--td-font-size-m);
+  margin-bottom: var(--td-spacer);
 }
 
 .custom-field-config-view-history {
