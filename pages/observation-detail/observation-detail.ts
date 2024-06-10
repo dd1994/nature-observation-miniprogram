@@ -233,5 +233,10 @@ Page({
     return {
       title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`
     }
+  },
+  customFieldValueChange(e) {
+    this.setData({
+      customFieldValue: e.detail
+    })
   }
 })

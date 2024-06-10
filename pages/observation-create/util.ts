@@ -27,7 +27,10 @@ export const generateSaveParamsFromData = (data: any) => {
   }
 
   const customFieldInfo = {
-    customFieldValue: data.validCustomFieldValue.filter(i => i.value)
+    customFieldValue:
+      data.customFieldValue
+        .filter(i => i.value)
+        .filter(i => data.customFieldConfig.find(j => j.id === i.customFieldConfigId))
   }
 
   const otherInfo = {
