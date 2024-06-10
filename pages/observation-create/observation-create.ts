@@ -216,6 +216,7 @@ Page({
       // 编辑状态
       this.setData({ id: options.id })
       this.fetchObservationDetail()
+      this.fetchCustomFieldValue(options.id)
     }
 
     if (options.files) {
@@ -269,6 +270,7 @@ Page({
       if (!data) {
         showErrorTips("获取数据失败")
       }
+      this.fetchCustomFieldConfig(data.taxon_id)
       this.setData(generateDataFromRes(data))
     })
   },
