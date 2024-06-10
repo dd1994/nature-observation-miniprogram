@@ -252,26 +252,24 @@ Page({
     }
 
     if (!options.id) {
-      // 为 iOS 用户获取观察位置缓存
+      // 为 iOS 用户获取观察位置缓存，默认缓存三小时
       try {
         const deviceInfo = wx.getDeviceInfo()
-        if (!deviceInfo.platform.toLowerCase().includes('ios')) {
-          return
+        if (deviceInfo.platform.toLowerCase().includes('ios')) {
+          wx.getStorage({ key: locationExpirationKey })
+            .then(res => {
+              if (Date.now() < res.data) {
+                wx.getStorage({ key: locationKey })
+                  .then(res2 => {
+                    if (res2.data) {
+                      this.setData({
+                        location: res2.data
+                      })
+                    }
+                  })
+              }
+            })
         }
-
-        wx.getStorage({ key: locationExpirationKey })
-          .then(res => {
-            if (Date.now() < res.data) {
-              wx.getStorage({ key: locationKey })
-                .then(res2 => {
-                  if (res2.data) {
-                    this.setData({
-                      location: res2.data
-                    })
-                  }
-                })
-            }
-          })
       } catch (error) {
         console.error(error)
       }
