@@ -40,6 +40,7 @@
         <view class="custom-field-config-title">
           <t-icon name="task-add" style="margin-right: 4px;" />
           <view>更多物种信息</view>
+          <view wx:if="{{customFieldValue.length}}" class="custom-field-config-view-history" hover-class="common-hover-class">查看历史</view>
         </view>
         <custom-field showRemoveIcon="{{isOwner}}" custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
       </view>

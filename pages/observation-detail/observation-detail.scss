@@ -1,4 +1,4 @@
-@import "../../theme.scss";
+@import "../../utils/css/hover-class.scss";
 
 .custom-tabs {
   font-size: var(--td-font-size-base) !important;
@@ -75,4 +75,10 @@
   align-items: center;
   justify-content: flex-start;
   font-size: var(--td-font-size-m);
+}
+
+.custom-field-config-view-history {
+  font-size: var(--td-font-size-base);
+  color: var(--td-font-gray-2);
+  margin-left: var(--spacer-mini);
 }
