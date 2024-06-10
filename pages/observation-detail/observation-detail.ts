@@ -12,11 +12,12 @@ import { getImgQuality } from "../../utils/img";
 import moment from "moment";
 import { needFirstLogin } from "../../utils/util";
 import { login } from "../../utils/service/login";
+import { CustomFieldBehavior } from "../../components/custom-field/custom-field-behavior";
 // pages/observation-detail/observation-detail.js
 const app = getApp()
 
 Page({
-  behaviors: [computedBehavior, UserProfileBehavior],
+  behaviors: [computedBehavior, UserProfileBehavior, CustomFieldBehavior],
   data: {
     observationDetail: {},
     currentPhoto: 0,
@@ -139,6 +140,7 @@ Page({
         this.setData({
           observationDetail: data
         })
+        this.fetchCustomFieldConfig(data.taxon_id)
       }
     }).then(() => {
       this.fetchIdentificationList()
@@ -146,6 +148,7 @@ Page({
   },
   onLoad(options) {
     this.fetchObservationDetail(options.id)
+    this.fetchCustomFieldValue(options.id)
     const res = wx.getMenuButtonBoundingClientRect()
 
     this.setData({
