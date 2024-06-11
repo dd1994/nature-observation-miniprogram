@@ -201,11 +201,14 @@ Page({
       showErrorTips('添加鉴定失败，请稍后重试')
     })
   },
-  async addIdentification() {
+  async forceLoginCheck() {
     if (needFirstLogin()) {
       await login()
       app.globalData.indexPageNeedRefresh = true
     }
+  },
+  async addIdentification() {
+    await this.forceLoginCheck()
 
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker?needConfirm=1',
@@ -241,16 +244,18 @@ Page({
       title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`
     }
   },
-  customFieldValueChange(e) {
+  async customFieldValueChange(e) {
     this.setData({
       customFieldValue: e.detail.value
     })
 
     if (e.detail?.change?.type === customFieldValueChangeType.remove) {
+      await this.forceLoginCheck()
       removeCustomFieldValue(this.data.id, e.detail?.change?.value).then(() => {
         this.refreshCustomField()
       })
     } else if (e.detail?.change?.type === customFieldValueChangeType.udpate) {
+      await this.forceLoginCheck()
       updateCustomFieldValue({
         observation_id: this.data.id, value: e.detail?.change?.value,
       }).then(() => {
