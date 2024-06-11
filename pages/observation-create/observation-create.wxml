@@ -13,9 +13,12 @@
         </view>
 
         <view bind:tap="goToSearchTaxon" class="create-form-item-content">
-          <view class="form-taxon-name" wx:if="{{taxon}}">
-            {{taxon.preferred_common_name || taxon.name}}
-            <text class="create-form-item-content__scientific_name">{{taxon.name}}</text>
+          <view class="create-form-item-content__taxon" wx:if="{{taxon}}">
+            <view class="form-taxon-name">
+              {{taxon.preferred_common_name || taxon.name}}
+              <text class="create-form-item-content__scientific_name">{{taxon.name}}</text>
+            </view>
+            <view class="ai-tools" catch:tap="gotoAiTools" hover-class="common-hover-class">识别工具</view>
           </view>
           <view wx:else class="create-form-item-placeholder {{ notSelectedTaxonTips ? 'animate__shakeY' : ''}}">
             <view>你看到了什么？</view>

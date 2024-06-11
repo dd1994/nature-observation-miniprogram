@@ -130,6 +130,13 @@ page {
   padding-bottom: var(--td-spacer-5);
 }
 
+.create-form-item-content__taxon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .form-taxon-name {
   display: flex;
   flex-direction: column;
