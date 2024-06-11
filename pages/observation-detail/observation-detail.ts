@@ -216,7 +216,8 @@ Page({
             taxon_rank: taxon.rank,
             iconic_taxon_name: taxon.iconic_taxon_name,
             taxon_id: taxon.id,
-            comments: taxon.comments
+            comments: taxon.comments,
+            taxon_source: taxon.taxon_source
           }).then(() => {
             showSuccessTips('添加鉴定成功')
             this.fetchObservationDetail()
