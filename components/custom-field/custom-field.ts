@@ -67,7 +67,7 @@ Component({
       const name = this.data.customFieldConfig?.find(i => i.id === e.currentTarget.dataset.id)?.name
       wx.showModal({
         title: '提示',
-        content: `确认移除${name}吗?`
+        content: `确认移除“${name}”吗?`
       }).then((res) => {
         if (res.cancel) {
           return showErrorTips('已取消')
@@ -79,8 +79,7 @@ Component({
               .filter(i => i.customFieldConfigId !== e.currentTarget.dataset.id),
             change: {
               type: customFieldValueChangeType.remove,
-              value: (this.data.customFieldValue || [])
-                ?.find(i => i.customFieldConfigId === e.currentTarget.dataset.id)?.id
+              value: e.currentTarget.dataset.id,
             }
           }
           )

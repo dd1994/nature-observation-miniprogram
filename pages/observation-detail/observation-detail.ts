@@ -247,14 +247,21 @@ Page({
     })
 
     if (e.detail?.change?.type === customFieldValueChangeType.remove) {
-      removeCustomFieldValue(e.detail?.change?.value)
+      removeCustomFieldValue(e.detail?.change?.value).then(() => {
+        this.refreshCustomField()
+      })
     } else if (e.detail?.change?.type === customFieldValueChangeType.udpate) {
       updateCustomFieldValue({
         observation_id: this.data.id, value: e.detail?.change?.value,
       }).then(() => {
+        this.refreshCustomField()
         showSuccessTips('添加成功')
       })
     }
+  },
+  refreshCustomField() {
+    this.fetchCustomFieldConfig(this.data.observationDetail.taxon_id)
+    this.fetchCustomFieldValue(this.data.id)
   },
   viewCustomFieldValueHistory() {
     fetchCustomFieldValueHistory(this.data.id).then(res => {

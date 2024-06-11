@@ -25,11 +25,11 @@ export function fetchCustomFieldValueHistory(observation_id) {
   })
 }
 
-export function removeCustomFieldValue(id) {
+export function removeCustomFieldValue(configId) {
   return requestPromiseWithLogin({
     method: 'POST',
     url: apiDomain + '/api/v1/remove-custom-field-value',
-    data: { id }
+    data: { configId }
   })
 }
 
