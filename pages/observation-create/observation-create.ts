@@ -270,7 +270,9 @@ Page({
       if (!data) {
         showErrorTips("获取数据失败")
       }
-      this.fetchCustomFieldConfig(data.taxon_id)
+      if (data.taxon_source !== 'CFH') {
+        this.fetchCustomFieldConfig(data.taxon_id)
+      }
       this.setData(generateDataFromRes(data))
     })
   },
@@ -282,7 +284,7 @@ Page({
           this.setData({
             taxon: taxon
           })
-          if (taxon.source === 'iNat') {
+          if (taxon.taxon_source === 'iNat') {
             this.fetchCustomFieldConfig(taxon.id)
           } else {
             this.setData({

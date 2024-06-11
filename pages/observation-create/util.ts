@@ -13,7 +13,8 @@ export const generateSaveParamsFromData = (data: any) => {
     scientific_name: data.taxon.name,
     taxon_rank: data.taxon.rank,
     iconic_taxon_name: data.taxon.iconic_taxon_name,
-    taxon_id: data.taxon.id
+    taxon_id: data.taxon.id,
+    taxon_source: data.taxon.taxon_source,
   }
 
 
@@ -75,6 +76,7 @@ export const generateDataFromRes = (res) => {
       "rank": res.taxon_rank,
       "iconic_taxon_name": res.iconic_taxon_name,
       "id": res.taxon_id,
+      "taxon_source": res.taxon_source
     },
     fileList: res.photos.map(i => {
       return {
