@@ -74,7 +74,7 @@
 
 .custom-field-config-title {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: flex-start;
   font-size: var(--td-font-size-m);
   margin-bottom: var(--td-spacer);
@@ -82,6 +82,6 @@
 
 .custom-field-config-view-history {
   font-size: var(--td-font-size-base);
-  color: var(--td-font-gray-2);
+  color: var(--td-font-gray-3);
   margin-left: var(--spacer-mini);
 }
