@@ -247,7 +247,7 @@ Page({
     })
 
     if (e.detail?.change?.type === customFieldValueChangeType.remove) {
-      removeCustomFieldValue(e.detail?.change?.value).then(() => {
+      removeCustomFieldValue(this.data.id, e.detail?.change?.value).then(() => {
         this.refreshCustomField()
       })
     } else if (e.detail?.change?.type === customFieldValueChangeType.udpate) {

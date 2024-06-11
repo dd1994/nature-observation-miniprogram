@@ -75,7 +75,7 @@
           <view wx:if="{{item.customFieldConfigType === 'select'}}">{{item.value}}</view>
           <view wx:if="{{item.customFieldConfigType === 'taxon'}}">{{item.extra.taxon.preferred_common_name}}</view>
         </view>
-        <view class="cutom-config-value-history-content__item__user">by {{item.user_name}} {{item.updated_at}}</view>
+        <view class="cutom-config-value-history-content__item__user">{{item.user_name}}添加于{{item.updated_at}}</view>
       </view>
     </scroll-view>
   </t-dialog>
