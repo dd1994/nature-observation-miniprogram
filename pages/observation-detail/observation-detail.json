@@ -14,6 +14,7 @@
     "taxon-cell": "../../components/taxon-cell/taxon-cell",
     "user-name-and-avatar": "../../components/user-name-and-avatar/user-name-and-avatar",
     "t-fab": "tdesign-miniprogram/fab/fab",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
     "custom-field": "../../components/custom-field/custom-field"
   }
 }

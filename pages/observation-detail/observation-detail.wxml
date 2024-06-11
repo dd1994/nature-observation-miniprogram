@@ -46,7 +46,7 @@
         <view class="custom-field-config-title">
           <t-icon name="task-add" style="margin-right: 8rpx;" />
           <view>更多物种信息</view>
-          <view wx:if="{{customFieldValue.length}}" class="custom-field-config-view-history" hover-class="common-hover-class">查看历史</view>
+          <view wx:if="{{customFieldValue.length}}" class="custom-field-config-view-history-btn" hover-class="common-hover-class" bind:tap="viewCustomFieldValueHistory">查看历史</view>
         </view>
         <custom-field showRemoveIcon="{{isOwner}}" custom-field-config="{{customFieldConfig}}" custom-field-value="{{customFieldValue}}" bind:customFieldValueChange="customFieldValueChange" />
       </view>
@@ -66,6 +66,18 @@
       </view>
     </t-tab-panel>
   </t-tabs>
+  <t-dialog visible="{{showCustomFieldValueHistory}}" title="信息添加历史" confirm-btn="知道了" bind:confirm="closeCustomFieldValueHistoryDialog">
+    <!-- 适配skyline，增加type="list" -->
+    <scroll-view slot="content" type="list" scroll-y class="cutom-config-value-history-content">
+      <view class="content-container">这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+      </view>
+    </scroll-view>
+  </t-dialog>
   <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>
   <t-button wx:if="{{backIconTop}}" bind:tap="back" style="{{backIconStyle}}" t-class="back-icon" size="small" variant="outline" ghost icon="arrow-left" shape="circle" aria-label="搜索">
 

@@ -14,7 +14,7 @@ import { needFirstLogin } from "../../utils/util";
 import { login } from "../../utils/service/login";
 import { CustomFieldBehavior } from "../../components/custom-field/custom-field-behavior";
 import { customFieldValueChangeType } from "../observation-create/util";
-import { removeCustomFieldValue, updateCustomFieldValue } from "../../utils/service/customField";
+import { fetchCustomFieldValueHistory, removeCustomFieldValue, updateCustomFieldValue } from "../../utils/service/customField";
 // pages/observation-detail/observation-detail.js
 const app = getApp()
 
@@ -27,6 +27,8 @@ Page({
     identifications: [],
     backIconTop: 0,
     backIconHeight: 0,
+    showCustomFieldValueHistory: false,
+    customFieldValueHistory: [],
     fabButton: {
       icon: 'share-1',
       theme: "light",
@@ -253,5 +255,22 @@ Page({
         showSuccessTips('添加成功')
       })
     }
+  },
+  viewCustomFieldValueHistory() {
+    fetchCustomFieldValueHistory(this.data.id).then(res => {
+      debugger
+      this.setData({
+        // @ts-ignore
+        customFieldValueHistory: res.data
+      })
+    })
+    this.setData({
+      showCustomFieldValueHistory: true,
+    })
+  },
+  closeCustomFieldValueHistoryDialog() {
+    this.setData({
+      showCustomFieldValueHistory: false,
+    })
   }
 })

@@ -88,8 +88,15 @@
   margin-bottom: var(--spacer-mini);
 }
 
-.custom-field-config-view-history {
+.custom-field-config-view-history-btn {
   font-size: var(--td-font-size-base);
   color: var(--td-font-gray-2);
   margin-left: var(--spacer-mini);
+}
+
+.cutom-config-value-history-content {
+  height: 576rpx;
+  margin-top: 16rpx;
+  font-size: 32rpx;
+  color: #888;
 }
