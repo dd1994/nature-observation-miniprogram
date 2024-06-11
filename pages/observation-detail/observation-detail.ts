@@ -258,10 +258,22 @@ Page({
   },
   viewCustomFieldValueHistory() {
     fetchCustomFieldValueHistory(this.data.id).then(res => {
-      debugger
       this.setData({
         // @ts-ignore
-        customFieldValueHistory: res.data
+        customFieldValueHistory: (res.data || []).map(i => {
+          if (i.extra) {
+            return {
+              ...i,
+              updated_at: moment(i.updated_at).fromNow(),
+              extra: JSON.parse(i.extra)
+            }
+          } else {
+            return {
+              ...i,
+              updated_at: moment(i.updated_at).fromNow(),
+            }
+          }
+        })
       })
     })
     this.setData({

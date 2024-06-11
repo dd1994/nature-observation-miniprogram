@@ -69,12 +69,13 @@
   <t-dialog visible="{{showCustomFieldValueHistory}}" title="信息添加历史" confirm-btn="知道了" bind:confirm="closeCustomFieldValueHistoryDialog">
     <!-- 适配skyline，增加type="list" -->
     <scroll-view slot="content" type="list" scroll-y class="cutom-config-value-history-content">
-      <view class="content-container">这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
-        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
-        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
-        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
-        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
-        这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+      <view class="cutom-config-value-history-content__item" wx:for="{{customFieldValueHistory}}" key="id">
+        <view class="cutom-config-value-history-content__item__main {{item.status === 0 ? 'cutom-config-value-history-content__item__main--deleted' : ''}}">
+          <view>{{item.customFieldConfigName}}：</view>
+          <view wx:if="{{item.customFieldConfigType === 'select'}}">{{item.value}}</view>
+          <view wx:if="{{item.customFieldConfigType === 'taxon'}}">{{item.extra.taxon.preferred_common_name}}</view>
+        </view>
+        <view class="cutom-config-value-history-content__item__user">by {{item.user_name}} {{item.updated_at}}</view>
       </view>
     </scroll-view>
   </t-dialog>

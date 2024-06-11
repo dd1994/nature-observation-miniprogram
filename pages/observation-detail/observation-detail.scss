@@ -95,8 +95,29 @@
 }
 
 .cutom-config-value-history-content {
-  height: 576rpx;
-  margin-top: 16rpx;
-  font-size: 32rpx;
-  color: #888;
+  max-height: 750rpx;
+  margin-top: var(--td-spacer-2);
+  font-size: var(--td-font-size-m);
+  color: var(--td-font-gray-1);
+}
+
+.cutom-config-value-history-content__item {
+  margin-bottom: var(--td-spacer-2);
+}
+
+.cutom-config-value-history-content__item__main--deleted {
+  text-decoration: line-through;
+  color: var(--td-font-gray-2);
+}
+
+.cutom-config-value-history-content__item__main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.cutom-config-value-history-content__item__user {
+  color: var(--td-font-gray-2);
+  font-size: var(--td-font-size-base);
 }
