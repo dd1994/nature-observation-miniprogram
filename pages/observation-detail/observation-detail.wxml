@@ -19,8 +19,8 @@
       </view>
       <view wx:if="{{description}}" class="observation-desc">
         <view class="observation-desc__title">
-          <t-icon name="edit-1" style="margin-right: 4px"></t-icon>
-          <view>备注</view>
+          <t-icon name="edit-1" style="margin-right: 8rpx"></t-icon>
+          <view>观察备注</view>
         </view>
         <text selectable>{{description}}</text>
       </view>
