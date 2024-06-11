@@ -142,7 +142,9 @@ Page({
         this.setData({
           observationDetail: data
         })
-        this.fetchCustomFieldConfig(data.taxon_id)
+        if (data.taxon_source !== 'CFH') {
+          this.fetchCustomFieldConfig(data.taxon_id)
+        }
       }
     }).then(() => {
       this.fetchIdentificationList()
