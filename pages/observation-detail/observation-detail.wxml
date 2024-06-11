@@ -5,10 +5,16 @@
   <t-divider t-class="custom-divider" />
   <t-tabs swipeable="{{false}}" split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs" t-class-track="custom-track">
     <t-tab-panel label="信息" value="0" icon="info-circle">
-      <view class="img-top-info">
-        <user-name-and-avatar userProfile="{{observationDetail}}"></user-name-and-avatar>
-        <view class="observation-on-time">
-          观察于<text style="margin-left: 8rpx;">{{formattedObservedOn}}</text>
+      <view class="observation-user-info">
+        <view class="observation-user-info__title">
+          <t-icon name="user-1" style="margin-right: 8rpx;" />
+          <view>观察者</view>
+        </view>
+        <view class="observation-user-info__detail">
+          <user-name-and-avatar userProfile="{{observationDetail}}"></user-name-and-avatar>
+          <view class="observation-on-time">
+            观察于<text style="margin-left: 8rpx;">{{formattedObservedOn}}</text>
+          </view>
         </view>
       </view>
       <view wx:if="{{description}}" class="observation-desc">
@@ -20,7 +26,7 @@
       </view>
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name && !observationDetail.address_hidden}}" hover arrow bind:click="openMap">
         <view slot="title" style="display: flex; align-items: center;">
-          <t-icon name="location" style="margin-right: 4px;" /> 观察位置
+          <t-icon name="location" style="margin-right: 8rpx;" /> 观察位置
         </view>
         <view class="observation-location-name" slot="description">
           {{recommend_address_name}}
@@ -29,7 +35,7 @@
 
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name && observationDetail.address_hidden}}">
         <view slot="title" style="display: flex; align-items: center;">
-          <t-icon name="location" style="margin-right: 4px;" /> 观察位置
+          <t-icon name="location" style="margin-right: 8rpx;" /> 观察位置
         </view>
         <view class="observation-location-name" slot="description">
           {{recommend_address_name}}
