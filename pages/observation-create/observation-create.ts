@@ -383,5 +383,10 @@ Page({
     this.setData({
       customFieldValue: e.detail.value
     })
+  },
+  gotoAiTools() {
+    wx.navigateTo({
+      url: '/mine-packages/pages/ai-tools/ai-tools'
+    })
   }
 })

@@ -18,7 +18,8 @@
             <text class="create-form-item-content__scientific_name">{{taxon.name}}</text>
           </view>
           <view wx:else class="create-form-item-placeholder {{ notSelectedTaxonTips ? 'animate__shakeY' : ''}}">
-            你看到了什么？
+            <view>你看到了什么？</view>
+            <view class="ai-tools" catch:tap="gotoAiTools" hover-class="common-hover-class">识别工具</view>
           </view>
         </view>
       </view>

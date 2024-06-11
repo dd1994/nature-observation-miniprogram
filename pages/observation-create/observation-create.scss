@@ -73,6 +73,16 @@ page {
 .create-form-item-placeholder {
   color: var(--td-font-gray-3) !important;
   font-size: var(--td-font-size-m) !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ai-tools {
+  color: var(--td-font-gray-2);
+  font-size: var(--td-font-size-base);
 }
 
 .create-form-item-icon-wrapper {
