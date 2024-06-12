@@ -9,12 +9,14 @@
           <view hover-class="common-hover-class" class="custom-field-value__item__detail">
             <view class="custom-field-value__item__detail__name">{{item.name}}：</view>
             <view class="custom-field-value__item__detail__value">{{customFieldValue[index].value || '请选择'}}
+              <t-icon name="caret-down-small" />
             </view>
           </view>
         </picker>
         <view data-id="{{item.customFieldConfigId}}" bind:tap="customFieldValueGoToSearchTaxon" wx:if="{{item.type === 'taxon'}}" hover-class="common-hover-class" class="custom-field-value__item__detail">
           <view class="custom-field-value__item__detail__name">{{item.name}}：</view>
           <view class="custom-field-value__item__detail__value">{{item.extra.taxon.preferred_common_name || '请选择'}}
+            <t-icon name="caret-down-small" />
           </view>
         </view>
       </view>
