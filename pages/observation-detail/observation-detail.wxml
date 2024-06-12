@@ -44,7 +44,7 @@
 
       <view class="custom-field-config-wrapper" wx:if="{{customFieldConfig.length}}">
         <view class="custom-field-config-title">
-          <t-icon name="task-add" style="margin-right: 8rpx;" />
+          <t-icon name="task-1" style="margin-right: 8rpx;" />
           <view>更多物种信息</view>
           <view wx:if="{{customFieldValue.length}}" class="custom-field-config-view-history-btn" hover-class="common-hover-class" bind:tap="viewCustomFieldValueHistory">查看历史</view>
         </view>
