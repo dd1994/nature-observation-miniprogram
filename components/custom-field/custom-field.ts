@@ -115,9 +115,13 @@ Component({
     customFieldValueGoToSearchTaxon(e) {
       const customFieldId = e.currentTarget.dataset.id
       const valueItemIndex = this.data.customFieldValue?.findIndex(i => i.customFieldConfigId === customFieldId)
-
+      const name = this.data.customFieldConfig?.find(i => i.id === customFieldId)?.name
       wx.navigateTo({
         url: '/pages/taxon-picker/taxon-picker',
+        success: (res) => {
+          // 发送一个事件
+          res.eventChannel.emit('setPlaceholder', { placeholder: `搜索物种，选择${name}` })
+        },
         events: {
           backFromSearchPage: (taxon) => {
             this.triggerEvent('customFieldValueChange', {
