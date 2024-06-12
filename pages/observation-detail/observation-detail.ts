@@ -96,6 +96,9 @@ Page({
         top: ${data.backIconTop}px;
         left: 10px;
       `
+    },
+    notEmptyCustomFieldValue(data) {
+      return data.customFieldValue?.filter(i => i.value) || []
     }
   },
   openMap() {
