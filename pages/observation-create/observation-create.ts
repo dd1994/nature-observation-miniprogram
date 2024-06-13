@@ -330,12 +330,19 @@ Page({
           key: 'noticeBarVisible',
           data: false,
         })
+
         wx.setStorage({
           key: 'newComer',
           data: false
         })
         setTimeout(() => {
-          this.goToIndexAndRefresh()
+          if (this.data.isEdit) {
+            wx.redirectTo({
+              url: `/pages/observation-detail/observation-detail?id=${this.data.id}`
+            })
+          } else {
+            this.goToIndexAndRefresh()
+          }
         }, 1000)
       } else {
         showErrorTips('保存失败，请稍后重试')
