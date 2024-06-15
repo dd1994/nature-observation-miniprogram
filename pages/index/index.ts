@@ -116,12 +116,17 @@ Page({
   },
   applyTaxonFilter(e) {
     const { taxon } = e.detail
-    wx.navigateTo({
-      url: generateUrlWithParams("/pages/index-search/index-search", {
-        common_name: taxon?.common_name || taxon?.scientific_name,
-        needLogin: true,
-      })
+
+    this.setData({
+      q: {
+        ...this.data.q,
+        taxon_id: taxon?.taxon_id,
+        taxon_preferred_common_name: taxon?.common_name || taxon?.scientific_name,
+        taxon_name: taxon?.scientific_name,
+      }
     })
+    this.resetAllTabAndFetch()
+    this.setData({ activeTab: TabType.observations })
   },
   gotoIndexFilter() {
     wx.navigateTo({
