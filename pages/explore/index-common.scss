@@ -30,6 +30,16 @@
   padding: var(--td-spacer);
   color: #fff;
 
+  .search-name-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .search-name-display__item {
+    margin-right: var(--spacer-mini);
+  }
+
   .search-taxon-info__remove-icon {
     padding-left: 15px; // 增大点击面积
   }

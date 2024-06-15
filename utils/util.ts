@@ -106,3 +106,15 @@ export const needFirstLogin = () => {
 export const isLogin = () => {
   return !!wx.getStorageSync('token')
 }
+
+export const generateDisplayRegion = (region: string[]) => {
+  if (region?.[2] !== '全部') {
+    return region[2]
+  } else if (region?.[1] !== '全部') {
+    return region[1]
+  } else if (region?.[0] !== '全部') {
+    return region[0]
+  } else {
+    return ''
+  }
+}

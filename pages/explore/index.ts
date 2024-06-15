@@ -2,7 +2,7 @@ import ObservationsBehavior from '../../components/observation-list/observationB
 import TaxonBehavior from '../../components/taxon-list/taxonBehavior';
 import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
-import { generateUrlWithParams, needFirstLogin } from '../../utils/util';
+import { generateDisplayRegion, generateUrlWithParams, needFirstLogin } from '../../utils/util';
 import { TabType } from './../index/constant';
 const app = getApp()
 
@@ -16,6 +16,19 @@ Page({
     filterIconTop: 0,
     filterIconHeight: 0,
     scollViewHeight: 0,
+    displayRegion: '',
+  },
+  bindRegionChange(e) {
+    this.setData({
+      q: {
+        ...this.data.q,
+        region: e.detail.value,
+      }
+    })
+    this.setData({
+      // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
+      displayRegion: generateDisplayRegion(e.detail.value)
+    })
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
@@ -121,6 +134,7 @@ Page({
 
           this.setData({
             q: {
+              ...this.data.q,
               taxon_id: taxon?.id,
               taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
               taxon_name: taxon?.name,
