@@ -1,5 +1,5 @@
 <view class="index-page" style="padding-top: {{tabTop + 'px'}}">
-  <view class="empty-tips" wx:if="{{observationsIsEmpty && !(q.taxon_id || displayRegion.length)}}">
+  <view class="empty-tips" wx:if="{{!observationsIsLoading && observationsIsEmpty && !(q.taxon_id || displayRegion.length)}}">
     <view class="slogan">
       <view>记录身边物种</view>
       <view>参与公民科学</view>
