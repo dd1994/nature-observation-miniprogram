@@ -10,6 +10,7 @@
     "taxon-list": "/components/taxon-list/taxon-list",
     "t-empty": "tdesign-miniprogram/empty/empty",
     "index-tab": "/components/index-tab/index-tab",
-    "fab": "/components/fab/fab"
+    "fab": "/components/fab/fab",
+    "t-tag": "tdesign-miniprogram/tag/tag"
   }
 }

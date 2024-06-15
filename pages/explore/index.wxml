@@ -5,10 +5,14 @@
   <view>
     <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length}}">
       <view class="search-name-display">
-        <text class="search-name-display__item" selectable>{{displayRegion}}</text>
-        <text class="search-name-display__item">{{q.taxon_preferred_common_name || q.taxon_name}}</text>
+        <t-tag wx:if="{{displayRegion}}" t-class="search-tag" bind:close="removeRegion" size="large" closable variant="light">
+          {{displayRegion}}
+        </t-tag>
+
+        <t-tag wx:if="{{q.taxon_id}}"  t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
+          {{q.taxon_preferred_common_name || q.taxon_name}}
+        </t-tag>
       </view>
-      <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
     </view>
 
     <view class="search-empty-tips" wx:if="{{activeTab === 0 && observationsIsEmpty && (q.taxon_id || q.region)}}">
