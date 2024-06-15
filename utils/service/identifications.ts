@@ -9,9 +9,10 @@ export function fetchIdentificationList(params) {
   })
 }
 
-export function fetchIndexIdList({ pageIndex, pageSize, user_id, q }: { pageIndex: number, pageSize: number, user_id?: string, q?: any }) {
-  return requestPromiseWithLogin({
-    url: apiDomain + '/api/v1/index-id',
+export function fetchIndexIdList({ pageIndex, pageSize, user_id, needLogin, q }: { pageIndex: number, pageSize: number, user_id?: string, needLogin: boolean, q?: any }) {
+  const fn = needLogin ? requestPromiseWithLogin : requestPromise
+  return fn({
+    url: apiDomain + (needLogin ? '/api/v1/index-id' : '/api/v1/user-home-id'),
     method: 'POST',
     data: {
       pageIndex,

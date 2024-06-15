@@ -17,7 +17,7 @@ const IdBehavior = Behavior({
     async fetchIndexIdList() {
       this.setData({ idLoading: true })
       try {
-        const res: any = await fetchIndexIdList({ pageIndex: this.data.idPageIndex, pageSize: this.data.idPageSize, user_id: this.data.user_id, q: this.data.q })
+        const res: any = await fetchIndexIdList({ pageIndex: this.data.idPageIndex, pageSize: this.data.idPageSize, user_id: this.data.user_id, q: this.data.q, needLogin: this.data.needLogin })
 
         this.setData({
           ids: (this.data.ids || []).concat(res?.data?.data?.list || []),
