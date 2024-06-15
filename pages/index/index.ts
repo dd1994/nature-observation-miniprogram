@@ -32,6 +32,27 @@ Page({
     })
     this.resetAllTabAndFetch()
   },
+  removeRegion() {
+    this.setData({
+      q: {
+        ...this.data.q,
+        region: ['全部', '全部', '全部'],
+      }
+    })
+    this.setData({
+      // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
+      displayRegion: ''
+    })
+    this.resetAllTabAndFetch()
+  },
+  removeTaxonFilter() {
+    this.setData({
+      q: {
+        region: this.data.q.region,
+      }
+    })
+    this.resetAllTabAndFetch()
+  },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
   },
