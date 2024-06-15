@@ -11,7 +11,7 @@
       <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
     </view>
 
-    <view class="search-empty-tips" wx:if="{{observationsIsEmpty && q.taxon_id}}">
+    <view class="search-empty-tips" wx:if="{{observationsIsEmpty && (q.taxon_id || q.region)}}">
       <t-empty icon="search" description="搜索结果为空，请尝试其他搜索条件" />
     </view>
   </view>
@@ -25,7 +25,7 @@
   </view>
   <view class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
 
-    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
+    <picker header-text="按地区过滤" mode="region" bindchange="bindRegionChange" value="{{q.region}}" custom-item="全部">
       <view class="picker">
         <view hover-class="common-hover-class" class="filter-location-icon">
           <t-icon size="24px" color="rgba(0,0,0,0.9)" name="location" />
