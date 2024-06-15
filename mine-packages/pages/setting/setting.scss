@@ -1,3 +1,8 @@
+page {
+  --td-cell-left-icon-color: rgba(0, 0, 0, 0.9);
+}
+
+
 .setting-page-container {
   background-color: var(--default-bg);
   min-height: 100vh;
@@ -9,4 +14,12 @@
 
 .cell-group:not(:first-child) {
   margin-top: var(--td-spacer-4);
+}
+
+.contact-btn {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: var(--td-font-size-m) !important;
+  color: var(--td-font-gray-1) !important;
 }
