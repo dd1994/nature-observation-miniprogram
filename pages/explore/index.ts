@@ -153,7 +153,8 @@ Page({
   },
   removeSearch() {
     this.setData({
-      q: {}
+      q: {},
+      displayRegion: '',
     })
     this.resetAllTabAndFetch()
   },
