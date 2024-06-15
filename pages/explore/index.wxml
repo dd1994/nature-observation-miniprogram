@@ -28,17 +28,17 @@
     <picker header-text="按地区过滤" mode="region" bindchange="bindRegionChange" value="{{q.region}}" custom-item="全部">
       <view class="picker">
         <view hover-class="common-hover-class" class="filter-location-icon">
-          <t-icon size="24px" color="rgba(0,0,0,0.9)" name="location" />
+          <t-icon size="20px" color="rgba(0,0,0,0.9)" name="location" />
         </view>
       </view>
     </picker>
 
     <view hover-class="common-hover-class" class="filter-icon">
-      <t-icon bind:click="gotoIndexFilter" size="24px" color="rgba(0,0,0,0.9)" name="filter-1" />
+      <t-icon bind:click="gotoIndexFilter" size="20px" color="rgba(0,0,0,0.9)" name="filter-1" />
     </view>
 
     <view hover-class="common-hover-class" class="search-icon">
-      <t-icon bind:click="gotoIndexSearch" size="24px" color="rgba(0,0,0,0.9)" name="search" />
+      <t-icon bind:click="gotoIndexSearch" size="20px" color="rgba(0,0,0,0.9)" name="search" />
     </view>
   </view>
   <fab icon="add" bind:tap="onAddIconTap" />

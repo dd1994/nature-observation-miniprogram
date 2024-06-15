@@ -18,7 +18,7 @@
 .search-icon,
 .filter-icon,
 .filter-location-icon {
-  padding: 0 var(--td-spacer);
+  padding: 0 12rpx;
 }
 
 .search-taxon-info {
@@ -27,7 +27,7 @@
   justify-content: space-between;
   font-size: var(--td-font-size-base);
   background-color: var(--td-font-gray-3);
-  padding: var(--td-spacer);
+  padding: var(--spacer-mini) var(--td-spacer);
   color: #fff;
 
   .search-name-display {
