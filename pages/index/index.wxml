@@ -1,5 +1,5 @@
 <view class="index-page" style="padding-top: {{tabTop + 'px'}}">
-  <view class="empty-tips" wx:if="{{observationsIsEmpty && !q.taxon_id}}">
+  <view class="empty-tips" wx:if="{{observationsIsEmpty && !(q.taxon_id || displayRegion.length)}}">
     <view class="slogan">
       <view>记录身边物种</view>
       <view>参与公民科学</view>
@@ -13,12 +13,15 @@
     </index-tab>
 
     <view>
-      <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
-        <text selectable>{{q.taxon_preferred_common_name || q.taxon_name}}；我上传的</text>
+      <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length}}">
+        <view class="search-name-display">
+          <text class="search-name-display__item" selectable>{{displayRegion}}</text>
+          <text class="search-name-display__item">{{q.taxon_preferred_common_name || q.taxon_name}}</text>
+        </view>
         <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
       </view>
 
-      <view class="search-empty-tips" wx:if="{{observationsIsEmpty && q.taxon_id}}">
+      <view class="search-empty-tips" wx:if="{{observationsIsEmpty && (q.taxon_id || q.region)}}">
         <t-empty icon="search" description="搜索结果为空，请尝试其他搜索条件" />
       </view>
     </view>
@@ -35,15 +38,23 @@
       </block>
     </view>
   </view>
-  <view class="tab-right-wrapper" wx:if="{{!observationsIsEmpty}}" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
-    <view hover-class="common-hover-class" class="search-icon">
-      <t-icon bind:click="gotoIndexSearch" size="24px" color="rgba(0,0,0,0.9)" name="search" />
-    </view>
+  <view class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
+
+    <picker header-text="按地区过滤" mode="region" bindchange="bindRegionChange" value="{{q.region}}" custom-item="全部">
+      <view class="picker">
+        <view hover-class="common-hover-class" class="filter-location-icon">
+          <t-icon size="20px" color="rgba(0,0,0,0.9)" name="location" />
+        </view>
+      </view>
+    </picker>
 
     <view hover-class="common-hover-class" class="filter-icon">
-      <t-icon bind:click="gotoIndexFilter" size="24px" color="rgba(0,0,0,0.9)" name="filter-1" />
+      <t-icon bind:click="gotoIndexFilter" size="20px" color="rgba(0,0,0,0.9)" name="filter-1" />
     </view>
 
+    <view hover-class="common-hover-class" class="search-icon">
+      <t-icon bind:click="gotoIndexSearch" size="20px" color="rgba(0,0,0,0.9)" name="search" />
+    </view>
   </view>
   <fab icon="add" wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap"></fab>
 </view>
