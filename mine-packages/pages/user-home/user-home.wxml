@@ -12,14 +12,17 @@
     </view>
   </view>
   <view>
-    <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
+    <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}, {value: 2, title: '鉴定', num: idTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
     </index-tab>
     <view style="height: 90vh;">
       <block wx:if="{{activeTab === 0}}">
         <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </block>
       <block wx:if="{{activeTab === 1}}">
-        <taxon-list bind:applyTaxonFilter="applyTaxonFilter"  taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+        <taxon-list bind:applyTaxonFilter="applyTaxonFilter" taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+      </block>
+      <block wx:if="{{activeTab === 2}}">
+        <id-list ids="{{ids}}" allLoaded="{{idAllLoaded}}" bind:scrolltolower="bindscrolltolower"></id-list>
       </block>
     </view>
     <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>

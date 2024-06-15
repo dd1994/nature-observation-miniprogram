@@ -1,5 +1,7 @@
 import ObservationsBehavior from "../../../components/observation-list/observationBehavior"
 import TaxonBehavior from "../../../components/taxon-list/taxonBehavior"
+import IdBehavior from "../../../components/id-list/idBehavior"
+
 import { TabType } from "../../../pages/index/constant";
 import { openTaxonDetail } from "../../../utils/openTaxonDetail";
 import { getUserProfileWithOutLogin } from "../../../utils/service/user"
@@ -7,7 +9,7 @@ import { trimUrlParams } from "../../../utils/util";
 const computedBehavior = require('miniprogram-computed').behavior;
 
 Page({
-  behaviors: [computedBehavior, ObservationsBehavior, TaxonBehavior],
+  behaviors: [computedBehavior, ObservationsBehavior, TaxonBehavior, IdBehavior],
   data: {
     activeTab: TabType.observations,
     user_id: null,
@@ -32,8 +34,12 @@ Page({
       user_id: options.user_id
     })
     this.getUserProfile()
+    this.resetAllTabAndFetch()
+  },
+  resetAllTabAndFetch() {
     this.resetAndFetchObservations()
     this.resetAndFetchTaxon()
+    this.resetAndFetchIndexId()
   },
   bindscrolltolower() {
     if (this.data.activeTab === TabType.observations) {
@@ -44,7 +50,7 @@ Page({
         observationsPageIndex: this.data.observationsPageIndex + 1
       })
       this.fetchObservationList()
-    } else {
+    } else if (this.data.activeTab === TabType.taxon) {
       if (this.data.taxonAllLoaded) {
         return
       }
@@ -52,6 +58,14 @@ Page({
         taxonPageIndex: this.data.taxonPageIndex + 1
       })
       this.fetchTaxonList()
+    } else {
+      if (this.data.idAllLoaded) {
+        return
+      }
+      this.setData({
+        idPageIndex: this.data.idPageIndex + 1
+      })
+      this.fetchIndexIdList()
     }
   },
   applyTaxonFilter(e) {
@@ -64,10 +78,15 @@ Page({
     })
   },
   refresh() {
-    this.resetAndFetchTaxon()
-    this.resetAndFetchObservations().finally(() => {
-      wx.stopPullDownRefresh()
-    })
+    if (this.data.activeTab === TabType.observations) {
+      this.resetAndFetchObservations().finally(() => {
+        wx.stopPullDownRefresh()
+      })
+    } else if (this.data.activeTab === TabType.taxon) {
+      this.resetAndFetchTaxon()
+    } else {
+      this.resetAndFetchIndexId()
+    }
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })

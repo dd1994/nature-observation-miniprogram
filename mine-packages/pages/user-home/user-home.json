@@ -7,6 +7,7 @@
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "observation-list": "/components/observation-list/observation-list",
     "taxon-list": "/components/taxon-list/taxon-list",
+    "id-list": "/components/id-list/id-list",
     "t-link": "tdesign-miniprogram/link/link",
     "index-tab": "/components/index-tab/index-tab",
     "t-fab": "tdesign-miniprogram/fab/fab"
