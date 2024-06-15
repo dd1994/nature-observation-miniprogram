@@ -7,11 +7,10 @@
       条
     </view>
     <view class="basic-info__item">
-      物种
+      物种数
       <view class="basic-info__item_count">
         {{statCount.taxon || 0}}
       </view>
-      种
     </view>
     <view class="basic-info__item">
       照片

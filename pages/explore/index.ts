@@ -29,6 +29,7 @@ Page({
       // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
       displayRegion: generateDisplayRegion(e.detail.value)
     })
+    this.resetAllTabAndFetch()
   },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
