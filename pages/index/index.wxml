@@ -14,7 +14,7 @@
 
     <view>
       <view class="search-taxon-info" wx:if="{{q.taxon_id}}">
-        <text selectable>{{q.taxon_preferred_common_name || q.taxon_name}}</text>
+        <text selectable>{{q.taxon_preferred_common_name || q.taxon_name}}；我上传的</text>
         <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
       </view>
 
@@ -28,7 +28,7 @@
         <observation-list bind:scrolltolower="bindscrolltolower" bind:refresh="resetAndFetchObservations" observations="{{observations}}" userProfile="{{userProfile}}" allLoaded="{{observationsAllLoaded}}"></observation-list>
       </block>
       <block wx:if="{{activeTab === 1}}">
-        <taxon-list bind:applyTaxonFilter="applyTaxonFilter"  taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
+        <taxon-list bind:applyTaxonFilter="applyTaxonFilter" taxon="{{taxon}}" allLoaded="{{taxonAllLoaded}}" bind:scrolltolower="bindscrolltolower"></taxon-list>
       </block>
       <block wx:if="{{activeTab === 2}}">
         <id-list ids="{{ids}}" allLoaded="{{idAllLoaded}}" bind:scrolltolower="bindscrolltolower"></id-list>
