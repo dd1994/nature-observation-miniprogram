@@ -23,7 +23,6 @@
             {{q.taxon_preferred_common_name || q.taxon_name}}
           </t-tag>
         </view>
-        <t-icon class="search-taxon-info__remove-icon" bind:click="removeSearch" name="close" size="52rpx" />
       </view>
 
       <view class="search-empty-tips" wx:if="{{activeTab === 0 && observationsIsEmpty && (q.taxon_id || q.region)}}">
