@@ -4,6 +4,7 @@ import UserProfileBehavior from '../../components/user-profile/user-profile';
 import { login } from '../../utils/service/login';
 import { generateDisplayRegion, generateUrlWithParams, needFirstLogin } from '../../utils/util';
 import { TabType } from './../index/constant';
+import _ from 'lodash';
 const app = getApp()
 
 const computedBehavior = require('miniprogram-computed').behavior;
@@ -29,6 +30,7 @@ Page({
       // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
       displayRegion: generateDisplayRegion(e.detail.value)
     })
+    debugger
     this.resetAllTabAndFetch()
   },
   removeRegion() {
@@ -84,7 +86,6 @@ Page({
     }
   },
   onLoad() {
-    this.resetAllTabAndFetch()
     const res = wx.getMenuButtonBoundingClientRect()
     const windowInfo = wx.getWindowInfo()
     const tabTop = res.bottom
@@ -120,6 +121,12 @@ Page({
   },
   onShow() {
     if (app.globalData.explorePageNeedRefresh) {
+      if (app.globalData?.q) {
+        this.setData({
+          q: _.cloneDeep(app.globalData.q)
+        })
+        app.globalData.q = {}
+      }
       this.resetAllTabAndFetch()
       app.globalData.explorePageNeedRefresh = false
     }

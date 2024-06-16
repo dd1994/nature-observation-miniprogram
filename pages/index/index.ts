@@ -6,7 +6,10 @@ import { login } from '../../utils/service/login';
 import { generateDisplayRegion, generateUrlWithParams, needFirstLogin } from '../../utils/util';
 import { TabType } from './constant';
 const computedBehavior = require('miniprogram-computed').behavior;
+import _ from 'lodash';
+
 const app = getApp()
+
 Page({
   behaviors: [computedBehavior, UserProfileBehavior, ObservationsBehavior, TaxonBehavior, IdBehavior],
   data: {
@@ -53,6 +56,14 @@ Page({
     })
     this.resetAllTabAndFetch()
   },
+  removeMine() {
+    // 因为 switchTab 不能传参，只能用全局变量传递。。。
+    app.globalData.q = _.cloneDeep(this.data.q)
+    app.globalData.explorePageNeedRefresh = true
+    wx.switchTab({
+      url: '/pages/explore/index'
+    })
+  },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
   },
@@ -87,6 +98,7 @@ Page({
     wx.switchTab({
       url: '/pages/explore/index'
     })
+
   },
   onLoad() {
     this.resetAllTabAndFetch()

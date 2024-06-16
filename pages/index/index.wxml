@@ -22,6 +22,9 @@
           <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
             {{q.taxon_preferred_common_name || q.taxon_name}}
           </t-tag>
+          <t-tag t-class="search-tag" bind:close="removeMine" size="large" closable variant="light">
+            我上传的
+          </t-tag>
         </view>
       </view>
 
