@@ -123,9 +123,10 @@ Page({
     if (app.globalData.explorePageNeedRefresh) {
       if (app.globalData?.q) {
         this.setData({
-          q: _.cloneDeep(app.globalData.q)
+          q: _.cloneDeep(app.globalData.q),
+          // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
+          displayRegion: generateDisplayRegion(app.globalData.q?.region)
         })
-        app.globalData.q = {}
       }
       this.resetAllTabAndFetch()
       app.globalData.explorePageNeedRefresh = false
