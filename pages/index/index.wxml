@@ -15,6 +15,10 @@
     <view>
       <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length}}">
         <view class="search-name-display">
+          <t-tag t-class="search-tag" bind:close="removeMine" size="large" closable variant="light">
+            我上传的
+          </t-tag>
+
           <t-tag wx:if="{{displayRegion}}" t-class="search-tag" bind:close="removeRegion" size="large" closable variant="light">
             {{displayRegion}}
           </t-tag>
@@ -22,9 +26,7 @@
           <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
             {{q.taxon_preferred_common_name || q.taxon_name}}
           </t-tag>
-          <t-tag t-class="search-tag" bind:close="removeMine" size="large" closable variant="light">
-            我上传的
-          </t-tag>
+
         </view>
       </view>
 
