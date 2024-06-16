@@ -58,7 +58,7 @@ Page({
   },
   removeMine() {
     // 因为 switchTab 不能传参，只能用全局变量传递。。。
-    app.globalData.q = _.cloneDeep(this.data.q)
+    app.globalData.exploreQ = _.cloneDeep(this.data.q)
     app.globalData.explorePageNeedRefresh = true
     wx.switchTab({
       url: '/pages/explore/index'
