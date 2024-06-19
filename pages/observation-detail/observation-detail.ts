@@ -239,7 +239,8 @@ Page({
   onShareAppMessage() {
     return {
       title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`,
-      path: `pages/observation-detail/observation-detail?id=${this.data.id}`
+      path: `pages/observation-detail/observation-detail?id=${this.data.id}`,
+      imageUrl: this.data?.swiperList?.[0]?.value
     }
   },
   onShareTimeline() {
