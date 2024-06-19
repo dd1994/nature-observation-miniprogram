@@ -245,7 +245,8 @@ Page({
   },
   onShareTimeline() {
     return {
-      title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`
+      title: `${this.data?.observationDetail?.user_name}的记录：${this.data.common_name}`,
+      imageUrl: this.data?.swiperList?.[0]?.value
     }
   },
   async customFieldValueChange(e) {
