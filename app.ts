@@ -2,12 +2,18 @@
 import './utils/libs/lodash-fix'
 import './utils/libs/moment-zh-cn'
 
-
 App({
   onLaunch() {
     // wx.setEnableDebug({
     //   enableDebug: true,
     // })
+  },
+  onShow(options) {
+    console.log(options?.scene)
+    if ([1007, 1008].includes(options?.scene)) {
+      // 解决分享打开时数据为空的问题
+      this.globalData.explorePageNeedRefresh = true
+    }
   },
   globalData: {
     userInfo: null,
