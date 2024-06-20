@@ -4,15 +4,8 @@ import './utils/libs/moment-zh-cn'
 
 App({
   onLaunch() {
-    // wx.setEnableDebug({
-    //   enableDebug: true,
-    // })
   },
-  onShow(options) {
-    // 解决分享打开时数据为空的问题
-    if ([1007, 1008].includes(options?.scene)) {
-      this.globalData.explorePageNeedRefresh = true
-    }
+  onShow() {
   },
   globalData: {
     userInfo: null,

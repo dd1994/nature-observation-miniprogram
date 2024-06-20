@@ -30,7 +30,6 @@ Page({
       // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
       displayRegion: generateDisplayRegion(e.detail.value)
     })
-    debugger
     this.resetAllTabAndFetch()
   },
   removeRegion() {
@@ -86,6 +85,13 @@ Page({
     }
   },
   onLoad() {
+    if (app.globalData.explorePageNeedRefresh) {
+      this.onShow()
+    } else {
+      // hack: 这里是为了解决分享到群聊后打开数据为空的问题，很奇怪
+      this.resetAllTabAndFetch()
+    }
+
     const res = wx.getMenuButtonBoundingClientRect()
     const windowInfo = wx.getWindowInfo()
     const tabTop = res.bottom
