@@ -8,9 +8,11 @@ App({
     //   enableDebug: true,
     // })
   },
-  onShow() {
+  onShow(options) {
     // 解决分享打开时数据为空的问题
-    this.globalData.explorePageNeedRefresh = true
+    if ([1007, 1008].includes(options?.scene)) {
+      this.globalData.explorePageNeedRefresh = true
+    }
   },
   globalData: {
     userInfo: null,
