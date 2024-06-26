@@ -2,7 +2,7 @@
   <t-cell left-icon="user-setting" title="编辑个人资料" bordered="{{false}}" hover arrow url="../profile-setting/profile-setting" />
   <view class="cell-group">
     <button plain class="contact-btn" open-type="contact">
-      <t-cell left-icon="logo-wechat-stroke" title="联系开发人员" bordered="{{false}}" hover arrow />
+      <t-cell left-icon="logo-wechat-stroke" title="提问题或者建议" bordered="{{false}}" hover arrow />
     </button>
   </view>
   <view class="cell-group">
