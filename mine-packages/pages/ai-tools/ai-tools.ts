@@ -29,10 +29,16 @@ Page({
     this.openByAppId('wx2f147e41f13ba243')
   },
   openDongniao() {
-    this.openByAppId('wx0d6a77cb8b27cf91')
+    wx.openEmbeddedMiniProgram({
+      appId: 'wx0d6a77cb8b27cf91',
+      path: 'pages/index/index'
+    });
   },
   openDongliangpa() {
-    this.openByAppId('wxfa3bd55035d29110')
+    wx.openEmbeddedMiniProgram({
+      appId: 'wxfa3bd55035d29110',
+      path: 'pages/index/index'
+    });
   },
   openGuanniaojun() {
     this.openByAppId('wx9ea5ac1d223a7fe6')
