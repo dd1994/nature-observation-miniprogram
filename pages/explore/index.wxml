@@ -25,6 +25,9 @@
           </view>
         </t-tag>
       </view>
+      <view hover-class="common-hover-class">
+        <t-icon name="close-circle" bind:click="removeSearch" size="40rpx" style="padding: 0 16rpx;"></t-icon>
+      </view>
     </view>
 
     <view class="search-empty-tips" wx:if="{{activeTab === 0 && observationsIsEmpty && (q.taxon_id || q.region)}}">

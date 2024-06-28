@@ -19,49 +19,6 @@ Page({
     scollViewHeight: 0,
     displayRegion: '',
   },
-  removeRegion() {
-    this.setData({
-      q: {
-        ...this.data.q,
-        region: ['全部', '全部', '全部'],
-      }
-    })
-    this.setData({
-      // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
-      displayRegion: ''
-    })
-    this.resetAllTabAndFetch()
-  },
-  removeStartDateFilter() {
-    this.setData({
-      q: {
-        ...this.data.q,
-        startDate: '',
-      }
-    })
-    this.resetAllTabAndFetch()
-  },
-  removeDateFilter() {
-    this.setData({
-      q: {
-        ...this.data.q,
-        startDate: '',
-        endDate: '',
-      }
-    })
-    this.resetAllTabAndFetch()
-  },
-  removeTaxonFilter() {
-    this.setData({
-      q: {
-        ...this.data.q,
-        taxon_id: null,
-        taxon_preferred_common_name: null,
-        taxon_name: null,
-      }
-    })
-    this.resetAllTabAndFetch()
-  },
   activeTabChange(e) {
     this.setData({ activeTab: e.detail.value })
   },
