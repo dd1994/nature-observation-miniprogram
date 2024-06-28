@@ -33,6 +33,6 @@
   </view>
 
   <view class="apply-filter-button">
-    <t-button theme="primary" size="large" block>确认过滤</t-button>
+    <t-button theme="primary" size="medium" block>确认过滤</t-button>
   </view>
 </view>
