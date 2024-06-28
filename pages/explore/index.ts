@@ -19,19 +19,6 @@ Page({
     scollViewHeight: 0,
     displayRegion: '',
   },
-  bindRegionChange(e) {
-    this.setData({
-      q: {
-        ...this.data.q,
-        region: e.detail.value,
-      }
-    })
-    this.setData({
-      // 这里本来应该用 computed 的，但是 skyline 渲染模式下 computed 没法用。。。
-      displayRegion: generateDisplayRegion(e.detail.value)
-    })
-    this.resetAllTabAndFetch()
-  },
   removeRegion() {
     this.setData({
       q: {
@@ -177,31 +164,6 @@ Page({
         }
       }
     })
-    // wx.navigateTo({
-    //   url: '/pages/taxon-picker/taxon-picker',
-    //   success: (res) => {
-    //     // 发送一个事件
-    //     res.eventChannel.emit('setPlaceholder', { placeholder: '过滤感兴趣的类群，比如“蜘蛛目”' })
-    //   },
-    //   events: {
-    //     backFromSearchPage: (taxon) => {
-    //       if (!taxon?.id) {
-    //         return
-    //       }
-
-    //       this.setData({
-    //         q: {
-    //           ...this.data.q,
-    //           taxon_id: taxon?.id,
-    //           taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
-    //           taxon_name: taxon?.name,
-    //         }
-    //       })
-    //       this.resetAndFetchObservations()
-    //       this.resetAndFetchTaxon()
-    //     }
-    //   }
-    // })
   },
   gotoIndexSearch() {
     wx.navigateTo({
