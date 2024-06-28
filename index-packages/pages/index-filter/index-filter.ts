@@ -7,7 +7,9 @@ Page({
   behaviors: [computedBehavior],
   data: {
     region: ['全部', '全部', '全部'],
-    taxon: null,
+    taxon_id: null,
+    taxon_preferred_common_name: null,
+    taxon_name: null,
     startDate: '',
     endDate: '',
     today: moment(Date.now()).format('YYYY-MM-DD')
@@ -46,11 +48,9 @@ Page({
           }
 
           this.setData({
-            taxon: {
               taxon_id: taxon?.id,
               taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
               taxon_name: taxon?.name,
-            }
           })
         }
       }
