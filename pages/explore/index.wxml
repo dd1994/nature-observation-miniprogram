@@ -9,7 +9,7 @@
           {{displayRegion}}
         </t-tag>
 
-        <t-tag wx:if="{{q.taxon_id}}"  t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
+        <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
           {{q.taxon_preferred_common_name || q.taxon_name}}
         </t-tag>
       </view>
@@ -29,13 +29,13 @@
   </view>
   <view class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
 
-    <picker header-text="按地区过滤" mode="region" bindchange="bindRegionChange" value="{{q.region}}" custom-item="全部">
+    <!-- <picker header-text="按地区过滤" mode="region" bindchange="bindRegionChange" value="{{q.region}}" custom-item="全部">
       <view class="picker">
         <view hover-class="common-hover-class" class="filter-location-icon">
           <t-icon size="20px" color="rgba(0,0,0,0.9)" name="location" />
         </view>
       </view>
-    </picker>
+    </picker> -->
 
     <view hover-class="common-hover-class" class="filter-icon">
       <t-icon bind:click="gotoIndexFilter" size="20px" color="rgba(0,0,0,0.9)" name="filter-1" />

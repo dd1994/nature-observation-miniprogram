@@ -1,11 +1,38 @@
-<!--components/filter-panel/filter-panel.wxml-->
 <view class="filter-panel-container">
-  <view class="filter-panel__title">物种筛选</view>
-  <t-search model:value="{{taxon}}" placeholder="输入物种名" />
-  <view class="apply-filter-button">
-    <t-button theme="primary" size="large" block>搜索</t-button>
+  <view class="filter-item">
+    <view class="filter-item-title">
+      <t-icon class="filter-item-title__icon" name="search" size="48rpx"></t-icon>
+      <view>类群</view>
+    </view>
+    <view class="filter-item-content filter-item-content__placeholder">
+      按类群过滤，比如“蜘蛛目”
+    </view>
   </view>
-  <!-- <view class="filter-panel__title">拍摄地点</view>
-  <view class="filter-panel__title">拍摄时间</view>
-  <view class="filter-panel__title">排序</view> -->
+  <view class="filter-item">
+    <view class="filter-item-title">
+      <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
+      <view>观察位置</view>
+    </view>
+    <view class="filter-item-content">
+      可选择省、市或者区范围
+    </view>
+  </view>
+  <view class="filter-item">
+    <view class="filter-item-title">
+      <t-icon class="filter-item-title__icon" name="calendar" size="48rpx"></t-icon>
+      <view>观察时间</view>
+    </view>
+    <view class="filter-item-content__time">
+      <view class="filter-item-content filter-item-content__time__start">
+        开始时间
+      </view>
+      <view class="filter-item-content filter-item-content__time__end">
+        结束时间
+      </view>
+    </view>
+  </view>
+
+  <view class="apply-filter-button">
+    <t-button theme="primary" size="large" block>确认过滤</t-button>
+  </view>
 </view>

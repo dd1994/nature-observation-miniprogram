@@ -164,30 +164,38 @@ Page({
   },
   gotoIndexFilter() {
     wx.navigateTo({
-      url: '/pages/taxon-picker/taxon-picker',
-      success: (res) => {
-        // 发送一个事件
-        res.eventChannel.emit('setPlaceholder', { placeholder: '过滤感兴趣的类群，比如“蜘蛛目”' })
-      },
+      url: '/index-packages/pages/index-filter/index-filter',
       events: {
-        backFromSearchPage: (taxon) => {
-          if (!taxon?.id) {
-            return
-          }
-
-          this.setData({
-            q: {
-              ...this.data.q,
-              taxon_id: taxon?.id,
-              taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
-              taxon_name: taxon?.name,
-            }
-          })
-          this.resetAndFetchObservations()
-          this.resetAndFetchTaxon()
+        backFromSearchPage: (filter) => {
+          debugger
         }
       }
     })
+    // wx.navigateTo({
+    //   url: '/pages/taxon-picker/taxon-picker',
+    //   success: (res) => {
+    //     // 发送一个事件
+    //     res.eventChannel.emit('setPlaceholder', { placeholder: '过滤感兴趣的类群，比如“蜘蛛目”' })
+    //   },
+    //   events: {
+    //     backFromSearchPage: (taxon) => {
+    //       if (!taxon?.id) {
+    //         return
+    //       }
+
+    //       this.setData({
+    //         q: {
+    //           ...this.data.q,
+    //           taxon_id: taxon?.id,
+    //           taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
+    //           taxon_name: taxon?.name,
+    //         }
+    //       })
+    //       this.resetAndFetchObservations()
+    //       this.resetAndFetchTaxon()
+    //     }
+    //   }
+    // })
   },
   gotoIndexSearch() {
     wx.navigateTo({
