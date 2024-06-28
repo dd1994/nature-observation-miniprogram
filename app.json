@@ -6,9 +6,7 @@
     "pages/observation-create/observation-create",
     "pages/observation-detail/observation-detail",
     "pages/taxon-detail/taxon-detail",
-    "pages/index-search/index-search",
-    "pages/taxon-picker/taxon-picker",
-    "pages/index-filter/index-filter"
+    "pages/taxon-picker/taxon-picker"
   ],
   "subPackages": [
     {
@@ -21,6 +19,13 @@
         "pages/ai-tools/ai-tools",
         "pages/user-home/user-home",
         "pages/notify/notify"
+      ]
+    },
+    {
+      "root": "index-packages",
+      "pages": [
+        "pages/index-filter/index-filter",
+        "pages/index-search/index-search"
       ]
     }
   ],

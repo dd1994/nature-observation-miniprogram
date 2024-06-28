@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import ObservationsBehavior from '../../components/observation-list/observationBehavior';
-import UserProfileBehavior from '../../components/user-profile/user-profile';
+import ObservationsBehavior from '../../../components/observation-list/observationBehavior';
+import UserProfileBehavior from '../../../components/user-profile/user-profile';
 
 Page({
   behaviors: [UserProfileBehavior, ObservationsBehavior],

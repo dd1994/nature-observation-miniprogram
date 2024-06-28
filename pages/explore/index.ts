@@ -191,7 +191,7 @@ Page({
   },
   gotoIndexSearch() {
     wx.navigateTo({
-      url: "/pages/index-search/index-search"
+      url: "/index-packages/pages/index-search/index-search"
     })
   },
   removeSearch() {

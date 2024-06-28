@@ -199,9 +199,6 @@ Page({
         }
       }
     })
-    // wx.navigateTo({
-    //   url: "/pages/index-search/index-search?needLogin=true"
-    // })
   },
   resetAllTabAndFetch() {
     this.resetAndFetchObservations()
@@ -210,7 +207,7 @@ Page({
   },
   gotoIndexSearch() {
     wx.navigateTo({
-      url: "/pages/index-search/index-search?needLogin=true"
+      url: "/index-packages/pages/index-search/index-search"
     })
   },
   removeSearch() {
