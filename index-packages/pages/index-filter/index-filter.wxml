@@ -4,8 +4,14 @@
       <t-icon class="filter-item-title__icon" name="filter-1" size="48rpx"></t-icon>
       <view>类群</view>
     </view>
-    <view class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
+    <view wx:if="{{!taxon.taxon_id}}" class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class" bind:tap="gotoTaxonFilter">
       过滤感兴趣的类群，比如“蜘蛛目”
+    </view>
+    <view wx:else class="filter-item-content" hover-class="common-hover-class" bind:tap="gotoTaxonFilter">
+      <view>{{taxon.taxon_preferred_common_name}}</view>
+      <view catch:tap="removeTaxonFilter" hover-class="common-hover-class">
+        <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+      </view>
     </view>
   </view>
   <view class="filter-item">
