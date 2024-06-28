@@ -152,6 +152,15 @@ Page({
   gotoIndexFilter() {
     wx.navigateTo({
       url: '/index-packages/pages/index-filter/index-filter',
+      success: (res) => {
+        // 发送一个事件
+        res.eventChannel.emit('setDefaultFilter', {
+          filter: {
+            ...this.data.q,
+            displayRegion: this.data.displayRegion
+          }
+        })
+      },
       events: {
         backFromIndexFilterPage: (filter) => {
           this.setData({

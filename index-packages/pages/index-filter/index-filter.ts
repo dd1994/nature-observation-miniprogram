@@ -89,6 +89,14 @@ Page({
       }
     })
   },
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+    eventChannel.on('setDefaultFilter', (res) => {
+      this.setData({
+        ...res.filter
+      })
+    })
+  },
   computed: {
     displayRegion(data) {
       return generateDisplayRegion(data.region)
