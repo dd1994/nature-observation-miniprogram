@@ -3,17 +3,17 @@
   <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
   </index-tab>
   <view>
-    <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length}}">
+    <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length || q.startDate || q.endDate}}">
       <view class="search-name-display">
-        <t-tag wx:if="{{displayRegion}}" t-class="search-tag" bind:close="removeRegion" size="large" closable variant="light">
+        <t-tag wx:if="{{displayRegion}}" t-class="search-tag" size="large" variant="light">
           {{displayRegion}}
         </t-tag>
 
-        <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
+        <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" size="large" variant="light">
           {{q.taxon_preferred_common_name || q.taxon_name}}
         </t-tag>
 
-        <t-tag wx:if="{{q.startDate || q.endDate}}" t-class="search-tag" bind:close="removeDateFilter" size="large" closable variant="light">
+        <t-tag wx:if="{{q.startDate || q.endDate}}" t-class="search-tag" size="large" variant="light">
           <view wx:if="{{q.startDate && q.endDate}}">
             {{q.startDate}}~{{q.endDate}}
           </view>
