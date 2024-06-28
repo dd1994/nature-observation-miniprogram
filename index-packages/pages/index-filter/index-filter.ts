@@ -34,6 +34,16 @@ Page({
       startDate: ''
     })
   },
+  bindEndDateChange(e) {
+    this.setData({
+      endDate: e.detail.value
+    })
+  },
+  removeEndDate() {
+    this.setData({
+      endDate: ''
+    })
+  },
   gotoTaxonFilter() {
     wx.navigateTo({
       url: '/pages/taxon-picker/taxon-picker',
@@ -48,9 +58,9 @@ Page({
           }
 
           this.setData({
-              taxon_id: taxon?.id,
-              taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
-              taxon_name: taxon?.name,
+            taxon_id: taxon?.id,
+            taxon_preferred_common_name: taxon?.preferred_common_name || taxon?.name,
+            taxon_name: taxon?.name,
           })
         }
       }
@@ -58,7 +68,9 @@ Page({
   },
   removeTaxonFilter() {
     this.setData({
-      taxon: null,
+      taxon_id: null,
+      taxon_preferred_common_name: null,
+      taxon_name: null,
     })
   },
   computed: {
