@@ -166,8 +166,14 @@ Page({
     wx.navigateTo({
       url: '/index-packages/pages/index-filter/index-filter',
       events: {
-        backFromSearchPage: (filter) => {
+        backFromIndexFilterPage: (filter) => {
+          this.setData({
+            q: filter
+          })
           debugger
+          this.setData({
+            displayRegion: filter?.displayRegion,
+          })
         }
       }
     })

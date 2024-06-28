@@ -73,6 +73,22 @@ Page({
       taxon_name: null,
     })
   },
+  confirmFilter() {
+    const eventChannel = this.getOpenerEventChannel();
+    wx.navigateBack({
+      complete: () => {
+        eventChannel.emit('backFromIndexFilterPage', {
+          displayRegion: this.data.displayRegion,
+          endDate: this.data.endDate,
+          region: this.data.region,
+          startDate: this.data.startDate,
+          taxon_id: this.data.taxon_id,
+          taxon_name: this.data.taxon_name,
+          taxon_preferred_common_name: this.data.taxon_preferred_common_name,
+        })
+      }
+    })
+  },
   computed: {
     displayRegion(data) {
       return generateDisplayRegion(data.region)
