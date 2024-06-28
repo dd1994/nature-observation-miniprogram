@@ -12,6 +12,18 @@
         <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
           {{q.taxon_preferred_common_name || q.taxon_name}}
         </t-tag>
+
+        <t-tag wx:if="{{q.startDate || q.endDate}}" t-class="search-tag" bind:close="removeDateFilter" size="large" closable variant="light">
+          <view wx:if="{{q.startDate && q.endDate}}">
+            {{q.startDate}}~{{q.endDate}}
+          </view>
+          <view wx:if="{{q.startDate && !q.endDate}}">
+            晚于{{q.startDate}}
+          </view>
+          <view wx:if="{{q.endDate && !q.startDate}}">
+            早于{{q.endDate}}
+          </view>
+        </t-tag>
       </view>
     </view>
 

@@ -32,10 +32,32 @@ Page({
     })
     this.resetAllTabAndFetch()
   },
+  removeStartDateFilter() {
+    this.setData({
+      q: {
+        ...this.data.q,
+        startDate: '',
+      }
+    })
+    this.resetAllTabAndFetch()
+  },
+  removeDateFilter() {
+    this.setData({
+      q: {
+        ...this.data.q,
+        startDate: '',
+        endDate: '',
+      }
+    })
+    this.resetAllTabAndFetch()
+  },
   removeTaxonFilter() {
     this.setData({
       q: {
-        region: this.data.q.region,
+        ...this.data.q,
+        taxon_id: null,
+        taxon_preferred_common_name: null,
+        taxon_name: null,
       }
     })
     this.resetAllTabAndFetch()

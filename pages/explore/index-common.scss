@@ -27,13 +27,14 @@
   justify-content: space-between;
   font-size: var(--td-font-size-base);
   background-color: var(--td-font-gray-3);
-  padding: var(--spacer-mini) var(--spacer-mini);
+  padding: var(--spacer-mini) 0;
   color: #fff;
 
   .search-name-display {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .search-name-display__item {
@@ -46,13 +47,14 @@
 }
 
 .search-tag {
-  margin-right: var(--td-spacer);
   background-color: transparent !important;
   border: none !important;
   color: #fff !important;
+  font-size: 28rpx !important;
 
   .t-icon {
     color: #fff !important;
-    font-size: var(--td-font-size-xl) !important;
+    font-size: var(--td-font-size-l) !important;
+    margin-left: 4rpx !important;
   }
 }
