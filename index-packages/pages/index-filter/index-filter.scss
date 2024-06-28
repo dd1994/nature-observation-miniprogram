@@ -33,13 +33,12 @@
 .filter-item-content__time {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .filter-item-content__time__start,
 .filter-item-content__time__end {
   width: 300rpx;
-  margin-right: var(--td-spacer-1);
 }
 
 .apply-filter-button {

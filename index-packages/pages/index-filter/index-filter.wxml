@@ -1,11 +1,11 @@
 <view class="filter-panel-container">
   <view class="filter-item">
     <view class="filter-item-title">
-      <t-icon class="filter-item-title__icon" name="search" size="48rpx"></t-icon>
+      <t-icon class="filter-item-title__icon" name="filter-1" size="48rpx"></t-icon>
       <view>类群</view>
     </view>
     <view class="filter-item-content filter-item-content__placeholder">
-      按类群过滤，比如“蜘蛛目”
+      过滤感兴趣的类群，比如“蜘蛛目”
     </view>
   </view>
   <view class="filter-item">
@@ -13,8 +13,8 @@
       <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
       <view>观察位置</view>
     </view>
-    <view class="filter-item-content">
-      可选择省、市或者区范围
+    <view class="filter-item-content filter-item-content__placeholder">
+      可按省、市或者区过滤
     </view>
   </view>
   <view class="filter-item">
@@ -23,10 +23,10 @@
       <view>观察时间</view>
     </view>
     <view class="filter-item-content__time">
-      <view class="filter-item-content filter-item-content__time__start">
+      <view class="filter-item-content filter-item-content__time__start filter-item-content__placeholder">
         开始时间
       </view>
-      <view class="filter-item-content filter-item-content__time__end">
+      <view class="filter-item-content filter-item-content__time__end filter-item-content__placeholder">
         结束时间
       </view>
     </view>
