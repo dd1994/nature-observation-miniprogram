@@ -166,10 +166,10 @@ Page({
           this.setData({
             q: filter
           })
-          debugger
           this.setData({
             displayRegion: filter?.displayRegion,
           })
+          this.resetAllTabAndFetch()
         }
       }
     })
