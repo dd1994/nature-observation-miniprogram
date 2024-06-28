@@ -4,7 +4,7 @@
       <t-icon class="filter-item-title__icon" name="filter-1" size="48rpx"></t-icon>
       <view>类群</view>
     </view>
-    <view class="filter-item-content filter-item-content__placeholder">
+    <view class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
       过滤感兴趣的类群，比如“蜘蛛目”
     </view>
   </view>
@@ -13,7 +13,7 @@
       <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
       <view>观察位置</view>
     </view>
-    <view class="filter-item-content filter-item-content__placeholder">
+    <view class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
       可按省、市或者区过滤
     </view>
   </view>
@@ -23,10 +23,10 @@
       <view>观察时间</view>
     </view>
     <view class="filter-item-content__time">
-      <view class="filter-item-content filter-item-content__time__start filter-item-content__placeholder">
+      <view class="filter-item-content filter-item-content__time__start filter-item-content__placeholder" hover-class="common-hover-class">
         开始时间
       </view>
-      <view class="filter-item-content filter-item-content__time__end filter-item-content__placeholder">
+      <view class="filter-item-content filter-item-content__time__end filter-item-content__placeholder" hover-class="common-hover-class">
         结束时间
       </view>
     </view>

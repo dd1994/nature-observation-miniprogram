@@ -38,11 +38,11 @@
     </picker> -->
 
     <view hover-class="common-hover-class" class="filter-icon">
-      <t-icon bind:click="gotoIndexFilter" size="20px" color="rgba(0,0,0,0.9)" name="filter-1" />
+      <t-icon bind:click="gotoIndexFilter" size="22px" color="rgba(0,0,0,0.9)" name="filter-1" />
     </view>
 
     <view hover-class="common-hover-class" class="search-icon">
-      <t-icon bind:click="gotoIndexSearch" size="20px" color="rgba(0,0,0,0.9)" name="search" />
+      <t-icon bind:click="gotoIndexSearch" size="22px" color="rgba(0,0,0,0.9)" name="search" />
     </view>
   </view>
   <fab icon="add" bind:tap="onAddIconTap" />
