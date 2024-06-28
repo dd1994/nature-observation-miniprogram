@@ -1,6 +1,7 @@
 import { generateDisplayRegion } from "../../../utils/util";
 
 const computedBehavior = require('miniprogram-computed').behavior;
+import moment from 'moment'
 
 Page({
   behaviors: [computedBehavior],
@@ -9,6 +10,7 @@ Page({
     taxon: null,
     startDate: '',
     endDate: '',
+    today: moment(Date.now()).format('YYYY-MM-DD')
   },
   bindRegionChange(e) {
     this.setData({

@@ -39,7 +39,7 @@
       <view>观察时间</view>
     </view>
     <view class="filter-item-content__time">
-      <picker header-text="按观察位置过滤" mode="date" bindchange="bindStartDateChange" value="{{startDate}}">
+      <picker header-text="按观察位置过滤" mode="date" bindchange="bindStartDateChange" value="{{startDate}}" end="{{today}}">
         <view wx:if="{{!startDate}}" class="filter-item-content filter-item-content__time__start filter-item-content__placeholder" hover-class="common-hover-class">
           开始时间
         </view>
