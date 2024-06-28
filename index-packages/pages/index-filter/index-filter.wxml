@@ -13,9 +13,19 @@
       <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
       <view>观察位置</view>
     </view>
-    <view class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
-      可按省、市或者区过滤
-    </view>
+    <picker header-text="按观察位置过滤" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
+      <view class="picker">
+        <view wx:if="{{!displayRegion}}" class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
+          可按省、市或者区过滤
+        </view>
+        <view wx:else class="filter-item-content" hover-class="common-hover-class">
+          <view>{{displayRegion}}</view>
+          <view catch:tap="removeRegion" hover-class="common-hover-class">
+            <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+          </view>
+        </view>
+      </view>
+    </picker>
   </view>
   <view class="filter-item">
     <view class="filter-item-title">
