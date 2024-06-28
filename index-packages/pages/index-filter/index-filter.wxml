@@ -39,9 +39,17 @@
       <view>观察时间</view>
     </view>
     <view class="filter-item-content__time">
-      <view class="filter-item-content filter-item-content__time__start filter-item-content__placeholder" hover-class="common-hover-class">
-        开始时间
-      </view>
+      <picker header-text="按观察位置过滤" mode="date" bindchange="bindStartDateChange" value="{{startDate}}">
+        <view wx:if="{{!startDate}}" class="filter-item-content filter-item-content__time__start filter-item-content__placeholder" hover-class="common-hover-class">
+          开始时间
+        </view>
+        <view wx:else class="filter-item-content filter-item-content__time__start" hover-class="common-hover-class">
+          <view>{{startDate}}</view>
+          <view catch:tap="removeStartDate" hover-class="common-hover-class">
+            <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+          </view>
+        </view>
+      </picker>
       <view class="filter-item-content filter-item-content__time__end filter-item-content__placeholder" hover-class="common-hover-class">
         结束时间
       </view>

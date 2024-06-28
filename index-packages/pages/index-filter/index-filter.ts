@@ -7,6 +7,8 @@ Page({
   data: {
     region: ['全部', '全部', '全部'],
     taxon: null,
+    startDate: '',
+    endDate: '',
   },
   bindRegionChange(e) {
     this.setData({
@@ -16,6 +18,16 @@ Page({
   removeRegion() {
     this.setData({
       region: ['全部', '全部', '全部'],
+    })
+  },
+  bindStartDateChange(e) {
+    this.setData({
+      startDate: e.detail.value
+    })
+  },
+  removeStartDate() {
+    this.setData({
+      startDate: ''
     })
   },
   gotoTaxonFilter() {
