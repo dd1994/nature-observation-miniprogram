@@ -1,6 +1,6 @@
 <scroll-view bindscrolltolower="bindscrolltolower" scroll-y type="custom" lower-threshold="{{1000}}" style="width: 100%; height: 100%;" type="custom" class="observation-list-wrapper">
   <grid-view type="masonry" main-axis-gap="4" cross-axis-gap="4" padding="{{[4,4,4,4]}}">
-    <view data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{formattedObservations}}">
+    <view hover-class="common-hover-class" data-id="{{item.id}}" bind:tap="gotoDetailPage" class="observation-list__item" wx:key="id" wx:for="{{formattedObservations}}">
       <image webp class="observation-list__item__img" src="{{item.displayImg}}" mode='aspectFill' alt="" srcset="" />
       <view class="observation-list__item__bottom">
         {{item.common_name}}
