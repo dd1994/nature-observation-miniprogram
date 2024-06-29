@@ -1,7 +1,7 @@
 export const defaultTimeFormat = 'YYYY-MM-DD'
 export const exifTimeFormat = 'YYYY:MM:DD HH:mm:ss'
-export const apiDomain = 'https://www.nature-notes.com'
-// export const apiDomain = 'http://192.168.3.179:7001'
+// export const apiDomain = 'https://www.nature-notes.com'
+export const apiDomain = 'http://192.168.3.179:7001'
 export const statBgColor = '#0bae31'
 export const defaultPlaceholder = '搜索物种，比如“银杏”'
 
@@ -42,3 +42,25 @@ export const RankChineseMap = {
   "form": "型",
   "infrahybrid": "种内杂种"
 }
+
+export const sortKeyOptions = [
+  {
+    label: '上传日期',
+    value: 'created_at',
+  },
+  {
+    label: '拍照日期',
+    value: 'observed_on'
+  }
+]
+
+export const sortTypeOptions = [
+  {
+    value: 'DESC',
+    label: '降序'
+  },
+  {
+    value: 'ASC',
+    label: '升序'
+  }
+]

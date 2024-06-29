@@ -27,7 +27,7 @@
   justify-content: space-between;
   font-size: var(--td-font-size-base);
   background-color: var(--td-font-gray-3);
-  padding: var(--spacer-mini) 0;
+  padding: var(--spacer-mini);
   color: #fff;
 
   .search-name-display {
@@ -46,15 +46,8 @@
   margin-top: var(--td-spacer-6);
 }
 
-.search-tag {
-  background-color: transparent !important;
-  border: none !important;
+.search-tips-tag {
   color: #fff !important;
   font-size: 28rpx !important;
-
-  .t-icon {
-    color: #fff !important;
-    font-size: var(--td-font-size-l) !important;
-    margin-left: 4rpx !important;
-  }
+  margin-right: var(--td-spacer-1);
 }

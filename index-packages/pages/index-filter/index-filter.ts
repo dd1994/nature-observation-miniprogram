@@ -2,6 +2,7 @@ import { generateDisplayRegion } from "../../../utils/util";
 
 const computedBehavior = require('miniprogram-computed').behavior;
 import moment from 'moment'
+import { sortKeyOptions, sortTypeOptions } from "../../../utils/constant";
 
 Page({
   behaviors: [computedBehavior],
@@ -15,26 +16,8 @@ Page({
     today: moment(Date.now()).format('YYYY-MM-DD'),
     sortKey: 0,
     sortType: 0,
-    sortKeyOptions: [
-      {
-        label: '上传日期',
-        value: 'created_at',
-      },
-      {
-        label: '拍照日期',
-        value: 'observed_on'
-      }
-    ],
-    sortTypeOptions: [
-      {
-        value: 'DESC',
-        label: '降序'
-      },
-      {
-        value: 'ASC',
-        label: '升序'
-      }
-    ]
+    sortKeyOptions: sortKeyOptions,
+    sortTypeOptions: sortTypeOptions
   },
   bindRegionChange(e) {
     this.setData({
@@ -109,29 +92,49 @@ Page({
     const eventChannel = this.getOpenerEventChannel();
     wx.navigateBack({
       complete: () => {
-        eventChannel.emit('backFromIndexFilterPage', {
-          displayRegion: this.data.displayRegion,
-          endDate: this.data.endDate,
-          region: this.data.region,
-          startDate: this.data.startDate,
-          taxon_id: this.data.taxon_id,
-          taxon_name: this.data.taxon_name,
-          taxon_preferred_common_name: this.data.taxon_preferred_common_name,
-        })
+        eventChannel.emit('backFromIndexFilterPage', this.data.formattedFilterValue)
       }
     })
   },
   onLoad() {
     const eventChannel = this.getOpenerEventChannel();
     eventChannel.on('setDefaultFilter', (res) => {
+      const sortKeyIndex = sortKeyOptions.findIndex(i => i.value === res?.filter?.sortKey)
+      const sortTypeIndex = sortTypeOptions.findIndex(i => i.value === res?.filter?.sortType)
+
       this.setData({
-        ...res.filter
+        ...res.filter,
+        sortKey: sortKeyIndex === -1 ? 0 : sortKeyIndex,
+        sortType: sortTypeIndex == -1 ? 0 : sortTypeIndex
       })
     })
   },
   computed: {
     displayRegion(data) {
       return generateDisplayRegion(data.region)
+    },
+    formattedFilterValue(data) {
+      let sortTips = ''
+      if ((data.sortType == 0) && (data.sortKey == 0)) {
+        // 默认排序，不展示任何提示
+        sortTips = ''
+      } else {
+        const sortTypeLabel = sortTypeOptions[data.sortType]?.label
+        const sortKeyLabel = sortKeyOptions[data.sortKey]?.label
+        sortTips = `按${sortKeyLabel}${sortTypeLabel}`
+      }
+      return {
+        displayRegion: data.displayRegion,
+        endDate: data.endDate,
+        region: data.region,
+        startDate: data.startDate,
+        taxon_id: data.taxon_id,
+        taxon_name: data.taxon_name,
+        taxon_preferred_common_name: data.taxon_preferred_common_name,
+        sortType: sortTypeOptions[data.sortType].value,
+        sortKey: sortKeyOptions[data.sortKey].value,
+        sortTips
+      }
     }
   }
 })
