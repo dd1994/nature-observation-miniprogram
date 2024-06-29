@@ -49,6 +49,16 @@
   width: 300rpx;
 }
 
+.mine-tips {
+  font-size: var(--td-font-size-s);
+  color: var(--td-font-gray-3);
+  margin-bottom: var(--td-spacer-2);
+
+  .mine-tips-explore-links {
+    text-decoration: underline;
+  }
+}
+
 .apply-filter-button {
   position: fixed;
   bottom: var(--td-spacer-6);

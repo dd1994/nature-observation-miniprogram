@@ -17,7 +17,8 @@ Page({
     sortType: 0,
     today: moment(Date.now()).format('YYYY-MM-DD'),
     sortKeyOptions: sortKeyOptions,
-    sortTypeOptions: sortTypeOptions
+    sortTypeOptions: sortTypeOptions,
+    mine: false,
   },
   bindRegionChange(e) {
     this.setData({
@@ -109,6 +110,11 @@ Page({
       }
     })
   },
+  gotoExplore() {
+    wx.switchTab({
+      url: '/pages/explore/index'
+    })
+  },
   onLoad() {
     const eventChannel = this.getOpenerEventChannel();
     eventChannel.on('setDefaultFilter', (res) => {
@@ -118,7 +124,8 @@ Page({
       this.setData({
         ...res.filter,
         sortKey: sortKeyIndex === -1 ? 0 : sortKeyIndex,
-        sortType: sortTypeIndex == -1 ? 0 : sortTypeIndex
+        sortType: sortTypeIndex == -1 ? 0 : sortTypeIndex,
+        mine: res.mine || false
       })
     })
   },
