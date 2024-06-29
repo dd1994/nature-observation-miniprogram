@@ -153,17 +153,17 @@ Page({
       }
     })
   },
-  gotoIndexSearch() {
-    wx.navigateTo({
-      url: "/index-packages/pages/index-search/index-search"
-    })
-  },
   removeSearch() {
     this.setData({
       q: {},
       displayRegion: '',
     })
     this.resetAllTabAndFetch()
+  },
+  gotoIndexSearch() {
+    wx.navigateTo({
+      url: "/index-packages/pages/index-search/index-search"
+    })
   },
   resetAllTabAndFetch() {
     this.resetAndFetchObservations()

@@ -13,20 +13,34 @@
     </index-tab>
 
     <view>
-      <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length}}">
+      <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length || q.startDate || q.endDate || q.sortTips}}" bind:tap="gotoIndexFilter">
         <view class="search-name-display">
-          <t-tag t-class="search-tag" bind:close="removeMine" size="large" closable variant="light">
-            我上传的
-          </t-tag>
-
-          <t-tag wx:if="{{displayRegion}}" t-class="search-tag" bind:close="removeRegion" size="large" closable variant="light">
+          <view wx:if="{{displayRegion}}" class="search-tips-tag" size="large" variant="light">
             {{displayRegion}}
-          </t-tag>
+          </view>
 
-          <t-tag wx:if="{{q.taxon_id}}" t-class="search-tag" bind:close="removeTaxonFilter" size="large" closable variant="light">
+          <view wx:if="{{q.taxon_id}}" class="search-tips-tag" size="large" variant="light">
             {{q.taxon_preferred_common_name || q.taxon_name}}
-          </t-tag>
+          </view>
 
+          <view wx:if="{{q.startDate || q.endDate}}" class="search-tips-tag" size="large" variant="light">
+            <view wx:if="{{q.startDate && q.endDate}}">
+              {{q.startDate}}~{{q.endDate}}
+            </view>
+            <view wx:if="{{q.startDate && !q.endDate}}">
+              晚于{{q.startDate}}
+            </view>
+            <view wx:if="{{q.endDate && !q.startDate}}">
+              早于{{q.endDate}}
+            </view>
+          </view>
+
+          <view wx:if="{{q.sortTips}}" class="search-tips-tag" size="large" variant="light">
+            {{q.sortTips}}
+          </view>
+        </view>
+        <view hover-class="common-hover-class" catch:tap="removeSearch">
+          <t-icon name="close-circle" size="40rpx" style="padding: 0 16rpx;"></t-icon>
         </view>
       </view>
 
@@ -48,21 +62,12 @@
     </view>
   </view>
   <view class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
-
-    <picker header-text="按地区过滤" mode="region" bindchange="bindRegionChange" value="{{q.region}}" custom-item="全部">
-      <view class="picker">
-        <view hover-class="common-hover-class" class="filter-location-icon">
-          <t-icon size="20px" color="rgba(0,0,0,0.9)" name="location" />
-        </view>
-      </view>
-    </picker>
-
     <view hover-class="common-hover-class" class="filter-icon">
-      <t-icon bind:click="gotoIndexFilter" size="20px" color="rgba(0,0,0,0.9)" name="filter-1" />
+      <t-icon bind:click="gotoIndexFilter" size="22px" color="rgba(0,0,0,0.9)" name="filter-1" />
     </view>
 
     <view hover-class="common-hover-class" class="search-icon">
-      <t-icon bind:click="gotoIndexSearch" size="20px" color="rgba(0,0,0,0.9)" name="search" />
+      <t-icon bind:click="gotoIndexSearch" size="22px" color="rgba(0,0,0,0.9)" name="search" />
     </view>
   </view>
   <fab icon="add" wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap"></fab>

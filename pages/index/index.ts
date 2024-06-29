@@ -210,17 +210,37 @@ Page({
       url: "/index-packages/pages/index-search/index-search"
     })
   },
+  gotoIndexFilter() {
+    wx.navigateTo({
+      url: '/index-packages/pages/index-filter/index-filter',
+      success: (res) => {
+        // 发送一个事件
+        res.eventChannel.emit('setDefaultFilter', {
+          filter: {
+            ...this.data.q,
+            displayRegion: this.data.displayRegion
+          }
+        })
+      },
+      events: {
+        backFromIndexFilterPage: (filter) => {
+          this.setData({
+            q: filter
+          })
+          this.setData({
+            displayRegion: filter?.displayRegion,
+          })
+          this.resetAllTabAndFetch()
+        }
+      }
+    })
+  },
   removeSearch() {
     this.setData({
       q: {},
       displayRegion: '',
     })
     this.resetAllTabAndFetch()
-  },
-  openFilterPanel() {
-    wx.navigateTo({
-      url: "/pages/index-filter/index-filter"
-    })
   },
   onFilterPanelVisibleChange(e) {
     this.setData({
