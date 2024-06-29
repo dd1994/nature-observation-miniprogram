@@ -17,9 +17,9 @@
   <view class="filter-item">
     <view class="filter-item-title">
       <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
-      <view>观察位置</view>
+      <view>拍照位置</view>
     </view>
-    <picker header-text="按观察位置筛选" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
+    <picker header-text="按拍照位置筛选" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
       <view class="picker">
         <view wx:if="{{!displayRegion}}" class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
           可按省、市或者区筛选
@@ -36,7 +36,7 @@
   <view class="filter-item">
     <view class="filter-item-title">
       <t-icon class="filter-item-title__icon" name="calendar" size="48rpx"></t-icon>
-      <view>观察时间</view>
+      <view>拍照时间</view>
     </view>
     <view class="filter-item-content__time">
       <picker header-text="开始时间" mode="date" bindchange="bindStartDateChange" value="{{startDate}}" end="{{today}}">
