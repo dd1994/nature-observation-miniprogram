@@ -3,7 +3,7 @@
   <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
   </index-tab>
   <view>
-    <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length || q.startDate || q.endDate}}">
+    <view class="search-taxon-info" wx:if="{{q.taxon_id || displayRegion.length || q.startDate || q.endDate}}" bind:tap="gotoIndexFilter">
       <view class="search-name-display">
         <t-tag wx:if="{{displayRegion}}" t-class="search-tag" size="large" variant="light">
           {{displayRegion}}
@@ -25,8 +25,8 @@
           </view>
         </t-tag>
       </view>
-      <view hover-class="common-hover-class">
-        <t-icon name="close-circle" bind:click="removeSearch" size="40rpx" style="padding: 0 16rpx;"></t-icon>
+      <view hover-class="common-hover-class" catch:tap="removeSearch">
+        <t-icon name="close-circle" size="40rpx" style="padding: 0 16rpx;"></t-icon>
       </view>
     </view>
 
