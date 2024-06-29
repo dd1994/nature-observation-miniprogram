@@ -85,7 +85,7 @@
   </view>
 
   <view class="apply-filter-button">
-    <view wx:if="mine" class="mine-tips">当前在“我的”记录里筛选，若想筛选他人记录，请前往<text hover-class="common-hover-class" class="mine-tips-explore-links" bind:tap="gotoExplore">发现页面</text></view>
+    <view wx:if="{{mine}}" class="mine-tips">当前在“我的”记录里筛选，若想筛选他人记录，请前往<text hover-class="common-hover-class" class="mine-tips-explore-links" bind:tap="gotoExplore">发现页面</text></view>
     <t-button icon="search" theme="primary" size="medium" block bind:tap="confirmFilter">确认筛选</t-button>
     <view bind:tap="resetFilter" hover-class="common-hover-class" class="reset-filter">重置筛选</view>
   </view>
