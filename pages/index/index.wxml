@@ -1,11 +1,11 @@
 <view class="index-page" style="padding-top: {{tabTop + 'px'}}">
-  <view class="empty-tips" wx:if="{{!observationsIsLoading && observationsIsEmpty && !(q.taxon_id || displayRegion.length)}}">
+  <view class="empty-tips" wx:if="{{!observationsIsLoading && observationsIsEmpty && !(q.taxon_id || displayRegion.length || q.startDate || q.endDate || q.sortTips)}}">
     <view class="slogan">
       <view>记录身边物种</view>
       <view>参与公民科学</view>
     </view>
     <t-button t-class="empty-tips__btn" theme="primary" size="large" block bind:tap="onAddIconTap">上传已有照片</t-button>
-  
+
     <view class="empty-tips__or">或者</view>
     <t-button t-class="empty-tips__btn" plain theme="primary" size="large" variant="outline" block bind:tap="goToExplore">先随便逛逛</t-button>
 
