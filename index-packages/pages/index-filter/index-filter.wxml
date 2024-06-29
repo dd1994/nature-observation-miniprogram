@@ -63,6 +63,26 @@
       </picker>
     </view>
   </view>
+  <view class="filter-item">
+    <view class="filter-item-title">
+      <t-icon class="filter-item-title__icon" name="calendar" size="48rpx"></t-icon>
+      <view>排序方式</view>
+    </view>
+    <view class="filter-item-content__sort">
+      <picker header-text="排序字段" mode="selector" bindchange="bindSortKeyChange" range="{{sortKeyOptions}}" value="{{sortKey}}" range-key="label">
+        <view class="filter-item-content filter-item-content__sort__key" hover-class="common-hover-class">
+          <view>{{sortKeyOptions[sortKey].label}}</view>
+          <t-icon name="caret-down-small" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+        </view>
+      </picker>
+      <picker header-text="排序顺序" mode="selector" bindchange="bindSortTypeChange" range="{{sortTypeOptions}}" range-key="label" value="{{sortType}}">
+        <view class="filter-item-content filter-item-content__sort__type" hover-class="common-hover-class">
+          <view>{{sortTypeOptions[sortType].label}}</view>
+          <t-icon name="caret-down-small" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+        </view>
+      </picker>
+    </view>
+  </view>
 
   <view class="apply-filter-button">
     <t-button icon="search" theme="primary" size="medium" block bind:tap="confirmFilter">确认过滤</t-button>

@@ -35,14 +35,17 @@
   }
 }
 
-.filter-item-content__time {
+.filter-item-content__time, .filter-item-content__sort {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .filter-item-content__time__start,
-.filter-item-content__time__end {
+.filter-item-content__time__end,
+.filter-item-content__sort__key,
+.filter-item-content__sort__type
+{
   width: 300rpx;
 }
 

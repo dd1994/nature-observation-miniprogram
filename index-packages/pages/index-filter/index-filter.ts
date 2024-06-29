@@ -12,7 +12,29 @@ Page({
     taxon_name: null,
     startDate: '',
     endDate: '',
-    today: moment(Date.now()).format('YYYY-MM-DD')
+    today: moment(Date.now()).format('YYYY-MM-DD'),
+    sortKey: 0,
+    sortType: 0,
+    sortKeyOptions: [
+      {
+        label: '上传日期',
+        value: 'created_at',
+      },
+      {
+        label: '拍照日期',
+        value: 'observed_on'
+      }
+    ],
+    sortTypeOptions: [
+      {
+        value: 'DESC',
+        label: '降序'
+      },
+      {
+        value: 'ASC',
+        label: '升序'
+      }
+    ]
   },
   bindRegionChange(e) {
     this.setData({
@@ -42,6 +64,16 @@ Page({
   removeEndDate() {
     this.setData({
       endDate: ''
+    })
+  },
+  bindSortTypeChange(e) {
+    this.setData({
+      sortType: e.detail.value
+    })
+  },
+  bindSortKeyChange(e) {
+    this.setData({
+      sortKey: e.detail.value
     })
   },
   gotoTaxonFilter() {
