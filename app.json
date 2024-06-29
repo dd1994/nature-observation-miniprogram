@@ -43,14 +43,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
+        "iconPath": "@iconPath1",
+        "selectedIconPath": "@selectedIconPath1",
         "text": "我的"
       },
       {
         "pagePath": "pages/explore/index",
+        "iconPath": "@iconPath2",
+        "selectedIconPath": "@selectedIconPath2",
         "text": "发现"
       },
       {
         "pagePath": "pages/mine/mine",
+        "iconPath": "@iconPath3",
+        "selectedIconPath": "@selectedIconPath3",
         "text": "设置"
       }
     ]
