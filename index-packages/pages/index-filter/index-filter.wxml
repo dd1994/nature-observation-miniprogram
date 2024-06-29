@@ -5,7 +5,7 @@
       <view>类群</view>
     </view>
     <view wx:if="{{!taxon_id}}" class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class" bind:tap="gotoTaxonFilter">
-      过滤感兴趣的类群，比如“蜘蛛目”
+      筛选感兴趣的类群，比如“蜘蛛目”
     </view>
     <view wx:else class="filter-item-content" hover-class="common-hover-class" bind:tap="gotoTaxonFilter">
       <view>{{taxon_preferred_common_name}}</view>
@@ -19,10 +19,10 @@
       <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
       <view>观察位置</view>
     </view>
-    <picker header-text="按观察位置过滤" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
+    <picker header-text="按观察位置筛选" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
       <view class="picker">
         <view wx:if="{{!displayRegion}}" class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class">
-          可按省、市或者区过滤
+          可按省、市或者区筛选
         </view>
         <view wx:else class="filter-item-content" hover-class="common-hover-class">
           <view>{{displayRegion}}</view>
@@ -65,7 +65,7 @@
   </view>
   <view class="filter-item">
     <view class="filter-item-title">
-      <t-icon class="filter-item-title__icon" name="calendar" size="48rpx"></t-icon>
+      <t-icon class="filter-item-title__icon" name="arrow-up-down-1" size="48rpx"></t-icon>
       <view>排序方式</view>
     </view>
     <view class="filter-item-content__sort">
@@ -85,6 +85,6 @@
   </view>
 
   <view class="apply-filter-button">
-    <t-button icon="search" theme="primary" size="medium" block bind:tap="confirmFilter">确认过滤</t-button>
+    <t-button icon="search" theme="primary" size="medium" block bind:tap="confirmFilter">确认筛选</t-button>
   </view>
 </view>

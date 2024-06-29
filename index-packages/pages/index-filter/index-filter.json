@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "过滤",
+  "navigationBarTitleText": "筛选",
   "usingComponents": {
     "t-search": "tdesign-miniprogram/search/search",
     "t-button": "tdesign-miniprogram/button/button",
