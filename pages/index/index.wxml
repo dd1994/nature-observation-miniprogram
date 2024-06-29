@@ -4,9 +4,11 @@
       <view>记录身边物种</view>
       <view>参与公民科学</view>
     </view>
-    <button class="empty-tips__btn" type="primary" bind:tap="onAddIconTap">上传已有照片</button>
+    <t-button t-class="empty-tips__btn" theme="primary" size="large" block bind:tap="onAddIconTap">上传已有照片</t-button>
+    <!-- <button class="empty-tips__btn" type="primary" bind:tap="onAddIconTap">上传已有照片</button> -->
     <view class="empty-tips__or">或者</view>
-    <button class="empty-tips__btn" type="primary" plain="true" bind:tap="goToExplore">先随便逛逛</button>
+    <t-button t-class="empty-tips__btn" plain theme="primary" size="large" variant="outline" block bind:tap="goToExplore">先随便逛逛</t-button>
+    <!-- <button class="empty-tips__btn" type="primary" plain="true" bind:tap="goToExplore">先随便逛逛</button> -->
   </view>
   <view wx:else>
     <index-tab tabs="{{[{value: 0, title: '记录', num: observationsTotal}, {value: 1, title: '物种', num: taxonTotal}, {value: 2, title: '鉴定', num: idTotal}]}}" bind:onTabChange="activeTabChange" activeTab="{{activeTab}}" bind:refresh="refresh">
