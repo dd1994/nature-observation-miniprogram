@@ -36,7 +36,7 @@
   <view class="filter-item">
     <view class="filter-item-title">
       <t-icon class="filter-item-title__icon" name="calendar" size="48rpx"></t-icon>
-      <view>拍照时间</view>
+      <view>拍照日期</view>
     </view>
     <view class="filter-item-content__time">
       <picker header-text="开始时间" mode="date" bindchange="bindStartDateChange" value="{{startDate}}" end="{{today}}">

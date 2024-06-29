@@ -45,11 +45,11 @@ export const RankChineseMap = {
 
 export const sortKeyOptions = [
   {
-    label: '上传日期',
+    label: '上传时间',
     value: 'created_at',
   },
   {
-    label: '拍照日期',
+    label: '拍照时间',
     value: 'observed_on'
   }
 ]
