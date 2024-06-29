@@ -86,5 +86,6 @@
 
   <view class="apply-filter-button">
     <t-button icon="search" theme="primary" size="medium" block bind:tap="confirmFilter">确认筛选</t-button>
+    <view bind:tap="resetFilter" hover-class="common-hover-class" class="reset-filter">重置筛选</view>
   </view>
 </view>

@@ -35,7 +35,8 @@
   }
 }
 
-.filter-item-content__time, .filter-item-content__sort {
+.filter-item-content__time,
+.filter-item-content__sort {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,8 +45,7 @@
 .filter-item-content__time__start,
 .filter-item-content__time__end,
 .filter-item-content__sort__key,
-.filter-item-content__sort__type
-{
+.filter-item-content__sort__type {
   width: 300rpx;
 }
 
@@ -54,4 +54,13 @@
   bottom: var(--td-spacer-6);
   left: var(--td-spacer-2);
   right: var(--td-spacer-2);
+}
+
+.reset-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--td-font-size-m);
+  color: var(--td-font-gray-3);
+  margin-top: var(--td-spacer-2);
 }

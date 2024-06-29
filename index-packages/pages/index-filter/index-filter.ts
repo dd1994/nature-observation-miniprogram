@@ -13,9 +13,9 @@ Page({
     taxon_name: null,
     startDate: '',
     endDate: '',
-    today: moment(Date.now()).format('YYYY-MM-DD'),
     sortKey: 0,
     sortType: 0,
+    today: moment(Date.now()).format('YYYY-MM-DD'),
     sortKeyOptions: sortKeyOptions,
     sortTypeOptions: sortTypeOptions
   },
@@ -87,6 +87,19 @@ Page({
       taxon_preferred_common_name: null,
       taxon_name: null,
     })
+  },
+  resetFilter() {
+    this.setData({
+      region: ['全部', '全部', '全部'],
+      taxon_id: null,
+      taxon_preferred_common_name: null,
+      taxon_name: null,
+      startDate: '',
+      endDate: '',
+      sortKey: 0,
+      sortType: 0,
+    })
+    this.confirmFilter()
   },
   confirmFilter() {
     const eventChannel = this.getOpenerEventChannel();
