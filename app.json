@@ -51,7 +51,7 @@
         "pagePath": "pages/explore/index",
         "iconPath": "@iconPath2",
         "selectedIconPath": "@selectedIconPath2",
-        "text": "探索"
+        "text": "发现"
       },
       {
         "pagePath": "pages/mine/mine",
