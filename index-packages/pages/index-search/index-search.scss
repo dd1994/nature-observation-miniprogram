@@ -10,6 +10,16 @@
 
 .search-input-wrapper {
   margin: var(--spacer-mini);
+
+  .mine-tips {
+    font-size: var(--td-font-size-s);
+    color: var(--td-font-gray-3);
+    margin-top: var(--td-spacer-1);
+
+    .mine-tips-explore-links {
+      text-decoration: underline;
+    }
+  }
 }
 
 .loading-wrapper {

@@ -1,6 +1,7 @@
 <view class="page-container">
   <view class="search-input-wrapper">
     <t-search focus="{{autoFocus}}" value="{{inputWords}}" placeholder="搜索记录过的物种中文名" bind:change="searchWords" />
+    <view wx:if="{{needLogin}}" class="mine-tips">当前在“我的”记录里搜索，若想搜索他人记录，请前往<text hover-class="common-hover-class" class="mine-tips-explore-links" bind:tap="gotoExplore">发现页面</text></view>
   </view>
   <view wx:if="{{observationsIsLoading && !observations.length}}" class="loading-wrapper">
     <t-loading theme="spinner" size="48rpx" text="搜索中..." inheritColor />

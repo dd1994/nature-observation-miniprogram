@@ -29,6 +29,11 @@ Page({
     })
     this.fetchObservationList()
   },
+  gotoExplore() {
+    wx.switchTab({
+      url: '/pages/explore/index'
+    })
+  },
   onLoad(options) {
     if (options.needLogin) {
       this.setData({

@@ -182,7 +182,7 @@ Page({
   },
   gotoIndexSearch() {
     wx.navigateTo({
-      url: "/index-packages/pages/index-search/index-search"
+      url: "/index-packages/pages/index-search/index-search?needLogin=1"
     })
   },
   gotoIndexFilter() {
