@@ -7,7 +7,7 @@
 }
 
 .filter-item {
-  margin-bottom: var(--td-spacer-4);
+  margin-bottom: var(--td-spacer-5);
 
   .filter-item-title {
     margin-bottom: var(--td-spacer-1);
@@ -41,9 +41,6 @@
   justify-content: space-between;
 }
 
-.filter-item-sort {
-  margin-top: var(--td-spacer-6);
-}
 
 .filter-item-content__time__start,
 .filter-item-content__time__end,
@@ -64,7 +61,7 @@
 
 .apply-filter-button {
   position: fixed;
-  bottom: var(--td-spacer-6);
+  bottom: var(--td-spacer-5);
   left: var(--td-spacer-2);
   right: var(--td-spacer-2);
 }
