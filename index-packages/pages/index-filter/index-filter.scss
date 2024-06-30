@@ -7,7 +7,7 @@
 }
 
 .filter-item {
-  margin-bottom: var(--td-spacer-5);
+  margin-bottom: var(--td-spacer-4);
 
   .filter-item-title {
     margin-bottom: var(--td-spacer-1);
@@ -39,6 +39,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.filter-item-sort {
+  margin-top: var(--td-spacer-6);
 }
 
 .filter-item-content__time__start,

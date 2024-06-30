@@ -63,7 +63,7 @@
       </picker>
     </view>
   </view>
-  <view class="filter-item">
+  <view class="filter-item filter-item-sort">
     <view class="filter-item-title">
       <t-icon class="filter-item-title__icon" name="arrow-up-down-1" size="48rpx"></t-icon>
       <view>排序方式</view>
