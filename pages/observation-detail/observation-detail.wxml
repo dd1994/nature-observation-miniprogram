@@ -2,8 +2,8 @@
   <t-swiper current="{{currentPhoto}}" autoplay="{{true}}" duration="{{500}}" interval="{{3000}}" loop="{{true}}" list="{{swiperList}}" height="{{'750rpx'}}" navigation="{{ { type: 'dots-bar' } }}" t-class="swiper-theme" bind:click="onSwiperClick" />
   <taxon-cell taxon="{{taxonInfo}}"></taxon-cell>
   <t-divider t-class="custom-divider" />
-  <t-tabs swipeable="{{false}}" split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs"  t-class-track="custom-track">
-    <t-tab-panel label="信息" value="0" icon="info-circle">
+  <t-tabs swipeable="{{false}}" split="{{false}}" defaultValue="{{1}}" t-class="custom-tabs" t-class-track="custom-track">
+    <t-tab-panel label="信息" value="0" icon="{{TabIcon.info}}">
       <view class="observation-user-info">
         <view class="observation-user-info__title">
           <t-icon size="44rpx" name="user-1" style="margin-right: 8rpx;" />
@@ -54,7 +54,7 @@
         <t-button bind:tap="edit" icon="edit" theme="primary" block size="medium" variant="outline">编辑记录</t-button>
       </view>
     </t-tab-panel>
-    <t-tab-panel label="鉴定" value="1" icon="lightbulb">
+    <t-tab-panel label="鉴定" value="1" icon="{{TabIcon.id}}">
       <view class="identifications-pannel">
         <identifications identifications="{{identifications}}" userProfile="{{userProfile}}" bind:agreeID="agreeID" />
         <view class="edit-button-wrapper">

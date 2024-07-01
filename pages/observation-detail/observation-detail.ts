@@ -34,6 +34,16 @@ Page({
       theme: "light",
       openType: 'share',
     },
+    TabIcon: {
+      info: {
+        name: 'info-circle',
+        size: '44rpx'
+      },
+      id: {
+        name: 'filter-2',
+        size: '44rpx'
+      }
+    }
   },
   computed: {
     taxonInfo(data) {
