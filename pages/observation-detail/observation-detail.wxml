@@ -12,7 +12,7 @@
         <view class="observation-user-info__detail">
           <user-name-and-avatar userProfile="{{observationDetail}}"></user-name-and-avatar>
           <view class="observation-on-time">
-            观察于<text style="margin-left: 8rpx;">{{formattedObservedOn}}</text>
+            观察于<text>{{formattedObservedOn}}</text>
           </view>
         </view>
       </view>
