@@ -23,7 +23,7 @@
     </view>
     <view hover-class="common-hover-class">
       <picker header-text="{{'补充更多物种信息'}}" bindchange="bindCustomFieldItemChange" value="{{index}}" range="{{customFieldConfig}}" range-key="name">
-        <view class="custom-field-picker">
+        <view class="custom-field-picker" hover-class="common-hover-class">
           <t-icon name="add" style="margin-right: 2px;" size="18px" />
           <view>补充更多物种信息</view>
         </view>
