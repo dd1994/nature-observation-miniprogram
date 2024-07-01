@@ -79,7 +79,7 @@
     </scroll-view>
   </t-dialog>
   <t-fab icon="share-1" button-props="{{fabButton}}" aria-label="分享" style="bottom: 128rpx"></t-fab>
-  <t-button wx:if="{{backIconTop}}" bind:tap="back" style="{{backIconStyle}}" t-class="back-icon" size="small" variant="outline" ghost icon="arrow-left" shape="circle" aria-label="搜索">
+  <t-button wx:if="{{backIconTop}}" bind:tap="back" style="{{backIconStyle}}" t-class="back-icon" size="small" variant="outline" ghost icon="chevron-left" shape="circle" aria-label="搜索">
 
   </t-button>
 </view>
