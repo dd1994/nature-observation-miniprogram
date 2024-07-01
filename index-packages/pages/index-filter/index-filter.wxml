@@ -1,7 +1,7 @@
 <view class="filter-panel-container">
   <view class="filter-item">
     <view class="filter-item-title">
-      <t-icon class="filter-item-title__icon" name="filter-1" size="48rpx"></t-icon>
+      <t-icon class="filter-item-title__icon" name="filter-1" size="44rpx"></t-icon>
       <view>类群</view>
     </view>
     <view wx:if="{{!taxon_id}}" class="filter-item-content filter-item-content__placeholder" hover-class="common-hover-class" bind:tap="gotoTaxonFilter">
@@ -10,13 +10,13 @@
     <view wx:else class="filter-item-content" hover-class="common-hover-class" bind:tap="gotoTaxonFilter">
       <view>{{taxon_preferred_common_name}}</view>
       <view catch:tap="removeTaxonFilter" hover-class="common-hover-class">
-        <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+        <t-icon name="close" size="44rpx" color="rgba(0,0,0,0.4)"></t-icon>
       </view>
     </view>
   </view>
   <view class="filter-item">
     <view class="filter-item-title">
-      <t-icon class="filter-item-title__icon" name="location" size="48rpx"></t-icon>
+      <t-icon class="filter-item-title__icon" name="location" size="44rpx"></t-icon>
       <view>拍照位置</view>
     </view>
     <picker header-text="按拍照位置筛选" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
@@ -27,7 +27,7 @@
         <view wx:else class="filter-item-content" hover-class="common-hover-class">
           <view>{{displayRegion}}</view>
           <view catch:tap="removeRegion" hover-class="common-hover-class">
-            <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+            <t-icon name="close" size="44rpx" color="rgba(0,0,0,0.4)"></t-icon>
           </view>
         </view>
       </view>
@@ -35,7 +35,7 @@
   </view>
   <view class="filter-item">
     <view class="filter-item-title">
-      <t-icon class="filter-item-title__icon" name="calendar" size="48rpx"></t-icon>
+      <t-icon class="filter-item-title__icon" name="calendar" size="44rpx"></t-icon>
       <view>拍照日期</view>
     </view>
     <view class="filter-item-content__time">
@@ -46,7 +46,7 @@
         <view wx:else class="filter-item-content filter-item-content__time__start" hover-class="common-hover-class">
           <view>{{startDate}}</view>
           <view catch:tap="removeStartDate" hover-class="common-hover-class">
-            <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+            <t-icon name="close" size="44rpx" color="rgba(0,0,0,0.4)"></t-icon>
           </view>
         </view>
       </picker>
@@ -57,7 +57,7 @@
         <view wx:else class="filter-item-content filter-item-content__time__end" hover-class="common-hover-class">
           <view>{{endDate}}</view>
           <view catch:tap="removeEndDate" hover-class="common-hover-class">
-            <t-icon name="close" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+            <t-icon name="close" size="44rpx" color="rgba(0,0,0,0.4)"></t-icon>
           </view>
         </view>
       </picker>
@@ -65,20 +65,20 @@
   </view>
   <view class="filter-item filter-item-sort">
     <view class="filter-item-title">
-      <t-icon class="filter-item-title__icon" name="arrow-up-down-1" size="48rpx"></t-icon>
+      <t-icon class="filter-item-title__icon" name="arrow-up-down-1" size="44rpx"></t-icon>
       <view>排序方式</view>
     </view>
     <view class="filter-item-content__sort">
       <picker header-text="排序字段" mode="selector" bindchange="bindSortKeyChange" range="{{sortKeyOptions}}" value="{{sortKey}}" range-key="label">
         <view class="filter-item-content filter-item-content__sort__key" hover-class="common-hover-class">
           <view>{{sortKeyOptions[sortKey].label}}</view>
-          <t-icon name="caret-down-small" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+          <t-icon name="caret-down-small" size="44rpx" color="rgba(0,0,0,0.4)"></t-icon>
         </view>
       </picker>
       <picker header-text="排序顺序" mode="selector" bindchange="bindSortTypeChange" range="{{sortTypeOptions}}" range-key="label" value="{{sortType}}">
         <view class="filter-item-content filter-item-content__sort__type" hover-class="common-hover-class">
           <view>{{sortTypeOptions[sortType].label}}</view>
-          <t-icon name="caret-down-small" size="48rpx" color="rgba(0,0,0,0.4)"></t-icon>
+          <t-icon name="caret-down-small" size="44rpx" color="rgba(0,0,0,0.4)"></t-icon>
         </view>
       </picker>
     </view>

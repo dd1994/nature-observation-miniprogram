@@ -6,7 +6,7 @@
     <t-tab-panel label="信息" value="0" icon="info-circle">
       <view class="observation-user-info">
         <view class="observation-user-info__title">
-          <t-icon name="user-1" style="margin-right: 8rpx;" />
+          <t-icon size="44rpx" name="user-1" style="margin-right: 8rpx;" />
           <view>观察者</view>
         </view>
         <view class="observation-user-info__detail">
@@ -25,7 +25,7 @@
       </view>
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name && !observationDetail.address_hidden}}" hover arrow bind:click="openMap">
         <view slot="title" style="display: flex; align-items: center;">
-          <t-icon name="location" style="margin-right: 8rpx;" /> 观察位置
+          <t-icon size="44rpx" name="location" style="margin-right: 8rpx;" /> 观察位置
         </view>
         <view class="observation-location-name" slot="description">
           {{recommend_address_name}}
@@ -34,7 +34,7 @@
 
       <t-cell bordered="{{false}}" wx:if="{{recommend_address_name && observationDetail.address_hidden}}">
         <view slot="title" style="display: flex; align-items: center;">
-          <t-icon name="location" style="margin-right: 8rpx;" /> 观察位置
+          <t-icon size="44rpx" name="location" style="margin-right: 8rpx;" /> 观察位置
         </view>
         <view class="observation-location-name" slot="description">
           {{recommend_address_name}}
@@ -43,7 +43,7 @@
 
       <view class="custom-field-config-wrapper" wx:if="{{customFieldConfig.length}}">
         <view class="custom-field-config-title">
-          <t-icon name="task-1" style="margin-right: 8rpx;" />
+          <t-icon size="44rpx" name="task-1" style="margin-right: 8rpx;" />
           <view>更多物种信息</view>
           <view wx:if="{{notEmptyCustomFieldValue.length}}" class="custom-field-config-view-history-btn" hover-class="common-hover-class" bind:tap="viewCustomFieldValueHistory">查看历史</view>
         </view>
