@@ -37,11 +37,11 @@ Page({
     TabIcon: {
       info: {
         name: 'info-circle',
-        size: '44rpx'
+        size: '42rpx'
       },
       id: {
         name: 'filter-2',
-        size: '44rpx'
+        size: '42rpx'
       }
     }
   },
