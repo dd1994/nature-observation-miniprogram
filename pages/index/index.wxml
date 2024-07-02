@@ -63,14 +63,18 @@
       </block>
     </view>
   </view>
-  <view wx:if="{{!(!observationsIsLoading && observationsIsEmpty && !(q.taxon_id || displayRegion.length || q.startDate || q.endDate || q.sortTips))}}" class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
-    <view hover-class="common-hover-class" class="filter-icon">
-      <t-icon bind:click="gotoIndexFilter" size="48rpx" color="rgba(0,0,0,0.9)" name="filter-1" />
-    </view>
+  <view class="tab-right-wrapper" style="top: {{filterIconTop + 'px'}};height: {{filterIconHeight+ 'px'}}">
+    <view class="left-icon-wrapper">
+      <view wx:if="{{!(!observationsIsLoading && observationsIsEmpty && !(q.taxon_id || displayRegion.length || q.startDate || q.endDate || q.sortTips))}}" hover-class="common-hover-class" class="filter-icon">
+        <t-icon bind:click="gotoIndexFilter" size="48rpx" color="rgba(0,0,0,0.9)" name="filter-1" />
+      </view>
 
-    <view hover-class="common-hover-class" class="search-icon">
-      <t-icon bind:click="gotoIndexSearch" size="48rpx" color="rgba(0,0,0,0.9)" name="search" />
+      <view wx:if="{{!(!observationsIsLoading && observationsIsEmpty && !(q.taxon_id || displayRegion.length || q.startDate || q.endDate || q.sortTips))}}" hover-class="common-hover-class" class="search-icon">
+        <t-icon bind:click="gotoIndexSearch" size="48rpx" color="rgba(0,0,0,0.9)" name="search" />
+      </view>
     </view>
+    <view class="nav-title">我的</view>
+    <view class="nav-title__hack-holder"></view>
   </view>
   <fab icon="add" wx:if="{{!observationsIsEmpty}}" bind:tap="onAddIconTap"></fab>
 </view>

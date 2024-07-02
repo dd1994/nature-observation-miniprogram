@@ -8,11 +8,30 @@
 .tab-right-wrapper {
   position: fixed;
   left: var(--td-spacer-1);
+  right: 0;
   z-index: 999;
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.left-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 33%;
+}
+
+.nav-title {
+  text-align: center;
+  flex-basis: 33%;
+  font-size: var(--td-font-size-m);
+  font-weight: 500;
+}
+
+.nav-title__hack-holder {
+  flex-basis: 33%;
 }
 
 .search-icon,
